@@ -1,8 +1,8 @@
 """Standalone public Gurbani stream and pankti server.
 
 Run with: uvicorn server:app --host 127.0.0.1 --port 8000
-The non-cache-aware ONNX recognizer is loaded from server_asr_offline.py.
-Model assets are expected in the existing model/ directory.
+The cache-aware NeMo streaming ONNX recognizer is loaded from
+server_asr_stream.py. Model assets are expected in kirtan_stream_model/.
 """
 from __future__ import annotations
 
@@ -1243,8 +1243,8 @@ async def startup() -> None:
     global _speech_column, _asr_module, _live_task
     _speech_column = await asyncio.to_thread(_ensure_database)
     await asyncio.to_thread(_build_pankti_index)
-    # Loads the original non-cache-aware ONNX encoder/decoder from model/.
-    import server_asr_offline as asr_module
+    # Loads the cache-aware NeMo streaming ONNX encoder/decoder.
+    import server_asr_stream as asr_module
     _asr_module = asr_module
     app.mount("/asr", asr_module.app, name="onnx-asr")
     _live_task = asyncio.create_task(_live_worker())
