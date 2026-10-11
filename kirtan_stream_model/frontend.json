@@ -1,0 +1,39 @@
+{
+  "win_length": 400,
+  "hop_length": 160,
+  "n_fft": 512,
+  "nfilt": 80,
+  "preemph": 0.97,
+  "log": true,
+  "log_zero_guard_type": "add",
+  "log_zero_guard_value": 5.960464477539063e-08,
+  "normalize": "per_feature",
+  "dither": 0.0,
+  "pad_to": 0,
+  "pad_value": 0,
+  "mag_power": 2.0,
+  "frame_splicing": 1,
+  "tokenizer": "tokenizer.model",
+  "mel_filterbank": "mel_filterbank.npy",
+  "stft_window": "stft_window.npy",
+  "mel_filterbank_shape": [
+    80,
+    257
+  ],
+  "stft_window_shape": [
+    400
+  ],
+  "nemo_preprocessor_config": {
+    "_target_": "nemo.collections.asr.modules.AudioToMelSpectrogramPreprocessor",
+    "sample_rate": 16000,
+    "normalize": "per_feature",
+    "window_size": 0.025,
+    "window_stride": 0.01,
+    "window": "hann",
+    "features": 80,
+    "n_fft": 512,
+    "frame_splicing": 1,
+    "dither": 1e-05,
+    "pad_to": 0
+  }
+}

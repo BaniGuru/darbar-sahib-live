@@ -1,0 +1,35 @@
+{
+  "encoder": "encoder-baniguru_stream_202_100_rnnt.onnx",
+  "decoder_joint": "decoder_joint-baniguru_stream_202_100_rnnt.onnx",
+  "tokenizer": "tokenizer.model",
+  "mel_filterbank": "mel_filterbank.npy",
+  "stft_window": "stft_window.npy",
+  "frontend_config": "frontend.json",
+  "sample_rate": 16000,
+  "n_fft": 512,
+  "win_length": 400,
+  "hop_length": 160,
+  "n_mels": 80,
+  "preemph": 0.97,
+  "log_zero_guard_value": 5.960464477539063e-08,
+  "language": "pa",
+  "local_vocab_size": 256,
+  "aggregate_vocab_size": 5632,
+  "punjabi_language_index": 15,
+  "joint_blank_id": 256,
+  "predictor_start_id": 5632,
+  "max_symbols_per_step": 5,
+  "att_context_size": [
+    202,
+    100
+  ],
+  "att_context_style": "chunked_limited",
+  "conv_context_size": [
+    30,
+    0
+  ],
+  "pre_encode_cache_size": 0,
+  "drop_extra_pre_encoded": 0,
+  "onnx_opset": 17,
+  "ctc_decoder": "ctc_decoder_202_100.onnx"
+}
