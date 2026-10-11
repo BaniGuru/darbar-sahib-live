@@ -1,0 +1,123 @@
+{
+  "encoder": {
+    "inputs": [
+      {
+        "name": "audio_signal",
+        "shape": [
+          "audio_signal_dynamic_axes_1",
+          "80",
+          "audio_signal_dynamic_axes_2"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "length",
+        "shape": [
+          "length_dynamic_axes_1"
+        ],
+        "type": "tensor(int64)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outputs",
+        "shape": [
+          "outputs_dynamic_axes_1",
+          "512",
+          "outputs_dynamic_axes_2"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "encoded_lengths",
+        "shape": [
+          "encoded_lengths_dynamic_axes_1"
+        ],
+        "type": "tensor(int64)"
+      }
+    ]
+  },
+  "decoder_joint": {
+    "inputs": [
+      {
+        "name": "encoder_outputs",
+        "shape": [
+          "encoder_outputs_dynamic_axes_1",
+          "512",
+          "encoder_outputs_dynamic_axes_2"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "targets",
+        "shape": [
+          "targets_dynamic_axes_1",
+          "targets_dynamic_axes_2"
+        ],
+        "type": "tensor(int32)"
+      },
+      {
+        "name": "target_length",
+        "shape": [
+          "target_length_dynamic_axes_1"
+        ],
+        "type": "tensor(int32)"
+      },
+      {
+        "name": "input_states_1",
+        "shape": [
+          "1",
+          "input_states_1_dynamic_axes_1",
+          "640"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "input_states_2",
+        "shape": [
+          "1",
+          "input_states_2_dynamic_axes_1",
+          "640"
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outputs",
+        "shape": [
+          "outputs_dynamic_axes_1",
+          "outputs_dynamic_axes_2",
+          "outputs_dynamic_axes_3",
+          "257"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "prednet_lengths",
+        "shape": [
+          "prednet_lengths_dynamic_axes_1"
+        ],
+        "type": "tensor(int32)"
+      },
+      {
+        "name": "output_states_1",
+        "shape": [
+          "1",
+          "output_states_1_dynamic_axes_1",
+          "640"
+        ],
+        "type": "tensor(float)"
+      },
+      {
+        "name": "output_states_2",
+        "shape": [
+          "1",
+          "output_states_2_dynamic_axes_1",
+          "640"
+        ],
+        "type": "tensor(float)"
+      }
+    ]
+  }
+}

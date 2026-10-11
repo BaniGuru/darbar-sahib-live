@@ -1,0 +1,19 @@
+{
+  "language": "pa",
+  "sample_rate": 16000,
+  "vocab_per_language": 256,
+  "aggregate_vocab_size": 5632,
+  "punjabi_language_index": 15,
+  "punjabi_offset": 3840,
+  "punjabi_last_id": 4095,
+  "joint_blank_id": 256,
+  "predictor_blank_id": 5632,
+  "max_symbols_per_step": 5,
+  "tokenizer": "tokenizer.model",
+  "frontend_config": "frontend.json",
+  "mel_filterbank": "mel_filterbank.npy",
+  "encoder": "encoder-baniguru_kirtan_v1_rnnt.onnx",
+  "decoder_joint": "decoder_joint-baniguru_kirtan_v1_rnnt.onnx",
+  "stft_window": "stft_window.npy",
+  "onnx_io": "onnx_io.json"
+}
