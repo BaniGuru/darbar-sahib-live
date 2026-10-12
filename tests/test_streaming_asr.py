@@ -46,7 +46,7 @@ def scheduled_decoder(tokens):
 class StreamingTests(unittest.TestCase):
     def setUp(self):
         for name, value in [("tokenizer", Tokenizer()), ("preprocess_audio", frontend),
-                            ("run_encoder", encoder), ("language_prior", None)]:
+                            ("run_encoder", encoder), ("language_prior", None), ("kenlm_prior", None)]:
             patched = patch.object(asr, name, value)
             patched.start()
             self.addCleanup(patched.stop)
@@ -94,6 +94,63 @@ class StreamingTests(unittest.TestCase):
             self.assertEqual(final["partial_text"], "")
             with self.assertRaises(RuntimeError):
                 recognizer.update(np.zeros(1, np.float32))
+
+    def test_kenlm_scores_terminal_word_at_eof_without_extra_audio(self):
+        class FinalWordPrior:
+            def full_score(self, text, context):
+                return 2.0 if text.strip() == "ਸੇਵਾ" else 0.0
+            def token_score(self, tokenizer, ids, context):
+                return 0.0
+        wrong = hypothesis([asr.TimedToken(3, 0)])
+        correct = hypothesis([asr.TimedToken(4, 0)], -0.1)
+        with patch.object(asr, "kenlm_prior", FinalWordPrior()), \
+             patch.object(asr, "KENLM_WEIGHT", 0.3), \
+             patch.object(asr, "decode_encoder_beams", return_value=[wrong, correct]):
+            recognizer = asr.StreamingRecognizer()
+            recognizer.update(np.zeros(321, np.float32))
+            final = recognizer.finish()
+            self.assertEqual(final, recognizer.finish())
+        self.assertEqual(final["text"], "ਸੇਵਾ")
+        self.assertEqual(final["samples"], 321)
+
+    def test_two_word_lm_context_survives_encoder_cache_promotion(self):
+        tokens = [asr.TimedToken(1, 10), asr.TimedToken(2, 30), asr.TimedToken(3, 80),
+                  asr.TimedToken(4, 120), asr.TimedToken(13, 170)]
+        scheduled = scheduled_decoder(tokens)
+        seen = []
+        def decode(*args, **kwargs):
+            seen.append(kwargs["previous_words"])
+            return scheduled(*args, **kwargs)
+        with patch.object(asr, "decode_encoder_beams", side_effect=decode):
+            recognizer = asr.StreamingRecognizer()
+            recognizer.update(np.zeros(128000, np.float32))
+            final = recognizer.finish()
+        self.assertIn(("ਪ੍ਰਭ", "ਦੀਨ"), seen)
+        self.assertEqual(final["text"], "ਪ੍ਰਭ ਦੀਨ ਸੇਵਾ ਨਾਮ")
+        self.assertEqual(final["samples"], 128000)
+
+    def test_five_gram_keeps_four_words_across_encoder_cache_promotion(self):
+        class FiveGramPrior:
+            order = 5
+            def full_score(self, text, context):
+                return 0.0
+            def token_score(self, tokenizer, ids, context):
+                return 0.0
+        tokens = [asr.TimedToken(1, 10), asr.TimedToken(2, 20), asr.TimedToken(3, 30),
+                  asr.TimedToken(4, 50), asr.TimedToken(13, 80), asr.TimedToken(14, 120),
+                  asr.TimedToken(4, 170)]
+        scheduled = scheduled_decoder(tokens)
+        seen = []
+        def decode(*args, **kwargs):
+            seen.append(kwargs["previous_words"])
+            return scheduled(*args, **kwargs)
+        with patch.object(asr, "kenlm_prior", FiveGramPrior()), \
+             patch.object(asr, "decode_encoder_beams", side_effect=decode):
+            recognizer = asr.StreamingRecognizer()
+            recognizer.update(np.zeros(128000, np.float32))
+            final = recognizer.finish()
+        self.assertIn(("ਪ੍ਰਭ", "ਦੀਨ", "ਸੇਵਾ", "ਨਾਮ"), seen)
+        self.assertEqual(final["text"], "ਪ੍ਰਭ ਦੀਨ ਸੇਵਾ ਨਾਮ ਜਪੋ ਸੇਵਾ")
 
     def test_websocket_finish_consumes_less_than_one_update_of_buffered_audio(self):
         async def run():
@@ -219,6 +276,32 @@ class StreamingTests(unittest.TestCase):
         best = hypothesis([asr.TimedToken(1, 50), asr.TimedToken(2, 75), asr.TimedToken(3, 90)])
         alternative = hypothesis([asr.TimedToken(1, 50), asr.TimedToken(6, 75), asr.TimedToken(3, 92)], -1)
         self.assertEqual(asr.settled_word_prefix([best, alternative], 120), 2)
+
+    def test_short_word_prefix_cannot_commit_while_a_longer_word_continues(self):
+        short = hypothesis([asr.TimedToken(12, 10), asr.TimedToken(10, 15), asr.TimedToken(13, 60)])
+        long = hypothesis([asr.TimedToken(12, 10), asr.TimedToken(10, 15),
+                           asr.TimedToken(11, 20), asr.TimedToken(13, 61)], -0.1)
+        self.assertEqual(asr.settled_word_prefix([short, long], 100), 0)
+
+    def test_hard_cache_limit_preserves_whole_prefix_word_alternatives(self):
+        short = hypothesis([asr.TimedToken(12, 10), asr.TimedToken(10, 15), asr.TimedToken(13, 60)])
+        long = hypothesis([asr.TimedToken(12, 10), asr.TimedToken(10, 15),
+                           asr.TimedToken(11, 20), asr.TimedToken(13, 61)], -0.1)
+        finishing = False
+        def decode(encoded, length, beams, frame_start, **kwargs):
+            if frame_start < 100:
+                return [short, long]
+            self.assertEqual(beams[1].token_ids[:3], (12, 10, 11))
+            return [long, short] if finishing else [short, long]
+        with patch.object(asr, "decode_encoder_beams", side_effect=decode):
+            r = asr.StreamingRecognizer()
+            state = r.update(np.zeros(128000, np.float32))
+            finishing = True
+            final = r.finish()
+        self.assertEqual(state["committed_text"], "")
+        self.assertEqual(state["cache_committed_until"], 4)
+        self.assertEqual(final["text"], "ਗੁਰੂ ਨਾਮ")
+        self.assertEqual(final["peak_pending_window_seconds"], 8)
 
     def test_beam_blank_preserves_predictor_state_without_mutating_input(self):
         initial = asr.new_decoder_beams()

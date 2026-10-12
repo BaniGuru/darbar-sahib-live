@@ -280,3 +280,18 @@ See [the complete report](validation/stream-word-retention20m/README.md),
 and [all section comparisons](validation/stream-word-retention20m/sections.csv).
 The source, runtime, audio and reference hashes, rejected experiments, complete
 transcripts, every paced partial and current live readiness evidence are included.
+
+## KenLM models and complete-word commitment
+
+The supplied 3-, 4- and 5-gram KenLM binaries are available through Git LFS.
+The selected model and tuning are documented in [KENLM_ASR.md](KENLM_ASR.md),
+with the current [section-24 accuracy and latency comparison](validation/kenlm-section24/README.md)
+and [earlier 20-minute measurements](validation/kenlm20m/README.md).
+
+KenLM keeps the complete model-order word history across cache promotions.
+The decoder also keeps a word partial when one viable spelling continues a
+shorter token prefix, such as `ਗੁਰ` becoming `ਗੁਰੂ`. Shared letters alone can
+no longer be committed while a retained beam continues that word. This applies
+to both adaptive word confirmation and the hard eight-second audio limit;
+the encoder can advance by four seconds while the entire ambiguous word stays
+in its acoustic beam. The partial refresh remains 800 ms.

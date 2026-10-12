@@ -14,7 +14,7 @@ import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
 from cached_rnnt_decoder import CachedRNNTDecoder
-from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score
+from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score, words as prior_words
 from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -53,6 +53,9 @@ ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", min(4, os.cpu
 BEAM_WIDTH = max(1, int(os.environ.get("ASR_BEAM_WIDTH", "24")))
 BEAM_PRUNE_LOGP = 6.0
 LANGUAGE_PRIOR_WEIGHT = max(0.0, float(os.environ.get("ASR_LANGUAGE_PRIOR_WEIGHT", "0.6")))
+KENLM_WEIGHT = max(0.0, float(os.environ.get("ASR_KENLM_WEIGHT", "0.3")))
+KENLM_MODE = os.environ.get("ASR_KENLM_MODE", "ngram")
+KENLM_WORD_BONUS = float(os.environ.get("ASR_KENLM_WORD_BONUS", "0"))
 WORD_LOOKAHEAD_FRAMES = int(round(1.0 / ENCODER_FRAME_SECONDS))
 WORD_BOUNDARY_TOLERANCE_FRAMES = 3  # RNNT paths can differ by 120 ms in alignment.
 
@@ -63,6 +66,11 @@ if tokenizer.get_piece_size() != LOCAL_VOCAB_SIZE:
     raise RuntimeError(f"Unexpected streaming tokenizer size: {tokenizer.get_piece_size()}")
 language_prior = (GurbaniLanguagePrior.from_database(BASE_DIR / "data" / "bani.db")
                   if LANGUAGE_PRIOR_WEIGHT and (BASE_DIR / "data" / "bani.db").exists() else None)
+kenlm_prior = None
+if KENLM_WEIGHT:
+    from kenlm_language_prior import KenLMWordPrior
+    kenlm_prior = KenLMWordPrior(Path(os.environ.get("ASR_KENLM_PATH", MODEL_DIR / "gurbani_3gram.bin")),
+                                mode=KENLM_MODE, word_bonus=KENLM_WORD_BONUS)
 
 def session_options_for(threads: int) -> ort.SessionOptions:
     options = ort.SessionOptions()
@@ -188,7 +196,7 @@ def _merge_hypothesis(candidates: dict, hypothesis: DecoderHypothesis) -> None:
 
 def decode_encoder_beams(
     encoded: np.ndarray, length: int, beams: list[DecoderHypothesis], frame_offset: int,
-    *, require_word_start: bool = False, previous_word: str = "",
+    *, require_word_start: bool = False, previous_word: str = "", previous_words: tuple[str, ...] = (),
 ) -> list[DecoderHypothesis]:
     """Keep competing word interpretations alive across acoustic commits.
 
@@ -199,12 +207,19 @@ def decode_encoder_beams(
                                if tokenizer.id_to_piece(label).startswith("▁")], dtype=np.int32) if require_word_start else None
     prior_scores = {}
     def prior_score(ids):
-        if language_prior is None:
+        if language_prior is None and kenlm_prior is None:
             return 0.0
         if ids not in prior_scores:
-            prior_scores[ids] = LANGUAGE_PRIOR_WEIGHT * token_prefix_score(language_prior, tokenizer, ids, previous_word)
+            value = (LANGUAGE_PRIOR_WEIGHT * token_prefix_score(language_prior, tokenizer, ids, previous_word)
+                     if language_prior is not None else 0.0)
+            if kenlm_prior is not None:
+                value += KENLM_WEIGHT * kenlm_prior.token_score(tokenizer, ids, previous_words)
+            prior_scores[ids] = value
         return prior_scores[ids]
-    expansion_width = BEAM_WIDTH * 2 if language_prior is not None else BEAM_WIDTH
+    expansion_width = BEAM_WIDTH * 2 if language_prior is not None or kenlm_prior is not None else BEAM_WIDTH
+    maximum_prior_reward = 12 * LANGUAGE_PRIOR_WEIGHT
+    if kenlm_prior is not None:
+        maximum_prior_reward += KENLM_WEIGHT * kenlm_prior.max_token_reward
     for frame in range(length):
         active = beams
         completed: dict[tuple[int, ...], DecoderHypothesis] = {}
@@ -248,7 +263,7 @@ def decode_encoder_beams(
                     acoustic_score = hypothesis.score + float(log_probs[index, label])
                     # A token can complete one word and begin the next. The
                     # bounded prior cannot rescue a candidate below this bound.
-                    if acoustic_score < best_completed - BEAM_PRUNE_LOGP - 12 * LANGUAGE_PRIOR_WEIGHT:
+                    if acoustic_score < best_completed - BEAM_PRUNE_LOGP - maximum_prior_reward:
                         continue
                     candidate_ids = hypothesis.token_ids + (int(label),)
                     score = (acoustic_score
@@ -287,6 +302,16 @@ def settled_word_prefix(beams: list[DecoderHypothesis], frame_end: int) -> int:
         if all(any(other.token_id == token.token_id and
                    abs(other.encoder_frame - token.encoder_frame) <= WORD_BOUNDARY_TOLERANCE_FRAMES
                    for _, other in starts) for starts in boundaries[1:]):
+            prefix = beams[0].token_ids[:index]
+            # A shorter spelling can be a token prefix of a longer word.
+            # Keep that entire word open if a compatible path continues it;
+            # committing its shared letters would split the longer word and
+            # incorrectly advance the LM context (ਗੁਰ + ੂ instead of ਗੁਰੂ).
+            if any(h.token_ids[:index] == prefix and
+                   (len(h.tokens) <= index or
+                    not tokenizer.id_to_piece(h.tokens[index].token_id).startswith("▁"))
+                   for h in beams[1:]):
+                continue
             return index
     return 0
 
@@ -337,6 +362,7 @@ class StreamingRecognizer:
         self.pending_audio = np.empty(0, dtype=np.float32)
         self.committed_tokens: list[TimedToken] = []
         self.committed_last_word = ""
+        self.committed_lm_context: tuple[str, ...] = ()
         self._display_token_count = -1
         self._committed_display_words: list[dict[str, Any]] = []
         self._committed_display_text = ""
@@ -373,7 +399,8 @@ class StreamingRecognizer:
                 beams = decode_encoder_beams(encoded[:, :, skip:valid_frames], valid_frames - skip,
                                              beams, frame_start + skip,
                                              require_word_start=bool(self.committed_tokens),
-                                             previous_word=self.committed_last_word)
+                                             previous_word=self.committed_last_word,
+                                             previous_words=self.committed_lm_context)
             frame_start += valid_frames
             if start == 0:
                 first_cache, first_beams, first_frames = cache, beams, valid_frames
@@ -406,6 +433,9 @@ class StreamingRecognizer:
                        for i, token in enumerate(hypothesis.tokens)):
                 self.hold_reason = "disputed-boundary"
                 return False, 0, None
+        if settled_word_prefix(result.beams, result.frame_end) < following:
+            self.hold_reason = "unfinished-word-alternative"
+            return False, 0, None
         return True, following, end.encoder_frame
 
     def _promote_cache(self, result: PendingDecode, settled: int, word_end: int | None,
@@ -413,6 +443,7 @@ class StreamingRecognizer:
         window_samples = self.pending_audio.size
         best = result.beams[0]
         first_end = self.encoder_frame_offset + result.first_frames
+        previously_committed = len(self.committed_tokens)
         if settled:
             # This checkpoint can lie after the acoustic cache frontier.
             # All tokens of the completed boundary word settle together.
@@ -435,6 +466,9 @@ class StreamingRecognizer:
             self.decoder_frame_offset = max(self.decoder_frame_offset, first_end)
         self.cache = result.first_cache
         if settled:
+            new_words = prior_words(tokenizer.decode([t.token_id for t in self.committed_tokens[previously_committed:]]))
+            context_words = kenlm_prior.order - 1 if kenlm_prior is not None else 2
+            self.committed_lm_context = (self.committed_lm_context + tuple(new_words))[-context_words:]
             last = self.committed_tokens[-1:]
             for token in reversed(self.committed_tokens[:-1]):
                 if tokenizer.id_to_piece(last[0].token_id).startswith("▁"):
@@ -528,7 +562,17 @@ class StreamingRecognizer:
             self.update(audio, preview=False)
         if not self.finished and self.pending_audio.size:
             result = self._encode_pending()
-            self.committed_tokens.extend(result.beams[0].tokens)
+            best = result.beams[0]
+            if kenlm_prior is not None:
+                # EOF completes the last word without inventing a sentence
+                # boundary or dropping audio shorter than the refresh period.
+                def final_score(hypothesis):
+                    ids = hypothesis.token_ids
+                    completed = kenlm_prior.full_score(tokenizer.decode(ids) + " ", self.committed_lm_context)
+                    partial = kenlm_prior.token_score(tokenizer, ids, self.committed_lm_context)
+                    return hypothesis.score + KENLM_WEIGHT * (completed - partial)
+                best = max(result.beams, key=final_score)
+            self.committed_tokens.extend(best.tokens)
             self.encoder_frame_offset = result.frame_end
             self.decoder_frame_offset = result.frame_end
             self.cache = result.last_cache
@@ -587,6 +631,11 @@ async def health():
             "predictor_cache_max_entries": getattr(decoder_session, "cache_size", 0),
             "language_prior": "repository-gurbani-word-context" if language_prior is not None else "disabled",
             "language_prior_weight": LANGUAGE_PRIOR_WEIGHT if language_prior is not None else 0.0,
+            "kenlm": kenlm_prior.path.name if kenlm_prior is not None else "disabled",
+            "kenlm_order": kenlm_prior.order if kenlm_prior is not None else None,
+            "kenlm_minimum_ngram_order": kenlm_prior.minimum_ngram_order if kenlm_prior is not None else None,
+            "kenlm_weight": KENLM_WEIGHT if kenlm_prior is not None else 0.0,
+            "kenlm_mode": KENLM_MODE, "kenlm_word_bonus": KENLM_WORD_BONUS,
             "word_lookahead_seconds": WORD_LOOKAHEAD_FRAMES * ENCODER_FRAME_SECONDS}
 
 

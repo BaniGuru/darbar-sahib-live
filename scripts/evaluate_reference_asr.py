@@ -239,7 +239,7 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
                         "-ar", "16000", "-ac", "1", "-f", "f32le", str(pcm_path)], check=True)
         audio = np.memmap(pcm_path, dtype="<f4", mode="r")
         recognizer = asr.StreamingRecognizer()
-        step, timings = asr.PARTIAL_INTERVAL_SAMPLES, []
+        step, timings, durations = asr.PARTIAL_INTERVAL_SAMPLES, [], []
         origin, last_log = time.perf_counter(), time.perf_counter()
         checkpoint_at = 60.0
         for start in range(0, len(audio), step):
@@ -249,6 +249,7 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
             before = time.perf_counter()
             state = recognizer.update(audio[start:end])
             timings.append(time.perf_counter() - before)
+            durations.append((end - start) / 16000)
             if checkpoint_path and end / 16000 >= checkpoint_at:
                 partial = {"completed": False, "text": state["text"],
                            "words": state["committed_words"] + state["partial_words"],
@@ -265,17 +266,34 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
                                   "cached_until": state["cache_committed_until"],
                                   "pending_window_seconds": state["pending_window_seconds"]}), flush=True)
                 last_log = time.perf_counter()
+        finish_start = time.perf_counter()
         result = recognizer.finish()
+        finish_seconds = time.perf_counter() - finish_start
         elapsed = time.perf_counter() - origin
+    lag, simulated_lags = 0.0, []
+    for duration, processing in zip(durations, timings):
+        lag = max(0.0, lag - duration) + processing
+        simulated_lags.append(lag)
     return result, {"paced": paced, "elapsed_seconds": elapsed,
                     "decoder_beam_width": asr.BEAM_WIDTH,
                     "language_prior_weight": asr.LANGUAGE_PRIOR_WEIGHT,
+                    "kenlm_weight": asr.KENLM_WEIGHT, "kenlm_mode": asr.KENLM_MODE,
+                    "kenlm_order": asr.kenlm_prior.order if asr.kenlm_prior else None,
+                    "kenlm_minimum_ngram_order": asr.kenlm_prior.minimum_ngram_order if asr.kenlm_prior else None,
+                    "kenlm_word_bonus": asr.KENLM_WORD_BONUS,
+                    "kenlm_sha256": hashlib.sha256(asr.kenlm_prior.path.read_bytes()).hexdigest() if asr.kenlm_prior else None,
+                    "kenlm_source_sha256": hashlib.sha256((Path(asr.__file__).parent / "kenlm_language_prior.py").read_bytes()).hexdigest(),
                     "predictor_cache": isinstance(asr.decoder_session, asr.CachedRNNTDecoder),
                     "predictor_cache_max_entries": getattr(asr.decoder_session, "cache_size", 0),
                     "source_sha256": hashlib.sha256(Path(asr.__file__).read_bytes()).hexdigest(),
                     "decoder_source_sha256": hashlib.sha256((Path(asr.__file__).parent / "cached_rnnt_decoder.py").read_bytes()).hexdigest(),
                     "prior_source_sha256": hashlib.sha256((Path(asr.__file__).parent / "gurbani_language_prior.py").read_bytes()).hexdigest(),
                     "real_time_factor": elapsed / result["seconds"], "updates": len(timings),
+                    "finish_processing_seconds": finish_seconds,
+                    "simulated_paced_processing_lag_seconds": {
+                        "median": float(np.median(simulated_lags)), "p95": float(np.percentile(simulated_lags, 95)),
+                        "max": max(simulated_lags), "end": lag + finish_seconds,
+                        "note": "Queue simulation from measured update costs; excludes network and scheduling overhead."},
                     "update_processing_seconds": {"median": float(np.median(timings)),
                                                   "p95": float(np.percentile(timings, 95)), "max": max(timings)},
                     "first_quarter_median_seconds": float(np.median(timings[:max(1, len(timings) // 4)])),

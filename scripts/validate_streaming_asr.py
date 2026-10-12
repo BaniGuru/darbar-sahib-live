@@ -31,12 +31,26 @@ async def validate(args):
             pcm = np.frombuffer(wav.readframes(wav.getnframes()), "<i2").astype(np.float32) / 32768
         wav_bytes = wav_path.read_bytes()
     async with httpx.AsyncClient(timeout=180) as client:
-        before = time.perf_counter()
-        response = await client.post(args.url.rstrip("/") + "/transcribe",
-                                     files={"file": ("audio.wav", wav_bytes, "audio/wav")})
-        response.raise_for_status()
-        full = response.json()
-        full_seconds = time.perf_counter() - before
+        if args.full_result:
+            recorded = json.loads(Path(args.full_result).read_text(encoding="utf-8"))
+            if not recorded.get("completed") or recorded.get("audio_sha256") != hashlib.sha256(audio_path.read_bytes()).hexdigest():
+                raise ValueError("Saved replay must be complete and match this audio file's SHA256")
+            runtime = (await client.get(args.url.rstrip("/") + "/health")).json()
+            measured = recorded["performance"]
+            for key in ("kenlm_order", "kenlm_weight", "kenlm_mode", "kenlm_word_bonus", "decoder_beam_width"):
+                if runtime[key] != measured[key]:
+                    raise ValueError(f"Server and saved replay disagree on {key}")
+            full = recorded["recognition"]
+            full_seconds = measured["elapsed_seconds"]
+            full_source = "saved-causal-replay"
+        else:
+            before = time.perf_counter()
+            response = await client.post(args.url.rstrip("/") + "/transcribe",
+                                         files={"file": ("audio.wav", wav_bytes, "audio/wav")})
+            response.raise_for_status()
+            full = response.json()
+            full_seconds = time.perf_counter() - before
+            full_source = "http"
     if "error" in full:
         raise RuntimeError(full["error"])
     url = args.url.replace("http://", "ws://").replace("https://", "wss://").rstrip("/")
@@ -97,7 +111,8 @@ async def validate(args):
     report = {
         "audio": audio_path.name, "sha256": hashlib.sha256(audio_path.read_bytes()).hexdigest(),
         "audio_seconds": len(pcm) / 16000, "packet_ms": args.packet_ms, "paced_in_real_time": True,
-        "full_inference_seconds": full_seconds, "full": full, "streaming_final": final,
+        "full_inference_seconds": full_seconds, "full_source": full_source,
+        "full": full, "streaming_final": final,
         "same_tokens_and_text": True, "updates": len(events), "cache_commits": len(boundaries),
         "peak_pending_window_seconds": final["peak_pending_window_seconds"],
         "lag_seconds": {"median": float(np.median(lags)), "p95": float(np.percentile(lags, 95)), "max": max(lags)},
@@ -120,4 +135,5 @@ if __name__ == "__main__":
     parser.add_argument("--url", default="http://127.0.0.1:8001")
     parser.add_argument("--packet-ms", type=float, default=100)
     parser.add_argument("--report", default="/tmp/darbar-validation/streaming-report.json")
+    parser.add_argument("--full-result", help="Compare against a completed evaluator replay with the same audio hash and model settings")
     asyncio.run(validate(parser.parse_args()))

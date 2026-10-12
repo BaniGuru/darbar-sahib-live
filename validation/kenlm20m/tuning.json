@@ -1,0 +1,672 @@
+[
+  {
+    "config": [
+      "control",
+      "ratio",
+      0,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 63.52116358598869,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 168,
+          "wer": 0.18023255813953487,
+          "cer_including_spaces": 0.14913448735019974,
+          "cer_excluding_spaces": 0.16206896551724137,
+          "substitutions": 17,
+          "deletions": 9,
+          "insertions": 5
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 66.15525246200559,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 28,
+          "wer": 0.11538461538461539,
+          "cer_including_spaces": 0.06870229007633588,
+          "cer_excluding_spaces": 0.0660377358490566,
+          "substitutions": 1,
+          "deletions": 0,
+          "insertions": 2
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob015b10",
+      "probability",
+      0.15,
+      10,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 73.85118027999124,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 180,
+          "wer": 0.1511627906976744,
+          "cer_including_spaces": 0.11318242343541944,
+          "cer_excluding_spaces": 0.12758620689655173,
+          "substitutions": 18,
+          "deletions": 0,
+          "insertions": 8
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob015b10beam16",
+      "probability",
+      0.15,
+      10,
+      0.6,
+      16
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 62.33369218200096,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 176,
+          "wer": 0.22093023255813954,
+          "cer_including_spaces": 0.16245006657789615,
+          "cer_excluding_spaces": 0.18620689655172415,
+          "substitutions": 30,
+          "deletions": 2,
+          "insertions": 6
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 63.70276427800127,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 30,
+          "wer": 0.23076923076923078,
+          "cer_including_spaces": 0.13740458015267176,
+          "cer_excluding_spaces": 0.1320754716981132,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 4
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob015b10intro",
+      "probability",
+      0.15,
+      10,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 64.82297411600302,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 30,
+          "wer": 0.23076923076923078,
+          "cer_including_spaces": 0.13740458015267176,
+          "cer_excluding_spaces": 0.1320754716981132,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 4
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob015b6",
+      "probability",
+      0.15,
+      6,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 66.97602244099835,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 166,
+          "wer": 0.20348837209302326,
+          "cer_including_spaces": 0.16910785619174434,
+          "cer_excluding_spaces": 0.18275862068965518,
+          "substitutions": 19,
+          "deletions": 11,
+          "insertions": 5
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 66.47146923800756,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 28,
+          "wer": 0.15384615384615385,
+          "cer_including_spaces": 0.07633587786259542,
+          "cer_excluding_spaces": 0.07547169811320754,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 2
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob01b10",
+      "probability",
+      0.1,
+      10,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 75.82293696000124,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 176,
+          "wer": 0.22093023255813954,
+          "cer_including_spaces": 0.16245006657789615,
+          "cer_excluding_spaces": 0.18620689655172415,
+          "substitutions": 30,
+          "deletions": 2,
+          "insertions": 6
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob03b6",
+      "probability",
+      0.3,
+      6,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 68.44703650299925,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 174,
+          "wer": 0.20930232558139536,
+          "cer_including_spaces": 0.16378162450066577,
+          "cer_excluding_spaces": 0.17758620689655172,
+          "substitutions": 20,
+          "deletions": 7,
+          "insertions": 9
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 67.57871966800303,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 28,
+          "wer": 0.15384615384615385,
+          "cer_including_spaces": 0.07633587786259542,
+          "cer_excluding_spaces": 0.07547169811320754,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 2
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob03b8",
+      "probability",
+      0.3,
+      8,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 80.86659870400035,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 179,
+          "wer": 0.22093023255813954,
+          "cer_including_spaces": 0.1611185086551265,
+          "cer_excluding_spaces": 0.18448275862068966,
+          "substitutions": 27,
+          "deletions": 2,
+          "insertions": 9
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 64.48345832900668,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 30,
+          "wer": 0.23076923076923078,
+          "cer_including_spaces": 0.13740458015267176,
+          "cer_excluding_spaces": 0.1320754716981132,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 4
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "prob03b8no_prior",
+      "probability",
+      0.3,
+      8,
+      0,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 58.879024784997455,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 158,
+          "wer": 0.21511627906976744,
+          "cer_including_spaces": 0.18641810918774968,
+          "cer_excluding_spaces": 0.19655172413793104,
+          "substitutions": 13,
+          "deletions": 19,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio01",
+      "ratio",
+      0.1,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 68.07663910000701,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 170,
+          "wer": 0.18023255813953487,
+          "cer_including_spaces": 0.14513981358189082,
+          "cer_excluding_spaces": 0.15862068965517243,
+          "substitutions": 19,
+          "deletions": 7,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio015",
+      "ratio",
+      0.15,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 64.44327451399295,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 170,
+          "wer": 0.18023255813953487,
+          "cer_including_spaces": 0.14513981358189082,
+          "cer_excluding_spaces": 0.15862068965517243,
+          "substitutions": 19,
+          "deletions": 7,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio01beam16",
+      "ratio",
+      0.1,
+      0,
+      0.6,
+      16
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 59.46124517699354,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 168,
+          "wer": 0.22093023255813954,
+          "cer_including_spaces": 0.170439414114514,
+          "cer_excluding_spaces": 0.1879310344827586,
+          "substitutions": 24,
+          "deletions": 9,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio03",
+      "ratio",
+      0.3,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 77.94997998299368,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 180,
+          "wer": 0.18604651162790697,
+          "cer_including_spaces": 0.13049267643142476,
+          "cer_excluding_spaces": 0.14482758620689656,
+          "substitutions": 24,
+          "deletions": 0,
+          "insertions": 8
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 63.96447564101254,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 30,
+          "wer": 0.23076923076923078,
+          "cer_including_spaces": 0.13740458015267176,
+          "cer_excluding_spaces": 0.1320754716981132,
+          "substitutions": 2,
+          "deletions": 0,
+          "insertions": 4
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio03p1",
+      "ratio",
+      0.3,
+      -1,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 68.7318897350051,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 168,
+          "wer": 0.23255813953488372,
+          "cer_including_spaces": 0.17177097203728361,
+          "cer_excluding_spaces": 0.19310344827586207,
+          "substitutions": 26,
+          "deletions": 9,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "ratio06",
+      "ratio",
+      0.6,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 85.19029186399712,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 185,
+          "wer": 0.2441860465116279,
+          "cer_including_spaces": 0.18242343541944075,
+          "cer_excluding_spaces": 0.20344827586206896,
+          "substitutions": 25,
+          "deletions": 2,
+          "insertions": 15
+        }
+      },
+      {
+        "range": [
+          0,
+          120
+        ],
+        "seconds": 69.43678826800897,
+        "scores": {
+          "reference_words": 26,
+          "hypothesis_words": 34,
+          "wer": 0.4230769230769231,
+          "cer_including_spaces": 0.26717557251908397,
+          "cer_excluding_spaces": 0.24528301886792453,
+          "substitutions": 3,
+          "deletions": 0,
+          "insertions": 8
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "trigram02",
+      "trigram",
+      0.2,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 70.75873810300254,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 168,
+          "wer": 0.18023255813953487,
+          "cer_including_spaces": 0.1478029294274301,
+          "cer_excluding_spaces": 0.16034482758620688,
+          "substitutions": 17,
+          "deletions": 9,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "trigram03",
+      "trigram",
+      0.3,
+      0,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 74.46779577199777,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 172,
+          "wer": 0.1511627906976744,
+          "cer_including_spaces": 0.11984021304926765,
+          "cer_excluding_spaces": 0.1310344827586207,
+          "substitutions": 16,
+          "deletions": 5,
+          "insertions": 5
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "trigram03b025",
+      "trigram",
+      0.3,
+      0.25,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 69.02275476099749,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 180,
+          "wer": 0.1511627906976744,
+          "cer_including_spaces": 0.1118508655126498,
+          "cer_excluding_spaces": 0.12586206896551724,
+          "substitutions": 18,
+          "deletions": 0,
+          "insertions": 8
+        }
+      }
+    ]
+  },
+  {
+    "config": [
+      "trigram03b05",
+      "trigram",
+      0.3,
+      0.5,
+      0.6,
+      24
+    ],
+    "clips": [
+      {
+        "range": [
+          680,
+          800
+        ],
+        "seconds": 64.9720788400009,
+        "scores": {
+          "reference_words": 172,
+          "hypothesis_words": 180,
+          "wer": 0.1511627906976744,
+          "cer_including_spaces": 0.1118508655126498,
+          "cer_excluding_spaces": 0.12586206896551724,
+          "substitutions": 18,
+          "deletions": 0,
+          "insertions": 8
+        }
+      }
+    ]
+  }
+]

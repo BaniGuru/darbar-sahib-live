@@ -20,23 +20,33 @@ def words(text):
 @lru_cache(maxsize=32768)
 def token_prefix_score(prior, tokenizer, token_ids, previous):
     """Reuse exact prefix evidence across previews without re-decoding pieces."""
+    parts = token_prefix_parts(tokenizer, token_ids)
+    if parts is None or not parts[0]:
+        return prior.score(tokenizer.decode(token_ids), previous)
+    boundary, tail = parts
+    prefix, context = _completed_token_prefix(prior, tokenizer, token_ids[:boundary], previous)
+    return prefix + prior.score(tail, context)
+
+
+@lru_cache(maxsize=32768)
+def token_prefix_parts(tokenizer, token_ids):
+    """Share piece boundaries and decoding between corpus and KenLM scores."""
     flags = _tokenizer_flags(tokenizer)
     if not token_ids or flags is None:
-        return prior.score(tokenizer.decode(token_ids), previous)
+        return None
     starts, unsafe = flags
     if any(unsafe[token] for token in token_ids):
-        return prior.score(tokenizer.decode(token_ids), previous)
+        return None
     boundary = next((index for index in range(len(token_ids) - 1, 0, -1)
                      if starts[token_ids[index]]), 0)
     if not boundary:
-        return prior.score(tokenizer.decode(token_ids), previous)
+        return 0, ""
     tail = tokenizer.decode(token_ids[boundary:])
     # Removing a final verse number changes which word is considered partial
     # by the original scorer. Preserve its exact behavior via the full path.
     if tail.strip().isnumeric():
-        return prior.score(tokenizer.decode(token_ids), previous)
-    prefix, context = _completed_token_prefix(prior, tokenizer, token_ids[:boundary], previous)
-    return prefix + prior.score(tail, context)
+        return None
+    return boundary, tail
 
 
 @lru_cache(maxsize=8)
