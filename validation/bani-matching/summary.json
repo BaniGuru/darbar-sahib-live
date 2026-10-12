@@ -1,0 +1,166 @@
+{
+  "scope": "real causal ASR updates; accelerated matching replay, not paced network test",
+  "human_reference_accuracy_measured": false,
+  "normal_shabad_scoring_unchanged": [
+    "_normalise_query",
+    "_token_similarity",
+    "_ordered_alignment_score",
+    "_best_line_alignment",
+    "_pankti_candidates",
+    "_match_active_shabad_fragment",
+    "_active_match_payload",
+    "match_live_pankti"
+  ],
+  "sources_sha256": {
+    "server.py": "f39aeb7b68ec842159648b9ff3dfc9577b5821e8eab339de5b8eb09d846b9227",
+    "bani_matching.py": "b73c07b7857f77d86cbb7ba7cb1cce236fa76106433d473cf07f40c944ae1b78"
+  },
+  "comparison_base_commit": "e84a09035ab2a60379998544aeccd1005e13c074",
+  "recordings": {
+    "asa": {
+      "audio_sha256": "61b022fdef307c66fe34b52ae9a8828b9d905e2925a403e39cf0533802660ee6",
+      "seconds": 600.0,
+      "samples": 9600000,
+      "encoder_frames": 15000,
+      "asr_model": {
+        "order": 3,
+        "weight": 0.3,
+        "mode": "ngram",
+        "beam": 24,
+        "source_sha256": "956f5e742b2ac917a2ef591bb35e9b6c2bc27bc235bc71c73b3640d767d5a8e8"
+      },
+      "current": {
+        "elapsed_seconds": 43.276676520000365,
+        "rtf": 0.07212779420000061,
+        "updates": 751,
+        "matched_updates": 750,
+        "bani_updates": 298,
+        "auto_next_transitions": 13,
+        "distinct_heard_panktis": 26,
+        "distinct_displayed_panktis": 53,
+        "update_processing_seconds": {
+          "median": 0.0029338549993553897,
+          "p95": 0.17965954750025048,
+          "max": 0.5752396139996563
+        }
+      },
+      "legacy": {
+        "elapsed_seconds": 39.576245094000114,
+        "rtf": 0.06596040849000019,
+        "updates": 751,
+        "matched_updates": 750,
+        "bani_updates": 0,
+        "auto_next_transitions": 0,
+        "distinct_heard_panktis": 0,
+        "distinct_displayed_panktis": 49,
+        "update_processing_seconds": {
+          "median": 0.0025235390003217617,
+          "p95": 0.15345992499987915,
+          "max": 0.2561194620002425
+        }
+      }
+    },
+    "aarti": {
+      "audio_sha256": "0a94e17e63d1db9028399fb6feb328219dada3e2d7d2d20fb54042e6c1047418",
+      "seconds": 729.1711875,
+      "samples": 11666739,
+      "encoder_frames": 18230,
+      "asr_model": {
+        "order": 3,
+        "weight": 0.3,
+        "mode": "ngram",
+        "beam": 24,
+        "source_sha256": "956f5e742b2ac917a2ef591bb35e9b6c2bc27bc235bc71c73b3640d767d5a8e8"
+      },
+      "current": {
+        "elapsed_seconds": 20.810499684000206,
+        "rtf": 0.02853993690473433,
+        "updates": 912,
+        "matched_updates": 896,
+        "bani_updates": 618,
+        "auto_next_transitions": 40,
+        "distinct_heard_panktis": 51,
+        "distinct_displayed_panktis": 68,
+        "update_processing_seconds": {
+          "median": 0.0023002855000413547,
+          "p95": 0.151553430049762,
+          "max": 0.42085899300036544
+        }
+      },
+      "legacy": {
+        "elapsed_seconds": 24.29678414099999,
+        "rtf": 0.033321097373996265,
+        "updates": 912,
+        "matched_updates": 896,
+        "bani_updates": 0,
+        "auto_next_transitions": 0,
+        "distinct_heard_panktis": 0,
+        "distinct_displayed_panktis": 63,
+        "update_processing_seconds": {
+          "median": 0.0017902924996633374,
+          "p95": 0.15336483284963828,
+          "max": 0.21877120499993907
+        }
+      }
+    },
+    "insertion": {
+      "audio_sha256": "01fa2174ab15f43773bd862c5328c59eaf70795388defcef11049caf35d3f8a1",
+      "seconds": 163.0,
+      "samples": 2608000,
+      "encoder_frames": 4075,
+      "asr_model": {
+        "order": 3,
+        "weight": 0.3,
+        "mode": "ngram",
+        "beam": 24,
+        "source_sha256": "956f5e742b2ac917a2ef591bb35e9b6c2bc27bc235bc71c73b3640d767d5a8e8"
+      },
+      "current": {
+        "elapsed_seconds": 13.595868802999576,
+        "rtf": 0.08341023805521212,
+        "updates": 204,
+        "matched_updates": 201,
+        "bani_updates": 94,
+        "auto_next_transitions": 4,
+        "distinct_heard_panktis": 7,
+        "distinct_displayed_panktis": 14,
+        "update_processing_seconds": {
+          "median": 0.0025217269999302516,
+          "p95": 0.1943110077005258,
+          "max": 0.37407828999948833
+        }
+      },
+      "legacy": {
+        "elapsed_seconds": 13.601615509000112,
+        "rtf": 0.08344549392024608,
+        "updates": 204,
+        "matched_updates": 201,
+        "bani_updates": 0,
+        "auto_next_transitions": 0,
+        "distinct_heard_panktis": 0,
+        "distinct_displayed_panktis": 13,
+        "update_processing_seconds": {
+          "median": 0.004208560500501335,
+          "p95": 0.17746491714933654,
+          "max": 0.2074274440001318
+        }
+      }
+    }
+  },
+  "insertion_audit": {
+    "pauri_auto_next_at": 72.8,
+    "pauri_heard_pankti": "N5Y1",
+    "predicted_next_pankti": "5N5B",
+    "inserted_shabad_id": "K3Q",
+    "inserted_shabad_mode": "normal",
+    "switch_at": 82.4,
+    "switch_after_insertion_seconds": 6.0,
+    "resume_at": 134.4,
+    "resume_after_return_seconds": 20.0,
+    "passed": true
+  },
+  "source_urls": {
+    "asa": "https://media.sikhnet.com/01_-_Bhai_Kamaljeet_Singh_-_Asa_Ki_Vaar_-live_darbar_sahib.mp3",
+    "aarti": "https://media.sikhnet.com/Bhai%20Harjinder%20Singh%20(Srinagar)%20-%20Aarti.mp3"
+  }
+}

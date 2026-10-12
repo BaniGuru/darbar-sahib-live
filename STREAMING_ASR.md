@@ -295,3 +295,13 @@ no longer be committed while a retained beam continues that word. This applies
 to both adaptive word confirmation and the hard eight-second audio limit;
 the encoder can advance by four seconds while the entire ambiguous word stays
 in its acoustic beam. The partial refresh remains 800 ms.
+
+## Ordered bani progression
+
+Asa Ki Vaar, Aarti and Rehras now use ordered `bani_lines` routes for early
+next-pankti display, with the existing shabad search handling interruptions.
+Both Aarti and Rehras variants remain available as their lines are heard.
+See [implementation and reproduction](BANI_MATCHING.md) and the
+[recording comparisons](validation/bani-matching/README.md), including an
+actual-audio inserted shabad after an Asa pauri. The ASR model and streaming
+cache/refresh settings are unchanged.
