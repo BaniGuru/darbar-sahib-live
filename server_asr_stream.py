@@ -13,6 +13,7 @@ from typing import Any
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
+from audio_activity import last_audio_sample
 from cached_rnnt_decoder import CachedRNNTDecoder
 from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score, words as prior_words
 from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
@@ -46,6 +47,8 @@ PREENCODE_CONTEXT_FRAMES = 8
 NORMALIZATION_HISTORY_SAMPLES = 16 * SAMPLE_RATE
 PARTIAL_INTERVAL_SECONDS = 0.8
 PARTIAL_INTERVAL_SAMPLES = int(round(SAMPLE_RATE * PARTIAL_INTERVAL_SECONDS))
+SILENCE_GUARD = os.environ.get("ASR_SILENCE_GUARD", "1") != "0"
+SILENCE_HANGOVER_SAMPLES = FEATURE_CHUNK_SAMPLES
 ENCODER_CACHE_CHANNELS = 17
 ENCODER_CACHE_DIM = 512
 ENCODER_CACHE_TIME = 30
@@ -374,8 +377,33 @@ class StreamingRecognizer:
         self.cache_events: list[dict[str, Any]] = []
         self.hold_reason = "collecting"
         self.finished = False
+        self.last_signal_sample: int | None = None
+        self.silence_suppressed = False
+
+    def _audio_decode_allowed(self) -> bool:
+        if not SILENCE_GUARD:
+            self.silence_suppressed = False
+            return True
+        signal_end = last_audio_sample(self.pending_audio)
+        if signal_end is not None:
+            signal_sample = self.encoder_frame_offset * HOP_LENGTH * 4 + signal_end
+            self.last_signal_sample = max(self.last_signal_sample or 0, signal_sample)
+            self.silence_suppressed = False
+        else:
+            self.silence_suppressed = (self.last_signal_sample is None or
+                                      self.total_samples - self.last_signal_sample >= SILENCE_HANGOVER_SAMPLES)
+        return not self.silence_suppressed
 
     def _encode_pending(self) -> PendingDecode:
+        initial_idle = self.last_signal_sample is None and self.silence_suppressed
+        decode_allowed = self._audio_decode_allowed()
+        if initial_idle and decode_allowed:
+            # Normalized startup noise must not become phonetic left context
+            # for the first real words. Reset once, before any signal has been
+            # heard; keep PCM, history, predictor and absolute clocks intact.
+            self.cache = new_encoder_cache()
+        # Advance acoustic state even on idle noise. Skipping/zeroing PCM or
+        # resetting after ordinary pauses would change ongoing word context.
         # Normalize the entire available window, including lookahead, before
         # slicing it into the exported graph's supported four-second blocks.
         context_audio = np.concatenate((self.history_audio, self.pending_audio))
@@ -395,7 +423,7 @@ class StreamingRecognizer:
             encoded, length, cache = run_encoder(block, cache)
             valid_frames = min(length, int(np.ceil(samples / (HOP_LENGTH * 4))))
             skip = min(valid_frames, max(0, self.decoder_frame_offset - frame_start))
-            if skip < valid_frames:
+            if decode_allowed and skip < valid_frames:
                 beams = decode_encoder_beams(encoded[:, :, skip:valid_frames], valid_frames - skip,
                                              beams, frame_start + skip,
                                              require_word_start=bool(self.committed_tokens),
@@ -540,6 +568,7 @@ class StreamingRecognizer:
         partial_text = tokenizer.decode([x.token_id for x in partial_display_tokens]).strip()
         return {
             "type": "final" if final else "partial",
+            "audio_active": not self.silence_suppressed,
             "text": " ".join(text for text in (committed_text, partial_text) if text),
             "committed_text": committed_text,
             "partial_text": partial_text,
@@ -627,6 +656,8 @@ async def health():
             "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
             "encoder_update_seconds": PARTIAL_INTERVAL_SAMPLES / SAMPLE_RATE,
             "encoder_threads": ENCODER_THREADS, "decoder_beam_width": BEAM_WIDTH,
+            "silence_guard": SILENCE_GUARD,
+            "silence_hangover_seconds": SILENCE_HANGOVER_SAMPLES / SAMPLE_RATE,
             "predictor_cache": isinstance(decoder_session, CachedRNNTDecoder),
             "predictor_cache_max_entries": getattr(decoder_session, "cache_size", 0),
             "language_prior": "repository-gurbani-word-context" if language_prior is not None else "disabled",

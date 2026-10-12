@@ -789,7 +789,9 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
         transcript = " ".join(part for part in (final_text, partial_text) if part).strip()
         if changed:
             await _broadcast_debug_words()
-        if not transcript:
+        # Idle updates retain transcript history, but are not fresh evidence
+        # for matching or extending the lifetime of a previous pankti.
+        if not transcript or message.get("audio_active") is False:
             continue
         # `match` must be local to this ASR update. Reusing its previous value
         # makes a no-match update look like a fresh repeat of the old pankti.

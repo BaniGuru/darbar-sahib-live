@@ -2,7 +2,7 @@ import asyncio
 import json
 import sqlite3
 import unittest
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 
 import server
 from bani_matching import OrderedBaniMatcher, bani_family
@@ -226,6 +226,23 @@ class BaniMatchingTests(unittest.TestCase):
         self.assertEqual(observed[1]['pankti_id'],route[2]['pankti_id'])
         self.assertEqual(observed[2]['shabad_id'],outside['shabad_id'])
         self.assertNotIn('bani_id',observed[2])
+
+    def test_idle_audio_does_not_renew_stale_pankti_match(self):
+        message = {'type': 'partial', 'audio_active': False,
+                   'committed_text': 'ਹਰਿ ਕਾ ਨਾਮੁ', 'partial_text': '', 'window_end': 20}
+        class Socket:
+            async def __aiter__(self):
+                yield json.dumps(message, ensure_ascii=False)
+        values = {'_live_match_at': 42, '_live_match': {'pankti_id': 'old'},
+                  '_debug_final_text': '', '_debug_partial_text': '',
+                  '_debug_final_words': [], '_debug_partial_words': []}
+        with patch.multiple(server, **values), \
+             patch.object(server, '_broadcast_debug_words', new=AsyncMock()), \
+             patch.object(server, 'match_live_pankti') as matcher:
+            asyncio.run(server._handle_asr_messages(Socket()))
+            matcher.assert_not_called()
+            self.assertEqual(server._live_match_at, 42)
+            self.assertEqual(server._debug_final_text, 'ਹਰਿ ਕਾ ਨਾਮੁ')
 
 
 if __name__ == '__main__':

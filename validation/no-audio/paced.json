@@ -1,0 +1,2427 @@
+{
+  "audio": "idle-voice-idle.wav",
+  "sha256": "44aade85ce3ce9e230c3e69972ab9c20ed26d5d0a9d1368fb4a0f67b20c5e2cd",
+  "audio_seconds": 32.0,
+  "packet_ms": 100.0,
+  "paced_in_real_time": true,
+  "full_inference_seconds": 13.51233046699781,
+  "full_source": "http",
+  "full": {
+    "type": "final",
+    "audio_active": false,
+    "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "partial_text": "",
+    "committed_until": 32.0,
+    "cache_committed_until": 32.0,
+    "text_committed_until": 20.0,
+    "committed_words": [
+      {
+        "text": "ਕਰਿ",
+        "start": 9.04,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਰਪਾ",
+        "start": 9.44,
+        "end": 11.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪ੍ਰਭ",
+        "start": 11.8,
+        "end": 12.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੀਨ",
+        "start": 12.28,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਇਆਲਾ",
+        "start": 13.64,
+        "end": 16.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੀ",
+        "start": 16.8,
+        "end": 17.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਓਟ",
+        "start": 17.64,
+        "end": 19.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪੂਰਨ",
+        "start": 19.24,
+        "end": 20.0,
+        "stable_count": 1
+      }
+    ],
+    "partial_words": [],
+    "window_start": 0.0,
+    "window_end": 32.0,
+    "window_seconds": 32.0,
+    "samples": 512000,
+    "pending_window_seconds": 0.0,
+    "max_window_seconds": 8.0,
+    "cache_hold_reason": "finished",
+    "final_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "tokens": [
+      31,
+      182,
+      26,
+      179,
+      195,
+      178,
+      63,
+      217,
+      24,
+      185,
+      3,
+      205,
+      198,
+      62,
+      77,
+      47,
+      177,
+      228,
+      209,
+      8,
+      173,
+      185
+    ],
+    "words": [
+      {
+        "text": "ਕਰਿ",
+        "start": 9.04,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਰਪਾ",
+        "start": 9.44,
+        "end": 11.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪ੍ਰਭ",
+        "start": 11.8,
+        "end": 12.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੀਨ",
+        "start": 12.28,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਇਆਲਾ",
+        "start": 13.64,
+        "end": 16.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੀ",
+        "start": 16.8,
+        "end": 17.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਓਟ",
+        "start": 17.64,
+        "end": 19.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪੂਰਨ",
+        "start": 19.24,
+        "end": 20.0,
+        "stable_count": 1
+      }
+    ],
+    "seconds": 32.0,
+    "feature_frames": 3200,
+    "encoded_frames": 800,
+    "peak_pending_window_seconds": 8.0,
+    "cache_events": [
+      {
+        "at_seconds": 5.6,
+        "cached_until": 4.0,
+        "window_seconds": 5.6,
+        "word_end_seconds": null,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 9.6,
+        "cached_until": 8.0,
+        "window_seconds": 5.6,
+        "word_end_seconds": null,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 14.4,
+        "cached_until": 12.0,
+        "window_seconds": 6.4,
+        "word_end_seconds": 12.280000000000001,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 18.4,
+        "cached_until": 16.0,
+        "window_seconds": 6.4,
+        "word_end_seconds": 16.8,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 24.0,
+        "cached_until": 20.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      },
+      {
+        "at_seconds": 28.0,
+        "cached_until": 24.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      },
+      {
+        "at_seconds": 32.0,
+        "cached_until": 28.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      }
+    ]
+  },
+  "streaming_final": {
+    "type": "final",
+    "audio_active": false,
+    "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "partial_text": "",
+    "committed_until": 32.0,
+    "cache_committed_until": 32.0,
+    "text_committed_until": 20.0,
+    "committed_words": [
+      {
+        "text": "ਕਰਿ",
+        "start": 9.04,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਰਪਾ",
+        "start": 9.44,
+        "end": 11.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪ੍ਰਭ",
+        "start": 11.8,
+        "end": 12.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੀਨ",
+        "start": 12.28,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਇਆਲਾ",
+        "start": 13.64,
+        "end": 16.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੀ",
+        "start": 16.8,
+        "end": 17.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਓਟ",
+        "start": 17.64,
+        "end": 19.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪੂਰਨ",
+        "start": 19.24,
+        "end": 20.0,
+        "stable_count": 1
+      }
+    ],
+    "partial_words": [],
+    "window_start": 0.0,
+    "window_end": 32.0,
+    "window_seconds": 32.0,
+    "samples": 512000,
+    "pending_window_seconds": 0.0,
+    "max_window_seconds": 8.0,
+    "cache_hold_reason": "finished",
+    "final_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+    "tokens": [
+      31,
+      182,
+      26,
+      179,
+      195,
+      178,
+      63,
+      217,
+      24,
+      185,
+      3,
+      205,
+      198,
+      62,
+      77,
+      47,
+      177,
+      228,
+      209,
+      8,
+      173,
+      185
+    ],
+    "words": [
+      {
+        "text": "ਕਰਿ",
+        "start": 9.04,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਰਪਾ",
+        "start": 9.44,
+        "end": 11.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪ੍ਰਭ",
+        "start": 11.8,
+        "end": 12.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੀਨ",
+        "start": 12.28,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਇਆਲਾ",
+        "start": 13.64,
+        "end": 16.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੀ",
+        "start": 16.8,
+        "end": 17.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਓਟ",
+        "start": 17.64,
+        "end": 19.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪੂਰਨ",
+        "start": 19.24,
+        "end": 20.0,
+        "stable_count": 1
+      }
+    ],
+    "seconds": 32.0,
+    "feature_frames": 3200,
+    "encoded_frames": 800,
+    "peak_pending_window_seconds": 8.0,
+    "cache_events": [
+      {
+        "at_seconds": 5.6,
+        "cached_until": 4.0,
+        "window_seconds": 5.6,
+        "word_end_seconds": null,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 9.6,
+        "cached_until": 8.0,
+        "window_seconds": 5.6,
+        "word_end_seconds": null,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 14.4,
+        "cached_until": 12.0,
+        "window_seconds": 6.4,
+        "word_end_seconds": 12.280000000000001,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 18.4,
+        "cached_until": 16.0,
+        "window_seconds": 6.4,
+        "word_end_seconds": 16.8,
+        "reason": "word-confirmed"
+      },
+      {
+        "at_seconds": 24.0,
+        "cached_until": 20.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      },
+      {
+        "at_seconds": 28.0,
+        "cached_until": 24.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      },
+      {
+        "at_seconds": 32.0,
+        "cached_until": 28.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "window-limit"
+      }
+    ],
+    "received_at_seconds": 32.86897042899727,
+    "lag_seconds": 0.8689704289972724
+  },
+  "same_tokens_and_text": true,
+  "updates": 40,
+  "cache_commits": 7,
+  "peak_pending_window_seconds": 8.0,
+  "lag_seconds": {
+    "median": 0.412782246498681,
+    "p95": 0.5604345998983262,
+    "max": 0.6118685759982334
+  },
+  "first_text_audio_seconds": 9.6,
+  "first_text_received_seconds": 10.075184744997387,
+  "events": [
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 0.8,
+      "window_seconds": 0.8,
+      "samples": 12800,
+      "pending_window_seconds": 0.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 0.9675091629978851,
+      "lag_seconds": 0.1675091629978851
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 1.6,
+      "window_seconds": 1.6,
+      "samples": 25600,
+      "pending_window_seconds": 1.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 1.7939100469993718,
+      "lag_seconds": 0.19391004699937175
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 2.4,
+      "window_seconds": 2.4,
+      "samples": 38400,
+      "pending_window_seconds": 2.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 2.6573789229987597,
+      "lag_seconds": 0.25737892299875975
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 3.2,
+      "window_seconds": 3.2,
+      "samples": 51200,
+      "pending_window_seconds": 3.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 3.4633541019975382,
+      "lag_seconds": 0.26335410199753806
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 4.0,
+      "window_seconds": 4.0,
+      "samples": 64000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "empty-lookahead",
+      "received_at_seconds": 4.254371166000055,
+      "lag_seconds": 0.2543711660000554
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 0.0,
+      "cache_committed_until": 0.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 4.8,
+      "window_seconds": 4.8,
+      "samples": 76800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "empty-lookahead",
+      "received_at_seconds": 5.169302839000011,
+      "lag_seconds": 0.36930283900001104
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 4.0,
+      "cache_committed_until": 4.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 5.6,
+      "window_seconds": 5.6,
+      "samples": 89600,
+      "pending_window_seconds": 1.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 5.983628726997267,
+      "lag_seconds": 0.3836287269972676
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 4.0,
+      "cache_committed_until": 4.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 6.4,
+      "window_seconds": 6.4,
+      "samples": 102400,
+      "pending_window_seconds": 2.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 6.622792328998912,
+      "lag_seconds": 0.22279232899891177
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 4.0,
+      "cache_committed_until": 4.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 7.2,
+      "window_seconds": 7.2,
+      "samples": 115200,
+      "pending_window_seconds": 3.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 7.409902165996755,
+      "lag_seconds": 0.2099021659967546
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 4.0,
+      "cache_committed_until": 4.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 8.0,
+      "window_seconds": 8.0,
+      "samples": 128000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "empty-lookahead",
+      "received_at_seconds": 8.292769445997692,
+      "lag_seconds": 0.29276944599769195
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "",
+      "committed_text": "",
+      "partial_text": "",
+      "committed_until": 4.0,
+      "cache_committed_until": 4.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [],
+      "window_start": 0.0,
+      "window_end": 8.8,
+      "window_seconds": 8.8,
+      "samples": 140800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "empty-lookahead",
+      "received_at_seconds": 9.267118712999945,
+      "lag_seconds": 0.46711871299994456
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.52,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿ",
+          "start": 9.52,
+          "end": 9.56,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 9.6,
+      "window_seconds": 9.6,
+      "samples": 153600,
+      "pending_window_seconds": 1.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 10.075184744997387,
+      "lag_seconds": 0.47518474499738694
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿਰਪਾ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.48,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.48,
+          "end": 10.16,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 10.4,
+      "window_seconds": 10.4,
+      "samples": 166400,
+      "pending_window_seconds": 2.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 10.624430602998473,
+      "lag_seconds": 0.2244306029984724
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿਰਪਾ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.48,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.48,
+          "end": 10.16,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 11.2,
+      "window_seconds": 11.2,
+      "samples": 179200,
+      "pending_window_seconds": 3.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 11.500308585997118,
+      "lag_seconds": 0.3003085859971186
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰ",
+          "start": 11.8,
+          "end": 11.84,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 12.0,
+      "window_seconds": 12.0,
+      "samples": 192000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 12.328755792997981,
+      "lag_seconds": 0.3287557929979812
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੇ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੇ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੇ",
+          "start": 12.28,
+          "end": 12.32,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 12.8,
+      "window_seconds": 12.8,
+      "samples": 204800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "word-lookahead",
+      "received_at_seconds": 13.179957333999482,
+      "lag_seconds": 0.3799573339994815
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ",
+      "committed_text": "",
+      "partial_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ",
+      "committed_until": 8.0,
+      "cache_committed_until": 8.0,
+      "text_committed_until": 0.0,
+      "committed_words": [],
+      "partial_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.32,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.32,
+          "end": 13.12,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 13.6,
+      "window_seconds": 13.6,
+      "samples": 217600,
+      "pending_window_seconds": 5.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "disputed-boundary",
+      "received_at_seconds": 14.068562650998501,
+      "lag_seconds": 0.4685626509985017
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ",
+      "partial_text": "ਦੀਨ ਦਇਆ",
+      "committed_until": 12.0,
+      "cache_committed_until": 12.0,
+      "text_committed_until": 12.28,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆ",
+          "start": 13.64,
+          "end": 14.04,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 14.4,
+      "window_seconds": 14.4,
+      "samples": 230400,
+      "pending_window_seconds": 2.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 14.874814573999174,
+      "lag_seconds": 0.4748145739991738
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ",
+      "partial_text": "ਦੀਨ ਦਇਆਲਾ",
+      "committed_until": 12.0,
+      "cache_committed_until": 12.0,
+      "text_committed_until": 12.28,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 14.64,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 15.2,
+      "window_seconds": 15.2,
+      "samples": 243200,
+      "pending_window_seconds": 3.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 15.495130880997749,
+      "lag_seconds": 0.29513088099774976
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ",
+      "partial_text": "ਦੀਨ ਦਇਆਲਾ",
+      "committed_until": 12.0,
+      "cache_committed_until": 12.0,
+      "text_committed_until": 12.28,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 14.64,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 16.0,
+      "window_seconds": 16.0,
+      "samples": 256000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 16.397094194999227,
+      "lag_seconds": 0.3970941949992266
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ",
+      "partial_text": "ਦੀਨ ਦਇਆਲਾ",
+      "committed_until": 12.0,
+      "cache_committed_until": 12.0,
+      "text_committed_until": 12.28,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 14.64,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 16.8,
+      "window_seconds": 16.8,
+      "samples": 268800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 17.255710868997994,
+      "lag_seconds": 0.4557108689979934
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ",
+      "partial_text": "ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "committed_until": 12.0,
+      "cache_committed_until": 12.0,
+      "text_committed_until": 12.28,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.28,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 17.6,
+      "window_seconds": 17.6,
+      "samples": 281600,
+      "pending_window_seconds": 5.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "word-lookahead",
+      "received_at_seconds": 18.122723341999517,
+      "lag_seconds": 0.5227233419995159
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.72,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.72,
+          "end": 18.32,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 18.4,
+      "window_seconds": 18.4,
+      "samples": 294400,
+      "pending_window_seconds": 2.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 18.91619926599742,
+      "lag_seconds": 0.5161992659974217
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.72,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.72,
+          "end": 18.32,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 19.2,
+      "window_seconds": 19.2,
+      "samples": 307200,
+      "pending_window_seconds": 3.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 19.490114866999647,
+      "lag_seconds": 0.29011486699964806
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 20.0,
+      "window_seconds": 20.0,
+      "samples": 320000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 20.3221821119987,
+      "lag_seconds": 0.32218211199869984
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 20.8,
+      "window_seconds": 20.8,
+      "samples": 332800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 21.222203603996604,
+      "lag_seconds": 0.4222036039966035
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 21.6,
+      "window_seconds": 21.6,
+      "samples": 345600,
+      "pending_window_seconds": 5.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 22.08047575999808,
+      "lag_seconds": 0.4804757599980789
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 22.4,
+      "window_seconds": 22.4,
+      "samples": 358400,
+      "pending_window_seconds": 6.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 22.842645762997563,
+      "lag_seconds": 0.4426457629975644
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ",
+      "partial_text": "ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_until": 16.0,
+      "cache_committed_until": 16.0,
+      "text_committed_until": 16.8,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 23.2,
+      "window_seconds": 23.2,
+      "samples": 371200,
+      "pending_window_seconds": 7.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 23.711633497998264,
+      "lag_seconds": 0.5116334979982646
+    },
+    {
+      "type": "partial",
+      "audio_active": true,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "partial_text": "ਓਟ ਪੂਰਨ",
+      "committed_until": 20.0,
+      "cache_committed_until": 20.0,
+      "text_committed_until": 17.64,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 24.0,
+      "window_seconds": 24.0,
+      "samples": 384000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 24.55956842899832,
+      "lag_seconds": 0.5595684289983183
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "partial_text": "ਓਟ ਪੂਰਨ",
+      "committed_until": 20.0,
+      "cache_committed_until": 20.0,
+      "text_committed_until": 17.64,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 24.8,
+      "window_seconds": 24.8,
+      "samples": 396800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 25.191178363998915,
+      "lag_seconds": 0.3911783639989146
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "partial_text": "ਓਟ ਪੂਰਨ",
+      "committed_until": 20.0,
+      "cache_committed_until": 20.0,
+      "text_committed_until": 17.64,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 25.6,
+      "window_seconds": 25.6,
+      "samples": 409600,
+      "pending_window_seconds": 5.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 26.00533121099943,
+      "lag_seconds": 0.40533121099942804
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "partial_text": "ਓਟ ਪੂਰਨ",
+      "committed_until": 20.0,
+      "cache_committed_until": 20.0,
+      "text_committed_until": 17.64,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 26.4,
+      "window_seconds": 26.4,
+      "samples": 422400,
+      "pending_window_seconds": 6.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 26.889015646996995,
+      "lag_seconds": 0.4890156469969966
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ",
+      "partial_text": "ਓਟ ਪੂਰਨ",
+      "committed_until": 20.0,
+      "cache_committed_until": 20.0,
+      "text_committed_until": 17.64,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 27.2,
+      "window_seconds": 27.2,
+      "samples": 435200,
+      "pending_window_seconds": 7.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 27.811868575998233,
+      "lag_seconds": 0.6118685759982334
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 24.0,
+      "cache_committed_until": 24.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 28.0,
+      "window_seconds": 28.0,
+      "samples": 448000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 28.57689184699848,
+      "lag_seconds": 0.5768918469984783
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 24.0,
+      "cache_committed_until": 24.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 28.8,
+      "window_seconds": 28.8,
+      "samples": 460800,
+      "pending_window_seconds": 4.8,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 29.220233281997935,
+      "lag_seconds": 0.42023328199793397
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 24.0,
+      "cache_committed_until": 24.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 29.6,
+      "window_seconds": 29.6,
+      "samples": 473600,
+      "pending_window_seconds": 5.6,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 30.04164508899703,
+      "lag_seconds": 0.4416450889970278
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 24.0,
+      "cache_committed_until": 24.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 30.4,
+      "window_seconds": 30.4,
+      "samples": 486400,
+      "pending_window_seconds": 6.4,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 30.84918467999887,
+      "lag_seconds": 0.4491846799988721
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 24.0,
+      "cache_committed_until": 24.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 31.2,
+      "window_seconds": 31.2,
+      "samples": 499200,
+      "pending_window_seconds": 7.2,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "boundary-word",
+      "received_at_seconds": 31.682977164997283,
+      "lag_seconds": 0.4829771649972834
+    },
+    {
+      "type": "partial",
+      "audio_active": false,
+      "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ",
+      "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ",
+      "partial_text": "ਪੂਰਨ",
+      "committed_until": 28.0,
+      "cache_committed_until": 28.0,
+      "text_committed_until": 19.24,
+      "committed_words": [
+        {
+          "text": "ਕਰਿ",
+          "start": 9.04,
+          "end": 9.44,
+          "stable_count": 1
+        },
+        {
+          "text": "ਕਿਰਪਾ",
+          "start": 9.44,
+          "end": 11.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਪ੍ਰਭ",
+          "start": 11.8,
+          "end": 12.28,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦੀਨ",
+          "start": 12.28,
+          "end": 13.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਦਇਆਲਾ",
+          "start": 13.64,
+          "end": 16.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਤੇਰੀ",
+          "start": 16.8,
+          "end": 17.64,
+          "stable_count": 1
+        },
+        {
+          "text": "ਓਟ",
+          "start": 17.64,
+          "end": 19.24,
+          "stable_count": 1
+        }
+      ],
+      "partial_words": [
+        {
+          "text": "ਪੂਰਨ",
+          "start": 19.24,
+          "end": 20.0,
+          "stable_count": 1
+        }
+      ],
+      "window_start": 0.0,
+      "window_end": 32.0,
+      "window_seconds": 32.0,
+      "samples": 512000,
+      "pending_window_seconds": 4.0,
+      "max_window_seconds": 8.0,
+      "cache_hold_reason": "collecting",
+      "received_at_seconds": 32.51351314099884,
+      "lag_seconds": 0.5135131409988389
+    }
+  ],
+  "idle_prefix_has_no_text": true,
+  "idle_suffix_is_inactive": true,
+  "matches_clean_recording_prefix": true,
+  "first_signal_cache_reset": true,
+  "expected_clean_recording_prefix": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ"
+}

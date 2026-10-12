@@ -46,7 +46,9 @@ def scheduled_decoder(tokens):
 class StreamingTests(unittest.TestCase):
     def setUp(self):
         for name, value in [("tokenizer", Tokenizer()), ("preprocess_audio", frontend),
-                            ("run_encoder", encoder), ("language_prior", None), ("kenlm_prior", None)]:
+                            ("run_encoder", encoder), ("language_prior", None), ("kenlm_prior", None),
+                            # These fixtures mock the acoustic model; zeros represent audible input.
+                            ("last_audio_sample", lambda audio: len(audio))]:
             patched = patch.object(asr, name, value)
             patched.start()
             self.addCleanup(patched.stop)

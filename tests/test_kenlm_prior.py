@@ -1,6 +1,7 @@
 import math
 from pathlib import Path
 import unittest
+import tempfile
 
 import sentencepiece as spm
 
@@ -72,8 +73,21 @@ class KenLMPriorTests(unittest.TestCase):
 
     def test_four_and_five_gram_states_match_native_full_history(self):
         tokens = ("ਹਰਿ", "ਕਾ", "ਨਾਮੁ", "ਧਿਆਇ", "ਕੈ", "ਹੋਹੁ", "ਹਰਿਆ", "ਭਾਈ")
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
         for order in (4, 5):
-            path = self.prior.path.with_name(f"gurbani_{order}gram.bin")
+            # main ships only the selected 3-gram. Keep higher-order state
+            # verification self-contained with a real native KenLM fixture.
+            path = Path(temporary.name) / f"fixture-{order}.arpa"
+            grams = {1: [(word,) for word in ("<unk>", "<s>", "</s>", *tokens)]}
+            grams.update({n: [tokens[i:i + n] for i in range(len(tokens) - n + 1)]
+                          for n in range(2, order + 1)})
+            lines = ["\\data\\", *[f"ngram {n}={len(grams[n])}" for n in grams]]
+            for n in grams:
+                lines.extend(["", f"\\{n}-grams:"])
+                lines.extend(f"{-1.0 / n}\t{' '.join(gram)}" + ("\t0" if n < order else "")
+                             for gram in grams[n])
+            path.write_text("\n".join([*lines, "", "\\end\\", ""]), encoding="utf-8")
             p = KenLMWordPrior(path, mode="probability", word_bonus=4)
             native = list(p.model.full_scores(" ".join(tokens), bos=False, eos=False))
             for index, word in enumerate(tokens):
