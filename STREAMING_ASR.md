@@ -70,8 +70,11 @@ packet and wait for the `final` response before closing the WebSocket. This
 flushes audio shorter than the 800 ms update interval and commits the final word.
 The PCM format is 16 kHz mono float32 little-endian.
 
-The encoder uses up to four CPU threads by default. Set `ASR_ENCODER_THREADS`
-to adjust this for the host; use one Uvicorn worker.
+The encoder uses up to four CPU threads by default, respecting CPU affinity
+and cgroup quota; a two-core container defaults to two threads. Set
+`ASR_ENCODER_THREADS` to override this; use one Uvicorn worker. See
+[LOW_POWER_ASR.md](LOW_POWER_ASR.md) for constrained latency measurements
+and the optional `enable_language_model` control.
 
 ## Validation
 

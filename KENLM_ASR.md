@@ -28,7 +28,7 @@ Native states, word scores and completed token prefixes use bounded caches. KenL
 
 ## Controls and validation
 
-`ASR_KENLM_WEIGHT=0` disables KenLM and retains the existing streaming decoder. Advanced tuning uses `ASR_KENLM_PATH`, `ASR_KENLM_MODE` (`ngram`, `full_order`, `probability` or `ratio`; `trigram` is a legacy alias for `ngram`), `ASR_KENLM_WORD_BONUS`, `ASR_LANGUAGE_PRIOR_WEIGHT` and `ASR_BEAM_WIDTH`. Specify the weight and bonus together when changing scoring modes.
+Set `enable_language_model = False` in `asr_config.py`, or start with `ENABLE_LANGUAGE_MODEL=False`, to disable optional KenLM loading and scoring. The corpus word prior remains enabled. `ASR_KENLM_WEIGHT=0` also disables KenLM. See [LOW_POWER_ASR.md](LOW_POWER_ASR.md) for two-core/four-GB measurements; the optimized 24-beam decoder can keep KenLM enabled within the measured real-time budget. Advanced tuning uses `ASR_KENLM_PATH`, `ASR_KENLM_MODE` (`ngram`, `full_order`, `probability` or `ratio`; `trigram` is a legacy alias for `ngram`), `ASR_KENLM_WORD_BONUS`, `ASR_LANGUAGE_PRIOR_WEIGHT` and `ASR_BEAM_WIDTH`. Specify the weight and bonus together when changing scoring modes.
 
 The [section-24 comparison](validation/kenlm-section24/README.md) compares all three orders and selects the defaults. The [earlier 20-minute comparison](validation/kenlm20m/README.md) records 3-gram profiles, whole-recording WER/CER, missing words, rejected settings and speed measurements. It includes complete transcripts and a highlighted word diff. Only terminal onkar ੁ and sihari ਿ are ignored in the primary accuracy comparison; internal vowels, repetitions and word boundaries remain significant.
 

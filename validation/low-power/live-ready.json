@@ -1,0 +1,520 @@
+{
+  "source": "https://live.sgpc.net:8442/;stream.mp3",
+  "observed_seconds": 20.038159828999994,
+  "endpoints": {
+    "/health": {
+      "status": "ok",
+      "stream_connected": true,
+      "asr_connected": true,
+      "database": "bani.db",
+      "speech_column": "unicode_speech",
+      "asr_build": null
+    },
+    "/asr/health": {
+      "status": "ok",
+      "provider": "CPUExecutionProvider",
+      "sample_rate": 16000,
+      "encoder_context": [
+        202,
+        100
+      ],
+      "encoder_frame_seconds": 0.04,
+      "text_commit_seconds": 4.0,
+      "cache_commit_seconds": 4.0,
+      "word_commit_policy": "adaptive-boundary-lookahead",
+      "max_pending_window_seconds": 8.0,
+      "encoder_update_seconds": 0.8,
+      "encoder_threads": 4,
+      "decoder_beam_width": 24,
+      "cpu_budget": 4,
+      "enable_language_model": true,
+      "silence_guard": true,
+      "silence_hangover_seconds": 4.0,
+      "predictor_cache": true,
+      "predictor_cache_max_entries": 16384,
+      "language_prior": "repository-gurbani-word-context",
+      "language_prior_weight": 0.6,
+      "kenlm": "gurbani_3gram.bin",
+      "kenlm_order": 3,
+      "kenlm_minimum_ngram_order": 3,
+      "kenlm_weight": 0.3,
+      "kenlm_mode": "ngram",
+      "kenlm_word_bonus": 0.0,
+      "word_lookahead_seconds": 1.0
+    },
+    "/": {
+      "status": 200
+    },
+    "/static/live.js": {
+      "status": 200
+    },
+    "/api/live/state": {
+      "enabled": true,
+      "connected": true,
+      "asr_connected": true,
+      "audio_url": "/api/live/audio",
+      "audio_start_timestamp": null,
+      "client_started_at": null,
+      "playhead_timestamp": null,
+      "pankti_timestamp": null,
+      "pankti": "",
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "bani_id": null,
+      "bani_name": null,
+      "line_group": null,
+      "bani_position": null,
+      "match_mode": null,
+      "revision": "f17987f5501d62be47d9"
+    }
+  },
+  "final_health": {
+    "status": "ok",
+    "stream_connected": true,
+    "asr_connected": true,
+    "database": "bani.db",
+    "speech_column": "unicode_speech",
+    "asr_build": null
+  },
+  "final_state": {
+    "enabled": true,
+    "connected": true,
+    "asr_connected": true,
+    "audio_url": "/api/live/audio",
+    "audio_start_timestamp": null,
+    "client_started_at": null,
+    "playhead_timestamp": null,
+    "pankti_timestamp": 1791848708.044343,
+    "pankti": "'ਕੀਰਤ' ਭੱਟ ਦੀ ਹੁਣ ਇਕ ਬੇਨਤੀ ਹੈ ਕਿ ਹੇ ਗੁਰੂ ਰਾਮਦਾਸ ਜੀ! ਆਪਣੀ ਸਰਨੀ ਰੱਖੋ ॥੪॥੫੮॥",
+    "punjabi": "'ਕੀਰਤ' ਭੱਟ ਦੀ ਹੁਣ ਇਕ ਬੇਨਤੀ ਹੈ ਕਿ ਹੇ ਗੁਰੂ ਰਾਮਦਾਸ ਜੀ! ਆਪਣੀ ਸਰਨੀ ਰੱਖੋ ॥੪॥੫੮॥",
+    "legacy_gurmukhi": "iek Ardwis, Bwt kIriq kI; gur rwmdws rwKhu srxweI ]4]58]",
+    "english": "Keerat the poet offers this one prayer: O Guru Raam Daas, save me! Take me into Your Sanctuary! ||4||58||",
+    "shabad_id": "MNB",
+    "pankti_id": "699M",
+    "bani_id": null,
+    "bani_name": null,
+    "line_group": null,
+    "bani_position": null,
+    "match_mode": null,
+    "revision": "044855981f50185b7df7"
+  },
+  "captions": [
+    {
+      "type": "transcript",
+      "final_text": "",
+      "partial_text": "ਆਸ ਮਿਟਾਈ ਇਕ ਅ",
+      "final_words": [],
+      "partial_words": [
+        "ਆਸ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅ"
+      ],
+      "text": "ਆਸ ਮਿਟਾਈ ਇਕ ਅ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "",
+      "partial_text": "ਆਸ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ",
+      "final_words": [],
+      "partial_words": [
+        "ਆਸ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ"
+      ],
+      "text": "ਆਸ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "",
+      "partial_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਈ",
+      "final_words": [],
+      "partial_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਈ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਈ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "",
+      "partial_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀ",
+      "final_words": [],
+      "partial_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ",
+      "partial_text": "ਭਾਟ ਕੀਰਤਿ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ"
+      ],
+      "partial_words": [
+        "ਭਾਟ",
+        "ਕੀਰਤਿ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ",
+      "partial_text": "ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ"
+      ],
+      "partial_words": [
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ",
+      "partial_text": "ਭਾਟ ਕੀਰਤਿ ਕੀ ਗ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ"
+      ],
+      "partial_words": [
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮਦਾ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮਦਾ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮਦਾਸ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮਦਾਸ ਰਾ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ",
+        "ਸਰ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "partial_text": "ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "partial_words": [
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ",
+        "ਸਰਣਾ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਇਕ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਇਕ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਇਕ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਇਕ ਅਰਦਾਸ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਇਕ ਅਰਦਾਸ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ"
+    },
+    {
+      "type": "transcript",
+      "final_text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ",
+      "partial_text": "ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ",
+      "final_words": [
+        "ਅਸੁ",
+        "ਮਿਟਾਈ",
+        "ਇਕ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ",
+        "ਰਾਮਦਾਸ",
+        "ਰਾਖਹੁ"
+      ],
+      "partial_words": [
+        "ਸਰਣਾਈ",
+        "ਅਰਦਾਸਿ",
+        "ਭਾਟ",
+        "ਕੀਰਤਿ",
+        "ਕੀ",
+        "ਗੁਰ"
+      ],
+      "text": "ਅਸੁ ਮਿਟਾਈ ਇਕ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ ਰਾਮਦਾਸ ਰਾਖਹੁ ਸਰਣਾਈ ਅਰਦਾਸਿ ਭਾਟ ਕੀਰਤਿ ਕੀ ਗੁਰ"
+    }
+  ],
+  "asr_updates": 29,
+  "audible_source_captions_and_pankti": true,
+  "source_was_idle_in_earlier_capture": true
+}

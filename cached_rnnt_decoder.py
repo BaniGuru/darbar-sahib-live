@@ -95,3 +95,65 @@ class CachedRNNTDecoder:
         if output_names is None:
             return result
         return [result[self.output_names.index(name)] for name in output_names]
+
+    @staticmethod
+    def _readonly(value):
+        value = value.copy()
+        value.setflags(write=False)
+        return value
+
+    def run_hypotheses(self, acoustic, checkpoints):
+        """Reuse immutable owned checkpoints without serializing their tensors.
+
+        Strong references in each cache entry prevent identity reuse. Mutable
+        arrays/views use the existing content-keyed path. Both paths share the
+        same bounded cache and unchanged extracted ONNX graphs.
+        """
+        names = self.input_names
+        batch = len(checkpoints)
+        if any(h.flags.writeable or c.flags.writeable or not h.flags.owndata or not c.flags.owndata
+               for h, c, label in checkpoints):
+            result = self.run(None, {
+                names[0]: np.repeat(acoustic, batch, axis=0),
+                names[1]: np.asarray([[p[2]] for p in checkpoints], np.int32),
+                names[2]: np.ones(batch, np.int32),
+                names[3]: np.concatenate([p[0] for p in checkpoints], axis=1),
+                names[4]: np.concatenate([p[1] for p in checkpoints], axis=1),
+            })
+            return result[0], [(self._readonly(result[2][:, i:i + 1]),
+                                self._readonly(result[3][:, i:i + 1])) for i in range(batch)]
+        key = (acoustic.shape[1:], acoustic.dtype.str, acoustic.tobytes())
+        projected = self.encoder_cache.get(key)
+        if projected is None:
+            projected = self._remember(self.encoder_cache, key,
+                                       self.encoder.run(None, {names[0]: acoustic})[0], 128)
+        predictions = [None] * batch
+        missing = {}
+        for index, (h, c, label) in enumerate(checkpoints):
+            key = ('immutable', id(h), id(c), label)
+            cached = self.predictor_cache.get(key)
+            if cached is None:
+                missing.setdefault(key, []).append(index)
+            else:
+                self.predictor_cache.move_to_end(key)
+                predictions[index] = cached[2]
+        if missing:
+            positions = [indices[0] for indices in missing.values()]
+            result = self.predictor.run(None, {
+                names[1]: np.asarray([[checkpoints[i][2]] for i in positions], np.int32),
+                names[3]: np.concatenate([checkpoints[i][0] for i in positions], axis=1),
+                names[4]: np.concatenate([checkpoints[i][1] for i in positions], axis=1),
+            })
+            for offset, (key, indices) in enumerate(missing.items()):
+                prediction = (result[0][offset:offset + 1].copy(),
+                              self._readonly(result[1][:, offset:offset + 1]),
+                              self._readonly(result[2][:, offset:offset + 1]))
+                h, c, label = checkpoints[indices[0]]
+                self._remember(self.predictor_cache, key, (h, c, prediction), self.cache_size)
+                for index in indices:
+                    predictions[index] = prediction
+        logits = self.joint.run(None, {
+            self.encoder_name: np.repeat(projected, batch, axis=0),
+            self.predictor_name: np.concatenate([p[0] for p in predictions], axis=0),
+        })[0]
+        return logits, [(p[1], p[2]) for p in predictions]

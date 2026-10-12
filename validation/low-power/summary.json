@@ -1,0 +1,1059 @@
+{
+  "date": "2026-10-13 Australia/Brisbane",
+  "base_commit": "ab2907c464ac17664c04a053b2cd992c9e032ef9",
+  "test_scope": "two-core CPU quota and affinity; 4 GiB, no swap; same x86-64 host; not a named physical machine",
+  "profiling_limitations": "Diagnostic profiles sometimes ran concurrently on disjoint cores under the parent four-core quota. They share memory bandwidth. Final paced tests ran serially without another model workload. Diagnostic backlog is a FIFO simulation based on measured causal costs.",
+  "source_sha256": {
+    "server_asr_stream.py": "6d8284aaeaa7d4bf9a5144aa2e7a17cedb144453e15986aa4e15329eab6dfcd0",
+    "asr_config.py": "666c1c210b2da1f577810bfc85eedd130db20bfccc856a6ec109d8f1fa9f311e",
+    "incremental_language_scorer.py": "b547c5bf307c18dfcfc8e88bea8bd0bfd3130aff6600e752017654ad94c3aeb1",
+    "cached_rnnt_decoder.py": "9ce9b447412e592ce9d6b30078737d0d0cf989c3fb5ded530a90de1dce392c91",
+    "audio_activity.py": "ec04741a92ec814230a871bebc92dd84b4ccb919c644eee067f97d3d9afb8726"
+  },
+  "regressions": {
+    "passed": 88,
+    "failed": 0,
+    "skipped": 0
+  },
+  "recordings": {
+    "normal": {
+      "format": "mono 16 kHz float32 decoded from supplied MP3",
+      "seconds": 52.0126875,
+      "mp3_sha256": "90492e044565751b7b91f22767e51aa7bc494c4922e63a2c6a3343c1bc143ac6"
+    },
+    "rapid": {
+      "format": "mono 16 kHz PCM16 WAV",
+      "original_start_seconds": 680,
+      "original_end_seconds": 800,
+      "reference_scope": "fully contained verified sections, retaining all recognized words for primary WER; edge audio is not fully labeled",
+      "reference_sha256": "3f5b32f0c5096b99d26e4aa8d1fa3437d0aa739a71164428d4f9b0bcba001ca7"
+    }
+  },
+  "diagnostics": {
+    "baseline4": {
+      "settings": {
+        "encoder_threads": 4,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 1.3093549925294627,
+          "update_cost": {
+            "median": 1.097203269997408,
+            "p95": 1.606329280199861,
+            "max": 1.822353772000497
+          },
+          "simulated_lag": {
+            "median": 8.210050131000024,
+            "p95": 17.590198592793456,
+            "max": 18.124524801994262
+          },
+          "peak_rss_bytes": 1414983680,
+          "cgroup_memory_peak_bytes": 1356206080
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 1.4963692256750012,
+          "update_cost": {
+            "median": 1.1264050125009817,
+            "p95": 2.5703680185002646,
+            "max": 3.4929287759987346
+          },
+          "simulated_lag": {
+            "median": 38.40253798198391,
+            "p95": 59.48433908956762,
+            "max": 60.66228835296934
+          },
+          "peak_rss_bytes": 1478160384,
+          "cgroup_memory_peak_bytes": 1417539584
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "lm-on2": {
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6478672274529067,
+          "update_cost": {
+            "median": 0.5303505219999352,
+            "p95": 0.7425747522007441,
+            "max": 0.7871637280004506
+          },
+          "simulated_lag": {
+            "median": 0.5303505219999352,
+            "p95": 0.7425747522007441,
+            "max": 0.7871637280004506
+          },
+          "peak_rss_bytes": 1421148160,
+          "cgroup_memory_peak_bytes": 1361960960
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.9132659726833178,
+          "update_cost": {
+            "median": 0.5964568870003859,
+            "p95": 1.9306436804474276,
+            "max": 2.9982298290015024
+          },
+          "simulated_lag": {
+            "median": 2.599389040499588,
+            "p95": 14.774358937842075,
+            "max": 16.22403340099263
+          },
+          "peak_rss_bytes": 1482489856,
+          "cgroup_memory_peak_bytes": 1421283328
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "lm-on1": {
+      "settings": {
+        "encoder_threads": 1,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.8935959118628951,
+          "update_cost": {
+            "median": 0.7531107150025491,
+            "p95": 1.0652434557996455,
+            "max": 1.2632661310017284
+          },
+          "simulated_lag": {
+            "median": 0.9004889589989045,
+            "p95": 1.8389030769943229,
+            "max": 1.9849299759946035
+          },
+          "peak_rss_bytes": 1288581120,
+          "cgroup_memory_peak_bytes": 1229684736
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 1.1202463348166627,
+          "update_cost": {
+            "median": 0.7817411345022265,
+            "p95": 2.094620156700327,
+            "max": 2.95405325700267
+          },
+          "simulated_lag": {
+            "median": 15.362943817501943,
+            "p95": 20.395931334975902,
+            "max": 21.026740603980578
+          },
+          "peak_rss_bytes": 1351626752,
+          "cgroup_memory_peak_bytes": 1290452992
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "lm-off1": {
+      "settings": {
+        "encoder_threads": 1,
+        "beam": 24,
+        "kenlm_weight": 0,
+        "corpus_weight": 0
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.937165994796946,
+          "update_cost": {
+            "median": 0.7565293459992972,
+            "p95": 1.1443290669980342,
+            "max": 1.3318679570002132
+          },
+          "simulated_lag": {
+            "median": 1.0125981939992954,
+            "p95": 4.03497662120164,
+            "max": 4.26539270700232
+          },
+          "peak_rss_bytes": 1070026752,
+          "cgroup_memory_peak_bytes": 1037090816
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.9921748863666532,
+          "update_cost": {
+            "median": 0.7824882804998197,
+            "p95": 1.23005973335039,
+            "max": 1.596651727999415
+          },
+          "simulated_lag": {
+            "median": 3.309495559018977,
+            "p95": 7.49561608459557,
+            "max": 8.036460187999182
+          },
+          "peak_rss_bytes": 1088638976,
+          "cgroup_memory_peak_bytes": 1054654464
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 148,
+        "wer": 0.3430232558139535,
+        "cer_excluding_spaces": 0.27586206896551724,
+        "deletions": 30,
+        "insertions": 6,
+        "substitutions": 23
+      }
+    },
+    "lm-off2": {
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0,
+        "corpus_weight": 0
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.7080414958754057,
+          "update_cost": {
+            "median": 0.5823910399994929,
+            "p95": 0.8098091529944212,
+            "max": 0.8784016390054603
+          },
+          "simulated_lag": {
+            "median": 0.6005083369964268,
+            "p95": 0.8098091529944212,
+            "max": 0.8784016390054603
+          },
+          "peak_rss_bytes": 1031327744,
+          "cgroup_memory_peak_bytes": 998559744
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.7323015549500269,
+          "update_cost": {
+            "median": 0.5700243450010021,
+            "p95": 0.9743552283980531,
+            "max": 1.1735067370027537
+          },
+          "simulated_lag": {
+            "median": 0.5865116000015433,
+            "p95": 2.2453195856457002,
+            "max": 3.1389470739886747
+          },
+          "peak_rss_bytes": 1065299968,
+          "cgroup_memory_peak_bytes": 1031127040
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 148,
+        "wer": 0.3430232558139535,
+        "cer_excluding_spaces": 0.27586206896551724,
+        "deletions": 30,
+        "insertions": 6,
+        "substitutions": 23
+      }
+    },
+    "lm-on2-beam8": {
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 8,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6255508240947056,
+          "update_cost": {
+            "median": 0.5024666980025358,
+            "p95": 0.7072001152017037,
+            "max": 0.834140804996423
+          },
+          "simulated_lag": {
+            "median": 0.5024666980025358,
+            "p95": 0.7192303986012121,
+            "max": 0.834140804996423
+          },
+          "peak_rss_bytes": 1302519808,
+          "cgroup_memory_peak_bytes": 1242935296
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.698370502100018,
+          "update_cost": {
+            "median": 0.5440883640003449,
+            "p95": 0.8287145521484488,
+            "max": 1.2206968500031508
+          },
+          "simulated_lag": {
+            "median": 0.5515617295022821,
+            "p95": 0.9097662192508875,
+            "max": 1.626911387998554
+          },
+          "peak_rss_bytes": 1334501376,
+          "cgroup_memory_peak_bytes": 1273081856
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 157,
+        "wer": 0.27325581395348836,
+        "cer_excluding_spaces": 0.2206896551724138,
+        "deletions": 20,
+        "insertions": 5,
+        "substitutions": 22
+      }
+    },
+    "kenlm-off2-beam8": {
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 8,
+        "kenlm_weight": 0,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6600871119186154,
+          "update_cost": {
+            "median": 0.5280235890022595,
+            "p95": 0.809082377202867,
+            "max": 0.8288837719956064
+          },
+          "simulated_lag": {
+            "median": 0.5280235890022595,
+            "p95": 0.8228451932038297,
+            "max": 0.8431522639977622
+          },
+          "peak_rss_bytes": 1379106816,
+          "cgroup_memory_peak_bytes": 1347063808
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.6777686134999992,
+          "update_cost": {
+            "median": 0.5220668260008097,
+            "p95": 0.8345199178016627,
+            "max": 1.0374383369999123
+          },
+          "simulated_lag": {
+            "median": 0.5289580389980983,
+            "p95": 1.0659717435487255,
+            "max": 1.790006031001397
+          },
+          "peak_rss_bytes": 1401913344,
+          "cgroup_memory_peak_bytes": 1367990272
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 160,
+        "wer": 0.27325581395348836,
+        "cer_excluding_spaces": 0.22241379310344828,
+        "deletions": 17,
+        "insertions": 5,
+        "substitutions": 25
+      }
+    },
+    "optimized-on24": {
+      "settings": {
+        "enable_language_model": true,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.653434110725486,
+          "update_cost": {
+            "median": 0.5134463300055359,
+            "p95": 0.7732517901982646,
+            "max": 0.8714902549982071
+          },
+          "simulated_lag": {
+            "median": 0.5134463300055359,
+            "p95": 0.7732517901982646,
+            "max": 0.8714902549982071
+          },
+          "peak_rss_bytes": 1393283072,
+          "cgroup_memory_peak_bytes": 1334587392
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.9316768350333707,
+          "update_cost": {
+            "median": 0.6343352875010169,
+            "p95": 1.6577624078505293,
+            "max": 2.3760602330003167
+          },
+          "simulated_lag": {
+            "median": 3.0227425695127756,
+            "p95": 11.358959805305709,
+            "max": 12.871757329006506
+          },
+          "peak_rss_bytes": 1400885248,
+          "cgroup_memory_peak_bytes": 1339125760
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "optimized-off24": {
+      "settings": {
+        "enable_language_model": false,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.675703106919888,
+          "update_cost": {
+            "median": 0.5450824860017747,
+            "p95": 0.8001230573994689,
+            "max": 0.9027300060042762
+          },
+          "simulated_lag": {
+            "median": 0.5450824860017747,
+            "p95": 0.8001230573994689,
+            "max": 0.9109945530028227
+          },
+          "peak_rss_bytes": 1214992384,
+          "cgroup_memory_peak_bytes": 1183113216
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.8537952592083456,
+          "update_cost": {
+            "median": 0.6055205320008099,
+            "p95": 1.3420562683528259,
+            "max": 1.7625400600009016
+          },
+          "simulated_lag": {
+            "median": 1.1425496705058347,
+            "p95": 7.232300874614734,
+            "max": 8.342237420014861
+          },
+          "peak_rss_bytes": 1236283392,
+          "cgroup_memory_peak_bytes": 1202511872
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 168,
+        "wer": 0.18023255813953487,
+        "cer_excluding_spaces": 0.16206896551724137,
+        "deletions": 9,
+        "insertions": 5,
+        "substitutions": 17
+      }
+    },
+    "bounded-on24": {
+      "settings": {
+        "enable_language_model": true,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6328464749297782,
+          "update_cost": {
+            "median": 0.5302672640027595,
+            "p95": 0.7537750860006781,
+            "max": 0.8074330909948912
+          },
+          "simulated_lag": {
+            "median": 0.5302672640027595,
+            "p95": 0.7537750860006781,
+            "max": 0.8074330909948912
+          },
+          "peak_rss_bytes": 1407508480,
+          "cgroup_memory_peak_bytes": 1348751360
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.7179244388333246,
+          "update_cost": {
+            "median": 0.5440169594985491,
+            "p95": 1.032709383649489,
+            "max": 1.4069732830030262
+          },
+          "simulated_lag": {
+            "median": 0.5659868130023824,
+            "p95": 2.904464952549383,
+            "max": 4.0222637980012195
+          },
+          "peak_rss_bytes": 1416552448,
+          "cgroup_memory_peak_bytes": 1355567104
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "bounded-off24": {
+      "settings": {
+        "enable_language_model": false,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6248190720581506,
+          "update_cost": {
+            "median": 0.5120763410013751,
+            "p95": 0.7353312215971527,
+            "max": 0.8152494759997353
+          },
+          "simulated_lag": {
+            "median": 0.5120763410013751,
+            "p95": 0.7353312215971527,
+            "max": 0.8152494759997353
+          },
+          "peak_rss_bytes": 1393152000,
+          "cgroup_memory_peak_bytes": 1361244160
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.7318309958666457,
+          "update_cost": {
+            "median": 0.531312742998125,
+            "p95": 1.078541527799097,
+            "max": 1.4585260430030758
+          },
+          "simulated_lag": {
+            "median": 0.5874539565011219,
+            "p95": 2.757686031687912,
+            "max": 3.69178673498827
+          },
+          "peak_rss_bytes": 1399181312,
+          "cgroup_memory_peak_bytes": 1365434368
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 168,
+        "wer": 0.18023255813953487,
+        "cer_excluding_spaces": 0.16206896551724137,
+        "deletions": 9,
+        "insertions": 5,
+        "substitutions": 17
+      }
+    },
+    "checkpoint-on24": {
+      "settings": {
+        "enable_language_model": true,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6126865958233788,
+          "update_cost": {
+            "median": 0.5025086070018006,
+            "p95": 0.7037879717972827,
+            "max": 0.780777403000684
+          },
+          "simulated_lag": {
+            "median": 0.5025086070018006,
+            "p95": 0.7037879717972827,
+            "max": 0.780777403000684
+          },
+          "peak_rss_bytes": 1388437504,
+          "cgroup_memory_peak_bytes": 1329319936
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.6665257696916645,
+          "update_cost": {
+            "median": 0.515370189998066,
+            "p95": 0.8693297082463682,
+            "max": 1.4311734119983157
+          },
+          "simulated_lag": {
+            "median": 0.532188215500355,
+            "p95": 2.317174931196568,
+            "max": 2.8141487529908744
+          },
+          "peak_rss_bytes": 1390272512,
+          "cgroup_memory_peak_bytes": 1331150848
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "spin-off24": {
+      "settings": {
+        "enable_language_model": true,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        2,
+        3
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6875935488239608,
+          "update_cost": {
+            "median": 0.5658238249961869,
+            "p95": 0.8140384263984742,
+            "max": 0.8533768879933632
+          },
+          "simulated_lag": {
+            "median": 0.5658238249961869,
+            "p95": 0.8203299544038599,
+            "max": 0.8533768879933632
+          },
+          "peak_rss_bytes": 1384726528,
+          "cgroup_memory_peak_bytes": 1325797376
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.7457499416416492,
+          "update_cost": {
+            "median": 0.5758362945016415,
+            "p95": 1.037148296144732,
+            "max": 1.3604028400004609
+          },
+          "simulated_lag": {
+            "median": 0.6045457934975271,
+            "p95": 2.7963907763402642,
+            "max": 3.7435496799924266
+          },
+          "peak_rss_bytes": 1385512960,
+          "cgroup_memory_peak_bytes": 1325797376
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "checkpoint-off24": {
+      "settings": {
+        "enable_language_model": false,
+        "cpu_budget": 2,
+        "encoder_threads": 2,
+        "beam": 24,
+        "kenlm_weight": 0,
+        "corpus_weight": 0.6
+      },
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.swap.max": "0"
+      },
+      "affinity": [
+        0,
+        1
+      ],
+      "cases": [
+        {
+          "audio": "kirtan.f32",
+          "seconds": 52.0126875,
+          "rtf": 0.6970301547482168,
+          "update_cost": {
+            "median": 0.5900726300023962,
+            "p95": 0.7984198103964444,
+            "max": 0.840051161001611
+          },
+          "simulated_lag": {
+            "median": 0.5900726300023962,
+            "p95": 0.8102038536002509,
+            "max": 0.8446487439970944
+          },
+          "peak_rss_bytes": 1283993600,
+          "cgroup_memory_peak_bytes": 1251954688
+        },
+        {
+          "audio": "rapid.wav",
+          "seconds": 120.0,
+          "rtf": 0.7313049545666824,
+          "update_cost": {
+            "median": 0.5653429660014808,
+            "p95": 1.0067119659972374,
+            "max": 1.2270109809978749
+          },
+          "simulated_lag": {
+            "median": 0.5979824284986535,
+            "p95": 2.404751912827918,
+            "max": 3.3061650399729814
+          },
+          "peak_rss_bytes": 1284780032,
+          "cgroup_memory_peak_bytes": 1252212736
+        }
+      ],
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 168,
+        "wer": 0.18023255813953487,
+        "cer_excluding_spaces": 0.16206896551724137,
+        "deletions": 9,
+        "insertions": 5,
+        "substitutions": 17
+      }
+    }
+  },
+  "paced": {
+    "paced-on": {
+      "health": {
+        "status": "ok",
+        "provider": "CPUExecutionProvider",
+        "sample_rate": 16000,
+        "encoder_context": [
+          202,
+          100
+        ],
+        "encoder_frame_seconds": 0.04,
+        "text_commit_seconds": 4.0,
+        "cache_commit_seconds": 4.0,
+        "word_commit_policy": "adaptive-boundary-lookahead",
+        "max_pending_window_seconds": 8.0,
+        "encoder_update_seconds": 0.8,
+        "encoder_threads": 2,
+        "decoder_beam_width": 24,
+        "cpu_budget": 2,
+        "enable_language_model": true,
+        "silence_guard": true,
+        "silence_hangover_seconds": 4.0,
+        "predictor_cache": true,
+        "predictor_cache_max_entries": 16384,
+        "language_prior": "repository-gurbani-word-context",
+        "language_prior_weight": 0.6,
+        "kenlm": "gurbani_3gram.bin",
+        "kenlm_order": 3,
+        "kenlm_minimum_ngram_order": 3,
+        "kenlm_weight": 0.3,
+        "kenlm_mode": "ngram",
+        "kenlm_word_bonus": 0.0,
+        "word_lookahead_seconds": 1.0
+      },
+      "seconds": 120.0,
+      "lag_seconds": {
+        "median": 0.5545788979987272,
+        "p95": 1.938396957299189,
+        "max": 2.698644238997076
+      },
+      "updates": 150,
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.peak": "1467457536",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "same_tokens_words_cache_and_samples": true,
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 172,
+        "wer": 0.1511627906976744,
+        "cer_excluding_spaces": 0.1310344827586207,
+        "deletions": 5,
+        "insertions": 5,
+        "substitutions": 16
+      }
+    },
+    "paced-off": {
+      "health": {
+        "status": "ok",
+        "provider": "CPUExecutionProvider",
+        "sample_rate": 16000,
+        "encoder_context": [
+          202,
+          100
+        ],
+        "encoder_frame_seconds": 0.04,
+        "text_commit_seconds": 4.0,
+        "cache_commit_seconds": 4.0,
+        "word_commit_policy": "adaptive-boundary-lookahead",
+        "max_pending_window_seconds": 8.0,
+        "encoder_update_seconds": 0.8,
+        "encoder_threads": 2,
+        "decoder_beam_width": 24,
+        "cpu_budget": 2,
+        "enable_language_model": false,
+        "silence_guard": true,
+        "silence_hangover_seconds": 4.0,
+        "predictor_cache": true,
+        "predictor_cache_max_entries": 16384,
+        "language_prior": "repository-gurbani-word-context",
+        "language_prior_weight": 0.6,
+        "kenlm": "disabled",
+        "kenlm_order": null,
+        "kenlm_minimum_ngram_order": null,
+        "kenlm_weight": 0.0,
+        "kenlm_mode": "ngram",
+        "kenlm_word_bonus": 0.0,
+        "word_lookahead_seconds": 1.0
+      },
+      "seconds": 120.0,
+      "lag_seconds": {
+        "median": 0.5380902254990367,
+        "p95": 1.671662017349734,
+        "max": 2.5976827060003416
+      },
+      "updates": 150,
+      "cgroup": {
+        "cpu.max": "200000 100000",
+        "memory.max": "4294967296",
+        "memory.peak": "1565724672",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "same_tokens_words_cache_and_samples": true,
+      "scores": {
+        "reference_words": 172,
+        "hypothesis_words": 168,
+        "wer": 0.18023255813953487,
+        "cer_excluding_spaces": 0.16206896551724137,
+        "deletions": 9,
+        "insertions": 5,
+        "substitutions": 17
+      }
+    }
+  },
+  "full_stack_memory_and_matching": {
+    "completed": true,
+    "loaded_acoustic_and_language_models": true,
+    "cpu_budget": 2,
+    "encoder_threads": 2,
+    "beam": 24,
+    "pankti_index_rows": 130840,
+    "matched_updates": 143,
+    "matching_cost_seconds": {
+      "median": 0.002040777002548566,
+      "p95": 0.16281280359944492,
+      "max": 0.19388724400050705
+    },
+    "peak_rss_bytes": 1644589056,
+    "cgroup": {
+      "cpu.max": "200000 100000",
+      "memory.max": "4294967296",
+      "memory.peak": "1586130944",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+    }
+  },
+  "kenlm_on_normal_and_rapid_identical_to_original": {
+    "lm-on2": true,
+    "lm-on1": true,
+    "bounded-on24": true,
+    "checkpoint-on24": true
+  }
+}

@@ -1,0 +1,24 @@
+[0;93m2026-10-12 22:44:48.190930104 [W:onnxruntime:Default, telemetry_1ds.cc:600 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+............INFO:gurbani-live:Loaded 130840 panktis into the live word index (67490 distinct words)
+.......INFO:gurbani-live:ASR_TEST timing lag=-20.00s type=partial
+......................Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmptwm4x4ho/fixture-4.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmptwm4x4ho/fixture-4.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmptwm4x4ho/fixture-5.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmptwm4x4ho/fixture-5.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+...............................................
+----------------------------------------------------------------------
+Ran 88 tests in 16.413s
+
+OK

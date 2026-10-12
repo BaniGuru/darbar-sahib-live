@@ -60,6 +60,40 @@ class CachedDecoderTests(unittest.TestCase):
         self.decoder.run(None, warm)
         self.assert_equivalent(inputs)
 
+    def test_immutable_checkpoint_path_matches_graph_with_hits_and_eviction(self):
+        for batch in (1, 4, 8, 24):
+            inputs = self.inputs(batch)
+            names = asr.decoder_inputs
+            checkpoints = []
+            for i in range(batch):
+                h, c = inputs[names[3]][:, i:i + 1].copy(), inputs[names[4]][:, i:i + 1].copy()
+                h.setflags(write=False)
+                c.setflags(write=False)
+                checkpoints.append((h, c, int(inputs[names[1]][i, 0])))
+            for delta in (0, .1, 0):
+                frame = inputs[names[0]][:1].copy() + np.float32(delta)
+                expected_inputs = {**inputs, names[0]: np.repeat(frame, batch, axis=0)}
+                expected = self.original.run(None, expected_inputs)
+                logits, states = self.decoder.run_hypotheses(frame, checkpoints)
+                np.testing.assert_array_equal(logits, expected[0])
+                for i, (h, c) in enumerate(states):
+                    np.testing.assert_array_equal(h, expected[2][:, i:i + 1])
+                    np.testing.assert_array_equal(c, expected[3][:, i:i + 1])
+                    self.assertFalse(h.flags.writeable)
+                    self.assertFalse(c.flags.writeable)
+                self.assertLessEqual(len(self.decoder.predictor_cache), 2)
+
+    def test_mutable_checkpoint_fallback_tracks_content_changes(self):
+        inputs = self.inputs(1)
+        names = asr.decoder_inputs
+        checkpoints = [(inputs[names[3]], inputs[names[4]], int(inputs[names[1]][0, 0]))]
+        for _ in range(3):
+            expected = self.original.run(None, inputs)
+            logits, states = self.decoder.run_hypotheses(inputs[names[0]], checkpoints)
+            np.testing.assert_array_equal(logits, expected[0])
+            np.testing.assert_array_equal(states[0][0], expected[2])
+            inputs[names[3]][:, :, 0] += .2
+
 
 if __name__ == '__main__':
     unittest.main()

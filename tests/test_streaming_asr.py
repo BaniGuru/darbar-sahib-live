@@ -2,7 +2,7 @@
 import asyncio
 import math
 import unittest
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock, Mock, patch
 
 import numpy as np
 
@@ -47,6 +47,9 @@ class StreamingTests(unittest.TestCase):
     def setUp(self):
         for name, value in [("tokenizer", Tokenizer()), ("preprocess_audio", frontend),
                             ("run_encoder", encoder), ("language_prior", None), ("kenlm_prior", None),
+                            # Synthetic logits use the general ONNX interface.
+                            # Native checkpoint-path equivalence is tested separately.
+                            ("decoder_session", Mock(wraps=asr.decoder_session)),
                             # These fixtures mock the acoustic model; zeros represent audible input.
                             ("last_audio_sample", lambda audio: len(audio))]:
             patched = patch.object(asr, name, value)

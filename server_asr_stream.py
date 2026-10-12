@@ -14,6 +14,8 @@ import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
 from audio_activity import last_audio_sample
+from asr_config import available_cpu_count, language_model_enabled
+from incremental_language_scorer import IncrementalLanguageScorer
 from cached_rnnt_decoder import CachedRNNTDecoder
 from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score, words as prior_words
 from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
@@ -52,7 +54,9 @@ SILENCE_HANGOVER_SAMPLES = FEATURE_CHUNK_SAMPLES
 ENCODER_CACHE_CHANNELS = 17
 ENCODER_CACHE_DIM = 512
 ENCODER_CACHE_TIME = 30
-ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", min(4, os.cpu_count() or 1))))
+CPU_BUDGET = available_cpu_count()
+ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", min(4, CPU_BUDGET))))
+enable_language_model = language_model_enabled()
 BEAM_WIDTH = max(1, int(os.environ.get("ASR_BEAM_WIDTH", "24")))
 BEAM_PRUNE_LOGP = 6.0
 LANGUAGE_PRIOR_WEIGHT = max(0.0, float(os.environ.get("ASR_LANGUAGE_PRIOR_WEIGHT", "0.6")))
@@ -70,7 +74,7 @@ if tokenizer.get_piece_size() != LOCAL_VOCAB_SIZE:
 language_prior = (GurbaniLanguagePrior.from_database(BASE_DIR / "data" / "bani.db")
                   if LANGUAGE_PRIOR_WEIGHT and (BASE_DIR / "data" / "bani.db").exists() else None)
 kenlm_prior = None
-if KENLM_WEIGHT:
+if enable_language_model and KENLM_WEIGHT:
     from kenlm_language_prior import KenLMWordPrior
     kenlm_prior = KenLMWordPrior(Path(os.environ.get("ASR_KENLM_PATH", MODEL_DIR / "gurbani_3gram.bin")),
                                 mode=KENLM_MODE, word_bonus=KENLM_WORD_BONUS)
@@ -164,7 +168,10 @@ def run_encoder(features: np.ndarray, cache: tuple[np.ndarray, np.ndarray, np.nd
 
 
 def new_predictor_state():
-    return np.zeros((1, 1, 640), np.float32), np.zeros((1, 1, 640), np.float32), PREDICTOR_START_ID
+    h, c = np.zeros((1, 1, 640), np.float32), np.zeros((1, 1, 640), np.float32)
+    h.setflags(write=False)
+    c.setflags(write=False)
+    return h, c, PREDICTOR_START_ID
 
 
 @dataclass
@@ -208,19 +215,11 @@ def decode_encoder_beams(
     """
     start_labels = np.asarray([label for label in range(LOCAL_VOCAB_SIZE)
                                if tokenizer.id_to_piece(label).startswith("▁")], dtype=np.int32) if require_word_start else None
-    prior_scores = {}
-    def prior_score(ids):
-        if language_prior is None and kenlm_prior is None:
-            return 0.0
-        if ids not in prior_scores:
-            value = (LANGUAGE_PRIOR_WEIGHT * token_prefix_score(language_prior, tokenizer, ids, previous_word)
-                     if language_prior is not None else 0.0)
-            if kenlm_prior is not None:
-                value += KENLM_WEIGHT * kenlm_prior.token_score(tokenizer, ids, previous_words)
-            prior_scores[ids] = value
-        return prior_scores[ids]
+    scorer = (IncrementalLanguageScorer(tokenizer, language_prior, kenlm_prior,
+              LANGUAGE_PRIOR_WEIGHT, KENLM_WEIGHT, previous_word, previous_words)
+              if language_prior is not None or kenlm_prior is not None else None)
     expansion_width = BEAM_WIDTH * 2 if language_prior is not None or kenlm_prior is not None else BEAM_WIDTH
-    maximum_prior_reward = 12 * LANGUAGE_PRIOR_WEIGHT
+    maximum_prior_reward = 12 * LANGUAGE_PRIOR_WEIGHT if language_prior is not None else 0.0
     if kenlm_prior is not None:
         maximum_prior_reward += KENLM_WEIGHT * kenlm_prior.max_token_reward
     for frame in range(length):
@@ -230,14 +229,21 @@ def decode_encoder_beams(
             if not active:
                 break
             batch = len(active)
-            result = decoder_session.run(None, {
-                decoder_inputs[0]: np.repeat(encoded[:, :, frame:frame + 1], batch, axis=0),
-                decoder_inputs[1]: np.asarray([[h.predictor[2]] for h in active], dtype=np.int32),
-                decoder_inputs[2]: np.ones(batch, dtype=np.int32),
-                decoder_inputs[3]: np.concatenate([h.predictor[0] for h in active], axis=1),
-                decoder_inputs[4]: np.concatenate([h.predictor[1] for h in active], axis=1),
-            })
-            logits = result[0].reshape(batch, -1, LOCAL_VOCAB_SIZE + 1)[:, 0, :].astype(np.float64)
+            if isinstance(decoder_session, CachedRNNTDecoder):
+                output, next_states = decoder_session.run_hypotheses(
+                    encoded[:, :, frame:frame + 1], [h.predictor for h in active])
+            else:
+                result = decoder_session.run(None, {
+                    decoder_inputs[0]: np.repeat(encoded[:, :, frame:frame + 1], batch, axis=0),
+                    decoder_inputs[1]: np.asarray([[h.predictor[2]] for h in active], dtype=np.int32),
+                    decoder_inputs[2]: np.ones(batch, dtype=np.int32),
+                    decoder_inputs[3]: np.concatenate([h.predictor[0] for h in active], axis=1),
+                    decoder_inputs[4]: np.concatenate([h.predictor[1] for h in active], axis=1),
+                })
+                output = result[0]
+                next_states = [(result[2][:, i:i + 1].copy(), result[3][:, i:i + 1].copy())
+                               for i in range(batch)]
+            logits = output.reshape(batch, -1, LOCAL_VOCAB_SIZE + 1)[:, 0, :].astype(np.float64)
             logits -= logits.max(axis=1, keepdims=True)
             log_probs = logits - np.log(np.exp(logits).sum(axis=1, keepdims=True))
             for index, hypothesis in enumerate(active):
@@ -251,10 +257,11 @@ def decode_encoder_beams(
                 break
             expanded: dict[tuple[int, ...], DecoderHypothesis] = {}
             for index, hypothesis in enumerate(active):
+                parent_state = scorer.state(hypothesis.token_ids) if scorer else None
+                parent_prior = scorer.score(hypothesis.token_ids) if scorer else 0.0
                 # Every label extending this parent has the same newly
                 # computed recurrent state. These arrays remain immutable.
-                next_h = result[2][:, index:index + 1, :].copy()
-                next_c = result[3][:, index:index + 1, :].copy()
+                next_h, next_c = next_states[index]
                 if require_word_start and not hypothesis.tokens:
                     # A settled word cannot acquire more suffix characters.
                     # Leave the new word's spelling free, but preserve its
@@ -262,18 +269,29 @@ def decode_encoder_beams(
                     labels = start_labels[np.argsort(log_probs[index, start_labels])[-expansion_width:]]
                 else:
                     labels = np.argsort(log_probs[index, :LOCAL_VOCAB_SIZE])[-expansion_width:]
+                if scorer:
+                    bounds = scorer.upper_bounds(parent_state, labels, maximum_prior_reward)
+                    labels = labels[hypothesis.score + log_probs[index, labels] >=
+                                    best_completed - BEAM_PRUNE_LOGP - bounds]
                 for label in labels:
                     acoustic_score = hypothesis.score + float(log_probs[index, label])
                     # A token can complete one word and begin the next. The
                     # bounded prior cannot rescue a candidate below this bound.
                     if acoustic_score < best_completed - BEAM_PRUNE_LOGP - maximum_prior_reward:
                         continue
-                    candidate_ids = hypothesis.token_ids + (int(label),)
-                    score = (acoustic_score
-                             + prior_score(candidate_ids) - prior_score(hypothesis.token_ids))
+                    state = scorer.extend(parent_state, int(label)) if scorer else None
+                    if scorer:
+                        candidate_prior = (state.score if state is not None else
+                                           scorer.fallback(hypothesis.token_ids + (int(label),)))
+                    else:
+                        candidate_prior = 0.0
+                    score = acoustic_score + candidate_prior - parent_prior
                     if score < best_completed - BEAM_PRUNE_LOGP:
                         continue
                     label = int(label)
+                    candidate_ids = hypothesis.token_ids + (label,)
+                    if scorer:
+                        scorer.states[candidate_ids] = state
                     predictor = (next_h, next_c, label)
                     _merge_hypothesis(expanded, DecoderHypothesis(
                         hypothesis.tokens + (TimedToken(label, frame_offset + frame),),
@@ -656,6 +674,8 @@ async def health():
             "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
             "encoder_update_seconds": PARTIAL_INTERVAL_SAMPLES / SAMPLE_RATE,
             "encoder_threads": ENCODER_THREADS, "decoder_beam_width": BEAM_WIDTH,
+            "cpu_budget": CPU_BUDGET,
+            "enable_language_model": enable_language_model,
             "silence_guard": SILENCE_GUARD,
             "silence_hangover_seconds": SILENCE_HANGOVER_SAMPLES / SAMPLE_RATE,
             "predictor_cache": isinstance(decoder_session, CachedRNNTDecoder),
