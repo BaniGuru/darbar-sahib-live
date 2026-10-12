@@ -16,7 +16,7 @@ Offline inference sees up to 30 seconds per uncached window, with five seconds o
 
 The original main endpoint attempts unbounded full-recording attention. Its baseline here uses the bounded adapter to make evaluation feasible. Both greedy and updated offline runs use the same model weights, window schedule and anchor reconciliation; the initial ownership-only adapter scored 39.86% WER with 44 deletions. Updated anchor handling plus greedy scored 39.51% with 40 deletions.
 
-The spelling restorer changes only final ੁ/ਿ when an exact three-word stem context is supported by the existing Gurbani database with at least 80% vote agreement. It cannot add/remove words, change consonants, change pronounced vowel marks, or repair false word splits. All 123 corrections are recorded; raw text, raw tokens, and original word timestamps are retained. Word count and timestamps were checked unchanged by restoration.
+The spelling restorer changes only final ੁ/ਿ when an exact three-word stem context is supported by the existing Gurbani database with at least 80% vote agreement. It cannot add/remove words, change consonants, change other vowel marks, or repair false word splits. All 123 corrections are recorded; raw text, raw tokens, and original word timestamps are retained. Word count and timestamps were checked unchanged by restoration.
 
 The first five minutes were used for pilots. Across reference sections beginning at or after 300 seconds (469 words), offline scored 16.20%, streaming 20.68%, and the matched streaming spelling control 19.62%. Repeated passages can make section attribution ambiguous; primary scores use exact global word alignment.
 
@@ -27,3 +27,7 @@ Main base: `e81db754638ca79706ec546b171795494ed9e53c`. Streaming control: `db263
 [Side-by-side word diff](diff.html) · [All 99 sections as CSV](sections.csv) · [Offline transcript](candidate20m.txt) · [Raw offline transcript](offline-raw20m.txt) · [Streaming transcript](streaming20m.txt)
 
 The HTML highlights word insertions, missing words, and substitutions against the human reference. It also includes the direct offline-versus-streaming diff. JSON reports preserve exact errors, audio/reference hashes, word timestamps and recognition metadata.
+
+## Verification after push
+
+The model-bearing commit `f0e1f32a33e9da2a27bf793654b25c0338436eae` was fetched from `origin/offline-model`; the five runtime source files matched the pushed tree byte for byte. The actual HTTP endpoint then transcribed all 1,200 seconds with the default four-thread encoder and one-thread decoder. It returned the same complete transcript as the pre-push run, all 19,200,000 samples, and identical 70 substitutions, 14 deletions, and 12 insertions. The bounded long-file mode and output token/text consistency were checked. This isolated endpoint run took 112.15 seconds. [Full post-push HTTP verification](post-push-http20m.json) records the remote commit and result.

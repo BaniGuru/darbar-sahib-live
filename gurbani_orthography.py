@@ -1,7 +1,7 @@
-"""Restore only silent final ੁ/ਿ with exact independent corpus context.
+"""Restore only final short ੁ/ਿ with exact independent corpus context.
 
 No transcript reference is consulted, no words are inserted or removed, and
-pronounced vowels/consonants are never rewritten. Raw ASR remains available.
+other vowel marks and consonants are never rewritten. Raw ASR remains available.
 """
 from collections import Counter, defaultdict
 from dataclasses import replace

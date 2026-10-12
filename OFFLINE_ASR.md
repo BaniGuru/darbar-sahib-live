@@ -11,7 +11,7 @@ The decoder retains four probability-pruned RNNT hypotheses. It uses a soft
 word-context prior from the existing Gurbani database, then restores only
 final short ੁ/ਿ using exact three-word corpus stem context and at least 80%
 vote agreement. Restoration preserves word count and timestamps, and cannot
-change consonants, pronounced vowel marks, or word divisions. Raw ASR text
+change consonants, other vowel marks, or word divisions. Raw ASR text
 and tokens remain available alongside all correction records. The reference
 transcript is used only for evaluation, never for decoding or restoration.
 
@@ -92,3 +92,16 @@ The original offline full-file entry point has no attention-memory bound.
 Its baseline therefore uses the same bounded adapter rather than attempting
 an unsafe hour-long single encoder call. Elapsed timings from comparison jobs
 that ran concurrently are not a controlled model speed comparison.
+
+After the model-bearing commit was pushed and fetched back, the actual HTTP
+endpoint transcribed the complete 20-minute input with default CPU settings.
+Its text exactly matched the pre-push run, and all 19,200,000 samples were
+retained. WER remained 16.78%, with 70 substitutions, 14 deletions and 12
+insertions. The isolated HTTP run took 112.15 seconds. The post-push JSON
+verification is linked from the comparison report.
+
+The complete app was also restarted with the documented FFmpeg/one-worker
+command. Its five web/health/state endpoints, live source connection, ASR
+connection and five changing-caption messages were verified. This readiness
+check measures delivery and startup, not accuracy of the current live
+passage, which has no human reference.
