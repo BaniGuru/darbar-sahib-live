@@ -1,8 +1,8 @@
 """Standalone public Gurbani stream and pankti server.
 
 Run with: uvicorn server:app --host 127.0.0.1 --port 8000
-The non-cache-aware ONNX recognizer is loaded from server_asr_offline.py.
-Model assets are expected in the existing model/ directory.
+The cache-aware NeMo streaming ONNX recognizer is loaded from
+server_asr_stream.py. Model assets are expected in kirtan_stream_model/.
 """
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ import sqlite3
 import subprocess
 import time
 from difflib import SequenceMatcher
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -27,6 +28,8 @@ import websockets
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
+
+from bani_matching import OrderedBaniMatcher, bani_family
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -88,6 +91,7 @@ _speech_column: str | None = None
 _pankti_rows: list[dict[str, Any]] | None = None
 _pankti_token_index: dict[str, tuple[int, ...]] = {}
 _pankti_shabad_index: dict[str, tuple[int, ...]] = {}
+_bani_matcher: OrderedBaniMatcher | None = None
 _live_match: dict[str, Any] | None = None
 _live_match_at = 0.0
 _active_shabad_id: str | None = None
@@ -161,6 +165,7 @@ def _normalise_query(text: str) -> str:
     return " ".join(text.split())
 
 
+@lru_cache(maxsize=65536)
 def _token_similarity(left: str, right: str) -> float:
     if left == right:
         return 1.0
@@ -446,7 +451,7 @@ def _translation_expression(
 
 def _build_pankti_index() -> int:
     """Load pankti text once and index normalized words for live lookup."""
-    global _pankti_rows, _pankti_token_index, _pankti_shabad_index, _speech_column
+    global _pankti_rows, _pankti_token_index, _pankti_shabad_index, _speech_column, _bani_matcher
     if _speech_column is None:
         _speech_column = _validate_database(BANI_DB_PATH)
     speech_expr = f"REPLACE(COALESCE(p.{_speech_column}, ''), ',', '')"
@@ -464,7 +469,8 @@ def _build_pankti_index() -> int:
                        COALESCE(NULLIF({punjabi_sql}, ''), p.gurmukhi, '') AS punjabi,
                        COALESCE(l.gurmukhi, '') AS legacy_gurmukhi,
                        {english_sql} AS english,
-                       l.order_id AS order_id
+                       l.order_id AS order_id,
+                       l.type_id AS _line_type
                 FROM panktis p
                 LEFT JOIN lines l ON l.id=p.id
                 WHERE p.shabad_id IS NOT NULL
@@ -496,6 +502,29 @@ def _build_pankti_index() -> int:
     _pankti_shabad_index = {
         shabad_id: tuple(indexes) for shabad_id, indexes in shabad_rows.items()
     }
+    by_id = {row["pankti_id"]: row for row in rows}
+    routes: dict[int, dict[str, Any]] = {}
+    with _sqlite_ro() as conn:
+        tables = {row[0] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        # The shipped schema calls this table banis; accept the alternate
+        # spelling used by some database exports as well.
+        bani_table = next((name for name in ("banis", "banies") if name in tables), None)
+        if bani_table and "bani_lines" in tables:
+            for entry in conn.execute(f"""
+                SELECT b.id AS bani_id, b.name_english, bl.line_group, p.id AS pankti_id
+                FROM {bani_table} b
+                JOIN bani_lines bl ON bl.bani_id=b.id
+                JOIN panktis p ON p.id=bl.line_id
+                JOIN lines l ON l.id=p.id
+                ORDER BY b.id, bl.line_group, l.order_id, p.id
+            """):
+                family = bani_family(entry["name_english"])
+                row = by_id.get(str(entry["pankti_id"]))
+                if family and row is not None:
+                    route = routes.setdefault(entry["bani_id"], {
+                        "name": entry["name_english"], "family": family, "lines": []})
+                    route["lines"].append({**row, "line_group": entry["line_group"]})
+    _bani_matcher = OrderedBaniMatcher(routes, _token_similarity, _normalise_query)
     logger.info(
         "Loaded %s panktis into the live word index (%s distinct words)",
         len(rows),
@@ -771,8 +800,17 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
                 _active_shabad_id = None
                 _pending_shabad_id = None
                 _pending_shabad_hits = 0
+                if _bani_matcher is not None:
+                    _bani_matcher.family = None
 
-            if _active_shabad_id:
+            if _bani_matcher is not None:
+                match = _bani_matcher.match(transcript, message)
+
+            if match is not None:
+                _pending_shabad_id = None
+                _pending_shabad_hits = 0
+                _active_shabad_id = str(match["_bani_observed_shabad_id"])
+            elif _active_shabad_id:
                 active_id = _active_shabad_id
                 match = await asyncio.to_thread(
                     match_live_pankti, transcript[-10000:], active_id, 0.55
@@ -839,7 +877,8 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
                       if _stream_wall_started_at is not None and window_end is not None
                       else time.time())
             )
-            if current and current.get("shabad_id") == match.get("shabad_id"):
+            if (not match.get("_bani_direct") and current
+                    and current.get("shabad_id") == match.get("shabad_id")):
                 current_id = str(current.get("pankti_id"))
                 candidate_id = str(match.get("pankti_id"))
                 if candidate_id == current_id:
@@ -876,6 +915,8 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
                 _pending_pankti_audio_time = None
 
         if match:
+            if _bani_matcher is not None and not match.get("_bani_direct"):
+                match = _bani_matcher.adopt(match, transcript, message)
             _live_match = match
             _live_match_at = time.time()
             # Do not extend the old line to the end of every rolling ASR
@@ -886,6 +927,9 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
             if (
                 not last_match
                 or last_match.get("pankti_id") != public_match.get("pankti_id")
+                or last_match.get("bani_position") != public_match.get("bani_position")
+                or last_match.get("bani_id") != public_match.get("bani_id")
+                or last_match.get("match_mode") != public_match.get("match_mode")
                 or match_audio_time - last_at >= 8.0
             ):
                 position = bisect_right([event[0] for event in _pankti_timeline], match_audio_time)
@@ -1243,8 +1287,8 @@ async def startup() -> None:
     global _speech_column, _asr_module, _live_task
     _speech_column = await asyncio.to_thread(_ensure_database)
     await asyncio.to_thread(_build_pankti_index)
-    # Loads the original non-cache-aware ONNX encoder/decoder from model/.
-    import server_asr_offline as asr_module
+    # Loads the cache-aware NeMo streaming ONNX encoder/decoder.
+    import server_asr_stream as asr_module
     _asr_module = asr_module
     app.mount("/asr", asr_module.app, name="onnx-asr")
     _live_task = asyncio.create_task(_live_worker())
@@ -1353,6 +1397,11 @@ def live_state(
         "english": fresh_match["english"] if fresh_match else "",
         "shabad_id": fresh_match["shabad_id"] if fresh_match else None,
         "pankti_id": fresh_match["pankti_id"] if fresh_match else None,
+        "bani_id": fresh_match.get("bani_id") if fresh_match else None,
+        "bani_name": fresh_match.get("bani_name") if fresh_match else None,
+        "line_group": fresh_match.get("line_group") if fresh_match else None,
+        "bani_position": fresh_match.get("bani_position") if fresh_match else None,
+        "match_mode": fresh_match.get("match_mode") if fresh_match else None,
     }
     revision_payload = {
         key: state[key]
@@ -1360,6 +1409,7 @@ def live_state(
             "enabled", "connected", "asr_connected", "audio_url",
             "audio_start_timestamp", "client_started_at", "pankti",
             "legacy_gurmukhi", "english", "shabad_id", "pankti_id",
+            "bani_id", "bani_name", "line_group", "bani_position", "match_mode",
         )
     }
     revision = hashlib.sha256(
