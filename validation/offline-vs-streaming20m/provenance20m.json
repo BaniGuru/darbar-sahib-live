@@ -1,0 +1,13 @@
+{
+  "main_commit": "e81db754638ca79706ec546b171795494ed9e53c",
+  "streaming_commit": "db2632a93f8e1aabad23890286b14542278cbd78",
+  "input_samples": 19200000,
+  "input_seconds": 1200,
+  "source_files": {
+    "server_asr_offline.py": "2da99435eeb2300e07985e8050c6115bad6dd5506e94ccb9033caa81d039df45",
+    "offline_audio_windows.py": "365c56531d114ae18abe19ef9db4d7d5ead2c9ae1fc10534377fe0b56f3fd132",
+    "offline_rnnt_decoder.py": "7fac1e8b9c0e0470b5f6e8c7f327a86e163c3d26c366fd179ad4c5c9a47a3ea6",
+    "gurbani_language_prior.py": "1d2ca66337157f61646d4b60d416054505e0b96e4fa91a4354873f8bc77f290b",
+    "gurbani_orthography.py": "f5e76f9e1242ad4947221d0b4408e1f57ea5c06f4a7acd6c2aada900927e0d8b"
+  }
+}

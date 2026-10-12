@@ -13,6 +13,10 @@ from typing import Any
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
+from gurbani_language_prior import GurbaniLanguagePrior
+from offline_audio_windows import MAX_WINDOW_SECONDS, transcribe_windows
+from offline_rnnt_decoder import decode_beam
+from gurbani_orthography import GurbaniOrthography
 
 from fastapi import (
     FastAPI,
@@ -309,8 +313,9 @@ session_options.graph_optimization_level = (
 
 # CPU only.
 #
-# 0 lets ORT choose an appropriate intra-op CPU thread count.
-session_options.intra_op_num_threads = 0
+# Limit CPU use rather than spawning threads for every host core.
+ENCODER_THREADS = max(1, int(os.getenv("ASR_ENCODER_THREADS", "4")))
+session_options.intra_op_num_threads = ENCODER_THREADS
 session_options.inter_op_num_threads = 1
 
 session_options.execution_mode = (
@@ -328,10 +333,23 @@ encoder_session = (
 )
 
 
+decoder_options = ort.SessionOptions()
+decoder_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+decoder_options.intra_op_num_threads = 1
+decoder_options.inter_op_num_threads = 1
+decoder_options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+DECODER_BEAM_WIDTH = max(1, int(os.getenv("ASR_DECODER_BEAM_WIDTH", "4")))
+LANGUAGE_PRIOR_WEIGHT = max(0.0, float(os.getenv("ASR_LANGUAGE_PRIOR_WEIGHT", "0.6")))
+language_prior = (GurbaniLanguagePrior.from_database(BASE_DIR / "data" / "bani.db")
+                  if LANGUAGE_PRIOR_WEIGHT and (BASE_DIR / "data" / "bani.db").exists() else None)
+RESTORE_GURBANI_ORTHOGRAPHY = os.getenv("ASR_RESTORE_GURBANI_ORTHOGRAPHY", "1") != "0"
+orthography = (GurbaniOrthography.from_database(BASE_DIR / "data" / "bani.db")
+              if RESTORE_GURBANI_ORTHOGRAPHY and (BASE_DIR / "data" / "bani.db").exists() else None)
+
 decoder_session = (
     ort.InferenceSession(
         str(DECODER_JOINT_PATH),
-        sess_options=session_options,
+        sess_options=decoder_options,
         providers=PROVIDERS,
     )
 )
@@ -882,7 +900,13 @@ def rnnt_decode_timed(
     encoder_outputs: np.ndarray,
     encoded_length: int,
 ) -> list[TimedToken]:
-    return rnnt_decode_greedy_timed(encoder_outputs, encoded_length)
+    if DECODER_BEAM_WIDTH == 1:
+        return rnnt_decode_greedy_timed(encoder_outputs, encoded_length)
+    return [TimedToken(token_id=token_id, encoder_frame=frame)
+            for token_id, frame in decode_beam(
+                encoder_outputs, encoded_length, decoder_session, decoder_input_names,
+                tokenizer, LOCAL_VOCAB_SIZE, JOINT_BLANK_ID, PREDICTOR_START_ID,
+                MAX_SYMBOLS_PER_STEP, DECODER_BEAM_WIDTH, language_prior, LANGUAGE_PRIOR_WEIGHT)]
 
 
 # ============================================================
@@ -1115,7 +1139,7 @@ def timed_tokens_to_words(
 # Core transcription
 # ============================================================
 
-def transcribe_pcm_sync(
+def _transcribe_window_sync(
     audio: np.ndarray,
     window_start_seconds: float = 0.0,
 ) -> dict[str, Any]:
@@ -1237,6 +1261,24 @@ def transcribe_pcm_sync(
         "encoded_frames":
             encoded_length,
     }
+
+
+def transcribe_pcm_sync(audio: np.ndarray, window_start_seconds: float = 0.0, *, progress=None, stitch="anchors") -> dict[str, Any]:
+    audio = np.asarray(audio, dtype=np.float32).reshape(-1)
+    if audio.size > MAX_WINDOW_SECONDS * SAMPLE_RATE:
+        result = transcribe_windows(audio, _transcribe_window_sync, window_start_seconds, progress=progress, stitch=stitch)
+    else:
+        result = _transcribe_window_sync(audio, window_start_seconds)
+    result["raw_text"] = result["text"]
+    result["raw_tokens"] = list(result["tokens"])
+    result["raw_words"] = [word.to_json() for word in result["words"]]
+    if orthography is not None:
+        corrected, changes = orthography.restore(result["words"], tokenizer)
+        result["words"] = corrected
+        result["text"] = " ".join(word.text for word in corrected)
+        result["tokens"] = [token for word in corrected for token in word.token_ids]
+        result["orthography_corrections"] = changes
+    return result
 
 
 async def transcribe_pcm(
@@ -2122,7 +2164,14 @@ async def health():
             MAX_LIVE_WINDOW_SECONDS,
 
         "window_mode":
-            "bounded_live_full_final",
+            "bounded_live_overlapping_final",
+
+        "max_offline_encoder_window_seconds": MAX_WINDOW_SECONDS,
+        "encoder_threads": ENCODER_THREADS,
+        "decoder_threads": 1,
+        "decoder_beam_width": DECODER_BEAM_WIDTH,
+        "language_prior_weight": LANGUAGE_PRIOR_WEIGHT,
+        "orthography_policy": "corpus-context-final-short-vowels" if orthography is not None else "disabled",
 
         "left_context_seconds":
             LEFT_CONTEXT_SECONDS,
@@ -2205,6 +2254,12 @@ async def transcribe(
 
             "encoded_frames":
                 result["encoded_frames"],
+            "raw_text": result.get("raw_text", result["text"]),
+            "raw_tokens": result.get("raw_tokens", result["tokens"]),
+            "orthography_corrections": result.get("orthography_corrections", []),
+            "inference_mode": result.get("inference_mode", "offline-single-window"),
+            "max_encoder_window_seconds": result.get("max_encoder_window_seconds", MAX_WINDOW_SECONDS),
+            "timeline_encoded_frames": result.get("timeline_encoded_frames", result["encoded_frames"]),
         }
 
 
