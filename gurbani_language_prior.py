@@ -4,6 +4,7 @@ This is a likelihood ratio, not a vocabulary constraint: unseen speech is
 allowed, and no benchmark reference is loaded by the recognizer.
 """
 from collections import Counter, defaultdict
+from functools import lru_cache
 import math
 from pathlib import Path
 import sqlite3
@@ -14,6 +15,46 @@ def words(text):
     text = unicodedata.normalize("NFC", text)
     text = "".join(" " if unicodedata.category(ch)[0] in "PS" else ch for ch in text)
     return [word for word in text.split() if not word.isnumeric()]
+
+
+@lru_cache(maxsize=32768)
+def token_prefix_score(prior, tokenizer, token_ids, previous):
+    """Reuse exact prefix evidence across previews without re-decoding pieces."""
+    flags = _tokenizer_flags(tokenizer)
+    if not token_ids or flags is None:
+        return prior.score(tokenizer.decode(token_ids), previous)
+    starts, unsafe = flags
+    if any(unsafe[token] for token in token_ids):
+        return prior.score(tokenizer.decode(token_ids), previous)
+    boundary = next((index for index in range(len(token_ids) - 1, 0, -1)
+                     if starts[token_ids[index]]), 0)
+    if not boundary:
+        return prior.score(tokenizer.decode(token_ids), previous)
+    tail = tokenizer.decode(token_ids[boundary:])
+    # Removing a final verse number changes which word is considered partial
+    # by the original scorer. Preserve its exact behavior via the full path.
+    if tail.strip().isnumeric():
+        return prior.score(tokenizer.decode(token_ids), previous)
+    prefix, context = _completed_token_prefix(prior, tokenizer, token_ids[:boundary], previous)
+    return prefix + prior.score(tail, context)
+
+
+@lru_cache(maxsize=8)
+def _tokenizer_flags(tokenizer):
+    if not hasattr(tokenizer, "get_piece_size"):
+        return None
+    pieces = [tokenizer.id_to_piece(index) for index in range(tokenizer.get_piece_size())]
+    starts = tuple(piece.startswith("▁") for piece in pieces)
+    unsafe = tuple(any((unicodedata.category(char)[0] in "PS" and char != "▁") or char.isspace()
+                       for char in piece) or "▁" in piece[1:] for piece in pieces)
+    return starts, unsafe
+
+
+@lru_cache(maxsize=32768)
+def _completed_token_prefix(prior, tokenizer, token_ids, previous):
+    text = tokenizer.decode(token_ids)
+    tokens = words(text)
+    return prior.score(text + " ", previous), tokens[-1] if tokens else previous
 
 
 class GurbaniLanguagePrior:
@@ -65,6 +106,7 @@ class GurbaniLanguagePrior:
         ratio = ((1 - strength) * base + strength * conditional) / base
         return min(3.0, max(-3.0, math.log(ratio)))
 
+    @lru_cache(maxsize=16384)
     def score(self, text, previous=""):
         tokens = words(text)
         score = 0.0

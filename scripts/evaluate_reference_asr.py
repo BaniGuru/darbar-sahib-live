@@ -30,15 +30,17 @@ class Section:
     text: str
 
 
-def normalized_words(text: str) -> list[str]:
+def normalized_words(text: str, *, ignore_final_short_vowels: bool = False) -> list[str]:
     """Keep Gurmukhi letters/vowel marks and word divisions intact.
 
-    Ignore punctuation and standalone verse numbers. No spelling fixes,
-    diacritic stripping, approximate matching, or joining of split words.
+    Ignore punctuation and standalone verse numbers. The explicit optional
+    comparison mode removes only final short i/u marks. It never joins
+    split words, removes internal vowels, or rewrites spelling.
     """
     text = unicodedata.normalize("NFC", text).casefold()
     cleaned = "".join(" " if unicodedata.category(ch)[0] in "PS" else ch for ch in text)
-    return [word for word in cleaned.split() if not word.isnumeric()]
+    words = [word for word in cleaned.split() if not word.isnumeric()]
+    return [word.rstrip("ਿੁ") or word for word in words] if ignore_final_short_vowels else words
 
 
 def seconds(value) -> float:
@@ -153,17 +155,18 @@ def alignment(reference: list[str], hypothesis: list[str], *, matrix_cell_limit:
     return solve(left, right, 0, 0)
 
 
-def score(sections: list[Section], result: dict, *, include_coverage: bool = True) -> dict:
+def score(sections: list[Section], result: dict, *, include_coverage: bool = True,
+          ignore_final_short_vowels: bool = False) -> dict:
     reference, owners = [], []
     details = []
     for index, section in enumerate(sections):
-        words = normalized_words(section.text)
+        words = normalized_words(section.text, ignore_final_short_vowels=ignore_final_short_vowels)
         reference.extend(words)
         owners.extend([index] * len(words))
         details.append({"start": section.start, "end": section.end, "reference": section.text,
                         "reference_words": len(words), "substitute": 0, "delete": 0, "insert": 0,
                         "hypothesis": [], "errors": []})
-    hypothesis = normalized_words(result["text"])
+    hypothesis = normalized_words(result["text"], ignore_final_short_vowels=ignore_final_short_vowels)
     operations = alignment(reference, hypothesis)
     counts = {"substitute": 0, "delete": 0, "insert": 0}
     previous_owner = 0
@@ -190,6 +193,7 @@ def score(sections: list[Section], result: dict, *, include_coverage: bool = Tru
             "substitutions": counts["substitute"], "deletions": counts["delete"], "insertions": counts["insert"],
             "wer": sum(counts.values()) / len(reference),
             "cer_including_spaces": edit_distance(ref_text, hyp_text) / len(ref_text),
+            "cer_excluding_spaces": edit_distance("".join(reference), "".join(hypothesis)) / len("".join(reference)),
             "strict_wer": edit_distance(raw_ref, result["text"].split()) / len(raw_ref),
             "reference_section_count": len(sections), "overlapping_reference_intervals": overlaps,
             "reference_last_end_seconds": max(section.end for section in sections),
@@ -199,6 +203,8 @@ def score(sections: list[Section], result: dict, *, include_coverage: bool = Tru
             "normalization": "NFC, casefold, punctuation removal and standalone verse-number removal; word spaces and Gurmukhi vowel marks preserved",
             "section_alignment": "Sections use global word alignment, not timestamp cuts; repeated passages can have ambiguous alignment.",
             "sections": details}
+    if ignore_final_short_vowels:
+        report["normalization"] += "; only word-final sihari (U+0A3F) and onkar (U+0A41) ignored"
     # Keep the all-output score primary. The supplementary score distinguishes
     # unannotated gaps from errors inside the supplied human-verified windows.
     if include_coverage and isinstance(result.get("words"), list):
@@ -210,7 +216,8 @@ def score(sections: list[Section], result: dict, *, include_coverage: bool = Tru
                 covered.append(word["text"])
             else:
                 outside.append(word["text"])
-        window_score = score(sections, {"text": " ".join(covered)}, include_coverage=False)
+        window_score = score(sections, {"text": " ".join(covered)}, include_coverage=False,
+                             ignore_final_short_vowels=ignore_final_short_vowels)
         report["verified_window_score"] = {key: window_score[key] for key in
             ("reference_words", "hypothesis_words", "substitutions", "deletions", "insertions", "wer")}
         report["verified_window_score"].update({"timestamp_tolerance_seconds": tolerance,
@@ -261,6 +268,13 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
         result = recognizer.finish()
         elapsed = time.perf_counter() - origin
     return result, {"paced": paced, "elapsed_seconds": elapsed,
+                    "decoder_beam_width": asr.BEAM_WIDTH,
+                    "language_prior_weight": asr.LANGUAGE_PRIOR_WEIGHT,
+                    "predictor_cache": isinstance(asr.decoder_session, asr.CachedRNNTDecoder),
+                    "predictor_cache_max_entries": getattr(asr.decoder_session, "cache_size", 0),
+                    "source_sha256": hashlib.sha256(Path(asr.__file__).read_bytes()).hexdigest(),
+                    "decoder_source_sha256": hashlib.sha256((Path(asr.__file__).parent / "cached_rnnt_decoder.py").read_bytes()).hexdigest(),
+                    "prior_source_sha256": hashlib.sha256((Path(asr.__file__).parent / "gurbani_language_prior.py").read_bytes()).hexdigest(),
                     "real_time_factor": elapsed / result["seconds"], "updates": len(timings),
                     "update_processing_seconds": {"median": float(np.median(timings)),
                                                   "p95": float(np.percentile(timings, 95)), "max": max(timings)},
@@ -274,6 +288,7 @@ def main():
     parser.add_argument("--audio", type=Path)
     parser.add_argument("--hypothesis", type=Path)
     parser.add_argument("--paced", action="store_true")
+    parser.add_argument("--ignore-final-short-vowels", action="store_true")
     parser.add_argument("--report", required=True, type=Path)
     args = parser.parse_args()
     if bool(args.audio) == bool(args.hypothesis):
@@ -295,12 +310,14 @@ def main():
     if args.audio:
         with args.audio.open("rb") as source:
             audio_digest = hashlib.file_digest(source, "sha256").hexdigest()
-    scores = score(sections, result)
+    scores = score(sections, result, ignore_final_short_vowels=args.ignore_final_short_vowels)
     report = {"completed": not scores["reference_extends_past_audio"], "recognition_completed": True,
               "reference_sha256": hashlib.sha256(args.reference.read_bytes()).hexdigest(),
               "audio_sha256": audio_digest,
               "audio": str(args.audio) if args.audio else None, "performance": performance,
               "scores": scores, "recognition": result}
+    if args.ignore_final_short_vowels:
+        report["scores_preserving_vowels"] = score(sections, result)
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({key: value for key, value in report["scores"].items() if key != "sections"}, ensure_ascii=False, indent=2))

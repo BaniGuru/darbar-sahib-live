@@ -12,7 +12,7 @@ frames, producing all 100 encoder frames. Frontend processing includes up to
 variable feature normalization. Audio packets crossing a cache boundary retain
 their overflow samples.
 
-The decoder keeps four probability-pruned RNNT hypotheses with their predictor
+The decoder keeps up to 24 probability-pruned RNNT hypotheses with their predictor
 states across cache updates. All unresolved text remains visible in
 `partial_text`, including competing spellings or word divisions. Later audio
 can replace a prior block's word choice, rather than only append characters
@@ -25,7 +25,18 @@ probabilities, backs off for sparse contexts, and bounds each contribution.
 The prior reranks acoustic alternatives while allowing unseen words and
 ordinary speech. It carries the last settled word across cache updates.
 `ASR_LANGUAGE_PRIOR_WEIGHT` defaults to `0.6`; set it to `0` for an acoustic
-control run. Beam width remains four. Settled word records and text are
+control run. `ASR_BEAM_WIDTH` defaults to `24`; set it to `4` for the previous
+search width. The unchanged ONNX decoder is factored into encoder projection,
+predictor and joint computations. A bounded 16,384-entry cache reuses predictor
+outputs only for identical labels and complete recurrent input states; blank
+frames do not rerun the LSTM. Acoustic projections have a separate 128-entry
+cache. Both caches include input shape, dtype and bytes in their keys. Joint
+scores still use each current acoustic frame. Set `ASR_CACHE_PREDICTOR=0` for
+the original combined decoder graph. Corpus prefix scores have a bounded
+16,384-entry cache, with a separate 32,768-entry token-prefix cache. Uncached
+predictor states are evaluated in a single batch. Sibling label hypotheses share immutable predictor
+arrays. These changes make the wider search practical without changing model
+weights, acoustic scores or the audio window limits. Settled word records and text are
 cached for display, so previews process only the mutable suffix between
 cache promotions.
 
@@ -215,7 +226,7 @@ hashes, source URLs, and runtime provenance are checked in:
 - [Section comparison CSV](validation/verified-kirtan/sections.csv)
 - [Updated complete transcript](validation/verified-kirtan/candidate.txt)
 
-The current 31 regression tests pass. The original 52.0126875-second MP3
+That revision’s 31 regression tests passed. The original 52.0126875-second MP3
 was also replayed over a paced WebSocket using 100 ms packets. HTTP and
 WebSocket final text, token IDs, sample counts, frame counts and cache
 decisions matched. All 65 partial updates retained complete settled words;
@@ -242,3 +253,30 @@ ASR audio updates continued, and the subsequent changing-caption check
 passed. Startup source buffering initially created a backlog, which caught
 up to the live edge. [Complete app check](validation/verified-kirtan/main-app-check.json)
 records the current-instance endpoints and caption evidence.
+
+
+## First 20-minute comparison with the offline branch
+
+The updated 24-beam decoder was validated on the same 1,200-second recording,
+99 human sections and 572 words used for the pushed offline-model comparison.
+With only word-final onkar and sihari ignored, streaming WER improves from
+13.29% to 10.84%, with deletions falling from 25 to 8. Offline scores 11.01%
+WER and 14 deletions, but has better CER: 7.37% versus streaming 8.18%, excluding
+spaces. Streaming insertions increase from 12 to 18; the narrow WER win is one
+word error. Full vowel-preserving scores, outside-tuning results and exact
+recoveries are retained in the report.
+
+All 38 regression tests pass. The final entire 20-minute replay retains all
+samples and frames and exactly matches the earlier 24-beam text, tokens and
+cache decisions. Pure computation reuse reduces its maximum update time from
+2.739 to 1.569 seconds. Actual paced API parity passes on both the supplied MP3
+and a 120-second fast passage. Fast-passage median lag is 424 ms; p95 is 2.088
+seconds and peak is 3.226 seconds, down from 11.710 seconds before the latency
+optimizations. Final lag recovers to 0.934 seconds. Brief delays remain during
+heavy recitation despite the unchanged 800 ms audio refresh.
+
+See [the complete report](validation/stream-word-retention20m/README.md),
+[highlighted transcript differences](validation/stream-word-retention20m/diff.html),
+and [all section comparisons](validation/stream-word-retention20m/sections.csv).
+The source, runtime, audio and reference hashes, rejected experiments, complete
+transcripts, every paced partial and current live readiness evidence are included.

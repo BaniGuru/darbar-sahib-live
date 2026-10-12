@@ -1,6 +1,8 @@
 import unittest
+from pathlib import Path
+import sentencepiece as spm
 
-from gurbani_language_prior import GurbaniLanguagePrior, words
+from gurbani_language_prior import GurbaniLanguagePrior, words, token_prefix_score
 
 
 class LanguagePriorTests(unittest.TestCase):
@@ -25,6 +27,22 @@ class LanguagePriorTests(unittest.TestCase):
     def test_duplicate_database_lines_do_not_change_evidence(self):
         unique = GurbaniLanguagePrior(["ਸਾਗਰੁ ਨੀਰਿ ਭਰਿਆ", "ਸਾਗਰੁ ਨੀਰਿ", "ਨੀਰੁ ਨਾਮ", "ਪਥਰ ਤਾਰੇ"])
         self.assertEqual(self.prior.score("ਸਾਗਰੁ ਨੀਰਿ"), unique.score("ਸਾਗਰੁ ਨੀਰਿ"))
+
+    def test_incremental_prefix_scores_exactly_match_full_text_and_context(self):
+        tokenizer = spm.SentencePieceProcessor(model_file=str(
+            Path(__file__).resolve().parents[1] / "kirtan_stream_model" / "tokenizer.model"))
+        marker = tokenizer.piece_to_id("▁")
+        for text in ["ਸਾਗਰੁ ਨੀਰਿ ਭਰਿਆ", "ਸਾਗਰੁ ਨੀਰੁ ਨਾਮ", "ਪਥਰ ਤਾਰੇ",
+                     "ਸਾਗਰੁ ੧", "ਸਾਗਰੁ ੧ ਨਾਮ", "ਸਾਗਰੁ ਨੀਰਿ ਪਥਰ ਤਾਰੇ"]:
+            ids = tokenizer.encode(text) + [marker]
+            for end in range(len(ids) + 1):
+                for previous in ["", "ਸਾਗਰੁ", "ਨੀਰੁ"]:
+                    prefix = tuple(ids[:end])
+                    self.assertEqual(token_prefix_score(self.prior, tokenizer, prefix, previous),
+                                     self.prior.score(tokenizer.decode(prefix), previous))
+            unknown = tuple(ids[:3] + [0] + ids[3:])
+            self.assertEqual(token_prefix_score(self.prior, tokenizer, unknown, "ਸਾਗਰੁ"),
+                             self.prior.score(tokenizer.decode(unknown), "ਸਾਗਰੁ"))
 
 
 if __name__ == "__main__":

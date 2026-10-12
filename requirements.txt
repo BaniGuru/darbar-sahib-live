@@ -1,6 +1,7 @@
 fastapi>=0.115,<1
 httpx[socks]>=0.27,<1
 numpy>=1.26,<3
+onnx>=1.17,<2
 onnxruntime>=1.20,<2
 python-multipart>=0.0.9
 sentencepiece>=0.2,<1

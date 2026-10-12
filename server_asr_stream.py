@@ -13,7 +13,8 @@ from typing import Any
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
-from gurbani_language_prior import GurbaniLanguagePrior
+from cached_rnnt_decoder import CachedRNNTDecoder
+from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score
 from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -49,7 +50,7 @@ ENCODER_CACHE_CHANNELS = 17
 ENCODER_CACHE_DIM = 512
 ENCODER_CACHE_TIME = 30
 ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", min(4, os.cpu_count() or 1))))
-BEAM_WIDTH = 4
+BEAM_WIDTH = max(1, int(os.environ.get("ASR_BEAM_WIDTH", "24")))
 BEAM_PRUNE_LOGP = 6.0
 LANGUAGE_PRIOR_WEIGHT = max(0.0, float(os.environ.get("ASR_LANGUAGE_PRIOR_WEIGHT", "0.6")))
 WORD_LOOKAHEAD_FRAMES = int(round(1.0 / ENCODER_FRAME_SECONDS))
@@ -80,6 +81,9 @@ decoder_session = ort.InferenceSession(
     str(MODEL_DIR / RUNTIME["decoder_joint"]), sess_options=session_options_for(1),
     providers=["CPUExecutionProvider"],
 )
+if os.environ.get("ASR_CACHE_PREDICTOR", "1") != "0":
+    decoder_session = CachedRNNTDecoder(decoder_session, str(MODEL_DIR / RUNTIME["decoder_joint"]),
+                                       session_options_for(1))
 encoder_inputs = [x.name for x in encoder_session.get_inputs()]
 decoder_inputs = [x.name for x in decoder_session.get_inputs()]
 INFERENCE_LOCK = asyncio.Lock()
@@ -198,7 +202,7 @@ def decode_encoder_beams(
         if language_prior is None:
             return 0.0
         if ids not in prior_scores:
-            prior_scores[ids] = LANGUAGE_PRIOR_WEIGHT * language_prior.score(tokenizer.decode(ids), previous_word)
+            prior_scores[ids] = LANGUAGE_PRIOR_WEIGHT * token_prefix_score(language_prior, tokenizer, ids, previous_word)
         return prior_scores[ids]
     expansion_width = BEAM_WIDTH * 2 if language_prior is not None else BEAM_WIDTH
     for frame in range(length):
@@ -229,6 +233,10 @@ def decode_encoder_beams(
                 break
             expanded: dict[tuple[int, ...], DecoderHypothesis] = {}
             for index, hypothesis in enumerate(active):
+                # Every label extending this parent has the same newly
+                # computed recurrent state. These arrays remain immutable.
+                next_h = result[2][:, index:index + 1, :].copy()
+                next_c = result[3][:, index:index + 1, :].copy()
                 if require_word_start and not hypothesis.tokens:
                     # A settled word cannot acquire more suffix characters.
                     # Leave the new word's spelling free, but preserve its
@@ -248,8 +256,7 @@ def decode_encoder_beams(
                     if score < best_completed - BEAM_PRUNE_LOGP:
                         continue
                     label = int(label)
-                    predictor = (result[2][:, index:index + 1, :].copy(),
-                                 result[3][:, index:index + 1, :].copy(), label)
+                    predictor = (next_h, next_c, label)
                     _merge_hypothesis(expanded, DecoderHypothesis(
                         hypothesis.tokens + (TimedToken(label, frame_offset + frame),),
                         hypothesis.token_ids + (label,),
@@ -576,6 +583,8 @@ async def health():
             "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
             "encoder_update_seconds": PARTIAL_INTERVAL_SAMPLES / SAMPLE_RATE,
             "encoder_threads": ENCODER_THREADS, "decoder_beam_width": BEAM_WIDTH,
+            "predictor_cache": isinstance(decoder_session, CachedRNNTDecoder),
+            "predictor_cache_max_entries": getattr(decoder_session, "cache_size", 0),
             "language_prior": "repository-gurbani-word-context" if language_prior is not None else "disabled",
             "language_prior_weight": LANGUAGE_PRIOR_WEIGHT if language_prior is not None else 0.0,
             "word_lookahead_seconds": WORD_LOOKAHEAD_FRAMES * ENCODER_FRAME_SECONDS}

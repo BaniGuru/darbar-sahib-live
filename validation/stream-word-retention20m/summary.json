@@ -1,0 +1,141 @@
+{
+  "recovered_exact_words_from_baseline_deletions": [
+    {
+      "word": "ਕਾ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਨਾਮ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਧਿਆਇ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਕੈ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਹੋਹ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਹਰਿਆ",
+      "start": 695.715,
+      "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ"
+    },
+    {
+      "word": "ਪੰਜੇ",
+      "start": 766.716,
+      "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ"
+    },
+    {
+      "word": "ਬਧੇ",
+      "start": 766.716,
+      "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ"
+    },
+    {
+      "word": "ਮਹਾਬਲੀ",
+      "start": 766.716,
+      "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ"
+    },
+    {
+      "word": "ਕਰ",
+      "start": 766.716,
+      "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ"
+    },
+    {
+      "word": "ਤੇ",
+      "start": 779.007,
+      "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ ਸੋਈ ਫਿਰਿ ਹੋਆ"
+    }
+  ],
+  "new_deletions": [
+    {
+      "word": "ਫਲ",
+      "start": 700.588
+    },
+    {
+      "word": "ਚਰਣ",
+      "start": 766.716
+    }
+  ],
+  "comparators": {
+    "stream_before": {
+      "wer": 0.13286713286713286,
+      "cer_including_spaces": 0.08825729244577413,
+      "cer_excluding_spaces": 0.09462672372800761,
+      "substitutions": 39,
+      "deletions": 25,
+      "insertions": 12,
+      "outside_tuning": {
+        "reference_words": 400,
+        "substitute": 17,
+        "delete": 2,
+        "insert": 11,
+        "wer": 0.075
+      },
+      "tuning": {
+        "reference_words": 172,
+        "substitute": 22,
+        "delete": 23,
+        "insert": 1,
+        "wer": 0.26744186046511625
+      }
+    },
+    "offline": {
+      "wer": 0.11013986013986014,
+      "cer_including_spaces": 0.06843679880329095,
+      "cer_excluding_spaces": 0.07370423204945316,
+      "substitutions": 37,
+      "deletions": 14,
+      "insertions": 12,
+      "outside_tuning": {
+        "reference_words": 400,
+        "substitute": 25,
+        "delete": 3,
+        "insert": 11,
+        "wer": 0.0975
+      },
+      "tuning": {
+        "reference_words": 172,
+        "substitute": 12,
+        "delete": 11,
+        "insert": 1,
+        "wer": 0.13953488372093023
+      }
+    },
+    "stream_after": {
+      "wer": 0.10839160839160839,
+      "cer_including_spaces": 0.07591623036649214,
+      "cer_excluding_spaces": 0.08178792201616739,
+      "substitutions": 36,
+      "deletions": 8,
+      "insertions": 18,
+      "outside_tuning": {
+        "reference_words": 400,
+        "substitute": 15,
+        "delete": 2,
+        "insert": 17,
+        "wer": 0.085
+      },
+      "tuning": {
+        "reference_words": 172,
+        "substitute": 21,
+        "delete": 6,
+        "insert": 1,
+        "wer": 0.16279069767441862
+      }
+    }
+  },
+  "pilot_audio_interval": [
+    680,
+    800
+  ]
+}

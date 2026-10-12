@@ -10,6 +10,26 @@ import evaluate_reference_asr as scoring
 
 
 class ReferenceScoringTests(unittest.TestCase):
+    def test_only_final_sihari_and_onkar_are_ignored_when_requested(self):
+        self.assertEqual(scoring.normalized_words("ਗੁਰੁ, ਗੁਰਿ ਕਿਰਪਾ ਗੁਰੂ ॥੧॥",
+                         ignore_final_short_vowels=True), ["ਗੁਰ", "ਗੁਰ", "ਕਿਰਪਾ", "ਗੁਰੂ"])
+        report = scoring.score([scoring.Section(0, 4, "ਗੁਰੁ ਗੁਰਿ ਕਿਰਪਾ ਗੁਰੂ ਵਾਹਿਗੁਰੂ")],
+                               {"text": "ਗੁਰ ਗੁਰ ਕਰਪਾ ਗੁਰ ਵਾਰ ਗੁਰੂ"},
+                               ignore_final_short_vowels=True)
+        self.assertEqual(report["substitutions"], 3)
+        self.assertEqual(report["insertions"], 1)
+        self.assertEqual(report["deletions"], 0)
+        self.assertGreater(report["cer_excluding_spaces"], 0)
+
+    def test_optional_suffix_normalization_applies_to_coverage_score(self):
+        report = scoring.score([scoring.Section(0, 4, "ਗੁਰੁ ਗੁਰਿ")],
+                               {"text": "ਗੁਰ ਗੁਰ", "words": [
+                                   {"text": "ਗੁਰ", "start": 1}, {"text": "ਗੁਰ", "start": 2}]},
+                               ignore_final_short_vowels=True)
+        self.assertEqual(report["wer"], 0)
+        self.assertEqual(report["cer_including_spaces"], 0)
+        self.assertEqual(report["verified_window_score"]["wer"], 0)
+
     def test_short_excerpt_cannot_claim_complete_reference_coverage(self):
         report = scoring.score([scoring.Section(20, 30, "ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ")],
                                {"text": "", "seconds": 10})
