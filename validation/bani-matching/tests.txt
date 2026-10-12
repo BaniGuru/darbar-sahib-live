@@ -1,7 +1,0 @@
-[0;93m2026-10-12 14:37:30.300918418 [W:onnxruntime:Default, telemetry_1ds.cc:600 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
-INFO:gurbani-live:Loaded 130840 panktis into the live word index (67490 distinct words)
-.....................................................................
-----------------------------------------------------------------------
-Ran 69 tests in 6.947s
-
-OK
