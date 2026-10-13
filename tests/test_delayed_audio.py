@@ -39,13 +39,15 @@ class DelayedAudioTests(unittest.TestCase):
         self.assertEqual(buffer.release(130)[0].data,b'new')
 
     def test_startup_burst_uses_media_delay_without_extra_wait(self):
-        buffer = DelayedAudio(30)
-        buffer.append([AudioFrame(i,i+1,b'x') for i in range(35)],100)
-        self.assertEqual(len(buffer.release(100)),5)
-        self.assertEqual(len(buffer.release(101)),1)
-        for i in range(35,300):
-            buffer.append([AudioFrame(i,i+1,b'x')],100+i-34)
-            buffer.release(100+i-34)
-        self.assertLessEqual(len(buffer.pending),30)
-        self.assertLessEqual(len(buffer.released),11)
+        for delay in (10, 30):
+            with self.subTest(delay=delay):
+                buffer = DelayedAudio(delay)
+                buffer.append([AudioFrame(i,i+1,b'x') for i in range(35)],100)
+                self.assertEqual(len(buffer.release(100)),35-delay)
+                self.assertEqual(len(buffer.release(101)),1)
+                for i in range(35,300):
+                    buffer.append([AudioFrame(i,i+1,b'x')],100+i-34)
+                    buffer.release(100+i-34)
+                self.assertLessEqual(len(buffer.pending),delay)
+                self.assertLessEqual(len(buffer.released),11)
 

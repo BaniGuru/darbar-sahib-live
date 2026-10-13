@@ -1,11 +1,21 @@
 # Delayed playback and single-pass recognition
 
-Listeners hear the original AAC/MP3 stream 30 seconds behind its received
+Listeners hear the original AAC/MP3 stream 10 seconds behind its received
 media edge. Recognition and Gurbani matching run ahead of playback. Pankti
 and debug captions use each listener's audio clock, so future matches are
 not shown while earlier audio is playing. New listeners join near the
 delayed edge; a cold server buffers first. Normal browser/network buffering
 can add further delay.
+
+The default was reduced from 30 to 10 seconds after production recognition
+lag stabilized at 4–5 seconds. This leaves roughly 5 seconds for matching
+before playback. Existing explicit `PLAYBACK_DELAY_SECONDS=30` overrides
+must be changed to `10` in the deployment environment, followed by restart.
+The ASR send queue still defaults to 38 seconds to absorb startup bursts;
+this queue capacity does not add playback delay. Recognition and KenLM
+settings are unchanged. Earlier accuracy and latency measurements below
+were collected with 30-second playback; their recognition results remain
+applicable, while their stated listener lead time describes that earlier setting.
 
 ## Deployment
 
@@ -14,7 +24,7 @@ with KenLM enabled. See [two-core deployment checks](TWO_CORE_BLOCKS.md),
 especially if health still reports an 800 ms rolling update. Run one worker:
 
 ```bash
-ENABLE_LANGUAGE_MODEL=True PLAYBACK_DELAY_SECONDS=30 \
+ENABLE_LANGUAGE_MODEL=True PLAYBACK_DELAY_SECONDS=10 \
   ASR_RECOGNITION_MODE=blocks ASR_BLOCK_SECONDS=4 \
   LIVE_STREAM_URL='https://live.sgpc.net:8442/;stream.mp3' \
   FFMPEG_PATH=/usr/bin/ffmpeg PORT=8000 \
@@ -50,7 +60,7 @@ Predictor state, competing unfinished word tokens and KenLM context survive
 cache advances. A word starting at 3.75 seconds can finish in a later block
 without being divided at four seconds. Lexical prefixes settle after a
 shared next-word boundary plus one second of acoustic evidence. Long sung
-words or instrumental gaps can postpone commitment beyond 30 seconds;
+words or instrumental gaps can postpone commitment beyond the playback delay;
 timed provisional hypotheses remain usable for search and playback debug
 captions. This avoids forcing a trailing word to end merely because a cache
 block ended. An explicit WebSocket `finish` drains all terminal samples.

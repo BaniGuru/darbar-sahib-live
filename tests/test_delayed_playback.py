@@ -9,14 +9,14 @@ from delayed_audio import AudioFrame, DelayedAudio
 class PlaybackTests(unittest.TestCase):
     def setUp(self):
         self.sid = '11111111-1111-4111-8111-111111111111'
-        buffer = DelayedAudio(30)
-        buffer.append([AudioFrame(i, i+1, b'audio') for i in range(60)],60)
-        buffer.release(60)
+        buffer = DelayedAudio(10)
+        buffer.append([AudioFrame(i, i+1, b'audio') for i in range(40)],40)
+        buffer.release(40)
         for name,value in (('_delayed_audio',buffer), ('_stream_wall_started_at',1000),
                            ('_audio_sessions',{}), ('_audio_subscribers',set()),
                            ('_pankti_timeline',[]), ('_debug_timed_final_words',[]),
                            ('_debug_timed_partial_words',[]),
-                           ('PLAYBACK_DELAY_SECONDS',30)):
+                           ('PLAYBACK_DELAY_SECONDS',10)):
             p=patch.object(server,name,value);p.start();self.addCleanup(p.stop)
 
     def test_listener_never_receives_future_match_or_transcript(self):

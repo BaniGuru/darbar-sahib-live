@@ -73,7 +73,7 @@ class FrameParser:
 
 class DelayedAudio:
     """Bounded media-clock delay; wall age drains buffered audio on outage."""
-    def __init__(self, delay=30.0):
+    def __init__(self, delay=10.0):
         self.delay = delay
         self.head = 0.0
         self.pending = deque()

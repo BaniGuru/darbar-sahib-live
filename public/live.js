@@ -19,7 +19,7 @@ let audioRecoveryTimer = null;
 let audioRecoveryRunning = false;
 let audioRecoveryAttempts = 0;
 let audioStallTimer = null;
-let playbackDelaySeconds = 30;
+let playbackDelaySeconds = 10;
 let audioGeneration = 0;
 const maxAudioRecoveryAttempts = 6;
 const localTimeFormatter = new Intl.DateTimeFormat(undefined, {
@@ -252,7 +252,7 @@ async function refresh() {
       stateRevision = "";
     }
     audioGeneration = nextGeneration;
-    playbackDelaySeconds = Number(state.playback_delay_seconds ?? 30);
+    playbackDelaySeconds = Number(state.playback_delay_seconds ?? 10);
     $("liveDot").classList.toggle("active", Boolean(state.connected));
     $("liveStatus").textContent = !state.playback_ready ? "ਆਵਾਜ਼ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ" : state.connected ? "ਲਾਈਵ" : "ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ";
     if (debugMode) {

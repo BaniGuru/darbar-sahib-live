@@ -1,6 +1,6 @@
 # Gurbani KenLM streaming decoding
 
-KenLM remains enabled for the current [30-second delayed playback and
+KenLM remains enabled for the current [10-second delayed playback and
 single-pass 4-second block deployment](DELAYED_PLAYBACK.md). Historical
 rolling-mode measurements below use `ASR_RECOGNITION_MODE=rolling`.
 

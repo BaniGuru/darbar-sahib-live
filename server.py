@@ -55,10 +55,11 @@ LIVE_STREAM_URL = os.getenv(
     "LIVE_STREAM_URL", "https://live.sgpc.net:8443/;stream.mp3"
 ).strip()
 ASR_REPLAY_SECONDS = max(2.0, min(8.0, float(os.getenv("ASR_REPLAY_SECONDS", "6"))))
-PLAYBACK_DELAY_SECONDS = max(0.0, min(120.0, float(os.getenv("PLAYBACK_DELAY_SECONDS", "30"))))
+PLAYBACK_DELAY_SECONDS = max(0.0, min(120.0, float(os.getenv("PLAYBACK_DELAY_SECONDS", "10"))))
 # Absorb source startup bursts without dropping PCM while recognition is
-# ahead of the delayed listener. The recognizer itself still holds <=8s.
-ASR_PCM_QUEUE_SECONDS = max(8.0, min(128.0, float(os.getenv("ASR_PCM_QUEUE_SECONDS", str(PLAYBACK_DELAY_SECONDS + 8)))))
+# ahead of the delayed listener. Keep a 38s minimum default for startup
+# bursts even with 10s playback delay; the recognizer itself holds <=8s.
+ASR_PCM_QUEUE_SECONDS = max(8.0, min(128.0, float(os.getenv("ASR_PCM_QUEUE_SECONDS", str(max(38.0, PLAYBACK_DELAY_SECONDS + 8))))))
 ASR_SAMPLE_RATE = 16000
 PCM_READ_BYTES = 12800
 ASR_PCM_QUEUE_CHUNKS = max(8, int(ASR_PCM_QUEUE_SECONDS * ASR_SAMPLE_RATE * 4 / PCM_READ_BYTES))
@@ -1142,7 +1143,7 @@ async def _forward_pcm_to_asr(
                     ready.get("block_seconds", "unknown"), ready.get("step_seconds", "unknown"),
                     ready.get("enable_language_model", "unknown"),
                 )
-                if ready.get("recognition_mode") != "blocks" and PLAYBACK_DELAY_SECONDS >= 30:
+                if ready.get("recognition_mode") != "blocks" and PLAYBACK_DELAY_SECONDS >= 10:
                     logger.warning(
                         "Delayed playback is connected to a rolling/legacy ASR service. "
                         "Verify /asr/health and deploy the no-audio-fix branch with ASR_RECOGNITION_MODE=blocks."

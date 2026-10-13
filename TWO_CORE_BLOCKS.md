@@ -33,7 +33,7 @@ shell:
 ```text
 ASR_RECOGNITION_MODE=blocks
 ASR_BLOCK_SECONDS=4
-PLAYBACK_DELAY_SECONDS=30
+PLAYBACK_DELAY_SECONDS=10
 ENABLE_LANGUAGE_MODEL=True
 ASR_ENCODER_THREADS=2
 ASR_BLAS_THREADS=1
@@ -62,7 +62,7 @@ A delayed frontend connected to rolling/legacy ASR emits a warning.
 
 A roughly 4–5-second source-to-recognition lag is expected in block mode
 because normalization deliberately waits for four seconds of future PCM.
-It is separate from the listener's 30-second playback delay. New timing logs
+It is separate from the listener's playback delay, now 10 seconds by default. New timing logs
 include mode, processing cost and inference-lock wait, helping distinguish
 work that exceeds the block's budget from intentional lookahead or another
 inference request holding the lock.

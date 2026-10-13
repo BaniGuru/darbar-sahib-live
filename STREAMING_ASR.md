@@ -1,6 +1,6 @@
 # Cache-aware streaming ASR
 
-Current default: [30-second delayed playback with single-pass 4-second
+Current default: [10-second delayed playback with single-pass 4-second
 recognition](DELAYED_PLAYBACK.md), keeping KenLM enabled. The rolling mode
 described below remains available with `ASR_RECOGNITION_MODE=rolling` for
 comparison. Its previews and adaptive acoustic caching are not the default.
