@@ -38,3 +38,9 @@ listener formatting and responsive layout. It verifies the real PNG asset
 loads. `PLAYER_UI_URL`, `PLAYER_UI_OUTPUT` and `CHROMIUM_PATH` optionally
 configure the server, artifacts and browser executable. Playwright is a
 development test tool and is not an application runtime dependency.
+
+The later pankti/greeting update adds the between-shabad welcome stage and
+the SGPC modified date/India clock opposite the listener badge. Its cache
+version is 16. See [matching notes](PANKTI_PROGRESSION.md) and
+[calendar source/maintenance](SGPC_CALENDAR.md); the validation script now
+also covers greeting transitions, India time, and a 320-pixel phone.

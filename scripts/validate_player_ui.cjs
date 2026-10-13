@@ -8,10 +8,11 @@ fs.mkdirSync(output, {recursive:true});
 (async () => {
  const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium',headless:true,args:['--no-sandbox']});
  const results=[];
- for (const viewport of [{width:1280,height:800},{width:390,height:844}]) {
+ for (const viewport of [{width:1280,height:800},{width:390,height:844},{width:320,height:700}]) {
   const page=await browser.newPage({viewport,timezoneId:'Australia/Brisbane'});const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  let listeners=1234;let revision=0;
-  await page.route('**/api/live/state?**',route=>route.fulfill({json:{connected:true,playback_ready:true,audio_url:'/api/live/audio?session_id=fixture',audio_generation:1,playback_delay_seconds:10,listener_count:listeners,revision:String(++revision),punjabi:'ਨਾਮ ਜਪੋ',legacy_gurmukhi:'ਨਾਮ ਜਪੋ',english:'Remember the Name.',playback_text:'ਨਾਮ ਜਪੋ'}}));
+  let listeners=1234;let revision=0;let waiting=false;
+  await page.clock.setFixedTime(new Date("2026-10-13T06:00:00Z"));
+  await page.route('**/api/live/state?**',route=>route.fulfill({json:{connected:true,playback_ready:true,audio_url:'/api/live/audio?session_id=fixture',audio_generation:1,playback_delay_seconds:10,listener_count:listeners,waiting_for_shabad:waiting,revision:String(++revision),punjabi:'ਨਾਮ ਜਪੋ',legacy_gurmukhi:'ਨਾਮ ਜਪੋ',english:'Remember the Name.',playback_text:'ਨਾਮ ਜਪੋ'}}));
   await page.addInitScript(() => {
    window.playCalls=0;window.mockPaused=true;
    Object.defineProperty(HTMLMediaElement.prototype,'paused',{get(){return window.mockPaused}});
@@ -26,6 +27,12 @@ fs.mkdirSync(output, {recursive:true});
   assert(await page.locator('.welcome-image').evaluate(img=>img.complete && img.naturalWidth===2172));
   assert(!(await page.locator('#panktiGroup').isVisible()));assert(!(await page.locator('#emptyText').isVisible()));assert(!(await page.locator('#debugPanel').isVisible()));
   assert.equal(await page.locator('#listenerCount').innerText(),'1,234');
+  assert.equal(await page.locator('#darbarNanakshahiDate').innerText(),'੨੭ ਅੱਸੂ ੫੫੮');
+  assert.equal(await page.locator('#darbarIndiaTime').innerText(),'11:30 am');
+  const dateBox=await page.locator('.darbar-date-time').boundingBox();
+  const countBox=await page.locator('.listener-badge').boundingBox();
+  assert(dateBox.x+dateBox.width<=countBox.x, 'Date and listeners must not overlap');
+  assert(countBox.x+countBox.width<=viewport.width);
   await page.click('#playToggle');
   assert(await page.locator('#playToggle').isDisabled());assert.equal(await page.locator('#playToggle').getAttribute('aria-busy'),'true');
   assert(await page.locator('.play-spinner').isVisible());assert(!(await page.locator('#playIcon').isVisible()));
@@ -43,6 +50,17 @@ fs.mkdirSync(output, {recursive:true});
   await page.evaluate(()=>window.startAudio());
   await page.waitForFunction(()=>!document.getElementById('playToggle').disabled);
   assert(!(await page.locator('#welcomeScreen').isVisible()));assert(await page.locator('#panktiGroup').isVisible());
+  waiting=true;
+  await page.waitForFunction(()=>!document.getElementById('welcomeScreen').hidden);
+  assert(!(await page.locator('#panktiGroup').isVisible()));
+  assert(!(await page.locator('#emptyText').isVisible()));
+  assert.equal(await page.locator('#startingSoon').innerText(),'Waiting for next shabad…');
+  assert(!(await page.locator('#playToggle').isDisabled()));
+  assert(await page.locator('#stopIcon').isVisible());
+  await page.screenshot({path:path.join(output,`greeting-${viewport.width}.png`)});
+  waiting=false;
+  await page.waitForFunction(()=>document.getElementById('welcomeScreen').hidden);
+  assert(await page.locator('#panktiGroup').isVisible());
   // A fresh visit returns to the welcome screen; counts remain live.
   await page.reload();await page.waitForFunction(()=>!document.getElementById('playToggle').disabled);
   listeners=1;await page.waitForFunction(()=>document.getElementById('listenerCount').textContent==='1');

@@ -1,3 +1,4 @@
+import { darbarDateTime } from "/static/sgpc-calendar.js?v=16";
 const $ = id => document.getElementById(id);
 let audioUrl = "";
 const debugMode = new URLSearchParams(location.search).has("debug");
@@ -117,6 +118,11 @@ function updateLocalTime() {
     .join("")
     .trim();
   clock.dateTime = now.toISOString();
+  const darbar = darbarDateTime(now);
+  $("darbarNanakshahiDate").textContent = darbar.date;
+  $("darbarNanakshahiDate").hidden = !darbar.date;
+  $("darbarIndiaTime").textContent = darbar.time;
+  $("darbarIndiaTime").dateTime = now.toISOString();
 }
 
 function setPlayerState(playing) {
@@ -134,7 +140,7 @@ function setPlaybackLoading(loading) {
   button.setAttribute("aria-busy", String(loading));
   document.querySelector(".player-dock").classList.toggle("is-loading", loading);
   button.setAttribute("aria-label", loading ? "ਕੀਰਤਨ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ" : playerIsPlaying ? "ਲਾਈਵ ਕੀਰਤਨ ਰੋਕੋ" : "ਲਾਈਵ ਕੀਰਤਨ ਚਲਾਓ");
-  $("startingSoon").hidden = hasStartedPlayback || !loading;
+  renderWelcome();
   if (loading) showPlayerDock();
 }
 
@@ -236,9 +242,17 @@ function fitPunjabi() {
   }
 }
 
+function renderWelcome() {
+  const waiting = hasStartedPlayback && Boolean(latestState?.waiting_for_shabad);
+  $("welcomeScreen").hidden = hasStartedPlayback && !waiting;
+  $("startingSoon").hidden = !waiting && (hasStartedPlayback || !playbackLoading);
+  $("startingSoon").textContent = waiting ? "Waiting for next shabad…" : "Starting soon…";
+}
+
 function showMatch(state) {
   latestState = state;
-  if (!hasStartedPlayback) {
+  renderWelcome();
+  if (!hasStartedPlayback || state.waiting_for_shabad) {
     $("panktiGroup").hidden = true;
     $("emptyText").hidden = true;
     return;

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { darbarDateTime } from '../public/sgpc-calendar.js';
+const today=darbarDateTime(new Date('2026-10-13T06:00:00Z'));
+assert.equal(today.date,'੨੭ ਅੱਸੂ ੫੫੮');assert.equal(today.time,'11:30 am');
+assert.equal(darbarDateTime(new Date('2026-10-16T18:29:59Z')).date,'੩੦ ਅੱਸੂ ੫੫੮');
+assert.equal(darbarDateTime(new Date('2026-10-16T18:30:00Z')).date,'੧ ਕੱਤਕ ੫੫੮');
+assert.equal(darbarDateTime(new Date('2026-08-16T12:00:00Z')).date,'੩੨ ਸਾਵਣ ੫੫੮');
+assert.equal(darbarDateTime(new Date('2026-03-13T18:29:59Z')).date,'੩੦ ਫੱਗਣ ੫੫੭');
+assert.equal(darbarDateTime(new Date('2026-03-13T18:30:00Z')).date,'੧ ਚੇਤ ੫੫੮');
+assert.equal(darbarDateTime(new Date('2027-03-15T00:00:00Z')).date,'');
+assert.equal(darbarDateTime(new Date('2025-03-13T00:00:00Z')).date,'');
+console.log('SGPC modified date, 32-day month, year change, India midnight, coverage limits: passed',today);

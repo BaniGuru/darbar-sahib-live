@@ -30,6 +30,10 @@ class OrderedBaniMatcher:
             self.family_routes[route["family"]].append(bani_id)
             for position, row in enumerate(route["lines"]):
                 self.members[row["pankti_id"]].append((bani_id, position))
+        self.reset()
+
+    def reset(self):
+        """Start a new recitation after the closing greeting."""
         self.family = None
         self.positions = {}
         self.evidence = defaultdict(int)
@@ -64,6 +68,7 @@ class OrderedBaniMatcher:
              "bani_name": route["name"], "line_group": row["line_group"],
              "bani_position": position, "match_mode": "bani-auto-next" if auto else "bani",
              "_query_end": query_end, "_bani_direct": True,
+             "_spoken": " ".join(self.spoken_tokens(row)),
              "_bani_auto_next": auto,
              "_bani_observed_shabad_id": route["lines"][self.positions[bani_id]]["shabad_id"]}
 

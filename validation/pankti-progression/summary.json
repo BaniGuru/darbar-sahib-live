@@ -1,0 +1,42 @@
+{
+  "python_tests": 117,
+  "python_passed": true,
+  "browser_viewports": [
+    [
+      1280,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      700
+    ]
+  ],
+  "real_aac_playback_passed": true,
+  "video_has_audio": false,
+  "reproduction": {
+    "old_pankti_id": "99AN",
+    "old_shabad_id": "SAM",
+    "new_pankti_id": "BKS1",
+    "new_shabad_id": "NJM",
+    "query": "ਕਾਟੇ ਸੁ ਪਾਪ ਨਰਹੁ ਕੇ ਗੁਰ ਰਾਮਦਾਸ ਜਿਨ ਪਾਇਓ",
+    "switch_confirmation_updates": 2
+  },
+  "asr_retranscribed": false,
+  "sgpc_date_2026_10_13": "੨੭ ਅੱਸੂ ੫੫੮",
+  "calendar_coverage_end_exclusive": "2027-03-15",
+  "kenlm_changed": false,
+  "playback_delay_seconds": 10,
+  "calendar_data": {
+    "package": "nanakshahi-jantri",
+    "version": "1.2.0",
+    "license": "MIT",
+    "pinned_sha256": {
+      "557": "00758ff09a509b774d267c69b28864cfc940aca65c8f8df4c3e6d37f78423b42",
+      "558": "0747ae7845b77306b8801f166a7e5672f98f32ab166f2de29298771d20365a97"
+    }
+  }
+}

@@ -180,7 +180,7 @@ class BaniMatchingTests(unittest.TestCase):
         for pid,group,text in [('A',1,'ਸਚੁ ਨਾਮੁ ਵਡਿਆਈ'),('B',1,'ਗੁਰ ਕੀ ਸੇਵਾ ਕਰਿ'),
                                ('A',2,'ਸਚੁ ਨਾਮੁ ਵਡਿਆਈ'),('C',2,'ਹਰਿ ਹਰਿ ਜਪੁ ਜੀਵੈ')]:
             rows.append({'pankti_id':pid,'shabad_id':'test','order_id':group,
-                         'line_group':group,'_tokens':text.split(),'speech':text,
+                         'line_group':group,'_tokens':server._normalise_query(text).split(),'speech':text,
                          'punjabi':text,'legacy_gurmukhi':'','english':''})
         self.matcher=OrderedBaniMatcher({13:{'family':'asa-ki-vaar','name':'Asa Ki Vaar','lines':rows}},
                                         server._token_similarity,server._normalise_query)
@@ -221,11 +221,26 @@ class BaniMatchingTests(unittest.TestCase):
                 '_debug_recompute_from':None,'_pankti_timeline':[],'_stream_wall_started_at':100000}
         with patch.multiple(server,**values),patch.object(server.logger,'info'):
             asyncio.run(server._handle_asr_messages(Socket()))
+            first_at=server._pankti_timeline[0][0]
+        ending=json.loads(messages[0])['committed_words'][-1]['end']
+        self.assertEqual(first_at,100000+ending)
         self.assertEqual(observed[0]['pankti_id'],route[2]['pankti_id'])
         self.assertEqual(observed[0]['match_mode'],'bani-auto-next')
         self.assertEqual(observed[1]['pankti_id'],route[2]['pankti_id'])
         self.assertEqual(observed[2]['shabad_id'],outside['shabad_id'])
         self.assertNotIn('bani_id',observed[2])
+
+    def test_closing_greeting_resets_bani_resume_and_variant_evidence(self):
+        self.adopt(self.routes[13]['lines'][1])
+        self.matcher.reset()
+        self.assertIsNone(self.matcher.family)
+        self.assertIsNone(self.matcher.selected)
+        self.assertFalse(self.matcher.positions)
+        self.assertFalse(self.matcher.evidence)
+        self.assertIsNone(self.matcher.end_time)
+        result=self.adopt(self.routes[9]['lines'][1])
+        self.assertEqual(self.matcher.family,'aarti')
+        self.assertEqual(result['bani_id'],9)
 
     def test_idle_audio_does_not_renew_stale_pankti_match(self):
         message = {'type': 'partial', 'audio_active': False,
