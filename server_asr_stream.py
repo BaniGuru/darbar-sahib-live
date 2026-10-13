@@ -3,8 +3,10 @@ from __future__ import annotations
 
 import asyncio
 import io
+import hashlib
 import json
 import os
+import time
 import wave
 from dataclasses import dataclass
 from pathlib import Path
@@ -22,8 +24,13 @@ from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score, wor
 from fastapi import FastAPI, File, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from websocket_lifecycle import close_if_open, send_json_if_open
 
 BASE_DIR = Path(__file__).resolve().parent
+SERVER_BUILD = "stream-" + hashlib.sha256(b"".join(
+    (BASE_DIR / name).read_bytes() for name in
+    ("server_asr_stream.py", "block_recognizer.py", "asr_config.py", "websocket_lifecycle.py")
+)).hexdigest()[:12]
 MODEL_DIR = BASE_DIR / "kirtan_stream_model"
 with (MODEL_DIR / "runtime.json").open(encoding="utf-8") as f:
     RUNTIME = json.load(f)
@@ -785,7 +792,7 @@ async def index():
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "provider": "CPUExecutionProvider", "sample_rate": SAMPLE_RATE,
+    return {"status": "ok", "build": SERVER_BUILD, "provider": "CPUExecutionProvider", "sample_rate": SAMPLE_RATE,
             "encoder_context": RUNTIME["att_context_size"], "encoder_frame_seconds": ENCODER_FRAME_SECONDS,
             "text_commit_seconds": 4.0, "cache_commit_seconds": 4.0,
             "word_commit_policy": "shared-word-boundary" if RECOGNITION_MODE == "blocks" else "adaptive-boundary-lookahead",
@@ -827,7 +834,10 @@ async def transcribe(file: UploadFile = File(...)):
 async def websocket_transcribe(websocket: WebSocket):
     await websocket.accept()
     recognizer = new_recognizer()
-    await websocket.send_json({"type": "ready", "sample_rate": SAMPLE_RATE,
+    if not await send_json_if_open(websocket, {"type": "ready", "build": SERVER_BUILD, "sample_rate": SAMPLE_RATE,
+                               "enable_language_model": enable_language_model,
+                               "cpu_budget": CPU_BUDGET, "encoder_threads": ENCODER_THREADS,
+                               "blas_threads": BLAS_THREADS,
                                "format": "float32-le-mono", "step_seconds": BLOCK_SECONDS if RECOGNITION_MODE == "blocks" else PARTIAL_INTERVAL_SECONDS,
                                "recognition_mode": RECOGNITION_MODE,
                                "block_seconds": BLOCK_SECONDS,
@@ -836,7 +846,8 @@ async def websocket_transcribe(websocket: WebSocket):
                                "word_commit_policy": "shared-word-boundary" if RECOGNITION_MODE == "blocks" else "adaptive-boundary-lookahead",
                                "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
                                "word_lookahead_seconds": WORD_LOOKAHEAD_FRAMES * ENCODER_FRAME_SECONDS,
-                               "encoder_context": RUNTIME["att_context_size"]})
+                               "encoder_context": RUNTIME["att_context_size"]}):
+        return
     buffered = np.empty(0, dtype=np.float32)
     last_frontier = -1
     try:
@@ -853,23 +864,30 @@ async def websocket_transcribe(websocket: WebSocket):
                 if isinstance(command, dict) and command.get("type") == "finish":
                     async with INFERENCE_LOCK:
                         result = await asyncio.to_thread(recognizer.finish, buffered)
-                    await websocket.send_json(result)
-                    await websocket.close()
+                    if await send_json_if_open(websocket, result):
+                        await close_if_open(websocket)
                     return
                 continue
             if len(raw) % 4:
-                await websocket.send_json({"type": "error", "message": "PCM byte count must be divisible by 4."})
+                if not await send_json_if_open(websocket, {"type": "error", "message": "PCM byte count must be divisible by 4."}):
+                    return
                 continue
             buffered = np.concatenate((buffered, np.frombuffer(raw, dtype="<f4").copy()))
             while buffered.size >= PARTIAL_INTERVAL_SAMPLES:
                 chunk, buffered = buffered[:PARTIAL_INTERVAL_SAMPLES], buffered[PARTIAL_INTERVAL_SAMPLES:]
+                waiting_at = time.perf_counter()
                 async with INFERENCE_LOCK:
+                    started_at = time.perf_counter()
                     state = await asyncio.to_thread(recognizer.update, chunk)
+                state = {**state, "recognition_mode": RECOGNITION_MODE,
+                         "processing_seconds": time.perf_counter()-started_at,
+                         "inference_lock_wait_seconds": started_at-waiting_at}
                 frontier = state.get("window_end")
                 # Unchanged collection ticks must not count as fresh matching
                 # evidence; send only actual acoustic progress in block mode.
                 if RECOGNITION_MODE != "blocks" or frontier != last_frontier:
-                    await websocket.send_json(state)
+                    if not await send_json_if_open(websocket, state):
+                        return
                     last_frontier = frontier
     except WebSocketDisconnect:
         pass

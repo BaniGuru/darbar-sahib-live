@@ -759,7 +759,12 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
             continue
         try:
             lag = _stream_audio_samples_total / ASR_SAMPLE_RATE - (audio_offset_seconds + float(message.get("window_end", 0.0)))
-            logger.info("ASR_TEST timing lag=%.2fs type=%s", lag, message_type)
+            logger.info(
+                "ASR_TEST timing lag=%.2fs type=%s mode=%s processing=%.3fs lock_wait=%.3fs",
+                lag, message_type, message.get("recognition_mode", "legacy"),
+                float(message.get("processing_seconds") or 0.0),
+                float(message.get("inference_lock_wait_seconds") or 0.0),
+            )
         except (TypeError, ValueError):
             pass
         if "final_text" in message:
@@ -1131,6 +1136,17 @@ async def _forward_pcm_to_asr(
                 ready = json.loads(ready_raw)
                 if ready.get("type") != "ready":
                     raise RuntimeError(f"ASR service did not become ready: {ready_raw!r}")
+                logger.info(
+                    "ASR runtime build=%s mode=%s block=%s update=%ss KenLM=%s",
+                    ready.get("build", "legacy"), ready.get("recognition_mode", "legacy"),
+                    ready.get("block_seconds", "unknown"), ready.get("step_seconds", "unknown"),
+                    ready.get("enable_language_model", "unknown"),
+                )
+                if ready.get("recognition_mode") != "blocks" and PLAYBACK_DELAY_SECONDS >= 30:
+                    logger.warning(
+                        "Delayed playback is connected to a rolling/legacy ASR service. "
+                        "Verify /asr/health and deploy the no-audio-fix branch with ASR_RECOGNITION_MODE=blocks."
+                    )
 
                 snapshot = tuple(history)
                 if snapshot and not has_connected:
@@ -1347,6 +1363,8 @@ def health() -> dict[str, Any]:
         "database": BANI_DB_PATH.name,
         "speech_column": _speech_column,
         "asr_build": getattr(_asr_module, "SERVER_BUILD", None),
+        "recognition_mode": getattr(_asr_module, "RECOGNITION_MODE", None),
+        "block_seconds": getattr(_asr_module, "BLOCK_SECONDS", None),
         "playback_delay_seconds": PLAYBACK_DELAY_SECONDS,
         "buffered_audio_seconds": _delayed_audio.head-(_delayed_audio.released[-1].end if _delayed_audio.released else 0.0),
     }

@@ -187,6 +187,22 @@ class StreamingTests(unittest.TestCase):
             socket.close.assert_awaited_once()
         asyncio.run(run())
 
+    def test_websocket_stops_after_transport_closes_before_partial_send(self):
+        async def run():
+            socket = AsyncMock()
+            socket.receive.return_value = {
+                "type": "websocket.receive", "bytes": np.zeros(128000, "<f4").tobytes(),
+            }
+            socket.send_json.side_effect = [None, None, RuntimeError(
+                "Unexpected ASGI message 'websocket.send', after sending 'websocket.close'.")]
+            with patch.object(asr, "RECOGNITION_MODE", "blocks"), \
+                 patch.object(asr, "decode_encoder_beams", return_value=[hypothesis()]):
+                await asr.websocket_transcribe(socket)
+            self.assertEqual(socket.receive.await_count, 1)
+            self.assertEqual(socket.send_json.await_count, 3)
+            socket.close.assert_not_awaited()
+        asyncio.run(run())
+
 
     def test_wrong_boundary_word_can_be_replaced_after_cache_advance(self):
         wrong = hypothesis([asr.TimedToken(5, 94), asr.TimedToken(6, 98)])

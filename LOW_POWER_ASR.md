@@ -1,5 +1,8 @@
 # Streaming on two CPU cores and 4 GB RAM
 
+For the current single-pass mode, measured without a growing backlog on
+two CPUs / 4 GiB with KenLM enabled, see [TWO_CORE_BLOCKS.md](TWO_CORE_BLOCKS.md).
+
 These are historical rolling-mode measurements. The current deployment uses
 [30-second delayed playback and single-pass 4-second blocks](DELAYED_PLAYBACK.md)
 on four cores / 8 GiB, with KenLM enabled. Use `ASR_RECOGNITION_MODE=rolling`

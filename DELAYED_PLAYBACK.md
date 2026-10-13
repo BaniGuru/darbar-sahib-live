@@ -9,7 +9,9 @@ can add further delay.
 
 ## Deployment
 
-Provision four CPU cores and 8 GiB RAM, then run one worker:
+Four CPU cores / 8 GiB and two CPU cores / 4 GiB have both been validated
+with KenLM enabled. See [two-core deployment checks](TWO_CORE_BLOCKS.md),
+especially if health still reports an 800 ms rolling update. Run one worker:
 
 ```bash
 ENABLE_LANGUAGE_MODEL=True PLAYBACK_DELAY_SECONDS=30 \
