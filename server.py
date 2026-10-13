@@ -1435,6 +1435,7 @@ def live_state(
     )
     state = {
         "enabled": True,
+        "listener_count": len(_audio_subscribers),
         "playback_delay_seconds": PLAYBACK_DELAY_SECONDS,
         "playback_ready": bool(_delayed_audio.released),
         "audio_generation": _audio_sessions.get(session_id, {}).get("generation", 0),
@@ -1470,6 +1471,7 @@ def live_state(
             "legacy_gurmukhi", "english", "shabad_id", "pankti_id",
             "bani_id", "bani_name", "line_group", "bani_position", "match_mode",
             "playback_delay_seconds", "playback_ready", "audio_generation", "playback_text",
+            "listener_count",
         )
     }
     revision = hashlib.sha256(

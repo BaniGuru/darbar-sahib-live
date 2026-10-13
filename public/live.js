@@ -14,6 +14,9 @@ let refreshInFlight = false;
 let dockHideTimer = null;
 let dockWakeTimer = null;
 let playerIsPlaying = false;
+let hasStartedPlayback = false;
+let playbackLoading = false;
+let latestState = null;
 let wantsAudioPlayback = false;
 let audioRecoveryTimer = null;
 let audioRecoveryRunning = false;
@@ -32,7 +35,7 @@ function showPlayerDock() {
   $("playToggle").focus({ preventScroll: true });
   clearTimeout(dockHideTimer);
   dockHideTimer = null;
-  if (playerIsPlaying) {
+  if (playerIsPlaying && !playbackLoading) {
     dockHideTimer = setTimeout(() => dock.classList.add("is-hidden"), 5000);
   }
 }
@@ -60,13 +63,15 @@ function failAudioRecovery() {
   wantsAudioPlayback = false;
   playerIsPlaying = false;
   clearAudioRecovery();
-  $("playToggle").disabled = false;
+  setPlaybackLoading(false);
   setPlayerState(false);
   $("liveStatus").textContent = "ਆਵਾਜ਼ ਰੁਕ ਗਈ ਹੈ — ਮੁੜ ਚਲਾਉਣ ਲਈ ਦਬਾਓ";
 }
 
 function scheduleAudioRecovery() {
-  if (!wantsAudioPlayback || audioRecoveryTimer || audioRecoveryRunning) return;
+  if (!wantsAudioPlayback) return;
+  setPlaybackLoading(true);
+  if (audioRecoveryTimer || audioRecoveryRunning) return;
   if (audioRecoveryAttempts >= maxAudioRecoveryAttempts) {
     failAudioRecovery();
     return;
@@ -118,17 +123,46 @@ function setPlayerState(playing) {
   playerIsPlaying = playing;
   const button = $("playToggle");
   button.setAttribute("aria-pressed", String(playing));
-  button.setAttribute("aria-label", playing ? "ਲਾਈਵ ਕੀਰਤਨ ਰੋਕੋ" : "ਲਾਈਵ ਕੀਰਤਨ ਚਲਾਓ");
+  button.setAttribute("aria-label", playbackLoading ? "ਕੀਰਤਨ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ" : playing ? "ਲਾਈਵ ਕੀਰਤਨ ਰੋਕੋ" : "ਲਾਈਵ ਕੀਰਤਨ ਚਲਾਓ");
   showPlayerDock();
 }
 
+function setPlaybackLoading(loading) {
+  playbackLoading = loading;
+  const button = $("playToggle");
+  button.disabled = loading || !audioUrl;
+  button.setAttribute("aria-busy", String(loading));
+  document.querySelector(".player-dock").classList.toggle("is-loading", loading);
+  button.setAttribute("aria-label", loading ? "ਕੀਰਤਨ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ" : playerIsPlaying ? "ਲਾਈਵ ਕੀਰਤਨ ਰੋਕੋ" : "ਲਾਈਵ ਕੀਰਤਨ ਚਲਾਓ");
+  $("startingSoon").hidden = hasStartedPlayback || !loading;
+  if (loading) showPlayerDock();
+}
+
+function onPlaybackStarted() {
+  hasStartedPlayback = true;
+  wantsAudioPlayback = true;
+  audioRecoveryAttempts = 0;
+  clearAudioRecovery();
+  setPlaybackLoading(false);
+  $("welcomeScreen").hidden = true;
+  if (clientStartedAt === null) clientStartedAt = Date.now() / 1000;
+  if (playbackBase === null && Number.isFinite($("liveAudio").currentTime)) {
+    playbackBase = $("liveAudio").currentTime;
+  }
+  showMatch(latestState || {});
+  showDebugPanel();
+  setPlayerState(true);
+}
+
 async function togglePlayback() {
+  if (playbackLoading || !audioUrl) return;
   const audio = $("liveAudio");
   showPlayerDock();
   if (wantsAudioPlayback && playerIsPlaying) {
     wantsAudioPlayback = false;
     playerIsPlaying = false;
     clearAudioRecovery();
+    setPlaybackLoading(false);
     audio.pause();
     setPlayerState(false);
     window.location.reload();
@@ -137,15 +171,13 @@ async function togglePlayback() {
   wantsAudioPlayback = true;
   audioRecoveryAttempts = 0;
   clearAudioRecovery();
-  $("playToggle").disabled = true;
+  setPlaybackLoading(true);
   try {
     await audio.play();
     if (!audio.paused) {
-      $("playToggle").disabled = false;
-      setPlayerState(true);
+      onPlaybackStarted();
     }
   } catch {
-    $("playToggle").disabled = false;
     scheduleAudioRecovery();
   }
 }
@@ -205,6 +237,12 @@ function fitPunjabi() {
 }
 
 function showMatch(state) {
+  latestState = state;
+  if (!hasStartedPlayback) {
+    $("panktiGroup").hidden = true;
+    $("emptyText").hidden = true;
+    return;
+  }
   const hasMatch = Boolean(state.punjabi || state.pankti);
   $("panktiGroup").hidden = !hasMatch;
   $("emptyText").hidden = hasMatch;
@@ -221,7 +259,7 @@ function showMatch(state) {
 
 function showDebugPanel() {
   if (!debugMode) return;
-  $("debugPanel").hidden = false;
+  $("debugPanel").hidden = !hasStartedPlayback;
   // Debug captions follow the same delayed playback clock as the pankti.
   // Recognition diagnostics remain available through /api/live/debug.
 }
@@ -253,6 +291,11 @@ async function refresh() {
     }
     audioGeneration = nextGeneration;
     playbackDelaySeconds = Number(state.playback_delay_seconds ?? 10);
+    if (typeof state.listener_count === "number" && Number.isFinite(state.listener_count)) {
+      const count = Math.max(0, Math.floor(state.listener_count));
+      $("listenerCount").textContent = new Intl.NumberFormat().format(count);
+      $("listenerLabel").textContent = count === 1 ? "listener" : "listeners";
+    }
     $("liveDot").classList.toggle("active", Boolean(state.connected));
     $("liveStatus").textContent = !state.playback_ready ? "ਆਵਾਜ਼ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ" : state.connected ? "ਲਾਈਵ" : "ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ";
     if (debugMode) {
@@ -265,7 +308,7 @@ async function refresh() {
       audioUrl = state.audio_url;
       playbackBase = 0;
       audio.src = audioUrl;
-      $("playToggle").disabled = false;
+      $("playToggle").disabled = playbackLoading;
       if (needsFocus) showPlayerDock();
     }
     showMatch(state);
@@ -294,21 +337,11 @@ window.addEventListener("keydown", event => {
   showPlayerDock();
 }, true);
 $("playToggle").addEventListener("click", togglePlayback);
-$("liveAudio").addEventListener("playing", () => {
-  wantsAudioPlayback = true;
-  audioRecoveryAttempts = 0;
-  clearAudioRecovery();
-  $("playToggle").disabled = false;
-  if (clientStartedAt === null) clientStartedAt = Date.now() / 1000;
-  if (playbackBase === null && Number.isFinite($("liveAudio").currentTime)) {
-    playbackBase = $("liveAudio").currentTime;
-  }
-  setPlayerState(true);
-});
+$("liveAudio").addEventListener("playing", onPlaybackStarted);
 $("liveAudio").addEventListener("error", () => {
-  $("playToggle").disabled = false;
   if (wantsAudioPlayback) scheduleAudioRecovery();
   else {
+    setPlaybackLoading(false);
     setPlayerState(false);
     $("liveStatus").textContent = "ਆਵਾਜ਼ ਚਲਾਉਣ ਲਈ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ";
   }

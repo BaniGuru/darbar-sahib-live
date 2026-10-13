@@ -56,3 +56,22 @@ class PlaybackTests(unittest.TestCase):
         self.assertEqual(server._matched_word_offset(message,'ਨਾਮ ਜਪੋ',2),6)
         self.assertEqual(server._matched_word_offset(message,'ਨਾਮ ਜਪੋ',2,'ਨਾਮ ਜਪੋ'),2)
 
+    def test_listener_count_tracks_stream_connections_and_invalidates_revision(self):
+        async def check():
+            initial = server.live_state(self.sid)
+            self.assertEqual(initial['listener_count'], 0)
+            first = await server.live_audio(self.sid)
+            await anext(first.body_iterator)
+            listening = server.live_state(self.sid)
+            self.assertEqual(listening['listener_count'], 1)
+            self.assertNotEqual(initial['revision'], listening['revision'])
+            second = await server.live_audio(self.sid)
+            await anext(second.body_iterator)
+            self.assertEqual(server.live_state(self.sid)['listener_count'], 1)
+            await first.body_iterator.aclose()
+            await second.body_iterator.aclose()
+            stopped = server.live_state(self.sid)
+            self.assertEqual(stopped['listener_count'], 0)
+            self.assertNotEqual(listening['revision'], stopped['revision'])
+        asyncio.run(check())
+

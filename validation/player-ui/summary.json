@@ -1,0 +1,44 @@
+{
+  "passed_python_tests": 110,
+  "python_test_seconds": 16.004,
+  "playback_tests": 8,
+  "javascript_syntax": "passed",
+  "artwork": {
+    "exact_uploaded_png": true,
+    "sha256": "6ed01976f644b89fd2aff212e3ce066b706db237643ddf60e3d316b61d982721",
+    "width": 2172,
+    "height": 724,
+    "png_color_type": 6,
+    "bytes": 1440156
+  },
+  "browser": {
+    "completed": true,
+    "artworkFilePresent": true,
+    "results": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "passed": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "passed": true
+      }
+    ]
+  },
+  "tested_behaviors": [
+    "Welcome image and listener count visible on arrival; Gurbani/debug transcript hidden",
+    "Play stays disabled with animated spinner and Starting soon text until playback starts",
+    "Repeated play clicks do not create a second play request",
+    "Playing hides welcome and shows Gurbani",
+    "Automatic pause/recovery preserves Gurbani without flashing welcome",
+    "Fresh visit and manual stop reload return to welcome",
+    "Listener singular/plural formatting and mobile badge fit",
+    "Connected listener counts affect state revision and avoid double count on reconnect"
+  ]
+}

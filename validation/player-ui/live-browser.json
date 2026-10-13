@@ -1,0 +1,25 @@
+{
+  "completed": true,
+  "real_audio_started": true,
+  "playing": {
+    "currentTime": 0.847321,
+    "listenerCount": "1",
+    "spinner": "false"
+  },
+  "health": {
+    "status": "ok",
+    "stream_connected": true,
+    "asr_connected": true,
+    "database": "bani.db",
+    "speech_column": "unicode_speech",
+    "asr_build": "stream-d3aee32ffe83",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "playback_delay_seconds": 10,
+    "buffered_audio_seconds": 9.566621315192208
+  },
+  "observer_listener_count_during_playback": 1,
+  "listener_count_after_stop": 0,
+  "manual_stop_returns_to_welcome": true,
+  "total_observation_seconds": 10.655
+}
