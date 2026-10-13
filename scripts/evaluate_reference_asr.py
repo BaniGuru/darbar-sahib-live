@@ -238,7 +238,7 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
                         "-hide_banner", "-loglevel", "error", "-i", str(audio_path),
                         "-ar", "16000", "-ac", "1", "-f", "f32le", str(pcm_path)], check=True)
         audio = np.memmap(pcm_path, dtype="<f4", mode="r")
-        recognizer = asr.StreamingRecognizer()
+        recognizer = asr.new_recognizer()
         step, timings, durations = asr.PARTIAL_INTERVAL_SAMPLES, [], []
         origin, last_log = time.perf_counter(), time.perf_counter()
         checkpoint_at = 60.0
@@ -275,6 +275,8 @@ def replay(audio_path: Path, paced: bool, checkpoint_path: Path | None = None) -
         lag = max(0.0, lag - duration) + processing
         simulated_lags.append(lag)
     return result, {"paced": paced, "elapsed_seconds": elapsed,
+                    "recognition_mode": asr.RECOGNITION_MODE, "block_seconds": asr.BLOCK_SECONDS,
+                    "encoder_threads": asr.ENCODER_THREADS, "blas_threads": asr.BLAS_THREADS,
                     "decoder_beam_width": asr.BEAM_WIDTH,
                     "language_prior_weight": asr.LANGUAGE_PRIOR_WEIGHT,
                     "kenlm_weight": asr.KENLM_WEIGHT, "kenlm_mode": asr.KENLM_MODE,

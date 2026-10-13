@@ -13,8 +13,9 @@ from typing import Any
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
+from threadpoolctl import threadpool_info, threadpool_limits
 from audio_activity import last_audio_sample
-from asr_config import available_cpu_count, language_model_enabled
+from asr_config import available_cpu_count, configured_decoder_mode, configured_recognition, default_encoder_threads, language_model_enabled
 from incremental_language_scorer import IncrementalLanguageScorer
 from cached_rnnt_decoder import CachedRNNTDecoder
 from gurbani_language_prior import GurbaniLanguagePrior, token_prefix_score, words as prior_words
@@ -55,8 +56,14 @@ ENCODER_CACHE_CHANNELS = 17
 ENCODER_CACHE_DIM = 512
 ENCODER_CACHE_TIME = 30
 CPU_BUDGET = available_cpu_count()
-ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", min(4, CPU_BUDGET))))
+ENCODER_THREADS = max(1, int(os.environ.get("ASR_ENCODER_THREADS", default_encoder_threads(CPU_BUDGET))))
+BLAS_THREADS = max(1, int(os.environ.get("ASR_BLAS_THREADS", "1")))
+# Apply after NumPy loads, including when the full server imported it first.
+# Retain the controller for the process lifetime, rather than a short scope.
+_blas_limits = threadpool_limits(limits=BLAS_THREADS, user_api="blas")
 enable_language_model = language_model_enabled()
+DECODER_MODE = configured_decoder_mode()
+RECOGNITION_MODE, BLOCK_SECONDS = configured_recognition()
 BEAM_WIDTH = max(1, int(os.environ.get("ASR_BEAM_WIDTH", "24")))
 BEAM_PRUNE_LOGP = 6.0
 LANGUAGE_PRIOR_WEIGHT = max(0.0, float(os.environ.get("ASR_LANGUAGE_PRIOR_WEIGHT", "0.6")))
@@ -205,6 +212,110 @@ def _merge_hypothesis(candidates: dict, hypothesis: DecoderHypothesis) -> None:
 
 
 def decode_encoder_beams(
+    encoded: np.ndarray, length: int, beams: list[DecoderHypothesis], frame_offset: int,
+    *, require_word_start: bool = False, previous_word: str = "", previous_words: tuple[str, ...] = (),
+) -> list[DecoderHypothesis]:
+    """Expose the original decoder for controlled live accuracy comparisons."""
+    decode = (_decode_encoder_beams_optimized if DECODER_MODE == "optimized"
+              else _decode_encoder_beams_accuracy)
+    return decode(encoded, length, beams, frame_offset,
+                  require_word_start=require_word_start, previous_word=previous_word,
+                  previous_words=previous_words)
+
+
+def _decode_encoder_beams_accuracy(
+    encoded: np.ndarray, length: int, beams: list[DecoderHypothesis], frame_offset: int,
+    *, require_word_start: bool = False, previous_word: str = "", previous_words: tuple[str, ...] = (),
+) -> list[DecoderHypothesis]:
+    """Keep competing word interpretations alive across acoustic commits.
+
+    Batch the predictor/joint calls across a small, probability-pruned beam.
+    A blank advances acoustic time without consuming predictor state.
+    """
+    start_labels = np.asarray([label for label in range(LOCAL_VOCAB_SIZE)
+                               if tokenizer.id_to_piece(label).startswith("▁")], dtype=np.int32) if require_word_start else None
+    prior_scores = {}
+    def prior_score(ids):
+        if language_prior is None and kenlm_prior is None:
+            return 0.0
+        if ids not in prior_scores:
+            value = (LANGUAGE_PRIOR_WEIGHT * token_prefix_score(language_prior, tokenizer, ids, previous_word)
+                     if language_prior is not None else 0.0)
+            if kenlm_prior is not None:
+                value += KENLM_WEIGHT * kenlm_prior.token_score(tokenizer, ids, previous_words)
+            prior_scores[ids] = value
+        return prior_scores[ids]
+    expansion_width = BEAM_WIDTH * 2 if language_prior is not None or kenlm_prior is not None else BEAM_WIDTH
+    maximum_prior_reward = 12 * LANGUAGE_PRIOR_WEIGHT
+    if kenlm_prior is not None:
+        maximum_prior_reward += KENLM_WEIGHT * kenlm_prior.max_token_reward
+    for frame in range(length):
+        active = beams
+        completed: dict[tuple[int, ...], DecoderHypothesis] = {}
+        for symbols in range(MAX_SYMBOLS_PER_STEP + 1):
+            if not active:
+                break
+            batch = len(active)
+            result = decoder_session.run(None, {
+                decoder_inputs[0]: np.repeat(encoded[:, :, frame:frame + 1], batch, axis=0),
+                decoder_inputs[1]: np.asarray([[h.predictor[2]] for h in active], dtype=np.int32),
+                decoder_inputs[2]: np.ones(batch, dtype=np.int32),
+                decoder_inputs[3]: np.concatenate([h.predictor[0] for h in active], axis=1),
+                decoder_inputs[4]: np.concatenate([h.predictor[1] for h in active], axis=1),
+            })
+            logits = result[0].reshape(batch, -1, LOCAL_VOCAB_SIZE + 1)[:, 0, :].astype(np.float64)
+            logits -= logits.max(axis=1, keepdims=True)
+            log_probs = logits - np.log(np.exp(logits).sum(axis=1, keepdims=True))
+            for index, hypothesis in enumerate(active):
+                _merge_hypothesis(completed, DecoderHypothesis(
+                    hypothesis.tokens, hypothesis.token_ids, hypothesis.predictor,
+                    hypothesis.score + float(log_probs[index, JOINT_BLANK_ID]),
+                    hypothesis.predictor_states,
+                ))
+            best_completed = max(h.score for h in completed.values())
+            if symbols == MAX_SYMBOLS_PER_STEP:
+                break
+            expanded: dict[tuple[int, ...], DecoderHypothesis] = {}
+            for index, hypothesis in enumerate(active):
+                # Every label extending this parent has the same newly
+                # computed recurrent state. These arrays remain immutable.
+                next_h = result[2][:, index:index + 1, :].copy()
+                next_c = result[3][:, index:index + 1, :].copy()
+                if require_word_start and not hypothesis.tokens:
+                    # A settled word cannot acquire more suffix characters.
+                    # Leave the new word's spelling free, but preserve its
+                    # confirmed boundary even if normalization later changes.
+                    labels = start_labels[np.argsort(log_probs[index, start_labels])[-expansion_width:]]
+                else:
+                    labels = np.argsort(log_probs[index, :LOCAL_VOCAB_SIZE])[-expansion_width:]
+                for label in labels:
+                    acoustic_score = hypothesis.score + float(log_probs[index, label])
+                    # A token can complete one word and begin the next. The
+                    # bounded prior cannot rescue a candidate below this bound.
+                    if acoustic_score < best_completed - BEAM_PRUNE_LOGP - maximum_prior_reward:
+                        continue
+                    candidate_ids = hypothesis.token_ids + (int(label),)
+                    score = (acoustic_score
+                             + prior_score(candidate_ids) - prior_score(hypothesis.token_ids))
+                    if score < best_completed - BEAM_PRUNE_LOGP:
+                        continue
+                    label = int(label)
+                    predictor = (next_h, next_c, label)
+                    _merge_hypothesis(expanded, DecoderHypothesis(
+                        hypothesis.tokens + (TimedToken(label, frame_offset + frame),),
+                        hypothesis.token_ids + (label,),
+                        predictor, score, hypothesis.predictor_states + (predictor,),
+                    ))
+            active = sorted(expanded.values(), key=lambda h: h.score, reverse=True)[:BEAM_WIDTH]
+        beams = sorted(completed.values(), key=lambda h: h.score, reverse=True)[:BEAM_WIDTH]
+        top_score = beams[0].score
+        beams = [DecoderHypothesis(h.tokens, h.token_ids, h.predictor, h.score - top_score, h.predictor_states)
+                 for h in beams if h.score >= top_score - BEAM_PRUNE_LOGP]
+    return beams
+
+
+
+def _decode_encoder_beams_optimized(
     encoded: np.ndarray, length: int, beams: list[DecoderHypothesis], frame_offset: int,
     *, require_word_start: bool = False, previous_word: str = "", previous_words: tuple[str, ...] = (),
 ) -> list[DecoderHypothesis]:
@@ -640,9 +751,16 @@ class StreamingRecognizer:
                 "cache_events": self.cache_events}
 
 
+def new_recognizer():
+    if RECOGNITION_MODE == "blocks":
+        from block_recognizer import BlockRecognizer
+        return BlockRecognizer(BLOCK_SECONDS)
+    return StreamingRecognizer()
+
+
 def transcribe_pcm_sync(audio: np.ndarray) -> dict[str, Any]:
     audio = np.asarray(audio, dtype=np.float32).reshape(-1)
-    recognizer = StreamingRecognizer()
+    recognizer = new_recognizer()
     recognizer.update(audio, preview=False)
     return recognizer.finish()
 
@@ -670,11 +788,17 @@ async def health():
     return {"status": "ok", "provider": "CPUExecutionProvider", "sample_rate": SAMPLE_RATE,
             "encoder_context": RUNTIME["att_context_size"], "encoder_frame_seconds": ENCODER_FRAME_SECONDS,
             "text_commit_seconds": 4.0, "cache_commit_seconds": 4.0,
-            "word_commit_policy": "adaptive-boundary-lookahead",
+            "word_commit_policy": "shared-word-boundary" if RECOGNITION_MODE == "blocks" else "adaptive-boundary-lookahead",
             "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
-            "encoder_update_seconds": PARTIAL_INTERVAL_SAMPLES / SAMPLE_RATE,
+            "encoder_update_seconds": BLOCK_SECONDS if RECOGNITION_MODE == "blocks" else PARTIAL_INTERVAL_SAMPLES / SAMPLE_RATE,
+            "normalization_lookahead_seconds": 4.0 if RECOGNITION_MODE == "blocks" else None,
             "encoder_threads": ENCODER_THREADS, "decoder_beam_width": BEAM_WIDTH,
+            "blas_threads": BLAS_THREADS,
+            "blas_pools": [{"internal_api": p["internal_api"], "num_threads": p["num_threads"]}
+                           for p in threadpool_info() if p["user_api"] == "blas"],
             "cpu_budget": CPU_BUDGET,
+            "decoder_mode": DECODER_MODE,
+            "recognition_mode": RECOGNITION_MODE, "block_seconds": BLOCK_SECONDS,
             "enable_language_model": enable_language_model,
             "silence_guard": SILENCE_GUARD,
             "silence_hangover_seconds": SILENCE_HANGOVER_SAMPLES / SAMPLE_RATE,
@@ -702,15 +826,19 @@ async def transcribe(file: UploadFile = File(...)):
 @app.websocket("/ws/transcribe")
 async def websocket_transcribe(websocket: WebSocket):
     await websocket.accept()
-    recognizer = StreamingRecognizer()
+    recognizer = new_recognizer()
     await websocket.send_json({"type": "ready", "sample_rate": SAMPLE_RATE,
-                               "format": "float32-le-mono", "step_seconds": PARTIAL_INTERVAL_SECONDS,
+                               "format": "float32-le-mono", "step_seconds": BLOCK_SECONDS if RECOGNITION_MODE == "blocks" else PARTIAL_INTERVAL_SECONDS,
+                               "recognition_mode": RECOGNITION_MODE,
+                               "block_seconds": BLOCK_SECONDS,
+                               "normalization_lookahead_seconds": 4.0 if RECOGNITION_MODE == "blocks" else None,
                                "text_commit_seconds": 4.0, "cache_commit_seconds": 4.0,
-                               "word_commit_policy": "adaptive-boundary-lookahead",
+                               "word_commit_policy": "shared-word-boundary" if RECOGNITION_MODE == "blocks" else "adaptive-boundary-lookahead",
                                "max_pending_window_seconds": MAX_PENDING_SAMPLES / SAMPLE_RATE,
                                "word_lookahead_seconds": WORD_LOOKAHEAD_FRAMES * ENCODER_FRAME_SECONDS,
                                "encoder_context": RUNTIME["att_context_size"]})
     buffered = np.empty(0, dtype=np.float32)
+    last_frontier = -1
     try:
         while True:
             message = await websocket.receive()
@@ -737,6 +865,11 @@ async def websocket_transcribe(websocket: WebSocket):
                 chunk, buffered = buffered[:PARTIAL_INTERVAL_SAMPLES], buffered[PARTIAL_INTERVAL_SAMPLES:]
                 async with INFERENCE_LOCK:
                     state = await asyncio.to_thread(recognizer.update, chunk)
-                await websocket.send_json(state)
+                frontier = state.get("window_end")
+                # Unchanged collection ticks must not count as fresh matching
+                # evidence; send only actual acoustic progress in block mode.
+                if RECOGNITION_MODE != "blocks" or frontier != last_frontier:
+                    await websocket.send_json(state)
+                    last_frontier = frontier
     except WebSocketDisconnect:
         pass

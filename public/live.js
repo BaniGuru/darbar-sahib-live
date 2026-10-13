@@ -19,6 +19,8 @@ let audioRecoveryTimer = null;
 let audioRecoveryRunning = false;
 let audioRecoveryAttempts = 0;
 let audioStallTimer = null;
+let playbackDelaySeconds = 30;
+let audioGeneration = 0;
 const maxAudioRecoveryAttempts = 6;
 const localTimeFormatter = new Intl.DateTimeFormat(undefined, {
   hour: "2-digit", minute: "2-digit", hourCycle: "h12"
@@ -81,10 +83,12 @@ function scheduleAudioRecovery() {
     audioRecoveryRunning = true;
     let attemptTimeout;
     try {
+      playbackBase = 0;
+      stateRevision = "";
       audio.load();
       await Promise.race([
         audio.play().then(() => true, () => false),
-        new Promise(resolve => { attemptTimeout = setTimeout(() => resolve(null), 15000); })
+        new Promise(resolve => { attemptTimeout = setTimeout(() => resolve(null), (playbackDelaySeconds + 15) * 1000); })
       ]).then(result => {
         if (result === null && wantsAudioPlayback) audio.pause();
       });
@@ -215,34 +219,11 @@ function showMatch(state) {
   fitPunjabi();
 }
 
-function connectDebugSocket() {
+function showDebugPanel() {
   if (!debugMode) return;
   $("debugPanel").hidden = false;
-  const scheme = location.protocol === "https:" ? "wss:" : "ws:";
-  const socket = new WebSocket(`${scheme}//${location.host}/api/live/debug`);
-  socket.addEventListener("open", () => { $("debugStatus").textContent = "live"; });
-  socket.addEventListener("message", event => {
-    try {
-      const message = JSON.parse(event.data);
-      if (message.type !== "transcript") return;
-      const finalWords = Array.isArray(message.final_words)
-        ? message.final_words.slice(-30)
-        : String(message.final_text || "").split(/\s+/).filter(Boolean).slice(-30);
-      const partialWords = Array.isArray(message.partial_words)
-        ? message.partial_words
-        : String(message.partial_text || "").split(/\s+/).filter(Boolean);
-      $("debugFinal").textContent = finalWords.length ? `${finalWords.join(" ")} ` : "";
-      $("debugPartial").textContent = partialWords.join(" ");
-      $("debugStatus").textContent = "live";
-    } catch {
-      // Ignore malformed or unrelated messages.
-    }
-  });
-  socket.addEventListener("close", () => {
-    $("debugStatus").textContent = "reconnecting…";
-    setTimeout(connectDebugSocket, 2000);
-  });
-  socket.addEventListener("error", () => socket.close());
+  // Debug captions follow the same delayed playback clock as the pankti.
+  // Recognition diagnostics remain available through /api/live/debug.
 }
 
 async function refresh() {
@@ -250,9 +231,7 @@ async function refresh() {
   refreshInFlight = true;
   try {
     const audio = $("liveAudio");
-    if (playbackBase === null && Number.isFinite(audio.currentTime) && audio.currentTime > 0) {
-      playbackBase = audio.currentTime;
-    }
+    if (playbackBase === null) playbackBase = 0;
     const playedSeconds = playbackBase === null
       ? 0
       : Math.max(0, audio.currentTime - playbackBase);
@@ -267,11 +246,24 @@ async function refresh() {
     const state = await response.json();
     if (!response.ok) throw new Error(state.detail || "state unavailable");
     stateRevision = state.revision || "";
+    const nextGeneration = Number(state.audio_generation || 0);
+    if (audioGeneration && nextGeneration !== audioGeneration) {
+      playbackBase = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+      stateRevision = "";
+    }
+    audioGeneration = nextGeneration;
+    playbackDelaySeconds = Number(state.playback_delay_seconds ?? 30);
     $("liveDot").classList.toggle("active", Boolean(state.connected));
-    $("liveStatus").textContent = state.connected ? "ਲਾਈਵ" : "ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ";
+    $("liveStatus").textContent = !state.playback_ready ? "ਆਵਾਜ਼ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ" : state.connected ? "ਲਾਈਵ" : "ਜੋੜਿਆ ਜਾ ਰਿਹਾ ਹੈ";
+    if (debugMode) {
+      $("debugFinal").textContent = state.playback_text || "";
+      $("debugPartial").textContent = "";
+      $("debugStatus").textContent = "playback";
+    }
     if (state.audio_url && state.audio_url !== audioUrl) {
       const needsFocus = $("playToggle").disabled;
       audioUrl = state.audio_url;
+      playbackBase = 0;
       audio.src = audioUrl;
       $("playToggle").disabled = false;
       if (needsFocus) showPlayerDock();
@@ -335,7 +327,7 @@ $("liveAudio").addEventListener("stalled", () => {
     if (!wantsAudioPlayback || audio.readyState >= 3) return;
     if (!audio.paused) audio.pause();
     scheduleAudioRecovery();
-  }, 12000);
+  }, (playbackDelaySeconds + 15) * 1000);
 });
 updateLocalTime();
 setInterval(updateLocalTime, 1000);
@@ -343,4 +335,4 @@ showPlayerDock();
 schedulePlayerWake();
 refresh();
 setInterval(refresh, 1000);
-connectDebugSocket();
+showDebugPanel();

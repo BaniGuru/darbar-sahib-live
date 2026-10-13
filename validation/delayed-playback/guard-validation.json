@@ -1,0 +1,16 @@
+{
+  "idle": {
+    "seconds": 65.387375,
+    "text": "",
+    "samples": 1046198,
+    "encoded_frames": 1635
+  },
+  "quiet": {
+    "seconds": 52.0126875,
+    "guard_on_off_same_tokens_and_word_times_at_minus40db": true,
+    "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਪ੍ਰਭ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+    "normal_volume_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+    "normal_volume_matches_four_core_recording": true,
+    "limitation": "Attenuation changes one recognized word (ਕਰਿ to ਪ੍ਰਭ). Guard on/off is identical at this level; this frontend/model difference is not a silence-guard regression."
+  }
+}

@@ -1,5 +1,18 @@
 # Streaming on two CPU cores and 4 GB RAM
 
+These are historical rolling-mode measurements. The current deployment uses
+[30-second delayed playback and single-pass 4-second blocks](DELAYED_PLAYBACK.md)
+on four cores / 8 GiB, with KenLM enabled. Use `ASR_RECOGNITION_MODE=rolling`
+to reproduce the approach measured below.
+
+These measurements describe the low-power decoder introduced in `b2f3f2d`.
+It remains the default `ASR_DECODER_MODE=optimized`. An explicit
+`ASR_DECODER_MODE=accuracy` restores pre-optimization full-prefix scoring and
+predictor handling for comparison on reports of worse live partials and
+committed words. Keep KenLM enabled. See [FOUR_CORE_ASR.md](FOUR_CORE_ASR.md)
+for the four-core/eight-GB comparison; the two-core timings below apply to
+optimized mode, not the restored original decoder.
+
 The test used a Docker container with two pinned cores, a two-core CPU quota,
 4 GiB RAM, no swap and one ASR worker. This constrains the service on the
 current x86-64 host; it is not a measurement of a particular customer's CPU.

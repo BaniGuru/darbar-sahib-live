@@ -1,0 +1,22 @@
+[
+  {
+    "codec": "aac",
+    "source_sha256": "7ca9600230ad4e3f25e68e70ef6f7cce8825d58191e50cbff03cc2ab2bb0073d",
+    "frames": 463,
+    "frame_clock_seconds": 21.501678004535126,
+    "same_decoded_first45s": true,
+    "source_pcm_samples": 344027,
+    "filtered_pcm_samples": 344027,
+    "trailing_bytes": 0
+  },
+  {
+    "codec": "mp3",
+    "source_sha256": "f071c4881102adb7f053087342616f9037d5341c6f7c019c2ebd5967e595d34c",
+    "frames": 123713,
+    "frame_clock_seconds": 3231.686530607915,
+    "same_decoded_first45s": true,
+    "source_pcm_samples": 720000,
+    "filtered_pcm_samples": 720000,
+    "trailing_bytes": 0
+  }
+]

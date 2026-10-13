@@ -30,6 +30,7 @@ from fastapi.responses import FileResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from bani_matching import OrderedBaniMatcher, bani_family
+from delayed_audio import DelayedAudio, FrameParser
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -54,9 +55,10 @@ LIVE_STREAM_URL = os.getenv(
     "LIVE_STREAM_URL", "https://live.sgpc.net:8443/;stream.mp3"
 ).strip()
 ASR_REPLAY_SECONDS = max(2.0, min(8.0, float(os.getenv("ASR_REPLAY_SECONDS", "6"))))
-# Keep only a short ASR send backlog. A long FIFO hides a slow recognizer and
-# makes captions trail the public live audio by many seconds.
-ASR_PCM_QUEUE_SECONDS = max(1.0, min(8.0, float(os.getenv("ASR_PCM_QUEUE_SECONDS", "2"))))
+PLAYBACK_DELAY_SECONDS = max(0.0, min(120.0, float(os.getenv("PLAYBACK_DELAY_SECONDS", "30"))))
+# Absorb source startup bursts without dropping PCM while recognition is
+# ahead of the delayed listener. The recognizer itself still holds <=8s.
+ASR_PCM_QUEUE_SECONDS = max(8.0, min(128.0, float(os.getenv("ASR_PCM_QUEUE_SECONDS", str(PLAYBACK_DELAY_SECONDS + 8)))))
 ASR_SAMPLE_RATE = 16000
 PCM_READ_BYTES = 12800
 ASR_PCM_QUEUE_CHUNKS = max(8, int(ASR_PCM_QUEUE_SECONDS * ASR_SAMPLE_RATE * 4 / PCM_READ_BYTES))
@@ -111,6 +113,7 @@ _pankti_timeline: list[tuple[float, dict[str, Any]]] = []
 _audio_sessions: dict[str, dict[str, Any]] = {}
 _stream_connected = False
 _live_task: asyncio.Task | None = None
+_audio_delay_task: asyncio.Task | None = None
 _asr_module: Any = None
 _debug_clients: set[WebSocket] = set()
 _debug_final_text = ""
@@ -118,9 +121,11 @@ _debug_partial_text = ""
 _debug_final_words: list[str] = []
 _debug_partial_words: list[str] = []
 _debug_timed_final_words: list[dict[str, Any]] = []
+_debug_timed_partial_words: list[dict[str, Any]] = []
 _debug_recompute_from: float | None = None
 _audio_subscribers: set[asyncio.Queue[tuple[float, bytes] | None]] = set()
 _live_audio_media_type = "audio/aac"
+_delayed_audio = DelayedAudio(PLAYBACK_DELAY_SECONDS)
 
 app = FastAPI(title="BaniGuru Live Gurbani")
 app.mount("/static", StaticFiles(directory=str(PUBLIC_DIR)), name="public")
@@ -256,7 +261,8 @@ def _best_line_alignment(expected: list[str], heard: list[str]) -> tuple[float, 
     return best
 
 
-def _matched_word_offset(message: dict[str, Any], transcript: str, query_end: int) -> float | None:
+def _matched_word_offset(message: dict[str, Any], transcript: str, query_end: int,
+                         line: str | None = None) -> float | None:
     """Map the matched query word to the ASR word's source-audio timestamp."""
     if query_end <= 0:
         return None
@@ -269,7 +275,7 @@ def _matched_word_offset(message: dict[str, Any], transcript: str, query_end: in
     for word in timed_words:
         token = _normalise_query(str(word.get("text") or ""))
         try:
-            end = float(word.get("end"))
+            end = float(word.get("start" if line else "end"))
         except (TypeError, ValueError):
             continue
         if token:
@@ -288,6 +294,14 @@ def _matched_word_offset(message: dict[str, Any], transcript: str, query_end: in
             qi -= 1
         wi -= 1
     query_index = min(len(query_words) - 1, query_end - 1)
+    if line:
+        # Recognition arrives before playback: backdate a confirmed pankti to
+        # the beginning of its supported phrase, not its second/third word.
+        line_words = _normalise_query(line).split()
+        blocks = SequenceMatcher(None, query_words[:query_index+1], line_words, autojunk=False).get_matching_blocks()
+        supported = [b for b in blocks if b.size >= 2]
+        if supported:
+            query_index = supported[0].a
     return found.get(query_index)
 
 
@@ -726,7 +740,7 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
     global _pending_pankti_audio_time
     global _debug_final_text, _debug_partial_text
     global _debug_final_words, _debug_partial_words
-    global _debug_timed_final_words, _debug_recompute_from
+    global _debug_timed_final_words, _debug_timed_partial_words, _debug_recompute_from
     async for raw in socket:
         try:
             message = json.loads(raw)
@@ -771,7 +785,9 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
             # Live matching only needs the recent phrase tail. Bound this
             # history so a continuously running service does not keep
             # rebuilding and serializing the entire stream transcript.
-            _debug_timed_final_words = _debug_timed_final_words[-120:]
+            latest = max((w["start"] for w in _debug_timed_final_words), default=0.0)
+            _debug_timed_final_words = [w for w in _debug_timed_final_words
+                                        if w["start"] >= latest-PLAYBACK_DELAY_SECONDS-90][-2000:]
             final_text = " ".join(
                 word["text"] for word in _debug_timed_final_words
             ).strip()
@@ -781,6 +797,7 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
         # The recognizer owns partial replacement. In particular an empty
         # partial means that its current hypothesis was withdrawn/promoted.
         partial_text = str(message.get("partial_text") or "").strip()
+        _debug_timed_partial_words = _timed_word_records(message.get("partial_words"), audio_offset_seconds)
         changed = final_text != _debug_final_text or partial_text != _debug_partial_text
         _debug_final_text = final_text
         _debug_partial_text = partial_text
@@ -870,7 +887,8 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
             except (TypeError, ValueError):
                 window_end = None
             matched_offset = _matched_word_offset(
-                message, transcript, int(match.get("_query_end") or 0)
+                message, transcript, int(match.get("_query_end") or 0),
+                str(match.get("punjabi") or "") if PLAYBACK_DELAY_SECONDS else None,
             )
             match_audio_time = (
                 _stream_wall_started_at + max(0.0, audio_offset_seconds + matched_offset)
@@ -963,16 +981,10 @@ async def _broadcast_debug_words() -> None:
         _debug_clients.discard(client)
 
 
-async def _publish_audio_chunk(chunk: bytes) -> None:
-    """Fan out bytes from the single upstream stream to public listeners."""
-    if _stream_wall_started_at is None:
-        source_time = time.time()
-    else:
-        # Use an audio-media clock, not wall time. It pauses while a source
-        # reconnects, matching each listener's audio.currentTime clock.
-        source_time = _stream_wall_started_at + (
-            _stream_audio_samples_total / ASR_SAMPLE_RATE
-        )
+async def _publish_audio_chunk(chunk: bytes, source_time: float | None = None) -> None:
+    """Fan out frame-aligned original bytes at their delayed media time."""
+    if source_time is None:
+        source_time = (_stream_wall_started_at or time.time()) + _stream_audio_samples_total / ASR_SAMPLE_RATE
     for queue in tuple(_audio_subscribers):
         if queue.full():
             # Never silently discard audio: doing so would desynchronize the
@@ -988,6 +1000,13 @@ async def _publish_audio_chunk(chunk: bytes) -> None:
         queue.put_nowait((source_time, chunk))
 
 
+async def _release_delayed_audio() -> None:
+    while True:
+        for frame in _delayed_audio.release(time.monotonic()):
+            await _publish_audio_chunk(frame.data, (_stream_wall_started_at or time.time()) + frame.start)
+        await asyncio.sleep(0.02)
+
+
 async def _feed_source_to_asr(response: Any, process: asyncio.subprocess.Process) -> None:
     """Send one upstream response to both public audio and ffmpeg/ASR."""
     global _stream_started_at, _stream_wall_started_at
@@ -997,6 +1016,8 @@ async def _feed_source_to_asr(response: Any, process: asyncio.subprocess.Process
         raise RuntimeError("ffmpeg stdin is unavailable")
     bytes_since_log = 0
     last_source_log = time.monotonic()
+    parser = FrameParser(_delayed_audio.head)
+    _delayed_audio.new_segment()
     try:
         async for chunk in response.aiter_bytes():
             if not chunk:
@@ -1018,9 +1039,11 @@ async def _feed_source_to_asr(response: Any, process: asyncio.subprocess.Process
                 _stream_started_at = time.monotonic()
             if _stream_wall_started_at is None:
                 _stream_wall_started_at = time.time()
-            await _publish_audio_chunk(chunk)
-            process.stdin.write(chunk)
-            await process.stdin.drain()
+            frames = parser.feed(chunk)
+            _delayed_audio.append(frames, time.monotonic())
+            if frames:
+                process.stdin.write(b"".join(frame.data for frame in frames))
+                await process.stdin.drain()
     finally:
         _source_connected = False
         process.stdin.close()
@@ -1286,7 +1309,7 @@ async def _live_worker() -> None:
 
 @app.on_event("startup")
 async def startup() -> None:
-    global _speech_column, _asr_module, _live_task
+    global _speech_column, _asr_module, _live_task, _audio_delay_task
     _speech_column = await asyncio.to_thread(_ensure_database)
     await asyncio.to_thread(_build_pankti_index)
     # Loads the cache-aware NeMo streaming ONNX encoder/decoder.
@@ -1294,15 +1317,20 @@ async def startup() -> None:
     _asr_module = asr_module
     app.mount("/asr", asr_module.app, name="onnx-asr")
     _live_task = asyncio.create_task(_live_worker())
+    _audio_delay_task = asyncio.create_task(_release_delayed_audio())
 
 
 @app.on_event("shutdown")
 async def shutdown() -> None:
-    global _live_task
+    global _live_task, _audio_delay_task
     if _live_task and not _live_task.done():
         _live_task.cancel()
         await asyncio.gather(_live_task, return_exceptions=True)
     _live_task = None
+    if _audio_delay_task:
+        _audio_delay_task.cancel()
+        await asyncio.gather(_audio_delay_task, return_exceptions=True)
+    _audio_delay_task = None
 
 
 @app.get("/")
@@ -1319,6 +1347,8 @@ def health() -> dict[str, Any]:
         "database": BANI_DB_PATH.name,
         "speech_column": _speech_column,
         "asr_build": getattr(_asr_module, "SERVER_BUILD", None),
+        "playback_delay_seconds": PLAYBACK_DELAY_SECONDS,
+        "buffered_audio_seconds": _delayed_audio.head-(_delayed_audio.released[-1].end if _delayed_audio.released else 0.0),
     }
 
 
@@ -1331,7 +1361,9 @@ def live_state(
 ) -> Any:
     """Return the pankti at this listener's playback position, or live edge."""
     now = time.time()
-    playhead_time = now
+    bootstrap = _delayed_audio.bootstrap()
+    delayed_position = bootstrap[0].start if bootstrap else max(0.0, _delayed_audio.head-PLAYBACK_DELAY_SECONDS)
+    playhead_time = (_stream_wall_started_at or now) + delayed_position
     audio_started_at = None
     if session_id and re.fullmatch(r"[0-9a-fA-F-]{36}", session_id):
         session = _audio_sessions.get(session_id)
@@ -1368,6 +1400,7 @@ def live_state(
                 fresh_entry = (float(last_at), last_match)
     if (
         fresh_entry is None
+        and PLAYBACK_DELAY_SECONDS == 0
         and audio_started_at is None
         and _live_match
         and 0 <= now - _live_match_at <= MATCH_HOLD_SECONDS
@@ -1383,6 +1416,11 @@ def live_state(
     )
     state = {
         "enabled": True,
+        "playback_delay_seconds": PLAYBACK_DELAY_SECONDS,
+        "playback_ready": bool(_delayed_audio.released),
+        "audio_generation": _audio_sessions.get(session_id, {}).get("generation", 0),
+        "playback_text": " ".join(w["text"] for w in (_debug_timed_final_words + _debug_timed_partial_words)
+                                   if (_stream_wall_started_at or now)+w["start"] <= playhead_time)[-500:],
         "connected": source_active,
         "asr_connected": _stream_connected,
         "audio_url": f"/api/live/audio?session_id={session_id}" if session_id else "/api/live/audio",
@@ -1412,6 +1450,7 @@ def live_state(
             "audio_start_timestamp", "client_started_at", "pankti",
             "legacy_gurmukhi", "english", "shabad_id", "pankti_id",
             "bani_id", "bani_name", "line_group", "bani_position", "match_mode",
+            "playback_delay_seconds", "playback_ready", "audio_generation", "playback_text",
         )
     }
     revision = hashlib.sha256(
@@ -1453,7 +1492,21 @@ async def live_audio(session_id: str | None = None) -> StreamingResponse:
     queue: asyncio.Queue[tuple[float, bytes] | None] = asyncio.Queue(maxsize=512)
     _audio_subscribers.add(queue)
     session = _audio_sessions.setdefault(session_id, {"last_seen": time.monotonic()})
+    previous_queue = session.get("queue")
+    if previous_queue is not None:
+        _audio_subscribers.discard(previous_queue)
+        while not previous_queue.empty():
+            previous_queue.get_nowait()
+        previous_queue.put_nowait(None)
+    session["queue"] = queue
     session["last_seen"] = time.monotonic()
+    session["generation"] = session.get("generation", 0) + 1
+    generation = session["generation"]
+    session["first_audio_at"] = None
+    session.pop("last_match", None)
+    session.pop("last_match_timestamp", None)
+    for frame in _delayed_audio.bootstrap():
+        queue.put_nowait(((_stream_wall_started_at or time.time()) + frame.start, frame.data))
 
     async def chunks():
         try:
@@ -1462,6 +1515,8 @@ async def live_audio(session_id: str | None = None) -> StreamingResponse:
                 if item is None:
                     break
                 source_time, chunk = item
+                if session["generation"] != generation:
+                    break
                 if session.get("first_audio_at") is None:
                     session["first_audio_at"] = source_time
                     logger.info(

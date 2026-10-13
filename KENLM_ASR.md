@@ -1,5 +1,9 @@
 # Gurbani KenLM streaming decoding
 
+KenLM remains enabled for the current [30-second delayed playback and
+single-pass 4-second block deployment](DELAYED_PLAYBACK.md). Historical
+rolling-mode measurements below use `ASR_RECOGNITION_MODE=rolling`.
+
 The streaming RNNT supports the supplied 3-, 4- and 5-gram models; `kirtan_stream_model/gurbani_3gram.bin` is selected alongside the existing soft Gurbani corpus prior. The binary is stored in Git LFS. The acoustic encoder, predictor, tokenizer and joint weights are unchanged.
 
 ## Install and run
@@ -22,13 +26,13 @@ The selected defaults are 24 beams, KenLM weight 0.3, `ngram` mode and zero word
 
 KenLM scores complete words during beam expansion. Its native log10 probabilities are converted to natural logarithms before combining them with acoustic scores. Probability mode uses a per-word bonus to balance the model's tendency to prefer shorter transcripts; word costs are capped at 12 nats so unknown commentary remains possible. Ratio mode compares contextual probability with the unigram; ngram mode limits that evidence to observed matches of order three or higher; full_order mode requires the model's maximum order. These softer modes cap contextual evidence and allow unknown words.
 
-The LM keeps order minus one completed words of context (two, three or four) across encoder cache promotions. An unfinished word remains in the acoustic beam until its boundary resolves. EOF scores the terminal word without adding audio or an artificial sentence boundary. The existing 800 ms partial refresh, four-second acoustic cache steps, one-second word lookahead, and eight-second maximum pending window remain in effect.
+The LM keeps order minus one completed words of context (two, three or four) across encoder cache promotions. An unfinished word remains in the acoustic beam until its boundary resolves. EOF scores the terminal word without adding audio or an artificial sentence boundary. The current single-pass mode advances acoustic caches every four seconds while retaining unresolved lexical hypotheses. It uses one-second word-boundary confirmation and an eight-second maximum pending PCM window; the 800 ms rolling partial refresh remains a diagnostic mode.
 
 Native states, word scores and completed token prefixes use bounded caches. KenLM and the corpus prior share token-boundary decoding, avoiding repeated SentencePiece work on every preview. The 16,384-entry RNNT predictor cache continues to reuse exact predictor computations.
 
 ## Controls and validation
 
-Set `enable_language_model = False` in `asr_config.py`, or start with `ENABLE_LANGUAGE_MODEL=False`, to disable optional KenLM loading and scoring. The corpus word prior remains enabled. `ASR_KENLM_WEIGHT=0` also disables KenLM. See [LOW_POWER_ASR.md](LOW_POWER_ASR.md) for two-core/four-GB measurements; the optimized 24-beam decoder can keep KenLM enabled within the measured real-time budget. Advanced tuning uses `ASR_KENLM_PATH`, `ASR_KENLM_MODE` (`ngram`, `full_order`, `probability` or `ratio`; `trigram` is a legacy alias for `ngram`), `ASR_KENLM_WORD_BONUS`, `ASR_LANGUAGE_PRIOR_WEIGHT` and `ASR_BEAM_WIDTH`. Specify the weight and bonus together when changing scoring modes.
+Keep KenLM enabled for deployment and accuracy comparisons (`ENABLE_LANGUAGE_MODEL=True`, the default). `ASR_DECODER_MODE=accuracy` restores the original full-prefix language scoring and predictor handling for explicit comparisons; the faster default is `ASR_DECODER_MODE=optimized`. See [FOUR_CORE_ASR.md](FOUR_CORE_ASR.md) for the four-core/eight-GB comparison. The historical two-core measurements in [LOW_POWER_ASR.md](LOW_POWER_ASR.md) apply to the optimized mode. Advanced tuning uses `ASR_KENLM_PATH`, `ASR_KENLM_MODE` (`ngram`, `full_order`, `probability` or `ratio`; `trigram` is a legacy alias for `ngram`), `ASR_KENLM_WORD_BONUS`, `ASR_LANGUAGE_PRIOR_WEIGHT` and `ASR_BEAM_WIDTH`. Specify the weight and bonus together when changing scoring modes. The existing diagnostic `ENABLE_LANGUAGE_MODEL=False` and `ASR_KENLM_WEIGHT=0` controls remain available; they are not used in the four-core validation or recommended deployment.
 
 The [section-24 comparison](validation/kenlm-section24/README.md) compares all three orders and selects the defaults. The [earlier 20-minute comparison](validation/kenlm20m/README.md) records 3-gram profiles, whole-recording WER/CER, missing words, rejected settings and speed measurements. It includes complete transcripts and a highlighted word diff. Only terminal onkar ੁ and sihari ਿ are ignored in the primary accuracy comparison; internal vowels, repetitions and word boundaries remain significant.
 

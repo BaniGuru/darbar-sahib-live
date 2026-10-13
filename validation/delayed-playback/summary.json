@@ -1,0 +1,6294 @@
+{
+  "selected_block_seconds": 4,
+  "playback_delay_seconds": 30,
+  "kenlm_enabled": true,
+  "scope": "First 1200 seconds, 572 reference words; same original 52-second example also transcribed. Enforced 4-core/8GiB Docker, no swap; serial native runs. Native costs are replay timings, not paced delivery measurements.",
+  "models": {
+    "2": {
+      "scores": {
+        "reference_words": 572,
+        "hypothesis_words": 587,
+        "substitutions": 29,
+        "deletions": 23,
+        "insertions": 38,
+        "wer": 0.15734265734265734,
+        "cer_including_spaces": 0.11967090501121914,
+        "cer_excluding_spaces": 0.12315739419876368,
+        "strict_wer": 0.20104895104895104,
+        "reference_section_count": 99,
+        "overlapping_reference_intervals": 0,
+        "reference_last_end_seconds": 1198.63169,
+        "scored_audio_seconds": 1200.0,
+        "reference_extends_past_audio": false,
+        "normalization": "NFC, casefold, punctuation removal and standalone verse-number removal; word spaces and Gurmukhi vowel marks preserved; only word-final sihari (U+0A3F) and onkar (U+0A41) ignored",
+        "section_alignment": "Sections use global word alignment, not timestamp cuts; repeated passages can have ambiguous alignment.",
+        "sections": [
+          {
+            "start": 19.88,
+            "end": 30.2,
+            "reference": "ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 2,
+            "hypothesis": "ਬੋਲੋ ਜੀ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਬੋਲੋ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਜੀ"
+              }
+            ],
+            "wer": 1.0
+          },
+          {
+            "start": 34.28,
+            "end": 38.92,
+            "reference": "ਵਾਹਿਗੁਰੂ",
+            "reference_words": 1,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਵਾਹਿਗੁਰੂ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 41.12,
+            "end": 49.24,
+            "reference": "ਗੁਰੂ ਜੀ",
+            "reference_words": 2,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਗੁਰ ਜੀ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਗੁਰੂ",
+                "hypothesis": "ਗੁਰ"
+              }
+            ],
+            "wer": 0.5
+          },
+          {
+            "start": 54.36,
+            "end": 65.08,
+            "reference": "ਜੇਤਾ ਸਮੁੰਦੁ ਸਾਗਰੁ ਨੀਰਿ ਭਰਿਆ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੇਤਾ ਸਮੁੰਦ ਸਾਗਰ ਨੀਰ ਭਰਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 66.88,
+            "end": 72.48,
+            "reference": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 75.52,
+            "end": 81.84,
+            "reference": "ਦਇਆ ਕਰੋ",
+            "reference_words": 2,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦਇਆ ਕਰਹ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਕਰੋ",
+                "hypothesis": "ਕਰਹ"
+              }
+            ],
+            "wer": 0.5
+          },
+          {
+            "start": 84.08,
+            "end": 102.886,
+            "reference": "ਕਿਛੁ ਮਿਹਰ ਉਪਾਵਹੁ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਛ ਮਿਹਰ ਉਪਾਵਹ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 106.204,
+            "end": 119.92,
+            "reference": "ਕਿਰਪਾ ਕਰਹੁ ਦੀਨ ਕੇ ਦਾਤੇ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਰਪਾ ਕਰਹ ਦੀਨ ਕੇ ਦਾਤੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 122.64,
+            "end": 128.68,
+            "reference": "ਕਿਰਪਾ ਕਰਹੁ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਰਪਾ ਕਰਹ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 130.68,
+            "end": 139.68,
+            "reference": "ਦੀਨ ਕੇ ਦਾਤੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੀਨ ਕੇ ਦਾਤੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 141.2,
+            "end": 149.68,
+            "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 151.96,
+            "end": 164.36,
+            "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+            "reference_words": 6,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗੁਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਅਵਗਣ",
+                "hypothesis": "ਅਵਗੁਣ"
+              }
+            ],
+            "wer": 0.16666666666666666
+          },
+          {
+            "start": 166.64,
+            "end": 174.32,
+            "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਸੁਆਮੀ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 176.56,
+            "end": 187.68,
+            "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 188.4,
+            "end": 206.4,
+            "reference": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤਿ ਏਹੀ",
+            "reference_words": 6,
+            "substitute": 1,
+            "delete": 1,
+            "insert": 0,
+            "hypothesis": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤਿਹੀ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਗਤ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਏਹੀ",
+                "hypothesis": "ਗਤਿਹੀ"
+              }
+            ],
+            "wer": 0.3333333333333333
+          },
+          {
+            "start": 207.0,
+            "end": 221.36,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 227.224,
+            "end": 246.52,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 13,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 252.44,
+            "end": 258.866,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 258.866,
+            "end": 264.986,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 264.986,
+            "end": 277.12,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 278.24,
+            "end": 289.92,
+            "reference": "ਮਉਲੀ ਮਉਲੀ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਮਉਲੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 290.28,
+            "end": 303.32,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਆਏ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਆਏ"
+              }
+            ],
+            "wer": 0.125
+          },
+          {
+            "start": 315.24,
+            "end": 322.44,
+            "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਤਰੇ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਤਰੇ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 327.72,
+            "end": 340.8,
+            "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+            "reference_words": 10,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 346.56,
+            "end": 365.324,
+            "reference": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 13,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 14,
+            "hypothesis": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਅਪੁਨੇ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਅਪੁਨੇ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਠਾਕੁਰ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੀ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਹਉ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਚੇਰੀ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਪੁਨੇ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਠਾਕੁਰ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੀ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਹਉ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਚੇਰੀ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਪੁਨੇ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਠਾਕੁਰ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੀ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਹਉ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਚੇਰੀ"
+              }
+            ],
+            "wer": 1.0769230769230769
+          },
+          {
+            "start": 383.68,
+            "end": 391.458,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 4,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਬਗੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਦੁਤੀਆ",
+                "hypothesis": "ਬਗੀਆ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 391.458,
+            "end": 405.72,
+            "reference": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 407.16,
+            "end": 426.569,
+            "reference": "ਚਾਰਿ ਬੇਦ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 9,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਚਾਰ ਵੇਦ ਵੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬੇਦ",
+                "hypothesis": "ਵੇਦ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਬੇਦ",
+                "hypothesis": "ਵੇਦ"
+              }
+            ],
+            "wer": 0.2222222222222222
+          },
+          {
+            "start": 427.88,
+            "end": 435.36,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 435.36,
+            "end": 441.248,
+            "reference": "ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਬੇਦ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੇ ਚਾਰ ਬੇਦ ਬੇਦ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 441.248,
+            "end": 451.88,
+            "reference": "ਚਾਰਿ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਚਾਰ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 456.88,
+            "end": 469.48,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 475.2,
+            "end": 481.325685,
+            "reference": "ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 481.326,
+            "end": 487.329632,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 487.33,
+            "end": 493.63,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 493.63,
+            "end": 500.0,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪਰਗਾਸ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਪਰਗਾਸ",
+                "hypothesis": "ਪ੍ਰਗਾਸ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 505.64,
+            "end": 524.12,
+            "reference": "ਘਟਿ ਘਟਿ ਮੋਲਿਆ ਆਤਮ ਪਰਗਾਸਿ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 13,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟਾਏ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਮੋਲਿਆ",
+                "hypothesis": "ਮਉਲਿਆ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਪਰਗਾਸ",
+                "hypothesis": "ਪ੍ਰਗਾਸ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਘਟਾਏ"
+              }
+            ],
+            "wer": 0.23076923076923078
+          },
+          {
+            "start": 542.08,
+            "end": 549.52,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 551.24,
+            "end": 556.321937,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 556.322,
+            "end": 564.633,
+            "reference": "ਜੋਗ ਜੋਗ ਧਿਆਨ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 1,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਧਿਆਨ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਜੋਗ",
+                "hypothesis": null
+              }
+            ],
+            "wer": 0.3333333333333333
+          },
+          {
+            "start": 564.633,
+            "end": 574.28,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਮਉਲਿਓ",
+            "reference_words": 3,
+            "substitute": 1,
+            "delete": 1,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰਮਾਲਿਓ ਮਉਲਿਓ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਸੰਕਰ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਉਲਿਓ",
+                "hypothesis": "ਸੰਕਰਮਾਲਿਓ"
+              }
+            ],
+            "wer": 0.6666666666666666
+          },
+          {
+            "start": 575.04,
+            "end": 594.0,
+            "reference": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗੁ ਧਿਆਨ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 599.2,
+            "end": 611.32,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "reference_words": 9,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 616.92,
+            "end": 623.201,
+            "reference": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 623.202,
+            "end": 635.045,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 635.06,
+            "end": 641.36,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪਰਗਾਸ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਪ੍ਰਗਾਸ",
+                "hypothesis": "ਪਰਗਾਸ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 646.44,
+            "end": 651.88,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 652.28,
+            "end": 658.265,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 658.265,
+            "end": 664.190518,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 664.191,
+            "end": 673.56,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 674.64,
+            "end": 682.68,
+            "reference": "ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 684.44,
+            "end": 687.92,
+            "reference": "ਹਰਿ ਹਰਿ ਨਾਮੁ ਜਪੰਤਿਆ ਕਛੁ ਨ ਕਹੈ ਜਮਕਾਲੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਹਰ ਨਾਮ ਜਪੰਤਿਆ ਕਛ ਨ ਕਹੈ ਜਮਕਾਲ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 689.053,
+            "end": 692.894898,
+            "reference": "ਨਾਨਕ ਮਨੁ ਤਨੁ ਸੁਖੀ ਹੋਇ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਮਹਲ ਤਨ ਸੁਖੀ ਹੋਇ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਮਨ",
+                "hypothesis": "ਮਹਲ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 692.895,
+            "end": 695.715,
+            "reference": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲੁ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 695.715,
+            "end": 700.587576,
+            "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ",
+            "reference_words": 14,
+            "substitute": 2,
+            "delete": 3,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ ਧਨ ਧਨ ਪਾਈਐ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਕਰਮ",
+                "hypothesis": "ਧਨ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਲਿਖੰਤੇ",
+                "hypothesis": "ਧਨ"
+              },
+              {
+                "operation": "delete",
+                "reference": "ਏ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਰੁਤ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸਹਾਈ",
+                "hypothesis": null
+              }
+            ],
+            "wer": 0.35714285714285715
+          },
+          {
+            "start": 700.588,
+            "end": 705.441779,
+            "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "reference_words": 14,
+            "substitute": 3,
+            "delete": 10,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਸਮਾਧੈ ਲਏ ਸਭ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਵਣ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਤ੍ਰਿਣ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਤ੍ਰਿਭਵਣ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਮਉਲਿਆ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਅੰਮ੍ਰਿਤ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਫਲ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਪਾਈ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਮਿਲ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸਾਧੂ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਸੁਖ",
+                "hypothesis": "ਹਰ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਊਪਜੈ",
+                "hypothesis": "ਸਮਾਧੈ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਲਥੀ",
+                "hypothesis": "ਲਏ"
+              },
+              {
+                "operation": "delete",
+                "reference": "ਛਾਈ",
+                "hypothesis": null
+              }
+            ],
+            "wer": 0.9285714285714286
+          },
+          {
+            "start": 705.442,
+            "end": 710.8,
+            "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+            "reference_words": 12,
+            "substitute": 3,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਛ ਜਾਣਲਾ ਏਕ ਨਾਮ ਧਿਆਇ ਬਹੁੜ ਨ ਧਾਈ ਫਿਰ ਬਹੁੜ ਨ ਧਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਨਾਨਕ",
+                "hypothesis": "ਕਿਛ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਸਿਮਰੈ",
+                "hypothesis": "ਜਾਣਲਾ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਫਿਰ",
+                "hypothesis": "ਧਿਆਇ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 711.44,
+            "end": 728.4,
+            "reference": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲੁ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ",
+            "reference_words": 16,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦ ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 729.16,
+            "end": 733.696,
+            "reference": "ਕਰਮਿ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤਿ ਸੁਹਾਈ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਰਮ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤ ਸੁਹਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 733.696,
+            "end": 739.221907,
+            "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਵਣ ਤ੍ਰਿਣ ਤ੍ਰਿਭਵਣ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲ ਪਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 739.222,
+            "end": 745.103914,
+            "reference": "ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਿਲ ਸਾਧੂ ਸੁਖ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 745.104,
+            "end": 749.539,
+            "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਸਿਮਰੈ ਏਕ ਨਾਮ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 749.539,
+            "end": 754.76,
+            "reference": "ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+            "reference_words": 4,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਫਿਰ ਬਹੁੜ ਨ ਦਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਧਾਈ",
+                "hypothesis": "ਦਾਈ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 755.4,
+            "end": 758.571913,
+            "reference": "ਪੂਰਾ ਪ੍ਰਭੁ ਆਰਾਧਿਆ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੂਰਾ ਪ੍ਰਭ ਆਰਾਧਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 758.572,
+            "end": 762.913,
+            "reference": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 762.913,
+            "end": 766.716,
+            "reference": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 766.716,
+            "end": 774.031,
+            "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+            "reference_words": 16,
+            "substitute": 1,
+            "delete": 7,
+            "insert": 0,
+            "hypothesis": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਅਜਬਾ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਪੰਜੇ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਬਧੇ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਮਹਾਬਲੀ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਕਰ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸਚਾ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਢੋਆ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਆਪਣੇ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਚਰਣ",
+                "hypothesis": "ਅਜਬਾ"
+              }
+            ],
+            "wer": 0.5
+          },
+          {
+            "start": 774.031,
+            "end": 779.00666,
+            "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+            "reference_words": 16,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 779.007,
+            "end": 784.938,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 10,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਸੋਈ ਫਿਰ ਹੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 784.938,
+            "end": 788.851,
+            "reference": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰ ਸਚਾ ਢੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 788.851,
+            "end": 793.415,
+            "reference": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 793.415,
+            "end": 798.141,
+            "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰੋਗ ਸੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਸੋਗ"
+              }
+            ],
+            "wer": 0.125
+          },
+          {
+            "start": 798.141,
+            "end": 804.384642,
+            "reference": "ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 804.385,
+            "end": 810.686,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 810.809,
+            "end": 822.2,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 4,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮੇਰੇ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਪ੍ਰੀਤਮ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਪ੍ਰਾਨ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਧਾਰਾ"
+              }
+            ],
+            "wer": 0.5714285714285714
+          },
+          {
+            "start": 841.76,
+            "end": 853.84,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 857.64,
+            "end": 869.887,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 870.293,
+            "end": 882.08,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 885.2,
+            "end": 895.64,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 905.96,
+            "end": 916.496,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 916.96,
+            "end": 927.56,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 937.44,
+            "end": 956.88,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 5,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਜੋਗ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਬਨਿਆ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਤੇਰਾ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੀਰਤਨ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਗਾਈ"
+              }
+            ],
+            "wer": 1.0
+          },
+          {
+            "start": 957.36,
+            "end": 969.08,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 993.48,
+            "end": 1003.88,
+            "reference": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 4,
+            "hypothesis": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍ ਅਉਰ ਨ ਕਾਹੂ ਬੇਰਾ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਉਰ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਨ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕਾਹੂ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਬੇਰਾ"
+              }
+            ],
+            "wer": 0.8
+          },
+          {
+            "start": 1014.04,
+            "end": 1018.64495,
+            "reference": "ਸਰਬ ਸੁਖਾ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸਰਬ ਸੁਖਾ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1018.645,
+            "end": 1024.407863,
+            "reference": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1024.408,
+            "end": 1029.004537,
+            "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1029.005,
+            "end": 1034.88,
+            "reference": "ਸਤਿਗੁਰ ਖੋਲੇ੍",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਸਤਿਗੁਰ ਖੋਲੇ੍ ਖੋਲ੍ਿਓ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਖੋਲ੍ਿਓ"
+              }
+            ],
+            "wer": 0.5
+          },
+          {
+            "start": 1044.48,
+            "end": 1063.28,
+            "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 10,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.1
+          },
+          {
+            "start": 1064.44,
+            "end": 1073.0,
+            "reference": "ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 1073.76,
+            "end": 1077.371625,
+            "reference": "ਜੋਗੁ ਬਨਿਆ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1077.372,
+            "end": 1083.715,
+            "reference": "ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1083.715,
+            "end": 1089.403767,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1089.404,
+            "end": 1094.001,
+            "reference": "ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1094.14,
+            "end": 1112.12,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 10,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.1
+          },
+          {
+            "start": 1112.76,
+            "end": 1132.76,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 10,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈਐ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਗਾਈ",
+                "hypothesis": "ਗਾਈਐ"
+              }
+            ],
+            "wer": 0.1
+          },
+          {
+            "start": 1167.92,
+            "end": 1178.44,
+            "reference": "ਹੁਕਮ ਬੂਝ ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 2,
+            "hypothesis": "ਹੁਕਮ ਬੂਝ ਰੰਗ ਰਸ ਮਾਣੇ ਕੈ ਵਸ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮਾਣੇ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੈ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਾਣੈ",
+                "hypothesis": "ਵਸ"
+              }
+            ],
+            "wer": 0.6
+          },
+          {
+            "start": 1188.16,
+            "end": 1193.02865,
+            "reference": "ਹੁਕਮ ਬੂਝ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਹੁਕਮ ਬੂਝ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1193.029,
+            "end": 1198.63169,
+            "reference": "ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+            "reference_words": 3,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰੰਗ ਰਸ ਮਾਣੇ ਸਤਿਗੁਰ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮਾਣੇ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਾਣੈ",
+                "hypothesis": "ਸਤਿਗੁਰ"
+              }
+            ],
+            "wer": 0.6666666666666666
+          }
+        ],
+        "verified_window_score": {
+          "reference_words": 572,
+          "hypothesis_words": 560,
+          "substitutions": 29,
+          "deletions": 23,
+          "insertions": 11,
+          "wer": 0.11013986013986014,
+          "timestamp_tolerance_seconds": 0.5,
+          "selection": "Recognized word starts inside any reference interval, including the declared tolerance",
+          "outside_window_words": 27,
+          "outside_window_text": "ਬੋਲੋ ਜੀ ਆਏ ਤਰੇ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਅਪੁਨੇ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਅਪੁਨੇ ਘਟਾਏ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ ਅਉਰੁ ਨ ਕਾਹੂ ਬੇਰਾ ਖੋਲ੍ਿਓ ਕੈ ਵਸਿ ਸਤਿਗੁਰ"
+        }
+      },
+      "elapsed_seconds": 175.01832023499992,
+      "rtf": 0.14584860019583326,
+      "encoder_calls": 600,
+      "acoustic_reencodes": 0,
+      "samples": 19200000,
+      "encoded_frames": 30000,
+      "max_pending_seconds": 6.0,
+      "active_block_cost_seconds": {
+        "p95": 0.4686120369499804,
+        "max": 0.7764387150000402
+      },
+      "late_commitment_at_word_start_plus30": [
+        {
+          "text": "ਬੋਲੋ",
+          "start": 0.88,
+          "end": 5.8,
+          "stable_count": 1
+        },
+        {
+          "text": "ਗਾਈ",
+          "start": 965.28,
+          "end": 994.4,
+          "stable_count": 1
+        },
+        {
+          "text": "ਗਾਈਐ",
+          "start": 1130.0,
+          "end": 1168.88,
+          "stable_count": 1
+        }
+      ],
+      "late_commitment_note": "Shared next-word boundaries can arrive after long sung words or instrumental gaps. Timed partial hypotheses remain available for matching/display; 30 seconds does not guarantee all words are committed at their start.",
+      "memory_peak_bytes": 1659998208,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "cgroup": {
+        "cpu.max": "400000 100000",
+        "memory.max": "8589934592",
+        "memory.swap.max": "0"
+      },
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 24,
+        "decoder_mode": "optimized",
+        "kenlm": "gurbani_3gram.bin",
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "original_example_final": {
+        "type": "final",
+        "audio_active": true,
+        "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "partial_text": "",
+        "committed_until": 52.04,
+        "cache_committed_until": 52.04,
+        "text_committed_until": 50.64,
+        "committed_words": [
+          {
+            "text": "ਕਰਿ",
+            "start": 1.04,
+            "end": 1.44,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 1.44,
+            "end": 3.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 3.76,
+            "end": 4.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 4.28,
+            "end": 5.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲ",
+            "start": 5.6,
+            "end": 8.84,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 8.84,
+            "end": 9.72,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 9.72,
+            "end": 11.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 11.2,
+            "end": 12.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲ",
+            "start": 12.96,
+            "end": 17.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 17.88,
+            "end": 18.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 18.16,
+            "end": 20.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 20.0,
+            "end": 20.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 20.36,
+            "end": 21.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 21.76,
+            "end": 24.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 24.76,
+            "end": 25.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 25.64,
+            "end": 26.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 26.88,
+            "end": 28.56,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 28.56,
+            "end": 31.8,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 31.8,
+            "end": 32.08,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 32.08,
+            "end": 33.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 33.68,
+            "end": 34.24,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 34.24,
+            "end": 35.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 35.64,
+            "end": 38.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 38.64,
+            "end": 39.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕੀ",
+            "start": 39.2,
+            "end": 39.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 39.6,
+            "end": 40.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 40.76,
+            "end": 42.32,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 42.32,
+            "end": 45.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 45.36,
+            "end": 46.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 46.16,
+            "end": 48.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 48.0,
+            "end": 48.92,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 48.92,
+            "end": 50.64,
+            "stable_count": 1
+          }
+        ],
+        "partial_words": [],
+        "window_start": 0.0,
+        "window_end": 52.0126875,
+        "window_seconds": 52.0126875,
+        "samples": 832203,
+        "pending_window_seconds": 0.0,
+        "max_window_seconds": 8.0,
+        "cache_hold_reason": "finished",
+        "received_until": 52.0126875,
+        "recognition_mode": "blocks",
+        "block_seconds": 2.0,
+        "lookahead_seconds": 4.0,
+        "encoder_calls": 27,
+        "acoustic_reencodes": 0,
+        "final_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "tokens": [
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          189,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          62,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178,
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          62,
+          77,
+          47,
+          56,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178
+        ],
+        "words": [
+          {
+            "text": "ਕਰਿ",
+            "start": 1.04,
+            "end": 1.44,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 1.44,
+            "end": 3.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 3.76,
+            "end": 4.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 4.28,
+            "end": 5.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲ",
+            "start": 5.6,
+            "end": 8.84,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 8.84,
+            "end": 9.72,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 9.72,
+            "end": 11.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 11.2,
+            "end": 12.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲ",
+            "start": 12.96,
+            "end": 17.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 17.88,
+            "end": 18.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 18.16,
+            "end": 20.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 20.0,
+            "end": 20.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 20.36,
+            "end": 21.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 21.76,
+            "end": 24.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 24.76,
+            "end": 25.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 25.64,
+            "end": 26.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 26.88,
+            "end": 28.56,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 28.56,
+            "end": 31.8,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 31.8,
+            "end": 32.08,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 32.08,
+            "end": 33.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 33.68,
+            "end": 34.24,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 34.24,
+            "end": 35.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 35.64,
+            "end": 38.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 38.64,
+            "end": 39.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕੀ",
+            "start": 39.2,
+            "end": 39.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 39.6,
+            "end": 40.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 40.76,
+            "end": 42.32,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 42.32,
+            "end": 45.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 45.36,
+            "end": 46.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 46.16,
+            "end": 48.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 48.0,
+            "end": 48.92,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 48.92,
+            "end": 50.64,
+            "stable_count": 1
+          }
+        ],
+        "seconds": 52.0126875,
+        "feature_frames": 5202,
+        "encoded_frames": 1301,
+        "peak_pending_window_seconds": 6.0,
+        "cache_events": [
+          {
+            "at_seconds": 6.0,
+            "cached_until": 2.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 8.0,
+            "cached_until": 4.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 10.0,
+            "cached_until": 6.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 12.0,
+            "cached_until": 8.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 14.0,
+            "cached_until": 10.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 16.0,
+            "cached_until": 12.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 18.0,
+            "cached_until": 14.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 20.0,
+            "cached_until": 16.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 22.0,
+            "cached_until": 18.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 24.0,
+            "cached_until": 20.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 26.0,
+            "cached_until": 22.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 28.0,
+            "cached_until": 24.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 30.0,
+            "cached_until": 26.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 32.0,
+            "cached_until": 28.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 34.0,
+            "cached_until": 30.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 36.0,
+            "cached_until": 32.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 38.0,
+            "cached_until": 34.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 40.0,
+            "cached_until": 36.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 42.0,
+            "cached_until": 38.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 44.0,
+            "cached_until": 40.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 46.0,
+            "cached_until": 42.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 48.0,
+            "cached_until": 44.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 50.0,
+            "cached_until": 46.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0,
+            "cached_until": 48.0,
+            "window_seconds": 6.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0126875,
+            "cached_until": 50.0,
+            "window_seconds": 4.0126875,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0126875,
+            "cached_until": 52.0,
+            "window_seconds": 2.0126875,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0126875,
+            "cached_until": 52.04,
+            "window_seconds": 0.0126875,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          }
+        ]
+      }
+    },
+    "4": {
+      "scores": {
+        "reference_words": 572,
+        "hypothesis_words": 581,
+        "substitutions": 29,
+        "deletions": 10,
+        "insertions": 19,
+        "wer": 0.10139860139860139,
+        "cer_including_spaces": 0.07068062827225131,
+        "cer_excluding_spaces": 0.07465525439847837,
+        "strict_wer": 0.13986013986013987,
+        "reference_section_count": 99,
+        "overlapping_reference_intervals": 0,
+        "reference_last_end_seconds": 1198.63169,
+        "scored_audio_seconds": 1200.0,
+        "reference_extends_past_audio": false,
+        "normalization": "NFC, casefold, punctuation removal and standalone verse-number removal; word spaces and Gurmukhi vowel marks preserved; only word-final sihari (U+0A3F) and onkar (U+0A41) ignored",
+        "section_alignment": "Sections use global word alignment, not timestamp cuts; repeated passages can have ambiguous alignment.",
+        "sections": [
+          {
+            "start": 19.88,
+            "end": 30.2,
+            "reference": "ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 2,
+            "hypothesis": "ਬੋਲੋ ਜੀ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਬੋਲੋ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਜੀ"
+              }
+            ],
+            "wer": 1.0
+          },
+          {
+            "start": 34.28,
+            "end": 38.92,
+            "reference": "ਵਾਹਿਗੁਰੂ",
+            "reference_words": 1,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਵਾਹਿਗੁਰੂ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 41.12,
+            "end": 49.24,
+            "reference": "ਗੁਰੂ ਜੀ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਗੁਰੂ ਜੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 54.36,
+            "end": 65.08,
+            "reference": "ਜੇਤਾ ਸਮੁੰਦੁ ਸਾਗਰੁ ਨੀਰਿ ਭਰਿਆ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੇਤਾ ਸਮੁੰਦ ਸਾਗਰ ਨੀਰ ਭਰਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 66.88,
+            "end": 72.48,
+            "reference": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 75.52,
+            "end": 81.84,
+            "reference": "ਦਇਆ ਕਰੋ",
+            "reference_words": 2,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦਇਆ ਕਰਹ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਕਰੋ",
+                "hypothesis": "ਕਰਹ"
+              }
+            ],
+            "wer": 0.5
+          },
+          {
+            "start": 84.08,
+            "end": 102.886,
+            "reference": "ਕਿਛੁ ਮਿਹਰ ਉਪਾਵਹੁ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਛ ਮਿਹਰ ਉਪਾਵਹ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 106.204,
+            "end": 119.92,
+            "reference": "ਕਿਰਪਾ ਕਰਹੁ ਦੀਨ ਕੇ ਦਾਤੇ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਰਪਾ ਕਰਹ ਦੀਨ ਕੇ ਦਾਤੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 122.64,
+            "end": 128.68,
+            "reference": "ਕਿਰਪਾ ਕਰਹੁ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਿਰਪਾ ਕਰਹ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 130.68,
+            "end": 139.68,
+            "reference": "ਦੀਨ ਕੇ ਦਾਤੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੀਨ ਕੇ ਦਾਤੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 141.2,
+            "end": 149.68,
+            "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 151.96,
+            "end": 164.36,
+            "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+            "reference_words": 6,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗੁਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਅਵਗਣ",
+                "hypothesis": "ਅਵਗੁਣ"
+              }
+            ],
+            "wer": 0.16666666666666666
+          },
+          {
+            "start": 166.64,
+            "end": 174.32,
+            "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਸੁਆਮੀ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 176.56,
+            "end": 187.68,
+            "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 188.4,
+            "end": 206.4,
+            "reference": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤਿ ਏਹੀ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤ ਏਹੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 207.0,
+            "end": 221.36,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 227.224,
+            "end": 246.52,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 13,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 252.44,
+            "end": 258.866,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 258.866,
+            "end": 264.986,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 264.986,
+            "end": 277.12,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 278.24,
+            "end": 289.92,
+            "reference": "ਮਉਲੀ ਮਉਲੀ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਮਉਲੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 290.28,
+            "end": 303.32,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 315.24,
+            "end": 322.44,
+            "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਤਰੇ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਤਰੇ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 327.72,
+            "end": 340.8,
+            "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+            "reference_words": 10,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 346.56,
+            "end": 365.324,
+            "reference": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 13,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਆਰਥ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਆਰਥ"
+              }
+            ],
+            "wer": 0.07692307692307693
+          },
+          {
+            "start": 383.68,
+            "end": 391.458,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 391.458,
+            "end": 405.72,
+            "reference": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 407.16,
+            "end": 426.569,
+            "reference": "ਚਾਰਿ ਬੇਦ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 9,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਚਾਰ ਵੇਦ ਵੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬੇਦ",
+                "hypothesis": "ਵੇਦ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਬੇਦ",
+                "hypothesis": "ਵੇਦ"
+              }
+            ],
+            "wer": 0.2222222222222222
+          },
+          {
+            "start": 427.88,
+            "end": 435.36,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 435.36,
+            "end": 441.248,
+            "reference": "ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਬੇਦ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੇ ਚਾਰ ਬੇਦ ਬੇਦ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 441.248,
+            "end": 451.88,
+            "reference": "ਚਾਰਿ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਚਾਰ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 456.88,
+            "end": 469.48,
+            "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 475.2,
+            "end": 481.325685,
+            "reference": "ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 481.326,
+            "end": 487.329632,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 487.33,
+            "end": 493.63,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 493.63,
+            "end": 500.0,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪਰਗਾਸ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਪਰਗਾਸ",
+                "hypothesis": "ਪ੍ਰਗਾਸ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 505.64,
+            "end": 524.12,
+            "reference": "ਘਟਿ ਘਟਿ ਮੋਲਿਆ ਆਤਮ ਪਰਗਾਸਿ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 13,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟਾਏ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਮੋਲਿਆ",
+                "hypothesis": "ਮਉਲਿਆ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਪਰਗਾਸ",
+                "hypothesis": "ਪ੍ਰਗਾਸ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਘਟਾਏ"
+              }
+            ],
+            "wer": 0.23076923076923078
+          },
+          {
+            "start": 542.08,
+            "end": 549.52,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 551.24,
+            "end": 556.321937,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 556.322,
+            "end": 564.633,
+            "reference": "ਜੋਗ ਜੋਗ ਧਿਆਨ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 1,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਧਿਆਨ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਜੋਗ",
+                "hypothesis": null
+              }
+            ],
+            "wer": 0.3333333333333333
+          },
+          {
+            "start": 564.633,
+            "end": 574.28,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਮਉਲਿਓ",
+            "reference_words": 3,
+            "substitute": 1,
+            "delete": 1,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰਮਾਲਿਓ ਮਉਲਿਓ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਸੰਕਰ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਉਲਿਓ",
+                "hypothesis": "ਸੰਕਰਮਾਲਿਓ"
+              }
+            ],
+            "wer": 0.6666666666666666
+          },
+          {
+            "start": 575.04,
+            "end": 594.0,
+            "reference": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗੁ ਧਿਆਨ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 599.2,
+            "end": 611.32,
+            "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "reference_words": 9,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 616.92,
+            "end": 623.201,
+            "reference": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 623.202,
+            "end": 635.045,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 635.06,
+            "end": 641.36,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 646.44,
+            "end": 651.88,
+            "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 652.28,
+            "end": 658.265,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 658.265,
+            "end": 664.190518,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 664.191,
+            "end": 673.56,
+            "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 674.64,
+            "end": 682.68,
+            "reference": "ਮਉਲਿਆ ਅਕਾਸ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਉਲਿਆ ਅਕਾਸ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 684.44,
+            "end": 687.92,
+            "reference": "ਹਰਿ ਹਰਿ ਨਾਮੁ ਜਪੰਤਿਆ ਕਛੁ ਨ ਕਹੈ ਜਮਕਾਲੁ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਹਰ ਨਾਮ ਜਪੰਤਿਆ ਕਛ ਨ ਕਹੈ ਜਮਕਾਲ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 689.053,
+            "end": 692.894898,
+            "reference": "ਨਾਨਕ ਮਨੁ ਤਨੁ ਸੁਖੀ ਹੋਇ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਮਹਲ ਤਨ ਸੁਖੀ ਹੋਇ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਮਨ",
+                "hypothesis": "ਮਹਲ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 692.895,
+            "end": 695.715,
+            "reference": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲੁ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 695.715,
+            "end": 700.587576,
+            "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ",
+            "reference_words": 14,
+            "substitute": 2,
+            "delete": 3,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ ਧਨ ਧਨ ਪਾਈਐ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਕਰਮ",
+                "hypothesis": "ਧਨ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਲਿਖੰਤੇ",
+                "hypothesis": "ਧਨ"
+              },
+              {
+                "operation": "delete",
+                "reference": "ਏ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਰੁਤ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸਹਾਈ",
+                "hypothesis": null
+              }
+            ],
+            "wer": 0.35714285714285715
+          },
+          {
+            "start": 700.588,
+            "end": 705.441779,
+            "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "reference_words": 14,
+            "substitute": 8,
+            "delete": 5,
+            "insert": 0,
+            "hypothesis": "ਹਰ ਸੇਵਾ ਤੇ ਮਤ ਜਿਤ ਮਿਲ ਆਏ ਅੰਮ੍ਰਿਤ ਬਾਣੀ",
+            "errors": [
+              {
+                "operation": "delete",
+                "reference": "ਵਣ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਤ੍ਰਿਣ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਤ੍ਰਿਭਵਣ",
+                "hypothesis": "ਹਰ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਉਲਿਆ",
+                "hypothesis": "ਸੇਵਾ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਅੰਮ੍ਰਿਤ",
+                "hypothesis": "ਤੇ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਫਲ",
+                "hypothesis": "ਮਤ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਪਾਈ",
+                "hypothesis": "ਜਿਤ"
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸਾਧੂ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਸੁਖ",
+                "hypothesis": null
+              },
+              {
+                "operation": "delete",
+                "reference": "ਊਪਜੈ",
+                "hypothesis": null
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਲਥੀ",
+                "hypothesis": "ਆਏ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਸਭ",
+                "hypothesis": "ਅੰਮ੍ਰਿਤ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਛਾਈ",
+                "hypothesis": "ਬਾਣੀ"
+              }
+            ],
+            "wer": 0.9285714285714286
+          },
+          {
+            "start": 705.442,
+            "end": 710.8,
+            "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+            "reference_words": 12,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਤੇਰਾ ਏਕ ਨਾਮ ਧਿਆਇ ਬਹੁੜ ਨ ਧਾਈ ਫਿਰ ਬਹੁੜ ਨ ਧਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਸਿਮਰੈ",
+                "hypothesis": "ਤੇਰਾ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਫਿਰ",
+                "hypothesis": "ਧਿਆਇ"
+              }
+            ],
+            "wer": 0.16666666666666666
+          },
+          {
+            "start": 711.44,
+            "end": 728.4,
+            "reference": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲੁ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ",
+            "reference_words": 16,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦ ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 729.16,
+            "end": 733.696,
+            "reference": "ਕਰਮਿ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤਿ ਸੁਹਾਈ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕਰਮ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤ ਸੁਹਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 733.696,
+            "end": 739.221907,
+            "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਵਣ ਤ੍ਰਿਣ ਤ੍ਰਿਭਵਣ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲ ਪਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 739.222,
+            "end": 745.103914,
+            "reference": "ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਮਿਲ ਸਾਧੂ ਸੁਖ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 745.104,
+            "end": 749.539,
+            "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਸਿਮਰੈ ਏਕ ਨਾਮ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 749.539,
+            "end": 754.76,
+            "reference": "ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+            "reference_words": 4,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਫਿਰ ਬਹੁੜ ਨ ਜਾਇ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਧਾਈ",
+                "hypothesis": "ਜਾਇ"
+              }
+            ],
+            "wer": 0.25
+          },
+          {
+            "start": 755.4,
+            "end": 758.571913,
+            "reference": "ਪੂਰਾ ਪ੍ਰਭੁ ਆਰਾਧਿਆ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੂਰਾ ਪ੍ਰਭ ਆਰਾਧਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 758.572,
+            "end": 762.913,
+            "reference": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+            "reference_words": 4,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 762.913,
+            "end": 766.716,
+            "reference": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 766.716,
+            "end": 774.031,
+            "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+            "reference_words": 16,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 774.031,
+            "end": 779.00666,
+            "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+            "reference_words": 16,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 779.007,
+            "end": 784.938,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 10,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਸੋਈ ਫਿਰ ਹੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 784.938,
+            "end": 788.851,
+            "reference": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰ ਸਚਾ ਢੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 788.851,
+            "end": 793.415,
+            "reference": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+            "reference_words": 6,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 793.415,
+            "end": 798.141,
+            "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰੋਗ ਸੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਸੋਗ"
+              }
+            ],
+            "wer": 0.125
+          },
+          {
+            "start": 798.141,
+            "end": 804.384642,
+            "reference": "ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+            "reference_words": 8,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 804.385,
+            "end": 810.686,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 810.809,
+            "end": 822.2,
+            "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+            "reference_words": 7,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 4,
+            "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮੇਰੇ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਪ੍ਰੀਤਮ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਪ੍ਰਾਨ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਧਾਰਾ"
+              }
+            ],
+            "wer": 0.5714285714285714
+          },
+          {
+            "start": 841.76,
+            "end": 853.84,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 857.64,
+            "end": 869.887,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 870.293,
+            "end": 882.08,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 885.2,
+            "end": 895.64,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 905.96,
+            "end": 916.496,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 916.96,
+            "end": 927.56,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 937.44,
+            "end": 956.88,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 5,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਜੋਗ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਬਨਿਆ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਤੇਰਾ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਕੀਰਤਨ"
+              },
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਗਾਈ"
+              }
+            ],
+            "wer": 1.0
+          },
+          {
+            "start": 957.36,
+            "end": 969.08,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 993.48,
+            "end": 1003.88,
+            "reference": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "reference_words": 5,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍ ਅਉਰਾ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਅਉਰਾ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 1014.04,
+            "end": 1018.64495,
+            "reference": "ਸਰਬ ਸੁਖਾ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸਰਬ ਸੁਖਾ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1018.645,
+            "end": 1024.407863,
+            "reference": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1024.408,
+            "end": 1029.004537,
+            "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1029.005,
+            "end": 1034.88,
+            "reference": "ਸਤਿਗੁਰ ਖੋਲੇ੍",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਸਤਿਗੁਰ ਖੋਲੇ੍",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1044.48,
+            "end": 1063.28,
+            "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 10,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.1
+          },
+          {
+            "start": 1064.44,
+            "end": 1073.0,
+            "reference": "ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 1073.76,
+            "end": 1077.371625,
+            "reference": "ਜੋਗੁ ਬਨਿਆ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1077.372,
+            "end": 1083.715,
+            "reference": "ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1083.715,
+            "end": 1089.403767,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ",
+            "reference_words": 3,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1089.404,
+            "end": 1094.001,
+            "reference": "ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਕੀਰਤਨ ਗਾਈ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1094.14,
+            "end": 1112.12,
+            "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+            "reference_words": 10,
+            "substitute": 2,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਰਾਗ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਰਾਜ",
+                "hypothesis": "ਰਾਗ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਬਣਾਈ",
+                "hypothesis": "ਬਨਾਈ"
+              }
+            ],
+            "wer": 0.2
+          },
+          {
+            "start": 1112.76,
+            "end": 1132.76,
+            "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+            "reference_words": 10,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈਐ",
+            "errors": [
+              {
+                "operation": "substitute",
+                "reference": "ਗਾਈ",
+                "hypothesis": "ਗਾਈਐ"
+              }
+            ],
+            "wer": 0.1
+          },
+          {
+            "start": 1167.92,
+            "end": 1178.44,
+            "reference": "ਹੁਕਮ ਬੂਝ ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+            "reference_words": 5,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਹੁਕਮ ਬੂਝ ਰੰਗ ਰਸ ਮਾਣੇ ਚਉ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮਾਣੇ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਾਣੈ",
+                "hypothesis": "ਚਉ"
+              }
+            ],
+            "wer": 0.4
+          },
+          {
+            "start": 1188.16,
+            "end": 1193.02865,
+            "reference": "ਹੁਕਮ ਬੂਝ",
+            "reference_words": 2,
+            "substitute": 0,
+            "delete": 0,
+            "insert": 0,
+            "hypothesis": "ਹੁਕਮ ਬੂਝ",
+            "errors": [],
+            "wer": 0.0
+          },
+          {
+            "start": 1193.029,
+            "end": 1198.63169,
+            "reference": "ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+            "reference_words": 3,
+            "substitute": 1,
+            "delete": 0,
+            "insert": 1,
+            "hypothesis": "ਰੰਗ ਰਸ ਮਾਣੇ ਸਤਿਗੁਰ",
+            "errors": [
+              {
+                "operation": "insert",
+                "reference": null,
+                "hypothesis": "ਮਾਣੇ"
+              },
+              {
+                "operation": "substitute",
+                "reference": "ਮਾਣੈ",
+                "hypothesis": "ਸਤਿਗੁਰ"
+              }
+            ],
+            "wer": 0.6666666666666666
+          }
+        ],
+        "verified_window_score": {
+          "reference_words": 572,
+          "hypothesis_words": 569,
+          "substitutions": 29,
+          "deletions": 10,
+          "insertions": 7,
+          "wer": 0.08041958041958042,
+          "timestamp_tolerance_seconds": 0.5,
+          "selection": "Recognized word starts inside any reference interval, including the declared tolerance",
+          "outside_window_words": 12,
+          "outside_window_text": "ਬੋਲੋ ਜੀ ਤਰੇ ਆਰਥ ਘਟਾਏ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ ਅਉਰਾ ਚਉ ਸਤਿਗੁਰ"
+        }
+      },
+      "elapsed_seconds": 121.99796076799976,
+      "rtf": 0.10166496730666646,
+      "encoder_calls": 300,
+      "acoustic_reencodes": 0,
+      "samples": 19200000,
+      "encoded_frames": 30000,
+      "max_pending_seconds": 8.0,
+      "active_block_cost_seconds": {
+        "p95": 0.6205970220994457,
+        "max": 1.3874875299998166
+      },
+      "late_commitment_at_word_start_plus30": [
+        {
+          "text": "ਬੋਲੋ",
+          "start": 0.76,
+          "end": 5.76,
+          "stable_count": 1
+        },
+        {
+          "text": "ਅਕਾਸੁ",
+          "start": 522.2,
+          "end": 528.84,
+          "stable_count": 1
+        },
+        {
+          "text": "ਹੋਆ",
+          "start": 819.08,
+          "end": 828.72,
+          "stable_count": 1
+        },
+        {
+          "text": "ਗਾਈ",
+          "start": 965.28,
+          "end": 994.4,
+          "stable_count": 1
+        },
+        {
+          "text": "ਗਾਈਐ",
+          "start": 1129.88,
+          "end": 1168.84,
+          "stable_count": 1
+        }
+      ],
+      "late_commitment_note": "Shared next-word boundaries can arrive after long sung words or instrumental gaps. Timed partial hypotheses remain available for matching/display; 30 seconds does not guarantee all words are committed at their start.",
+      "memory_peak_bytes": 1503125504,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "cgroup": {
+        "cpu.max": "400000 100000",
+        "memory.max": "8589934592",
+        "memory.swap.max": "0"
+      },
+      "settings": {
+        "encoder_threads": 2,
+        "beam": 24,
+        "decoder_mode": "optimized",
+        "kenlm": "gurbani_3gram.bin",
+        "kenlm_weight": 0.3,
+        "corpus_weight": 0.6
+      },
+      "original_example_final": {
+        "type": "final",
+        "audio_active": true,
+        "text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "committed_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "partial_text": "",
+        "committed_until": 52.04,
+        "cache_committed_until": 52.04,
+        "text_committed_until": 50.64,
+        "committed_words": [
+          {
+            "text": "ਕਰਿ",
+            "start": 1.08,
+            "end": 1.44,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 1.44,
+            "end": 3.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 3.76,
+            "end": 4.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 4.28,
+            "end": 5.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 5.64,
+            "end": 8.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 8.76,
+            "end": 9.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 9.64,
+            "end": 11.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 11.2,
+            "end": 12.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲ",
+            "start": 12.96,
+            "end": 17.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 17.68,
+            "end": 18.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 18.16,
+            "end": 20.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 20.0,
+            "end": 20.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 20.36,
+            "end": 21.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 21.76,
+            "end": 24.84,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 24.84,
+            "end": 25.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 25.6,
+            "end": 26.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 26.88,
+            "end": 28.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 28.6,
+            "end": 31.8,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 31.8,
+            "end": 32.08,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 32.08,
+            "end": 33.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 33.6,
+            "end": 34.24,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 34.24,
+            "end": 35.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 35.64,
+            "end": 38.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 38.68,
+            "end": 39.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕੀ",
+            "start": 39.2,
+            "end": 39.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 39.6,
+            "end": 40.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 40.76,
+            "end": 42.32,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 42.32,
+            "end": 45.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 45.28,
+            "end": 46.12,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 46.12,
+            "end": 48.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 48.0,
+            "end": 48.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 48.96,
+            "end": 50.64,
+            "stable_count": 1
+          }
+        ],
+        "partial_words": [],
+        "window_start": 0.0,
+        "window_end": 52.0126875,
+        "window_seconds": 52.0126875,
+        "samples": 832203,
+        "pending_window_seconds": 0.0,
+        "max_window_seconds": 8.0,
+        "cache_hold_reason": "finished",
+        "received_until": 52.0126875,
+        "recognition_mode": "blocks",
+        "block_seconds": 4.0,
+        "lookahead_seconds": 4.0,
+        "encoder_calls": 14,
+        "acoustic_reencodes": 0,
+        "final_text": "ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਕਰਿ ਕਿਰਪਾ ਪ੍ਰਭ ਦੀਨ ਦਇਆਲਾ ਤੇਰੀ ਕੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ ਤੇਰੀ ਓਟ ਪੂਰਨ ਗੋਪਾਲਾ",
+        "tokens": [
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          62,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          62,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178,
+          31,
+          182,
+          26,
+          179,
+          195,
+          178,
+          63,
+          217,
+          24,
+          185,
+          3,
+          205,
+          198,
+          62,
+          77,
+          47,
+          56,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178,
+          77,
+          47,
+          177,
+          228,
+          209,
+          8,
+          173,
+          185,
+          29,
+          196,
+          195,
+          20,
+          178
+        ],
+        "words": [
+          {
+            "text": "ਕਰਿ",
+            "start": 1.08,
+            "end": 1.44,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 1.44,
+            "end": 3.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 3.76,
+            "end": 4.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 4.28,
+            "end": 5.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 5.64,
+            "end": 8.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 8.76,
+            "end": 9.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 9.64,
+            "end": 11.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 11.2,
+            "end": 12.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲ",
+            "start": 12.96,
+            "end": 17.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 17.68,
+            "end": 18.16,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 18.16,
+            "end": 20.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 20.0,
+            "end": 20.36,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 20.36,
+            "end": 21.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 21.76,
+            "end": 24.84,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 24.84,
+            "end": 25.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 25.6,
+            "end": 26.88,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 26.88,
+            "end": 28.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 28.6,
+            "end": 31.8,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਰਿ",
+            "start": 31.8,
+            "end": 32.08,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕਿਰਪਾ",
+            "start": 32.08,
+            "end": 33.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪ੍ਰਭ",
+            "start": 33.6,
+            "end": 34.24,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦੀਨ",
+            "start": 34.24,
+            "end": 35.64,
+            "stable_count": 1
+          },
+          {
+            "text": "ਦਇਆਲਾ",
+            "start": 35.64,
+            "end": 38.68,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 38.68,
+            "end": 39.2,
+            "stable_count": 1
+          },
+          {
+            "text": "ਕੀ",
+            "start": 39.2,
+            "end": 39.6,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 39.6,
+            "end": 40.76,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 40.76,
+            "end": 42.32,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 42.32,
+            "end": 45.28,
+            "stable_count": 1
+          },
+          {
+            "text": "ਤੇਰੀ",
+            "start": 45.28,
+            "end": 46.12,
+            "stable_count": 1
+          },
+          {
+            "text": "ਓਟ",
+            "start": 46.12,
+            "end": 48.0,
+            "stable_count": 1
+          },
+          {
+            "text": "ਪੂਰਨ",
+            "start": 48.0,
+            "end": 48.96,
+            "stable_count": 1
+          },
+          {
+            "text": "ਗੋਪਾਲਾ",
+            "start": 48.96,
+            "end": 50.64,
+            "stable_count": 1
+          }
+        ],
+        "seconds": 52.0126875,
+        "feature_frames": 5202,
+        "encoded_frames": 1301,
+        "peak_pending_window_seconds": 8.0,
+        "cache_events": [
+          {
+            "at_seconds": 8.0,
+            "cached_until": 4.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 12.0,
+            "cached_until": 8.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 16.0,
+            "cached_until": 12.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 20.0,
+            "cached_until": 16.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 24.0,
+            "cached_until": 20.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 28.0,
+            "cached_until": 24.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 32.0,
+            "cached_until": 28.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 36.0,
+            "cached_until": 32.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 40.0,
+            "cached_until": 36.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 44.0,
+            "cached_until": 40.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 48.0,
+            "cached_until": 44.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0,
+            "cached_until": 48.0,
+            "window_seconds": 8.0,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0126875,
+            "cached_until": 52.0,
+            "window_seconds": 4.0126875,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          },
+          {
+            "at_seconds": 52.0126875,
+            "cached_until": 52.04,
+            "window_seconds": 0.0126875,
+            "word_end_seconds": null,
+            "reason": "single-pass-block"
+          }
+        ]
+      }
+    }
+  },
+  "rolling_baseline": {
+    "scores": {
+      "reference_words": 572,
+      "hypothesis_words": 581,
+      "substitutions": 30,
+      "deletions": 10,
+      "insertions": 19,
+      "wer": 0.10314685314685315,
+      "cer_including_spaces": 0.07105459985041136,
+      "cer_excluding_spaces": 0.07513076557299096,
+      "strict_wer": 0.14160839160839161,
+      "reference_section_count": 99,
+      "overlapping_reference_intervals": 0,
+      "reference_last_end_seconds": 1198.63169,
+      "scored_audio_seconds": 1200.0,
+      "reference_extends_past_audio": false,
+      "normalization": "NFC, casefold, punctuation removal and standalone verse-number removal; word spaces and Gurmukhi vowel marks preserved; only word-final sihari (U+0A3F) and onkar (U+0A41) ignored",
+      "section_alignment": "Sections use global word alignment, not timestamp cuts; repeated passages can have ambiguous alignment.",
+      "sections": [
+        {
+          "start": 19.88,
+          "end": 30.2,
+          "reference": "ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 2,
+          "hypothesis": "ਬੋਲੋ ਜੀ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਬੋਲੋ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਜੀ"
+            }
+          ],
+          "wer": 1.0
+        },
+        {
+          "start": 34.28,
+          "end": 38.92,
+          "reference": "ਵਾਹਿਗੁਰੂ",
+          "reference_words": 1,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਵਾਹਿਗੁਰੂ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 41.12,
+          "end": 49.24,
+          "reference": "ਗੁਰੂ ਜੀ",
+          "reference_words": 2,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਗੁਰ ਜੀ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਗੁਰੂ",
+              "hypothesis": "ਗੁਰ"
+            }
+          ],
+          "wer": 0.5
+        },
+        {
+          "start": 54.36,
+          "end": 65.08,
+          "reference": "ਜੇਤਾ ਸਮੁੰਦੁ ਸਾਗਰੁ ਨੀਰਿ ਭਰਿਆ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੇਤਾ ਸਮੁੰਦ ਸਾਗਰ ਨੀਰ ਭਰਿਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 66.88,
+          "end": 72.48,
+          "reference": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਤੇਤੇ ਅਉਗਣ ਹਮਾਰੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 75.52,
+          "end": 81.84,
+          "reference": "ਦਇਆ ਕਰੋ",
+          "reference_words": 2,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦਇਆ ਕਰਹ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਕਰੋ",
+              "hypothesis": "ਕਰਹ"
+            }
+          ],
+          "wer": 0.5
+        },
+        {
+          "start": 84.08,
+          "end": 102.886,
+          "reference": "ਕਿਛੁ ਮਿਹਰ ਉਪਾਵਹੁ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕਿਛ ਮਿਹਰ ਉਪਾਵਹ ਡੁਬਦੇ ਪਥਰ ਤਾਰੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 106.204,
+          "end": 119.92,
+          "reference": "ਕਿਰਪਾ ਕਰਹੁ ਦੀਨ ਕੇ ਦਾਤੇ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕਿਰਪਾ ਕਰਹ ਦੀਨ ਕੇ ਦਾਤੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 122.64,
+          "end": 128.68,
+          "reference": "ਕਿਰਪਾ ਕਰਹੁ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕਿਰਪਾ ਕਰਹ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 130.68,
+          "end": 139.68,
+          "reference": "ਦੀਨ ਕੇ ਦਾਤੇ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦੀਨ ਕੇ ਦਾਤੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 141.2,
+          "end": 149.68,
+          "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 151.96,
+          "end": 164.36,
+          "reference": "ਮੇਰਾ ਗੁਣੁ ਅਵਗਣੁ ਨ ਬੀਚਾਰਹੁ ਕੋਈ",
+          "reference_words": 6,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮੇਰਾ ਗੁਣ ਅਵਗੁਣ ਨ ਬੀਚਾਰਹ ਕੋਈ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਅਵਗਣ",
+              "hypothesis": "ਅਵਗੁਣ"
+            }
+          ],
+          "wer": 0.16666666666666666
+        },
+        {
+          "start": 166.64,
+          "end": 174.32,
+          "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਸੁਆਮੀ"
+            }
+          ],
+          "wer": 0.25
+        },
+        {
+          "start": 176.56,
+          "end": 187.68,
+          "reference": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਾਟੀ ਕਾ ਕਿਆ ਧੋਪੈ ਸੁਆਮੀ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 188.4,
+          "end": 206.4,
+          "reference": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤਿ ਏਹੀ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਾਨਸ ਕੀ ਮਾਨਸ ਕੀ ਗਤ ਏਹੀ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 207.0,
+          "end": 221.36,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 227.224,
+          "end": 246.52,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+          "reference_words": 13,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 252.44,
+          "end": 258.866,
+          "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 258.866,
+          "end": 264.986,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 264.986,
+          "end": 277.12,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 278.24,
+          "end": 289.92,
+          "reference": "ਮਉਲੀ ਮਉਲੀ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਮਉਲੀ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 290.28,
+          "end": 303.32,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 315.24,
+          "end": 322.44,
+          "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਤਰੇ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਤਰੇ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 327.72,
+          "end": 340.8,
+          "reference": "ਰਾਜਾ ਰਾਮੁ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+          "reference_words": 10,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਜਾ ਰਾਮ ਮਉਲਿਆ ਅਨਤ ਭਾਇ ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 346.56,
+          "end": 365.324,
+          "reference": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 13,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਜਹ ਦੇਖਉ ਤਹ ਰਹਿਆ ਸਮਾਇ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਆਰਥ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਆਰਥ"
+            }
+          ],
+          "wer": 0.07692307692307693
+        },
+        {
+          "start": 383.68,
+          "end": 391.458,
+          "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 391.458,
+          "end": 405.72,
+          "reference": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦੁਤੀਆ ਦੁਤੀਆ ਮਉਲੇ ਮਉਲੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 407.16,
+          "end": 426.569,
+          "reference": "ਚਾਰਿ ਬੇਦ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+          "reference_words": 9,
+          "substitute": 2,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਚਾਰ ਵੇਦ ਵੇਦ ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਬੇਦ",
+              "hypothesis": "ਵੇਦ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਬੇਦ",
+              "hypothesis": "ਵੇਦ"
+            }
+          ],
+          "wer": 0.2222222222222222
+        },
+        {
+          "start": 427.88,
+          "end": 435.36,
+          "reference": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਦੁਤੀਆ ਮਉਲੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 435.36,
+          "end": 441.248,
+          "reference": "ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਬੇਦ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੇ ਚਾਰ ਬੇਦ ਬੇਦ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 441.248,
+          "end": 451.88,
+          "reference": "ਚਾਰਿ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਚਾਰ ਬੇਦ ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 456.88,
+          "end": 469.48,
+          "reference": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰਿ ਬੇਦ ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦੁਤੀਆ ਮਉਲੇ ਚਾਰ ਬੇਦ ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 475.2,
+          "end": 481.325685,
+          "reference": "ਸਿੰਮ੍ਰਿਤਿ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸਿੰਮ੍ਰਿਤ ਮਉਲੀ ਸਿਉ ਕਤੇਬ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 481.326,
+          "end": 487.329632,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 487.33,
+          "end": 493.63,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 493.63,
+          "end": 500.0,
+          "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪਰਗਾਸ",
+          "reference_words": 5,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਪਰਗਾਸ",
+              "hypothesis": "ਪ੍ਰਗਾਸ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 505.64,
+          "end": 524.12,
+          "reference": "ਘਟਿ ਘਟਿ ਮੋਲਿਆ ਆਤਮ ਪਰਗਾਸਿ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "reference_words": 13,
+          "substitute": 2,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਘਟਾਏ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਮੋਲਿਆ",
+              "hypothesis": "ਮਉਲਿਆ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਪਰਗਾਸ",
+              "hypothesis": "ਪ੍ਰਗਾਸ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਘਟਾਏ"
+            }
+          ],
+          "wer": 0.23076923076923078
+        },
+        {
+          "start": 542.08,
+          "end": 549.52,
+          "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 551.24,
+          "end": 556.321937,
+          "reference": "ਸੰਕਰੁ ਮਉਲਿਓ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 556.322,
+          "end": 564.633,
+          "reference": "ਜੋਗ ਜੋਗ ਧਿਆਨ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 1,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਧਿਆਨ",
+          "errors": [
+            {
+              "operation": "delete",
+              "reference": "ਜੋਗ",
+              "hypothesis": null
+            }
+          ],
+          "wer": 0.3333333333333333
+        },
+        {
+          "start": 564.633,
+          "end": 574.28,
+          "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਮਉਲਿਓ",
+          "reference_words": 3,
+          "substitute": 1,
+          "delete": 1,
+          "insert": 0,
+          "hypothesis": "ਸੰਕਰਮਾਲਿਓ ਮਉਲਿਓ",
+          "errors": [
+            {
+              "operation": "delete",
+              "reference": "ਸੰਕਰ",
+              "hypothesis": null
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਮਉਲਿਓ",
+              "hypothesis": "ਸੰਕਰਮਾਲਿਓ"
+            }
+          ],
+          "wer": 0.6666666666666666
+        },
+        {
+          "start": 575.04,
+          "end": 594.0,
+          "reference": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗੁ ਧਿਆਨ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਮਉਲਿਓ ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 599.2,
+          "end": 611.32,
+          "reference": "ਸੰਕਰੁ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+          "reference_words": 9,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸੰਕਰ ਮਉਲਿਓ ਜੋਗ ਧਿਆਨ ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 616.92,
+          "end": 623.201,
+          "reference": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕਬੀਰ ਕੋ ਸੁਆਮੀ ਸਭ ਸਮਾਨ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 623.202,
+          "end": 635.045,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 635.06,
+          "end": 641.36,
+          "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 646.44,
+          "end": 651.88,
+          "reference": "ਘਟਿ ਘਟਿ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸੁ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਘਟ ਘਟ ਮਉਲਿਆ ਆਤਮ ਪ੍ਰਗਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 652.28,
+          "end": 658.265,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 658.265,
+          "end": 664.190518,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 664.191,
+          "end": 673.56,
+          "reference": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ ਮਉਲੀ ਧਰਤੀ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 674.64,
+          "end": 682.68,
+          "reference": "ਮਉਲਿਆ ਅਕਾਸ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਉਲਿਆ ਅਕਾਸ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 684.44,
+          "end": 687.92,
+          "reference": "ਹਰਿ ਹਰਿ ਨਾਮੁ ਜਪੰਤਿਆ ਕਛੁ ਨ ਕਹੈ ਜਮਕਾਲੁ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਹਰ ਹਰ ਨਾਮ ਜਪੰਤਿਆ ਕਛ ਨ ਕਹੈ ਜਮਕਾਲ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 689.053,
+          "end": 692.894898,
+          "reference": "ਨਾਨਕ ਮਨੁ ਤਨੁ ਸੁਖੀ ਹੋਇ",
+          "reference_words": 5,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਨਾਨਕ ਮਹਲ ਤਨ ਸੁਖੀ ਹੋਇ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਮਨ",
+              "hypothesis": "ਮਹਲ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 692.895,
+          "end": 695.715,
+          "reference": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲੁ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਅੰਤੇ ਮਿਲੈ ਗੋਪਾਲ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 695.715,
+          "end": 700.587576,
+          "reference": "ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ ਕਰਮ ਲਿਖੰਤੇ ਪਾਈਐ ਏ ਰੁਤੁ ਸਹਾਈ",
+          "reference_words": 14,
+          "substitute": 2,
+          "delete": 3,
+          "insert": 0,
+          "hypothesis": "ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ ਧਨ ਧਨ ਪਾਈਐ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਕਰਮ",
+              "hypothesis": "ਧਨ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਲਿਖੰਤੇ",
+              "hypothesis": "ਧਨ"
+            },
+            {
+              "operation": "delete",
+              "reference": "ਏ",
+              "hypothesis": null
+            },
+            {
+              "operation": "delete",
+              "reference": "ਰੁਤ",
+              "hypothesis": null
+            },
+            {
+              "operation": "delete",
+              "reference": "ਸਹਾਈ",
+              "hypothesis": null
+            }
+          ],
+          "wer": 0.35714285714285715
+        },
+        {
+          "start": 700.588,
+          "end": 705.441779,
+          "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+          "reference_words": 14,
+          "substitute": 8,
+          "delete": 5,
+          "insert": 0,
+          "hypothesis": "ਹਰ ਸੇਵਾ ਤੇ ਮਤ ਜਿਤ ਮਿਲ ਆਏ ਅੰਮ੍ਰਿਤ ਬਾਣੀ",
+          "errors": [
+            {
+              "operation": "delete",
+              "reference": "ਵਣ",
+              "hypothesis": null
+            },
+            {
+              "operation": "delete",
+              "reference": "ਤ੍ਰਿਣ",
+              "hypothesis": null
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਤ੍ਰਿਭਵਣ",
+              "hypothesis": "ਹਰ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਮਉਲਿਆ",
+              "hypothesis": "ਸੇਵਾ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਅੰਮ੍ਰਿਤ",
+              "hypothesis": "ਤੇ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਫਲ",
+              "hypothesis": "ਮਤ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਪਾਈ",
+              "hypothesis": "ਜਿਤ"
+            },
+            {
+              "operation": "delete",
+              "reference": "ਸਾਧੂ",
+              "hypothesis": null
+            },
+            {
+              "operation": "delete",
+              "reference": "ਸੁਖ",
+              "hypothesis": null
+            },
+            {
+              "operation": "delete",
+              "reference": "ਊਪਜੈ",
+              "hypothesis": null
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਲਥੀ",
+              "hypothesis": "ਆਏ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਸਭ",
+              "hypothesis": "ਅੰਮ੍ਰਿਤ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਛਾਈ",
+              "hypothesis": "ਬਾਣੀ"
+            }
+          ],
+          "wer": 0.9285714285714286
+        },
+        {
+          "start": 705.442,
+          "end": 710.8,
+          "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+          "reference_words": 12,
+          "substitute": 2,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਨਾਨਕ ਤੇਰਾ ਏਕ ਨਾਮ ਧਿਆਇ ਬਹੁੜ ਨ ਧਾਈ ਫਿਰ ਬਹੁੜ ਨ ਧਾਈ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਸਿਮਰੈ",
+              "hypothesis": "ਤੇਰਾ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਫਿਰ",
+              "hypothesis": "ਧਿਆਇ"
+            }
+          ],
+          "wer": 0.16666666666666666
+        },
+        {
+          "start": 711.44,
+          "end": 728.4,
+          "reference": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲੁ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦਿ ਹਰਿ ਕਾ ਨਾਮੁ ਧਿਆਇ ਕੈ ਹੋਹੁ ਹਰਿਆ ਭਾਈ",
+          "reference_words": 16,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਬਸੰਤ ਕੀ ਵਾਰ ਮਹਲ ਪੰਜਵਾ ੴ ਸਤਿਗੁਰ ਪ੍ਰਸਾਦ ਹਰ ਕਾ ਨਾਮ ਧਿਆਇ ਕੈ ਹੋਹ ਹਰਿਆ ਭਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 729.16,
+          "end": 733.696,
+          "reference": "ਕਰਮਿ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤਿ ਸੁਹਾਈ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕਰਮ ਲਿਖੰਤੈ ਪਾਈਐ ਇਹ ਰੁਤ ਸੁਹਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 733.696,
+          "end": 739.221907,
+          "reference": "ਵਣੁ ਤ੍ਰਿਣੁ ਤ੍ਰਿਭਵਣੁ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲੁ ਪਾਈ",
+          "reference_words": 7,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਵਣ ਤ੍ਰਿਣ ਤ੍ਰਿਭਵਣ ਮਉਲਿਆ ਅੰਮ੍ਰਿਤ ਫਲ ਪਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 739.222,
+          "end": 745.103914,
+          "reference": "ਮਿਲਿ ਸਾਧੂ ਸੁਖੁ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+          "reference_words": 7,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਮਿਲ ਸਾਧੂ ਸੁਖ ਊਪਜੈ ਲਥੀ ਸਭ ਛਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 745.104,
+          "end": 749.539,
+          "reference": "ਨਾਨਕੁ ਸਿਮਰੈ ਏਕੁ ਨਾਮੁ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਨਾਨਕ ਸਿਮਰੈ ਏਕ ਨਾਮ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 749.539,
+          "end": 754.76,
+          "reference": "ਫਿਰਿ ਬਹੁੜਿ ਨ ਧਾਈ",
+          "reference_words": 4,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਫਿਰ ਬਹੁੜ ਨ ਜਾਇ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਧਾਈ",
+              "hypothesis": "ਜਾਇ"
+            }
+          ],
+          "wer": 0.25
+        },
+        {
+          "start": 755.4,
+          "end": 758.571913,
+          "reference": "ਪੂਰਾ ਪ੍ਰਭੁ ਆਰਾਧਿਆ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਪੂਰਾ ਪ੍ਰਭ ਆਰਾਧਿਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 758.572,
+          "end": 762.913,
+          "reference": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+          "reference_words": 4,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਪੂਰਾ ਜਾ ਕਾ ਨਾਉ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 762.913,
+          "end": 766.716,
+          "reference": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਨਾਨਕ ਪੂਰਾ ਪਾਇਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 766.716,
+          "end": 774.031,
+          "reference": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+          "reference_words": 16,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਪੂਰੇ ਕੇ ਗੁਨ ਗਾਉ ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰ ਸਚਾ ਢੋਆ ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 774.031,
+          "end": 779.00666,
+          "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+          "reference_words": 16,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 779.007,
+          "end": 784.938,
+          "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+          "reference_words": 10,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਸੋਈ ਫਿਰ ਹੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 784.938,
+          "end": 788.851,
+          "reference": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰਿ ਸਚਾ ਢੋਆ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਪੰਜੇ ਬਧੇ ਮਹਾਬਲੀ ਕਰ ਸਚਾ ਢੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 788.851,
+          "end": 793.415,
+          "reference": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨੁ ਵਿਚਿ ਦਯੁ ਖੜੋਆ",
+          "reference_words": 6,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਆਪਣੇ ਚਰਣ ਜਪਾਇਅਨ ਵਿਚ ਦਯ ਖੜੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 793.415,
+          "end": 798.141,
+          "reference": "ਰੋਗ ਸੋਗ ਸਭਿ ਮਿਟਿ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਰੋਗ ਸੋਗ ਸੋਗ ਸਭ ਮਿਟ ਗਏ ਨਿਤ ਨਵਾ ਨਿਰੋਆ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਸੋਗ"
+            }
+          ],
+          "wer": 0.125
+        },
+        {
+          "start": 798.141,
+          "end": 804.384642,
+          "reference": "ਦਿਨੁ ਰੈਣਿ ਨਾਮੁ ਧਿਆਇਦਾ ਫਿਰਿ ਪਾਇ ਨ ਮੋਆ",
+          "reference_words": 8,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਦਿਨ ਰੈਣ ਨਾਮ ਧਿਆਇਦਾ ਫਿਰ ਪਾਇ ਨ ਮੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 804.385,
+          "end": 810.686,
+          "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+          "reference_words": 7,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 810.809,
+          "end": 822.2,
+          "reference": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰਿ ਹੋਆ",
+          "reference_words": 7,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 4,
+          "hypothesis": "ਜਿਸ ਤੇ ਉਪਜਿਆ ਨਾਨਕਾ ਸੋਈ ਫਿਰ ਹੋਆ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਮੇਰੇ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਪ੍ਰੀਤਮ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਪ੍ਰਾਨ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਅਧਾਰਾ"
+            }
+          ],
+          "wer": 0.5714285714285714
+        },
+        {
+          "start": 841.76,
+          "end": 853.84,
+          "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 857.64,
+          "end": 869.887,
+          "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 870.293,
+          "end": 882.08,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 885.2,
+          "end": 895.64,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 905.96,
+          "end": 916.496,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 916.96,
+          "end": 927.56,
+          "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 937.44,
+          "end": 956.88,
+          "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 5,
+          "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਜੋਗ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਬਨਿਆ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਤੇਰਾ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਕੀਰਤਨ"
+            },
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਗਾਈ"
+            }
+          ],
+          "wer": 1.0
+        },
+        {
+          "start": 957.36,
+          "end": 969.08,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 993.48,
+          "end": 1003.88,
+          "reference": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+          "reference_words": 5,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਸਰਬ ਸੁਖਾ ਬਨੇ ਤੇਰੈ ਓਲੈ੍ ਅਉਰਾ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਅਉਰਾ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 1014.04,
+          "end": 1018.64495,
+          "reference": "ਸਰਬ ਸੁਖਾ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸਰਬ ਸੁਖਾ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1018.645,
+          "end": 1024.407863,
+          "reference": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਬਨੇ ਤੇਰੈ ਓਲੈ੍",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1024.408,
+          "end": 1029.004537,
+          "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1029.005,
+          "end": 1034.88,
+          "reference": "ਸਤਿਗੁਰ ਖੋਲੇ੍",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਸਤਿਗੁਰ ਖੋਲੇ੍",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1044.48,
+          "end": 1063.28,
+          "reference": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+          "reference_words": 10,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਭ੍ਰਮ ਕੇ ਪਰਦੇ ਸਤਿਗੁਰ ਖੋਲੇ੍ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਬਣਾਈ",
+              "hypothesis": "ਬਨਾਈ"
+            }
+          ],
+          "wer": 0.1
+        },
+        {
+          "start": 1064.44,
+          "end": 1073.0,
+          "reference": "ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+          "reference_words": 5,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਬਣਾਈ",
+              "hypothesis": "ਬਨਾਈ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 1073.76,
+          "end": 1077.371625,
+          "reference": "ਜੋਗੁ ਬਨਿਆ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1077.372,
+          "end": 1083.715,
+          "reference": "ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1083.715,
+          "end": 1089.403767,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ",
+          "reference_words": 3,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1089.404,
+          "end": 1094.001,
+          "reference": "ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਕੀਰਤਨ ਗਾਈ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1094.14,
+          "end": 1112.12,
+          "reference": "ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮਿ ਬਨਾਈ ਰਾਜੁ ਲੀਲਾ ਤੇਰੈ ਨਾਮੁ ਬਣਾਈ",
+          "reference_words": 10,
+          "substitute": 2,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਰਾਗ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ ਰਾਜ ਲੀਲਾ ਤੇਰੈ ਨਾਮ ਬਨਾਈ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਰਾਜ",
+              "hypothesis": "ਰਾਗ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਬਣਾਈ",
+              "hypothesis": "ਬਨਾਈ"
+            }
+          ],
+          "wer": 0.2
+        },
+        {
+          "start": 1112.76,
+          "end": 1132.76,
+          "reference": "ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ ਜੋਗੁ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨੁ ਗਾਈ",
+          "reference_words": 10,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈ ਜੋਗ ਬਨਿਆ ਤੇਰਾ ਕੀਰਤਨ ਗਾਈਐ",
+          "errors": [
+            {
+              "operation": "substitute",
+              "reference": "ਗਾਈ",
+              "hypothesis": "ਗਾਈਐ"
+            }
+          ],
+          "wer": 0.1
+        },
+        {
+          "start": 1167.92,
+          "end": 1178.44,
+          "reference": "ਹੁਕਮ ਬੂਝ ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+          "reference_words": 5,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਹੁਕਮ ਬੂਝ ਰੰਗ ਰਸ ਮਾਣੇ ਚਉ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਮਾਣੇ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਮਾਣੈ",
+              "hypothesis": "ਚਉ"
+            }
+          ],
+          "wer": 0.4
+        },
+        {
+          "start": 1188.16,
+          "end": 1193.02865,
+          "reference": "ਹੁਕਮ ਬੂਝ",
+          "reference_words": 2,
+          "substitute": 0,
+          "delete": 0,
+          "insert": 0,
+          "hypothesis": "ਹੁਕਮ ਬੂਝ",
+          "errors": [],
+          "wer": 0.0
+        },
+        {
+          "start": 1193.029,
+          "end": 1198.63169,
+          "reference": "ਰੰਗਿ ਰਸੁ ਮਾਣੈ",
+          "reference_words": 3,
+          "substitute": 1,
+          "delete": 0,
+          "insert": 1,
+          "hypothesis": "ਰੰਗ ਰਸ ਮਾਣੇ ਸਤਿਗੁਰ",
+          "errors": [
+            {
+              "operation": "insert",
+              "reference": null,
+              "hypothesis": "ਮਾਣੇ"
+            },
+            {
+              "operation": "substitute",
+              "reference": "ਮਾਣੈ",
+              "hypothesis": "ਸਤਿਗੁਰ"
+            }
+          ],
+          "wer": 0.6666666666666666
+        }
+      ],
+      "verified_window_score": {
+        "reference_words": 572,
+        "hypothesis_words": 569,
+        "substitutions": 30,
+        "deletions": 10,
+        "insertions": 7,
+        "wer": 0.08216783216783216,
+        "timestamp_tolerance_seconds": 0.5,
+        "selection": "Recognized word starts inside any reference interval, including the declared tolerance",
+        "outside_window_words": 12,
+        "outside_window_text": "ਬੋਲੋ ਜੀ ਤਰੇ ਆਰਥ ਘਟਾਏ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਾਨ ਅਧਾਰਾ ਅਉਰਾ ਚਉ ਸਤਿਗੁਰ"
+      }
+    },
+    "elapsed_seconds": 778.0522512320001,
+    "rtf": 0.6483768760266667,
+    "baseline_commit": "b2f3f2d6171e05806dd20846e3e54fc8870cee3c",
+    "encoder_threads": 4,
+    "timing_note": "Includes both block strategy and CPU thread-budget differences; not an isolated per-factor speed comparison."
+  },
+  "paced": {
+    "seconds": 120.0,
+    "health": {
+      "status": "ok",
+      "provider": "CPUExecutionProvider",
+      "sample_rate": 16000,
+      "encoder_context": [
+        202,
+        100
+      ],
+      "encoder_frame_seconds": 0.04,
+      "text_commit_seconds": 4.0,
+      "cache_commit_seconds": 4.0,
+      "word_commit_policy": "shared-word-boundary",
+      "max_pending_window_seconds": 8.0,
+      "encoder_update_seconds": 4,
+      "normalization_lookahead_seconds": 4.0,
+      "encoder_threads": 2,
+      "decoder_beam_width": 24,
+      "blas_threads": 1,
+      "blas_pools": [
+        {
+          "internal_api": "openblas",
+          "num_threads": 1
+        }
+      ],
+      "cpu_budget": 4,
+      "decoder_mode": "optimized",
+      "recognition_mode": "blocks",
+      "block_seconds": 4,
+      "enable_language_model": true,
+      "silence_guard": true,
+      "silence_hangover_seconds": 4.0,
+      "predictor_cache": true,
+      "predictor_cache_max_entries": 16384,
+      "language_prior": "repository-gurbani-word-context",
+      "language_prior_weight": 0.6,
+      "kenlm": "gurbani_3gram.bin",
+      "kenlm_order": 3,
+      "kenlm_minimum_ngram_order": 3,
+      "kenlm_weight": 0.3,
+      "kenlm_mode": "ngram",
+      "kenlm_word_bonus": 0.0,
+      "word_lookahead_seconds": 1.0
+    },
+    "lag_seconds": {
+      "median": 4.434144752500288,
+      "p95": 4.875190992600892,
+      "max": 4.93201130000125
+    },
+    "same_tokens_words_cache_and_samples": true,
+    "cgroup": {
+      "cpu.max": "400000 100000",
+      "memory.max": "8589934592",
+      "memory.peak": "1575403520",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+    },
+    "updates": 30,
+    "full_inference_seconds": 14.411024499999257
+  },
+  "regressions": {
+    "suite_tests": 102,
+    "suite_status": "passed",
+    "pip_check": "passed",
+    "javascript_syntax": "passed",
+    "guard_validation": "guard-validation.json",
+    "live_validation": "live-ready.json",
+    "benchmark_cli_short_tail_samples": 6400,
+    "benchmark_cli_full_blocks_samples": 128000,
+    "suite_seconds": 23.849
+  }
+}

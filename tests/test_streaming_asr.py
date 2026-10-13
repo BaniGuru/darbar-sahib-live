@@ -56,6 +56,20 @@ class StreamingTests(unittest.TestCase):
             patched.start()
             self.addCleanup(patched.stop)
 
+    def test_decoder_mode_dispatch_preserves_context_and_boundaries(self):
+        encoded = np.zeros((1, 512, 1), np.float32)
+        beams = [hypothesis()]
+        context = dict(require_word_start=True, previous_word='ਨਾਮ', previous_words=('ਜਪੋ', 'ਨਾਮ'))
+        for mode, selected, other in (
+            ('accuracy', '_decode_encoder_beams_accuracy', '_decode_encoder_beams_optimized'),
+            ('optimized', '_decode_encoder_beams_optimized', '_decode_encoder_beams_accuracy'),
+        ):
+            with self.subTest(mode=mode), patch.object(asr, 'DECODER_MODE', mode), \
+                 patch.object(asr, selected, return_value=beams) as chosen, \
+                 patch.object(asr, other, side_effect=AssertionError('Wrong decoder selected')):
+                self.assertIs(asr.decode_encoder_beams(encoded, 1, beams, 100, **context), beams)
+                chosen.assert_called_once_with(encoded, 1, beams, 100, **context)
+
     def test_partial_is_visible_on_first_decode(self):
         token = asr.TimedToken(4, 10)
         with patch.object(asr, "decode_encoder_beams", return_value=[hypothesis([token])]):

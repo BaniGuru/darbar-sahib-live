@@ -29,7 +29,7 @@ def pcm(path):
 
 def replay(asr, audio, enabled):
     asr.SILENCE_GUARD = enabled
-    recognizer = asr.StreamingRecognizer()
+    recognizer = asr.new_recognizer()
     states = []
     started = time.perf_counter()
     for start in range(0, len(audio), 12800):

@@ -5,6 +5,32 @@ import asr_config
 
 
 class ConfigurationTests(unittest.TestCase):
+    def test_single_pass_default_and_explicit_diagnostic_modes(self):
+        with patch.dict(asr_config.os.environ, {}, clear=True):
+            self.assertEqual(asr_config.configured_recognition(), ('blocks', 4))
+        for mode, block in (('blocks', 2), ('rolling', 4)):
+            with patch.dict(asr_config.os.environ, {'ASR_RECOGNITION_MODE': mode, 'ASR_BLOCK_SECONDS': str(block)}):
+                self.assertEqual(asr_config.configured_recognition(), (mode, block))
+        for values in ({'ASR_RECOGNITION_MODE': 'typo'}, {'ASR_BLOCK_SECONDS': '8'}):
+            with patch.dict(asr_config.os.environ, values):
+                with self.assertRaises(ValueError):
+                    asr_config.configured_recognition()
+
+    def test_encoder_pool_leaves_capacity_without_slowing_two_core_default(self):
+        expected = {1: 1, 2: 2, 3: 2, 4: 2, 6: 3, 8: 4, 32: 4}
+        for budget, threads in expected.items():
+            self.assertEqual(asr_config.default_encoder_threads(budget), threads)
+    def test_optimized_default_and_explicit_previous_decoder(self):
+        with patch.dict(asr_config.os.environ, {}, clear=True):
+            self.assertEqual(asr_config.configured_decoder_mode(), 'optimized')
+        with patch.dict(asr_config.os.environ, {'ASR_DECODER_MODE': 'accuracy'}):
+            self.assertEqual(asr_config.configured_decoder_mode(), 'accuracy')
+        with patch.dict(asr_config.os.environ, {'ASR_DECODER_MODE': 'optimized'}):
+            self.assertEqual(asr_config.configured_decoder_mode(), 'optimized')
+        with patch.dict(asr_config.os.environ, {'ASR_DECODER_MODE': 'typo'}):
+            with self.assertRaises(ValueError):
+                asr_config.configured_decoder_mode()
+
     def test_editable_flag_and_environment_override(self):
         with patch.dict(asr_config.os.environ, {}, clear=True), \
              patch.object(asr_config, 'enable_language_model', False):

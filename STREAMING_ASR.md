@@ -1,5 +1,10 @@
 # Cache-aware streaming ASR
 
+Current default: [30-second delayed playback with single-pass 4-second
+recognition](DELAYED_PLAYBACK.md), keeping KenLM enabled. The rolling mode
+described below remains available with `ASR_RECOGNITION_MODE=rolling` for
+comparison. Its previews and adaptive acoustic caching are not the default.
+
 The NeMo ONNX model uses `[202, 100]` attention context and 40 ms encoder
 frames. Encoder caches advance in four-second steps after adaptive word
 lookahead. Previews re-decode the pending audio every 800 ms without changing
@@ -75,6 +80,13 @@ and cgroup quota; a two-core container defaults to two threads. Set
 `ASR_ENCODER_THREADS` to override this; use one Uvicorn worker. See
 [LOW_POWER_ASR.md](LOW_POWER_ASR.md) for constrained latency measurements
 and the optional `enable_language_model` control.
+
+`ASR_DECODER_MODE=accuracy` explicitly selects the decoder from before the
+low-power optimizations, with full-prefix language scoring and the original
+predictor cache path. Keep KenLM enabled for accuracy. The default remains
+`ASR_DECODER_MODE=optimized`, which matched all original captions on the
+four-core/20-minute comparison and processed them faster.
+See [FOUR_CORE_ASR.md](FOUR_CORE_ASR.md) for the four-core/eight-GB validation.
 
 ## Validation
 
