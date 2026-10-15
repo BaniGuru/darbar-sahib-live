@@ -1,0 +1,76 @@
+{
+  "verified_at": "2026-10-15T07:21:56.971770+00:00",
+  "baseline_revision": "177bc437168909dfd973f5ebad8f8233729585be",
+  "python_tests": {
+    "run": 180,
+    "passed": 180,
+    "skipped": 0,
+    "seconds": 61.81
+  },
+  "replay_comparisons": {
+    "asa": {
+      "seconds": 300.0,
+      "listener_samples": 301,
+      "changed_pankti_samples": 0,
+      "word_pair_checks": 208,
+      "on_time_before": 208,
+      "on_time_after": 208,
+      "ambiguous_refrain_pairs_excluded": 0
+    },
+    "rapid": {
+      "seconds": 144.0,
+      "listener_samples": 145,
+      "changed_pankti_samples": 0,
+      "word_pair_checks": 48,
+      "on_time_before": 47,
+      "on_time_after": 47,
+      "ambiguous_refrain_pairs_excluded": 3
+    }
+  },
+  "replay_note": "Same causal ASR messages and prior committed matcher; consistency/timing, not human transcription accuracy.",
+  "acoustic_model_changed": false,
+  "kenlm_enabled": true,
+  "playback_delay_seconds": 10,
+  "ardas_lines_loaded_from_database": 27,
+  "waiting_timeout_seconds": 30,
+  "runtime_duties_seeded": false,
+  "new_artwork_available": false,
+  "outstanding": "Downloadable original raagi PNG/ZIP and visual verification against that artwork.",
+  "new_artwork_test_limit": "Browser uses an explicitly labelled SVG aspect-ratio scaffold only; no replacement image is shipped.",
+  "browser_checks": {
+    "completed": true,
+    "originalArtworkVerified": true,
+    "raagiArtworkVerified": false,
+    "raagiOverlayScaffold": true,
+    "singlePankti": true,
+    "firstWordScheduleWithoutPoll": true,
+    "stalledAudioHoldsLine": true,
+    "timedGreeting": true,
+    "timedRaagi": true,
+    "missingDutyFallback": true,
+    "failedImageFallback": true,
+    "results": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "passed": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "passed": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 700
+        },
+        "passed": true
+      }
+    ]
+  }
+}

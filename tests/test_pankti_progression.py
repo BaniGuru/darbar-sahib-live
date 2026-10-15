@@ -96,7 +96,7 @@ class PanktiProgressionTests(unittest.TestCase):
         self.assertTrue(server.live_state(sid,20)['waiting_for_shabad'])
         self.assertFalse(server.live_state(sid,40)['waiting_for_shabad'])
         self.assertEqual(server.live_state(sid,40)['pankti_id'],'BKS1')
-        self.assertFalse(server.live_state(sid,900)['waiting_for_shabad'])
+        self.assertTrue(server.live_state(sid,900)['waiting_for_shabad'])
 
     def test_repeated_phrase_timestamp_uses_latest_occurrence(self):
         text='ਗੁਰ ਰਾਮਦਾਸ ਨਾਮ ਜਪੋ ਗੁਰ ਰਾਮਦਾਸ'

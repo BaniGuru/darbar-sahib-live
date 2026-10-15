@@ -32,6 +32,7 @@ from fastapi.staticfiles import StaticFiles
 from pankti_display import identity
 from bani_matching import OrderedBaniMatcher, bani_family
 from delayed_audio import DelayedAudio, FrameParser
+from duty_schedule import DutySchedule
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -85,6 +86,9 @@ if "mode=live" not in ASR_INTERNAL_WS_URL:
 PUNJABI_LANGUAGE_SOURCE_ID = int(os.getenv("PUNJABI_LANGUAGE_SOURCE_ID", "6"))
 ENGLISH_LANGUAGE_SOURCE_ID = int(os.getenv("ENGLISH_LANGUAGE_SOURCE_ID", "1"))
 MATCH_HOLD_SECONDS = max(1.0, min(300.0, float(os.getenv("MATCH_HOLD_SECONDS", "300"))))
+NO_SHABAD_SECONDS = 30.0
+_duties_setting = Path(os.getenv("KIRTAN_DUTIES_PATH", "data/kirtan_duties.json"))
+_duty_schedule = DutySchedule(_duties_setting if _duties_setting.is_absolute() else BASE_DIR / _duties_setting)
 PUBLIC_DIR = BASE_DIR / "public"
 MODEL_DIR = BASE_DIR / "model"
 
@@ -96,6 +100,8 @@ _pankti_rows: list[dict[str, Any]] | None = None
 _pankti_token_index: dict[str, tuple[int, ...]] = {}
 _pankti_shabad_index: dict[str, tuple[int, ...]] = {}
 _bani_matcher: OrderedBaniMatcher | None = None
+_ardas_pankti_ids: set[str] = set()
+_ardas_phrases: set[tuple[str, ...]] = set()
 _live_match: dict[str, Any] | None = None
 _live_match_at = 0.0
 _active_shabad_id: str | None = None
@@ -481,6 +487,7 @@ def _translation_expression(
 def _build_pankti_index() -> int:
     """Load pankti text once and index normalized words for live lookup."""
     global _pankti_rows, _pankti_token_index, _pankti_shabad_index, _speech_column, _bani_matcher
+    global _ardas_pankti_ids, _ardas_phrases
     if _speech_column is None:
         _speech_column = _validate_database(BANI_DB_PATH)
     speech_expr = f"REPLACE(COALESCE(p.{_speech_column}, ''), ',', '')"
@@ -533,6 +540,8 @@ def _build_pankti_index() -> int:
     }
     by_id = {row["pankti_id"]: row for row in rows}
     routes: dict[int, dict[str, Any]] = {}
+    _ardas_pankti_ids = set()
+    _ardas_phrases = set()
     with _sqlite_ro() as conn:
         tables = {row[0] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
         # The shipped schema calls this table banis; accept the alternate
@@ -540,13 +549,18 @@ def _build_pankti_index() -> int:
         bani_table = next((name for name in ("banis", "banies") if name in tables), None)
         if bani_table and "bani_lines" in tables:
             for entry in conn.execute(f"""
-                SELECT b.id AS bani_id, b.name_english, bl.line_group, p.id AS pankti_id
+                SELECT b.id AS bani_id, b.name_english, bl.line_group, p.id AS pankti_id,
+                       {speech_expr} AS ardas_speech
                 FROM {bani_table} b
                 JOIN bani_lines bl ON bl.bani_id=b.id
                 JOIN panktis p ON p.id=bl.line_id
                 JOIN lines l ON l.id=p.id
                 ORDER BY b.id, bl.line_group, l.order_id, p.id
             """):
+                if re.fullmatch(r"ard+a+a?s", str(entry["name_english"]).strip(), re.I):
+                    _ardas_pankti_ids.add(str(entry["pankti_id"]))
+                    tokens = _normalise_query(entry["ardas_speech"]).split()
+                    _ardas_phrases.update(tuple(tokens[i:i+4]) for i in range(len(tokens)-3))
                 family = bani_family(entry["name_english"])
                 row = by_id.get(str(entry["pankti_id"]))
                 if family and row is not None:
@@ -794,9 +808,56 @@ def _stronger_new_phrase(candidate: dict[str, Any] | None,
     return len(distinctive) >= 2
 
 
-def _waiting_event() -> dict[str, Any]:
+def _waiting_event(reason: str = "greeting") -> dict[str, Any]:
     return dict(punjabi="", legacy_gurmukhi="", english="", shabad_id=None,
-                pankti_id=None, waiting_for_shabad=True)
+                pankti_id=None, waiting_for_shabad=True, waiting_reason=reason)
+
+
+def _non_shabad_span(transcript: str):
+    """Recognize a fresh simran pair or a strong Ardas phrase at the tail."""
+    words = [_normalise_query(word) for word in transcript.split()]
+    if len(words) >= 2 and all(_token_similarity(word, "ਵਾਹਿਗੁਰੂ") >= .84 for word in words[-2:]):
+        start = len(words)-2
+        while start and _token_similarity(words[start-1], "ਵਾਹਿਗੁਰੂ") >= .84:
+            start -= 1
+        return start, len(words), "simran"
+    if len(words) >= 4:
+        tail = tuple(words[-4:])
+        if tail in _ardas_phrases or any(
+                min(scores := [_token_similarity(a,b) for a,b in zip(tail, phrase)]) >= .75
+                and sum(scores)/4 >= .91 for phrase in _ardas_phrases):
+            return len(words)-4, len(words), "ardas"
+    return None
+
+
+def _record_waiting(at: float, cutoff: float, reason: str):
+    """Use source time, deduplicate retained text, and release matching state."""
+    global _greeting_audio_cutoff, _live_match, _active_shabad_id
+    global _pending_shabad_id, _pending_shabad_hits, _pending_shabad_update
+    global _pending_pankti_id, _pending_pankti_hits, _pending_pankti_audio_time
+    if _greeting_audio_cutoff is not None and cutoff <= _greeting_audio_cutoff+.001:
+        return
+    _greeting_audio_cutoff = cutoff
+    ending = (_stream_wall_started_at or 0)+cutoff
+    _pankti_timeline[:] = [(ts,line) for ts,line in _pankti_timeline
+                           if not (at <= ts <= ending and not line.get("waiting_for_shabad"))]
+    index = bisect_right(_pankti_timeline, at, key=lambda event: event[0])-1
+    if index < 0 or not _pankti_timeline[index][1].get("waiting_for_shabad"):
+        _pankti_timeline.insert(index+1, (at, _waiting_event(reason)))
+    if len(_pankti_timeline) > 20000:
+        del _pankti_timeline[:-20000]
+    _live_match = None
+    _active_shabad_id = _pending_shabad_id = _pending_pankti_id = None
+    _pending_shabad_hits = _pending_pankti_hits = 0
+    _pending_shabad_update = _pending_pankti_audio_time = None
+    if _bani_matcher is not None:
+        _bani_matcher.reset()
+
+
+def _waiting_payload(line, at):
+    if not line.get("waiting_for_shabad"):
+        return line
+    return {**line, "raagi": _duty_schedule.at(at) if line.get("waiting_reason") == "no-shabad" else None}
 
 
 def _prepare_pankti_timeline() -> None:
@@ -805,10 +866,24 @@ def _prepare_pankti_timeline() -> None:
     Auto-next predictions help the matcher follow bani internally. Playback
     changes line only at the first recognized word of a confirmed line.
     """
-    _playback_pankti_timeline[:] = [
+    observed = [
         (at, line) for at, line in _pankti_timeline
         if line.get("match_mode") != "bani-auto-next"
     ]
+    prepared = []
+    if _stream_wall_started_at is not None:
+        initial = _stream_wall_started_at+NO_SHABAD_SECONDS
+        if not observed or initial < observed[0][0]:
+            prepared.append((initial, _waiting_event("no-shabad")))
+    for index, (at, line) in enumerate(observed):
+        prepared.append((at, line))
+        if line.get("waiting_reason") == "no-shabad":
+            continue
+        deadline = max(at, float(line.get("matched_until", at)))+NO_SHABAD_SECONDS
+        next_at = observed[index+1][0] if index+1 < len(observed) else float("inf")
+        if deadline < next_at:
+            prepared.append((deadline, _waiting_event("no-shabad")))
+    _playback_pankti_timeline[:] = prepared
     for word in _debug_timed_final_words + _debug_timed_partial_words:
         at = (_stream_wall_started_at or 0)+word["start"]
         word["audio_timestamp"] = at
@@ -833,7 +908,7 @@ def _pankti_schedule(playhead: float, selected: dict[str, Any] | None) -> list[d
     for at, line in _playback_pankti_timeline[start:min(end, start+64)]:
         if at <= playhead and (not selected or identity(line) != identity(selected)):
             continue
-        events.append({"audio_timestamp": at, "line": line})
+        events.append({"audio_timestamp": at, "line": _waiting_payload(line, max(at, playhead))})
     return events
 
 
@@ -932,9 +1007,8 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
             greeting_offset = (records[timed_greeting_end-1]["end"]
                                if timed_greeting_end is not None and timed_greeting_end <= len(records) else
                                audio_offset_seconds + float(message.get("window_end", 0)))
-            if (greeting_key != _last_greeting_key
-                    and (_greeting_audio_cutoff is None
-                         or greeting_offset > _greeting_audio_cutoff + .1)):
+            if (_greeting_audio_cutoff is None
+                    or greeting_offset > _greeting_audio_cutoff + .1):
                 _greeting_audio_cutoff = greeting_offset
                 _last_greeting_key = greeting_key
                 greeting_time = (_stream_wall_started_at or time.time())+_greeting_audio_cutoff
@@ -997,6 +1071,25 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
     global _live_match, _live_match_at
     global _active_shabad_id, _pending_shabad_id, _pending_shabad_hits, _pending_shabad_update
     global _pending_pankti_id, _pending_pankti_hits, _pending_pankti_audio_time
+    span = _non_shabad_span(transcript)
+    if span is not None:
+        start, end, reason = span
+        timed = [word for field in ("committed_words", "partial_words") for word in message.get(field, [])]
+        if len(timed) == len(transcript.split()):
+            cutoff = audio_offset_seconds+float(timed[end-1]["end"])
+            at = (_stream_wall_started_at or time.time())+audio_offset_seconds+float(timed[start]["start"])
+        else:
+            cutoff = audio_offset_seconds+float(message.get("window_end") or 0)
+            at = (_stream_wall_started_at or time.time())+cutoff
+        _record_waiting(at, cutoff, reason)
+        return
+    if _greeting_audio_cutoff is not None:
+        filtered = [word for field in ("committed_words", "partial_words") for word in message.get(field, [])
+                    if float(word["start"])+audio_offset_seconds >= _greeting_audio_cutoff]
+        if not filtered:
+            return
+        message = {**message, "committed_words": filtered, "partial_words": []}
+        transcript = " ".join(word["text"] for word in filtered)
     # `match` must be local to this ASR update. Reusing its previous value
     # makes a no-match update look like a fresh repeat of the old pankti.
     match: dict[str, Any] | None = None
@@ -1106,6 +1199,12 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
                   if _stream_wall_started_at is not None and window_end is not None
                   else time.time())
         )
+        supported_end = _matched_word_offset(message, timestamp_text, timestamp_end)
+        matched_until = ((_stream_wall_started_at or time.time())+audio_offset_seconds+supported_end
+                         if supported_end is not None else match_audio_time)
+        if str(match.get("pankti_id")) in _ardas_pankti_ids:
+            _record_waiting(match_audio_time, matched_until-(_stream_wall_started_at or 0), "ardas")
+            return
         if (not match.get("_bani_direct") and current
                 and current.get("shabad_id") == match.get("shabad_id")):
             current_id = str(current.get("pankti_id"))
@@ -1148,6 +1247,7 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
     if match:
         if _bani_matcher is not None and not match.get("_bani_direct"):
             match = _bani_matcher.adopt(match, transcript, bani_message)
+        match["matched_until"] = matched_until
         if match.get("_bani_auto_next"):
             # A very short bani line can finish in the same update that
             # identifies it. Record that heard line before its prediction.
@@ -1163,6 +1263,7 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
                 prior = _pankti_timeline[index][1] if index >= 0 else {}
                 if identity(prior) != identity(observed) or prior.get("match_mode") == "bani-auto-next":
                     public = {k:v for k,v in observed.items() if not k.startswith("_")}
+                    public["matched_until"] = matched_until
                     _pankti_timeline.insert(index+1, (at, public))
             # This is a prediction of the next line, anchored to the
             # previous line's final word, not the next line's text.
@@ -1186,6 +1287,10 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
         # context window. Record transitions at the matched word time;
         # renew an unchanged line only occasionally for long refrains.
         public_match = {key: value for key, value in match.items() if not key.startswith("_")}
+        prior_index = bisect_right(_pankti_timeline, match_audio_time, key=lambda event:event[0])-1
+        if prior_index >= 0 and identity(_pankti_timeline[prior_index][1]) == identity(public_match):
+            prior = _pankti_timeline[prior_index][1]
+            prior["matched_until"] = max(float(prior.get("matched_until", 0)), matched_until)
         last_at, last_match = _pankti_timeline[-1] if _pankti_timeline else (0.0, None)
         if (
             not last_match
@@ -1665,7 +1770,9 @@ def live_state(
         # A new listener receives the current match immediately while the
         # audio element establishes its own timestamp anchor.
         fresh_entry = (_live_match_at, _live_match)
-    fresh_match = fresh_entry[1] if fresh_entry else None
+    if fresh_entry is None and _stream_wall_started_at is not None and playhead_time >= _stream_wall_started_at+NO_SHABAD_SECONDS:
+        fresh_entry = (_stream_wall_started_at+NO_SHABAD_SECONDS, _waiting_event("no-shabad"))
+    fresh_match = _waiting_payload(fresh_entry[1], playhead_time) if fresh_entry else None
     source_active = bool(
         _source_connected
         and _source_last_chunk_monotonic is not None
@@ -1679,6 +1786,9 @@ def live_state(
         "playback_words": [w for w in (_debug_timed_final_words + _debug_timed_partial_words)
                            if w.get("audio_timestamp", float("inf")) <= playhead_time][-30:],
         "waiting_for_shabad": bool(fresh_match and fresh_match.get("waiting_for_shabad")),
+        "waiting_reason": fresh_match.get("waiting_reason") if fresh_match else None,
+        "raagi": fresh_match.get("raagi") if fresh_match else None,
+        "raagi_artwork_url": "/static/darbar-sahib-raagi.png" if (PUBLIC_DIR / "darbar-sahib-raagi.png").is_file() else None,
         "playback_delay_seconds": PLAYBACK_DELAY_SECONDS,
         "playback_ready": bool(_delayed_audio.released),
         "audio_generation": _audio_sessions.get(session_id, {}).get("generation", 0),
@@ -1714,7 +1824,7 @@ def live_state(
             "legacy_gurmukhi", "english", "shabad_id", "pankti_id",
             "bani_id", "bani_name", "line_group", "bani_position", "match_mode",
             "playback_delay_seconds", "playback_ready", "audio_generation", "playback_text",
-            "listener_count", "waiting_for_shabad", "display_panktis", "playback_words", "pankti_schedule",
+            "listener_count", "waiting_for_shabad", "waiting_reason", "raagi", "raagi_artwork_url", "display_panktis", "playback_words", "pankti_schedule",
         )
     }
     revision = hashlib.sha256(

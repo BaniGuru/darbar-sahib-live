@@ -82,3 +82,14 @@ body.live-page {
 }
 
 .pankti-group p { max-height: none; overflow: visible; }
+
+.raagi-artwork { position: relative; }
+.raagi-name { position: absolute; left: 37%; right: 24%; top: 40%; height: 19%; margin: 0; display: flex; align-items: center; justify-content: center; font-family: GurbaniWebThick, serif; font-size: clamp(12px, 2.7vw, 34px); line-height: 1.3; color: #644015; overflow-wrap: anywhere; }
+.is-raagi .artwork-meta { top: 65%; left: 38%; right: 25%; flex-wrap: wrap; }
+.is-raagi .listener-badge { margin-left: auto; }
+@media (max-width: 600px) {
+  .welcome-artwork.is-raagi { padding-bottom: 0; }
+  .is-raagi .artwork-meta { position: static; margin: 10px 4% 0; }
+  .is-raagi .darbar-date-time { flex-basis: auto; }
+  .is-raagi .raagi-name { font-size: clamp(11px, 3.2vw, 18px); }
+}

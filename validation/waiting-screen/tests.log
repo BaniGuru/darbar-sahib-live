@@ -1,0 +1,73 @@
+[0;93m2026-10-15 07:19:34.020157422 [W:onnxruntime:Default, telemetry_1ds.cc:600 operator()] Failed to persist telemetry device ID; using an in-memory identifier[m
+...............INFO:gurbani-live:Loaded 130840 panktis into the live word index (60366 distinct words)
+........INFO:gurbani-live:ASR_TEST timing lag=-20.00s type=partial mode=legacy processing=0.000s lock_wait=0.000s
+..........................INFO:gurbani-live:Public audio session 11111111-1111-4111-8111-111111111111 received its first 5-byte chunk
+INFO:gurbani-live:Public audio session 11111111-1111-4111-8111-111111111111 received its first 5-byte chunk
+..INFO:gurbani-live:Public audio session 11111111-1111-4111-8111-111111111111 received its first 5-byte chunk
+INFO:gurbani-live:Public audio session 11111111-1111-4111-8111-111111111111 received its first 5-byte chunk
+.....Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmpmr7c371j/fixture-4.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmpmr7c371j/fixture-4.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmpmr7c371j/fixture-5.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /tmp/tmpmr7c371j/fixture-5.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+........INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 304 Not Modified"
+.INFO:kirtan-duties:PDF has no usable Unicode or supported legacy mapping; trying Punjabi OCR
+WARNING:kirtan-duties:Duties page 1 used Punjabi OCR (confidence 93.6); check names/times against PDF
+INFO:kirtan-duties:PDF has no usable Unicode or supported legacy mapping; trying Punjabi OCR
+WARNING:kirtan-duties:Duties page 1 used Punjabi OCR (confidence 94.7); check names/times against PDF
+.INFO:kirtan-duties:PDF has no usable Unicode or supported legacy mapping; trying Punjabi OCR
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 503 Service Unavailable"
+....INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/files/punjabi.pdf "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 503 Service Unavailable"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+..INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 503 Service Unavailable"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:kirtan-duties:Converting AnmolLipi/GurbaniAkhar font text directly to Unicode
+...INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:kirtan-duties:PDF has no usable Unicode or supported legacy mapping; trying Punjabi OCR
+.WARNING:kirtan-duties:Duties page 1 used Punjabi OCR (confidence 95.0); check names/times against PDF
+..INFO:kirtan-duties:Updated duties: /tmp/tmp8fif4gtf/duties.json
+INFO:kirtan-duties:No new duties; file unchanged: /tmp/tmp8fif4gtf/duties.json
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+...INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 304 Not Modified"
+.INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php "HTTP/1.1 200 OK"
+......................................................................INFO:gurbani-live:Loaded 130840 panktis into the live word index (60366 distinct words)
+.................
+----------------------------------------------------------------------
+Ran 180 tests in 61.810s
+
+OK

@@ -1,0 +1,36 @@
+{
+  "completed": true,
+  "originalArtworkVerified": true,
+  "raagiArtworkVerified": false,
+  "raagiOverlayScaffold": true,
+  "singlePankti": true,
+  "firstWordScheduleWithoutPoll": true,
+  "stalledAudioHoldsLine": true,
+  "timedGreeting": true,
+  "timedRaagi": true,
+  "missingDutyFallback": true,
+  "failedImageFallback": true,
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 700
+      },
+      "passed": true
+    }
+  ]
+}

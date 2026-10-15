@@ -1,0 +1,31 @@
+{
+  "/health": {
+    "status": "ok",
+    "asr_connected": true,
+    "playback_delay_seconds": 10.0,
+    "recognition_mode": "blocks",
+    "block_seconds": 4
+  },
+  "/asr/health": {
+    "status": "ok",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "enable_language_model": true,
+    "kenlm": "gurbani_3gram.bin",
+    "decoder_beam_width": 24,
+    "encoder_threads": 2,
+    "blas_threads": 1,
+    "provider": "CPUExecutionProvider",
+    "sample_rate": 16000
+  },
+  "/api/live/state": {
+    "connected": true,
+    "asr_connected": true,
+    "playback_ready": true,
+    "playback_delay_seconds": 10.0,
+    "waiting_for_shabad": false,
+    "waiting_reason": null,
+    "raagi": null,
+    "raagi_artwork_url": null
+  }
+}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fffaf0">
   <title>Live Gurbani Kirtan</title>
-  <link rel="stylesheet" href="/static/live.css?v=18">
+  <link rel="stylesheet" href="/static/live.css?v=19">
 </head>
 <body class="live-page">
   <main class="sync-screen">
@@ -13,7 +13,11 @@
     <section class="sync-content" aria-live="polite" aria-atomic="true">
       <div id="welcomeScreen" class="welcome-screen">
         <div class="welcome-artwork">
-          <img src="/static/darbar-sahib-live.png" class="welcome-image" width="2172" height="724" alt="Darbar Sahib Live">
+          <img id="defaultWelcomeImage" src="/static/darbar-sahib-live.png" class="welcome-image" width="2172" height="724" alt="Darbar Sahib Live">
+          <div id="raagiArtwork" class="raagi-artwork" hidden>
+            <img id="raagiImage" class="welcome-image" alt="Darbar Sahib kirtan" width="1983" height="793">
+            <p id="currentRaagiName" class="raagi-name" lang="pa"></p>
+          </div>
           <div class="artwork-meta">
             <div class="darbar-date-time" aria-label="ਦਰਬਾਰ ਸਾਹਿਬ ਦਾ ਨਾਨਕਸ਼ਾਹੀ ਤਾਰੀਖ਼ ਅਤੇ ਭਾਰਤੀ ਸਮਾਂ">
               <span id="darbarNanakshahiDate" lang="pa"></span>
@@ -52,6 +56,6 @@
     <div class="debug-heading"><span>ASR transcript</span><span id="debugStatus">connecting…</span></div>
     <p id="debugWords" lang="pa"><span id="debugFinal"></span><span id="debugPartial"></span></p>
   </aside>
-  <script type="module" src="/static/live.js?v=18"></script>
+  <script type="module" src="/static/live.js?v=19"></script>
 </body>
 </html>
