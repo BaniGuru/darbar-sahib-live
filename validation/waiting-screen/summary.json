@@ -1,54 +1,70 @@
 {
-  "verified_at": "2026-10-15T07:21:56.971770+00:00",
-  "baseline_revision": "177bc437168909dfd973f5ebad8f8233729585be",
+  "verified_at": "2026-10-15T07:44:48.989340+00:00",
   "python_tests": {
     "run": 180,
     "passed": 180,
     "skipped": 0,
-    "seconds": 61.81
+    "seconds": 59.213
   },
-  "replay_comparisons": {
+  "focused_tests": {
+    "run": 15,
+    "passed": 15,
+    "seconds": 8.62
+  },
+  "no_shabad_seconds": 60,
+  "landing_only": true,
+  "raagi_display": false,
+  "ardas_database_lines": 27,
+  "closing_shabad_count": 2,
+  "closing_indexed_panktis": 14,
+  "playback_delay_seconds": 10,
+  "native_recording_checks": {
+    "ardas": {
+      "start_seconds": 13295.0,
+      "end_seconds": 13415.0,
+      "listener_samples": 121,
+      "waiting_verified_from": 13305.0,
+      "capture_seconds": 148.0,
+      "asr_elapsed_seconds": 39.92127468800027,
+      "cloud_asr_rtf": 0.2697383424864883
+    },
+    "role-ending": {
+      "start_seconds": 25174.0,
+      "end_seconds": 25322.0,
+      "listener_samples": 149,
+      "waiting_verified_from": 25174.0,
+      "capture_seconds": 176.0,
+      "asr_elapsed_seconds": 20.200189754999883,
+      "cloud_asr_rtf": 0.1147738054261357
+    }
+  },
+  "normal_kirtan_regressions": {
     "asa": {
-      "seconds": 300.0,
       "listener_samples": 301,
       "changed_pankti_samples": 0,
       "word_pair_checks": 208,
       "on_time_before": 208,
       "on_time_after": 208,
-      "ambiguous_refrain_pairs_excluded": 0
+      "ambiguous_pairs_excluded": 0
     },
     "rapid": {
-      "seconds": 144.0,
       "listener_samples": 145,
       "changed_pankti_samples": 0,
       "word_pair_checks": 48,
       "on_time_before": 47,
       "on_time_after": 47,
-      "ambiguous_refrain_pairs_excluded": 3
+      "ambiguous_pairs_excluded": 3
     }
   },
-  "replay_note": "Same causal ASR messages and prior committed matcher; consistency/timing, not human transcription accuracy.",
-  "acoustic_model_changed": false,
-  "kenlm_enabled": true,
-  "playback_delay_seconds": 10,
-  "ardas_lines_loaded_from_database": 27,
-  "waiting_timeout_seconds": 30,
-  "runtime_duties_seeded": false,
-  "new_artwork_available": false,
-  "outstanding": "Downloadable original raagi PNG/ZIP and visual verification against that artwork.",
-  "new_artwork_test_limit": "Browser uses an explicitly labelled SVG aspect-ratio scaffold only; no replacement image is shipped.",
-  "browser_checks": {
+  "browser": {
     "completed": true,
-    "originalArtworkVerified": true,
-    "raagiArtworkVerified": false,
-    "raagiOverlayScaffold": true,
+    "artworkVerified": true,
     "singlePankti": true,
     "firstWordScheduleWithoutPoll": true,
     "stalledAudioHoldsLine": true,
-    "timedGreeting": true,
-    "timedRaagi": true,
-    "missingDutyFallback": true,
-    "failedImageFallback": true,
+    "timedWaitingAndResume": true,
+    "noRaagiName": true,
+    "allWaitingReasons": true,
     "results": [
       {
         "viewport": {
@@ -72,5 +88,21 @@
         "passed": true
       }
     ]
-  }
+  },
+  "acoustic_model_changed": false,
+  "kenlm_enabled": true,
+  "human_accuracy_measured": false,
+  "original_artwork_sha256": "6ed01976f644b89fd2aff212e3ce066b706db237643ddf60e3d316b61d982721",
+  "timing_note": "Capture runtime measured on this cloud instance, not an enforced 2-core/4GB server benchmark.",
+  "production_deployed": false,
+  "pending_asset": false,
+  "supersedes": "Prior 30-second/raagi-card implementation was replaced at the user request.",
+  "normal_kirtan_baseline_revision": "177bc437168909dfd973f5ebad8f8233729585be",
+  "ardas_initial_implementation_revision": "446a8a3a6e2362a03d0e32ff3c035c6e6474b768",
+  "ardas_unrelated_pankti_flashes_before": [
+    "N4NW",
+    "SN7R",
+    "6SJW"
+  ],
+  "ardas_unrelated_pankti_flashes_after": []
 }

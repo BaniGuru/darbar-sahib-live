@@ -1,0 +1,1835 @@
+{
+  "recording_start": "2026-10-14T02:00:00+05:30",
+  "clock_mapping": "Filename states recording starts at 02:00 India; file offsets add to this clock.",
+  "capture_start_seconds": 13279.0,
+  "start_seconds": 13295.0,
+  "end_seconds": 13415.0,
+  "audio_sha256": "23d8c9f385f9ecbea94c52d8765895b04cc859cb1d30f43092dd36553851f729",
+  "acoustic_settings": {
+    "order": 3,
+    "weight": 0.3,
+    "mode": "ngram",
+    "beam": 24,
+    "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+  },
+  "recognition_mode": "blocks",
+  "block_seconds": 4,
+  "ardas_database_lines": 27,
+  "listener_samples": [
+    {
+      "file_seconds": 13295.0,
+      "india_time": "2026-10-14T05:41:35+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13296.0,
+      "india_time": "2026-10-14T05:41:36+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13297.0,
+      "india_time": "2026-10-14T05:41:37+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13298.0,
+      "india_time": "2026-10-14T05:41:38+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13299.0,
+      "india_time": "2026-10-14T05:41:39+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13300.0,
+      "india_time": "2026-10-14T05:41:40+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13301.0,
+      "india_time": "2026-10-14T05:41:41+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13302.0,
+      "india_time": "2026-10-14T05:41:42+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13303.0,
+      "india_time": "2026-10-14T05:41:43+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13304.0,
+      "india_time": "2026-10-14T05:41:44+05:30",
+      "waiting_for_shabad": false,
+      "waiting_reason": null,
+      "pankti_id": "C1W0",
+      "pankti": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥"
+    },
+    {
+      "file_seconds": 13305.0,
+      "india_time": "2026-10-14T05:41:45+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13306.0,
+      "india_time": "2026-10-14T05:41:46+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13307.0,
+      "india_time": "2026-10-14T05:41:47+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13308.0,
+      "india_time": "2026-10-14T05:41:48+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13309.0,
+      "india_time": "2026-10-14T05:41:49+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13310.0,
+      "india_time": "2026-10-14T05:41:50+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13311.0,
+      "india_time": "2026-10-14T05:41:51+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13312.0,
+      "india_time": "2026-10-14T05:41:52+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13313.0,
+      "india_time": "2026-10-14T05:41:53+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13314.0,
+      "india_time": "2026-10-14T05:41:54+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13315.0,
+      "india_time": "2026-10-14T05:41:55+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13316.0,
+      "india_time": "2026-10-14T05:41:56+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13317.0,
+      "india_time": "2026-10-14T05:41:57+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13318.0,
+      "india_time": "2026-10-14T05:41:58+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13319.0,
+      "india_time": "2026-10-14T05:41:59+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13320.0,
+      "india_time": "2026-10-14T05:42:00+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13321.0,
+      "india_time": "2026-10-14T05:42:01+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13322.0,
+      "india_time": "2026-10-14T05:42:02+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13323.0,
+      "india_time": "2026-10-14T05:42:03+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13324.0,
+      "india_time": "2026-10-14T05:42:04+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13325.0,
+      "india_time": "2026-10-14T05:42:05+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13326.0,
+      "india_time": "2026-10-14T05:42:06+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13327.0,
+      "india_time": "2026-10-14T05:42:07+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13328.0,
+      "india_time": "2026-10-14T05:42:08+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13329.0,
+      "india_time": "2026-10-14T05:42:09+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13330.0,
+      "india_time": "2026-10-14T05:42:10+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13331.0,
+      "india_time": "2026-10-14T05:42:11+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13332.0,
+      "india_time": "2026-10-14T05:42:12+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13333.0,
+      "india_time": "2026-10-14T05:42:13+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13334.0,
+      "india_time": "2026-10-14T05:42:14+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13335.0,
+      "india_time": "2026-10-14T05:42:15+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13336.0,
+      "india_time": "2026-10-14T05:42:16+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13337.0,
+      "india_time": "2026-10-14T05:42:17+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13338.0,
+      "india_time": "2026-10-14T05:42:18+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13339.0,
+      "india_time": "2026-10-14T05:42:19+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13340.0,
+      "india_time": "2026-10-14T05:42:20+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13341.0,
+      "india_time": "2026-10-14T05:42:21+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13342.0,
+      "india_time": "2026-10-14T05:42:22+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13343.0,
+      "india_time": "2026-10-14T05:42:23+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13344.0,
+      "india_time": "2026-10-14T05:42:24+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13345.0,
+      "india_time": "2026-10-14T05:42:25+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13346.0,
+      "india_time": "2026-10-14T05:42:26+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13347.0,
+      "india_time": "2026-10-14T05:42:27+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13348.0,
+      "india_time": "2026-10-14T05:42:28+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13349.0,
+      "india_time": "2026-10-14T05:42:29+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13350.0,
+      "india_time": "2026-10-14T05:42:30+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13351.0,
+      "india_time": "2026-10-14T05:42:31+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13352.0,
+      "india_time": "2026-10-14T05:42:32+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13353.0,
+      "india_time": "2026-10-14T05:42:33+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13354.0,
+      "india_time": "2026-10-14T05:42:34+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13355.0,
+      "india_time": "2026-10-14T05:42:35+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13356.0,
+      "india_time": "2026-10-14T05:42:36+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13357.0,
+      "india_time": "2026-10-14T05:42:37+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13358.0,
+      "india_time": "2026-10-14T05:42:38+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13359.0,
+      "india_time": "2026-10-14T05:42:39+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13360.0,
+      "india_time": "2026-10-14T05:42:40+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13361.0,
+      "india_time": "2026-10-14T05:42:41+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13362.0,
+      "india_time": "2026-10-14T05:42:42+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13363.0,
+      "india_time": "2026-10-14T05:42:43+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13364.0,
+      "india_time": "2026-10-14T05:42:44+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13365.0,
+      "india_time": "2026-10-14T05:42:45+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13366.0,
+      "india_time": "2026-10-14T05:42:46+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13367.0,
+      "india_time": "2026-10-14T05:42:47+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13368.0,
+      "india_time": "2026-10-14T05:42:48+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13369.0,
+      "india_time": "2026-10-14T05:42:49+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13370.0,
+      "india_time": "2026-10-14T05:42:50+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13371.0,
+      "india_time": "2026-10-14T05:42:51+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13372.0,
+      "india_time": "2026-10-14T05:42:52+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13373.0,
+      "india_time": "2026-10-14T05:42:53+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13374.0,
+      "india_time": "2026-10-14T05:42:54+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13375.0,
+      "india_time": "2026-10-14T05:42:55+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13376.0,
+      "india_time": "2026-10-14T05:42:56+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13377.0,
+      "india_time": "2026-10-14T05:42:57+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13378.0,
+      "india_time": "2026-10-14T05:42:58+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13379.0,
+      "india_time": "2026-10-14T05:42:59+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13380.0,
+      "india_time": "2026-10-14T05:43:00+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13381.0,
+      "india_time": "2026-10-14T05:43:01+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13382.0,
+      "india_time": "2026-10-14T05:43:02+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13383.0,
+      "india_time": "2026-10-14T05:43:03+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13384.0,
+      "india_time": "2026-10-14T05:43:04+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13385.0,
+      "india_time": "2026-10-14T05:43:05+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13386.0,
+      "india_time": "2026-10-14T05:43:06+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13387.0,
+      "india_time": "2026-10-14T05:43:07+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13388.0,
+      "india_time": "2026-10-14T05:43:08+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13389.0,
+      "india_time": "2026-10-14T05:43:09+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13390.0,
+      "india_time": "2026-10-14T05:43:10+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13391.0,
+      "india_time": "2026-10-14T05:43:11+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13392.0,
+      "india_time": "2026-10-14T05:43:12+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13393.0,
+      "india_time": "2026-10-14T05:43:13+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13394.0,
+      "india_time": "2026-10-14T05:43:14+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13395.0,
+      "india_time": "2026-10-14T05:43:15+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13396.0,
+      "india_time": "2026-10-14T05:43:16+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13397.0,
+      "india_time": "2026-10-14T05:43:17+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13398.0,
+      "india_time": "2026-10-14T05:43:18+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13399.0,
+      "india_time": "2026-10-14T05:43:19+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13400.0,
+      "india_time": "2026-10-14T05:43:20+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13401.0,
+      "india_time": "2026-10-14T05:43:21+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13402.0,
+      "india_time": "2026-10-14T05:43:22+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13403.0,
+      "india_time": "2026-10-14T05:43:23+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13404.0,
+      "india_time": "2026-10-14T05:43:24+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13405.0,
+      "india_time": "2026-10-14T05:43:25+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13406.0,
+      "india_time": "2026-10-14T05:43:26+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13407.0,
+      "india_time": "2026-10-14T05:43:27+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13408.0,
+      "india_time": "2026-10-14T05:43:28+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13409.0,
+      "india_time": "2026-10-14T05:43:29+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13410.0,
+      "india_time": "2026-10-14T05:43:30+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13411.0,
+      "india_time": "2026-10-14T05:43:31+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13412.0,
+      "india_time": "2026-10-14T05:43:32+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13413.0,
+      "india_time": "2026-10-14T05:43:33+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13414.0,
+      "india_time": "2026-10-14T05:43:34+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 13415.0,
+      "india_time": "2026-10-14T05:43:35+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    }
+  ],
+  "transitions": [
+    {
+      "file_seconds": 13280.240000009537,
+      "pankti_id": "2UQS",
+      "shabad_id": "TUY",
+      "order_id": 39470,
+      "punjabi": "ਅਕਾਲ ਪੁਰਖ ਦੀ ਸਿਫ਼ਤ-ਸਾਲਾਹ ਦੀ ਬਾਣੀ ਸੁਣਿਆਂ ਸਾਰੇ ਦੁੱਖ ਰੋਗ ਕਲੇਸ਼ ਮਿਟ ਜਾਂਦੇ ਹਨ।",
+      "legacy_gurmukhi": "dUK rog sMqwp auqry; suxI scI bwxI ]",
+      "english": "Pain, illness and suffering have departed, listening to the True Bani.",
+      "score": 0.8889,
+      "bani_id": 7,
+      "bani_name": "Rehras Sahib (S.)",
+      "line_group": 9,
+      "bani_position": 286,
+      "match_mode": "bani",
+      "matched_until": 1791936681.36
+    },
+    {
+      "file_seconds": 13280.799999952316,
+      "score": 0.92,
+      "pankti_id": "2TCU",
+      "shabad_id": "TUY",
+      "order_id": 39310,
+      "punjabi": "(ਸੋ, ਸੰਤ ਜਨੋ!) ਗੁਰੂ ਦੇ ਹੁਕਮ ਉੱਤੇ ਤੁਰੋ ਤੇ ਸਦਾ ਕਾਇਮ ਰਹਿਣ ਵਾਲੇ ਪ੍ਰਭੂ ਦੀ ਸਿਫ਼ਤ-ਸਾਲਾਹ ਦੀ ਬਾਣੀ ਗਾਇਆ ਕਰੋ।",
+      "legacy_gurmukhi": "hukmu mMinhu gurU kyrw; gwvhu scI bwxI ]",
+      "english": "Obey the Hukam of the Guru's Command, and sing the True Word of His Bani.",
+      "matched_until": 1791936682.52
+    },
+    {
+      "file_seconds": 13283.519999980927,
+      "pankti_id": "DLUB",
+      "shabad_id": "TUY",
+      "order_id": 39471,
+      "punjabi": "ਜੇਹੜੇ ਸੰਤ ਗੁਰਮੁਖਿ ਪੂਰੇ ਗੁਰੂ ਤੋਂ ਸਿਫ਼ਤ-ਸਾਲਾਹ ਦੀ ਬਾਣੀ ਨਾਲ ਸਾਂਝੀ ਪਾਣੀ ਸਿੱਖ ਲੈਂਦੇ ਹਨ ਉਹਨਾਂ ਦੇ ਹਿਰਦੇ ਖਿੜ ਆਉਂਦੇ ਹਨ।",
+      "legacy_gurmukhi": "sMq swjn Bey srsy; pUry gur qy jwxI ]",
+      "english": "The Saints and their friends are in ecstasy, knowing the Perfect Guru.",
+      "score": 0.88,
+      "bani_id": 7,
+      "bani_name": "Rehras Sahib (S.)",
+      "line_group": 9,
+      "bani_position": 287,
+      "match_mode": "bani",
+      "matched_until": 1791936685.64
+    },
+    {
+      "file_seconds": 13286.319999933243,
+      "pankti_id": "51FD",
+      "shabad_id": "TUY",
+      "order_id": 39472,
+      "punjabi": "ਇਸ ਬਾਣੀ ਨੂੰ ਸੁਣਨ ਵਾਲੇ ਉਚਾਰਨ ਵਾਲੇ ਸਭ ਪਵਿਤ੍ਰ-ਆਤਮਕ ਹੋ ਜਾਂਦੇ ਹਨ, ਇਸ ਬਾਣੀ ਵਿਚ ਉਹਨਾਂ ਨੂੰ ਸਤਿਗੁਰੂ ਹੀ ਦਿੱਸਦਾ ਹੈ।",
+      "legacy_gurmukhi": "suxqy punIq. khqy pivqu; siqguru rihAw BrpUry ]",
+      "english": "Pure are the listeners, and pure are the speakers; the True Guru is all-pervading and permeating.",
+      "score": 1.0,
+      "bani_id": 7,
+      "bani_name": "Rehras Sahib (S.)",
+      "line_group": 9,
+      "bani_position": 288,
+      "match_mode": "bani",
+      "matched_until": 1791936689.48
+    },
+    {
+      "file_seconds": 13290.599999904633,
+      "pankti_id": "C1W0",
+      "shabad_id": "TUY",
+      "order_id": 39473,
+      "punjabi": "ਨਾਨਕ ਬੇਨਤੀ ਕਰਦਾ ਹੈ-ਜੇਹੜੇ ਬੰਦੇ ਗੁਰੂ ਦੀ ਚਰਨੀਂ ਲੱਗਦੇ ਹਨ, ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਇਕ-ਰਸ (ਖ਼ੁਸ਼ੀ ਦੇ) ਵਾਜੇ ਵੱਜ ਪੈਂਦੇ ਹਨ (ਉਹਨਾਂ ਦੇ ਅੰਦਰ ਆਤਮਕ ਆਨੰਦ ਪੈਦਾ ਹੋ ਜਾਂਦਾ ਹੈ) ॥੪੦॥੧॥",
+      "legacy_gurmukhi": "ibnvMiq nwnku. gur crx lwgy; vwjy Anhd qUry ]40]1]",
+      "english": "Prays Nanak, touching the Guru's Feet, the unstruck sound current of the celestial bugles vibrates and resounds. ||40||1||",
+      "score": 1.0,
+      "bani_id": 7,
+      "bani_name": "Rehras Sahib (S.)",
+      "line_group": 9,
+      "bani_position": 289,
+      "match_mode": "bani",
+      "matched_until": 1791936694.0
+    },
+    {
+      "file_seconds": 13303.83999991417,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "simran"
+    },
+    {
+      "file_seconds": 13363.83999991417,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad"
+    }
+  ],
+  "asr_updates": [
+    {
+      "received_file_seconds": 13279.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13280.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13281.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13282.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13283.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13283.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13284.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13285.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13286.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13287.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13287.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13288.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13289.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13290.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13291.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13291.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13292.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13293.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13294.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13295.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13295.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13296.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13297.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13298.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13299.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13299.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13300.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13301.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13302.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13303.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13303.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13304.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13305.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13306.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13307.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13307.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13308.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13309.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13310.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13311.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13311.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13312.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13313.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13314.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13315.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13315.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13316.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13317.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13318.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13319.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13319.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13320.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13321.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13322.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13323.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13323.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13324.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13325.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13326.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13327.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13327.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13328.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13329.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13330.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13331.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13331.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13332.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13333.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13334.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13335.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13335.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13336.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13337.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13338.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13339.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13339.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13340.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13341.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13342.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13343.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13343.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13344.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13345.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13346.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13347.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13347.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13348.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13349.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13350.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13351.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13351.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13352.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13353.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13354.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13355.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13355.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13356.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13357.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13358.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13359.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13359.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13360.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13361.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13362.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13363.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13363.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13364.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13365.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13366.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13367.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13367.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13368.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13369.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13370.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13371.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13371.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13372.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13373.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13374.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13375.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13375.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13376.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13377.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13378.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13379.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13379.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13380.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13381.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13382.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13383.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13383.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13384.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13385.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13386.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13387.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13387.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13388.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13389.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13390.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13391.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13391.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13392.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13393.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13394.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13395.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13395.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13396.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13397.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13398.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13399.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13399.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13400.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13401.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13402.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13403.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13403.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13404.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13405.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13406.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13407.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13407.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13408.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13409.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13410.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13411.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13411.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13412.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13413.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13414.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13415.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13415.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13416.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13417.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13418.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13419.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13419.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13420.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13421.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13422.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13423.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13423.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13424.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13425.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13426.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13427.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 13427.0,
+      "audio_active": true
+    }
+  ],
+  "recognized_text": "ਗੁਰ ਤੇ ਸੁਣੀ ਸਚੀ ਬਾਣੀ ਸੰਸਾ ਜਨ ਭਏ ਸਭੇ ਪੂਰੇ ਗੁਰ ਤੇ ਜਾਣੈ ਸੁਣਤੇ ਪੁਨੀਤ ਕਹਤੇ ਪਵਿਤੁ ਸਤਿਗੁਰੁ ਰਹਿਆ ਭਰਪੂਰੇ ਬਿਨਵੰਤ ਨਾਨਕ ਚਰਣ ਲਾਗੇ ਵਾਜੇ ਅਨਹਦ ਤੂਰੇ ਬੋਲੋ ਜੀ ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਹਿ ਸ੍ਰੀ ਗਉੜੀ ਜੀ ਸਹਾਇ ਵਾਰ ਸ੍ਰੀ ਭਗਉਤੀ ਜੀ ਕੀ ਬਾਤ ਬਰਥਾ ਭਗਉਤੀ ਸਿਮਰ ਕੈ ਗੁਰ ਨਾਨਕ ਲਈਂ ਧਿਆਇ ਸਿਰੰਗ ਗੁਰ ਤੇ ਅਮਰਦਾਸੁ ਰਾਮਦਾਸੈ ਹੋਇ ਸਹਾਈ ਹਰਿ ਜਨ ਹਰਿ ਗੋਵਿੰਦਾ ਨਾਉ ਸਮਰਾਉ ਸ੍ਰੀ ਹਰਿ ਰਾਇਓ ਸ੍ਰੀ ਹਰਿ ਕਰਿ ਧਿਆਈਐ ਜੈਸਾ ਡਠਾ ਸਭੁ ਦੁਖੁ ਦਾਇ ਤੈ ਦਹਦ ਸਿਮਰਿਆ ਘਰ ਨਉ ਨਿਧਿ ਆਵੈ ਧਾਇ ਸਭ ਥਾਈ ਹੋਇ ਸਹਾਇ ਦਸਵੈ ਪਾਤਿਸਾਹ ਸ੍ਰੀ ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ ਸਾਹਿਬ ਜੀ ਸਭ ਥਾਈ ਹੋਇ ਸਹਾਇ ਦਸਾਂ ਪਾਤਿਸਾਈਆ ਦੀ ਦਉਦਾ ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ ਦੇ ਪਾਠ ਦੀਦਾਰ ਦਾ ਧਿਆਨ ਧਰ ਕੇ ਬੋਲੋ ਜੀ ਵਾਹਿਗੁਰੂ ਵਾਹਿ ਪੰਜਾ ਪਿਆਰਿਆ ਚੌਹਾ ਸਾਹਿਬਾਦਿਆ ਚਾਲਿਆ ਮੁਕਤਿਆ ਹਠਿਆ ਜਾਪੈ ਤਪਣਾ ਜਿਨਾ੍ ਨਾਮੁ ਜਪਿਆ ਵੰਡ ਛਕਿਆ ਦੇਗ ਚਲਾਈ ਤੇਗ ਵਾਹੀ ਦੇਖ ਕੇ ਆਣਿ ਡਿਠਿ ਕੀਤਾ ਤਿਨਾ੍ ਪਿਆਰਿਆ ਸਚਿਆਰਿਆ ਦੀ ਕਮਾਈ ਦਾ ਧਿਆਨ ਧਰ ਕੇ ਖਾਲਸਾ ਜੀ ਬੋਲੋ ਜੀ ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ ਜਿਨਾ ਸਿੰਘਾ ਸਿੰਘਣਿਆ ਨਰ ਮਹਿ ਦਾਸੁ ਦਿਤੇ ਬੰਦ ਬੰਦ ਕਟਾਏ ਖੋਪਰੀਆ ਲੁਹਾਈਆ ਚੜੈ ਖੜੀਆ ਦੇ ਚੜਿਆਰਿਆ ਨਾਲਿ ਚਰਾਏ ਗਵੈ ਗੁਰ",
+  "human_accuracy_measured": false,
+  "no_raagi_fields_verified": true,
+  "waiting_verified_from": 13305.0
+}

@@ -1,0 +1,2155 @@
+{
+  "recording_start": "2026-10-14T02:00:00+05:30",
+  "clock_mapping": "Filename states recording starts at 02:00 India; file offsets add to this clock.",
+  "capture_start_seconds": 25158.0,
+  "start_seconds": 25174.0,
+  "end_seconds": 25322.0,
+  "audio_sha256": "23d8c9f385f9ecbea94c52d8765895b04cc859cb1d30f43092dd36553851f729",
+  "acoustic_settings": {
+    "order": 3,
+    "weight": 0.3,
+    "mode": "ngram",
+    "beam": 24,
+    "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+  },
+  "recognition_mode": "blocks",
+  "block_seconds": 4,
+  "ardas_database_lines": 27,
+  "listener_samples": [
+    {
+      "file_seconds": 25174.0,
+      "india_time": "2026-10-14T08:59:34+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25175.0,
+      "india_time": "2026-10-14T08:59:35+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25176.0,
+      "india_time": "2026-10-14T08:59:36+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25177.0,
+      "india_time": "2026-10-14T08:59:37+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25178.0,
+      "india_time": "2026-10-14T08:59:38+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25179.0,
+      "india_time": "2026-10-14T08:59:39+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25180.0,
+      "india_time": "2026-10-14T08:59:40+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25181.0,
+      "india_time": "2026-10-14T08:59:41+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25182.0,
+      "india_time": "2026-10-14T08:59:42+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25183.0,
+      "india_time": "2026-10-14T08:59:43+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25184.0,
+      "india_time": "2026-10-14T08:59:44+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25185.0,
+      "india_time": "2026-10-14T08:59:45+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25186.0,
+      "india_time": "2026-10-14T08:59:46+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25187.0,
+      "india_time": "2026-10-14T08:59:47+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25188.0,
+      "india_time": "2026-10-14T08:59:48+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25189.0,
+      "india_time": "2026-10-14T08:59:49+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25190.0,
+      "india_time": "2026-10-14T08:59:50+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25191.0,
+      "india_time": "2026-10-14T08:59:51+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25192.0,
+      "india_time": "2026-10-14T08:59:52+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25193.0,
+      "india_time": "2026-10-14T08:59:53+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25194.0,
+      "india_time": "2026-10-14T08:59:54+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25195.0,
+      "india_time": "2026-10-14T08:59:55+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25196.0,
+      "india_time": "2026-10-14T08:59:56+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25197.0,
+      "india_time": "2026-10-14T08:59:57+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25198.0,
+      "india_time": "2026-10-14T08:59:58+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25199.0,
+      "india_time": "2026-10-14T08:59:59+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25200.0,
+      "india_time": "2026-10-14T09:00:00+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25201.0,
+      "india_time": "2026-10-14T09:00:01+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25202.0,
+      "india_time": "2026-10-14T09:00:02+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25203.0,
+      "india_time": "2026-10-14T09:00:03+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25204.0,
+      "india_time": "2026-10-14T09:00:04+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25205.0,
+      "india_time": "2026-10-14T09:00:05+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25206.0,
+      "india_time": "2026-10-14T09:00:06+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25207.0,
+      "india_time": "2026-10-14T09:00:07+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25208.0,
+      "india_time": "2026-10-14T09:00:08+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25209.0,
+      "india_time": "2026-10-14T09:00:09+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25210.0,
+      "india_time": "2026-10-14T09:00:10+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25211.0,
+      "india_time": "2026-10-14T09:00:11+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25212.0,
+      "india_time": "2026-10-14T09:00:12+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25213.0,
+      "india_time": "2026-10-14T09:00:13+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25214.0,
+      "india_time": "2026-10-14T09:00:14+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25215.0,
+      "india_time": "2026-10-14T09:00:15+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25216.0,
+      "india_time": "2026-10-14T09:00:16+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25217.0,
+      "india_time": "2026-10-14T09:00:17+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25218.0,
+      "india_time": "2026-10-14T09:00:18+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25219.0,
+      "india_time": "2026-10-14T09:00:19+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25220.0,
+      "india_time": "2026-10-14T09:00:20+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25221.0,
+      "india_time": "2026-10-14T09:00:21+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25222.0,
+      "india_time": "2026-10-14T09:00:22+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25223.0,
+      "india_time": "2026-10-14T09:00:23+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25224.0,
+      "india_time": "2026-10-14T09:00:24+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25225.0,
+      "india_time": "2026-10-14T09:00:25+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25226.0,
+      "india_time": "2026-10-14T09:00:26+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25227.0,
+      "india_time": "2026-10-14T09:00:27+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25228.0,
+      "india_time": "2026-10-14T09:00:28+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25229.0,
+      "india_time": "2026-10-14T09:00:29+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25230.0,
+      "india_time": "2026-10-14T09:00:30+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25231.0,
+      "india_time": "2026-10-14T09:00:31+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25232.0,
+      "india_time": "2026-10-14T09:00:32+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25233.0,
+      "india_time": "2026-10-14T09:00:33+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25234.0,
+      "india_time": "2026-10-14T09:00:34+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25235.0,
+      "india_time": "2026-10-14T09:00:35+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25236.0,
+      "india_time": "2026-10-14T09:00:36+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25237.0,
+      "india_time": "2026-10-14T09:00:37+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25238.0,
+      "india_time": "2026-10-14T09:00:38+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25239.0,
+      "india_time": "2026-10-14T09:00:39+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25240.0,
+      "india_time": "2026-10-14T09:00:40+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25241.0,
+      "india_time": "2026-10-14T09:00:41+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25242.0,
+      "india_time": "2026-10-14T09:00:42+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25243.0,
+      "india_time": "2026-10-14T09:00:43+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25244.0,
+      "india_time": "2026-10-14T09:00:44+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25245.0,
+      "india_time": "2026-10-14T09:00:45+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25246.0,
+      "india_time": "2026-10-14T09:00:46+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25247.0,
+      "india_time": "2026-10-14T09:00:47+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25248.0,
+      "india_time": "2026-10-14T09:00:48+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25249.0,
+      "india_time": "2026-10-14T09:00:49+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25250.0,
+      "india_time": "2026-10-14T09:00:50+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25251.0,
+      "india_time": "2026-10-14T09:00:51+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25252.0,
+      "india_time": "2026-10-14T09:00:52+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25253.0,
+      "india_time": "2026-10-14T09:00:53+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25254.0,
+      "india_time": "2026-10-14T09:00:54+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25255.0,
+      "india_time": "2026-10-14T09:00:55+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25256.0,
+      "india_time": "2026-10-14T09:00:56+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25257.0,
+      "india_time": "2026-10-14T09:00:57+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25258.0,
+      "india_time": "2026-10-14T09:00:58+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25259.0,
+      "india_time": "2026-10-14T09:00:59+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25260.0,
+      "india_time": "2026-10-14T09:01:00+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25261.0,
+      "india_time": "2026-10-14T09:01:01+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25262.0,
+      "india_time": "2026-10-14T09:01:02+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25263.0,
+      "india_time": "2026-10-14T09:01:03+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25264.0,
+      "india_time": "2026-10-14T09:01:04+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25265.0,
+      "india_time": "2026-10-14T09:01:05+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25266.0,
+      "india_time": "2026-10-14T09:01:06+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25267.0,
+      "india_time": "2026-10-14T09:01:07+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25268.0,
+      "india_time": "2026-10-14T09:01:08+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25269.0,
+      "india_time": "2026-10-14T09:01:09+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25270.0,
+      "india_time": "2026-10-14T09:01:10+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25271.0,
+      "india_time": "2026-10-14T09:01:11+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25272.0,
+      "india_time": "2026-10-14T09:01:12+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25273.0,
+      "india_time": "2026-10-14T09:01:13+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25274.0,
+      "india_time": "2026-10-14T09:01:14+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25275.0,
+      "india_time": "2026-10-14T09:01:15+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25276.0,
+      "india_time": "2026-10-14T09:01:16+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25277.0,
+      "india_time": "2026-10-14T09:01:17+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25278.0,
+      "india_time": "2026-10-14T09:01:18+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25279.0,
+      "india_time": "2026-10-14T09:01:19+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25280.0,
+      "india_time": "2026-10-14T09:01:20+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25281.0,
+      "india_time": "2026-10-14T09:01:21+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25282.0,
+      "india_time": "2026-10-14T09:01:22+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25283.0,
+      "india_time": "2026-10-14T09:01:23+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25284.0,
+      "india_time": "2026-10-14T09:01:24+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25285.0,
+      "india_time": "2026-10-14T09:01:25+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25286.0,
+      "india_time": "2026-10-14T09:01:26+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25287.0,
+      "india_time": "2026-10-14T09:01:27+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25288.0,
+      "india_time": "2026-10-14T09:01:28+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25289.0,
+      "india_time": "2026-10-14T09:01:29+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25290.0,
+      "india_time": "2026-10-14T09:01:30+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25291.0,
+      "india_time": "2026-10-14T09:01:31+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25292.0,
+      "india_time": "2026-10-14T09:01:32+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25293.0,
+      "india_time": "2026-10-14T09:01:33+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25294.0,
+      "india_time": "2026-10-14T09:01:34+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25295.0,
+      "india_time": "2026-10-14T09:01:35+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25296.0,
+      "india_time": "2026-10-14T09:01:36+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25297.0,
+      "india_time": "2026-10-14T09:01:37+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25298.0,
+      "india_time": "2026-10-14T09:01:38+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25299.0,
+      "india_time": "2026-10-14T09:01:39+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25300.0,
+      "india_time": "2026-10-14T09:01:40+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25301.0,
+      "india_time": "2026-10-14T09:01:41+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25302.0,
+      "india_time": "2026-10-14T09:01:42+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25303.0,
+      "india_time": "2026-10-14T09:01:43+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25304.0,
+      "india_time": "2026-10-14T09:01:44+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25305.0,
+      "india_time": "2026-10-14T09:01:45+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25306.0,
+      "india_time": "2026-10-14T09:01:46+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25307.0,
+      "india_time": "2026-10-14T09:01:47+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25308.0,
+      "india_time": "2026-10-14T09:01:48+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25309.0,
+      "india_time": "2026-10-14T09:01:49+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25310.0,
+      "india_time": "2026-10-14T09:01:50+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25311.0,
+      "india_time": "2026-10-14T09:01:51+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25312.0,
+      "india_time": "2026-10-14T09:01:52+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25313.0,
+      "india_time": "2026-10-14T09:01:53+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25314.0,
+      "india_time": "2026-10-14T09:01:54+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25315.0,
+      "india_time": "2026-10-14T09:01:55+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25316.0,
+      "india_time": "2026-10-14T09:01:56+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25317.0,
+      "india_time": "2026-10-14T09:01:57+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25318.0,
+      "india_time": "2026-10-14T09:01:58+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25319.0,
+      "india_time": "2026-10-14T09:01:59+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25320.0,
+      "india_time": "2026-10-14T09:02:00+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25321.0,
+      "india_time": "2026-10-14T09:02:01+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    },
+    {
+      "file_seconds": 25322.0,
+      "india_time": "2026-10-14T09:02:02+05:30",
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting",
+      "pankti_id": null,
+      "pankti": ""
+    }
+  ],
+  "transitions": [
+    {
+      "file_seconds": 25158.599999904633,
+      "score": 1.0,
+      "pankti_id": "AV70",
+      "shabad_id": "64S",
+      "order_id": 7380,
+      "punjabi": "ਇਹ ਨਿਸ਼ਚਾ ਕਰ ਕੇ ਮੰਨ ਕਿ ਪਰਮਾਤਮਾ ਦੀ ਰਜ਼ਾ ਅਟੱਲ ਹੈ।",
+      "legacy_gurmukhi": "pRB kI AwigAw; siq kir mwnu ]",
+      "english": "Accept the Order of God as True.",
+      "matched_until": 1791948560.04
+    },
+    {
+      "file_seconds": 25162.039999961853,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "role-ending"
+    },
+    {
+      "file_seconds": 25222.039999961853,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad"
+    },
+    {
+      "file_seconds": 25262.640000104904,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "greeting"
+    },
+    {
+      "file_seconds": 25322.640000104904,
+      "punjabi": "",
+      "legacy_gurmukhi": "",
+      "english": "",
+      "shabad_id": null,
+      "pankti_id": null,
+      "waiting_for_shabad": true,
+      "waiting_reason": "no-shabad"
+    }
+  ],
+  "asr_updates": [
+    {
+      "received_file_seconds": 25158.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25159.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25160.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25161.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25162.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25162.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25163.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25164.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25165.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25166.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25166.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25167.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25168.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25169.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25170.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25170.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25171.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25172.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25173.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25174.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25174.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25175.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25176.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25177.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25178.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25178.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25179.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25180.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25181.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25182.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25182.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25183.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25184.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25185.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25186.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25186.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25187.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25188.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25189.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25190.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25190.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25191.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25192.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25193.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25194.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25194.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25195.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25196.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25197.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25198.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25198.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25199.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25200.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25201.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25202.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25202.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25203.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25204.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25205.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25206.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25206.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25207.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25208.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25209.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25210.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25210.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25211.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25212.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25213.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25214.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25214.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25215.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25216.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25217.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25218.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25218.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25219.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25220.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25221.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25222.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25222.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25223.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25224.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25225.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25226.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25226.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25227.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25228.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25229.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25230.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25230.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25231.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25232.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25233.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25234.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25234.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25235.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25236.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25237.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25238.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25238.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25239.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25240.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25241.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25242.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25242.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25243.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25244.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25245.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25246.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25246.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25247.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25248.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25249.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25250.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25250.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25251.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25252.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25253.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25254.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25254.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25255.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25256.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25257.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25258.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25258.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25259.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25260.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25261.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25262.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25262.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25263.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25264.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25265.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25266.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25266.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25267.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25268.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25269.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25270.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25270.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25271.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25272.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25273.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25274.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25274.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25275.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25276.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25277.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25278.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25278.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25279.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25280.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25281.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25282.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25282.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25283.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25284.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25285.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25286.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25286.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25287.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25288.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25289.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25290.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25290.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25291.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25292.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25293.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25294.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25294.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25295.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25296.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25297.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25298.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25298.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25299.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25300.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25301.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25302.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25302.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25303.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25304.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25305.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25306.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25306.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25307.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25308.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25309.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25310.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25310.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25311.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25312.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25313.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25314.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25314.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25315.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25316.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25317.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25318.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25318.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25319.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25320.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25321.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25322.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25322.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25323.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25324.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25325.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25326.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25326.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25327.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25328.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25329.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25330.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25330.8,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25331.6,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25332.4,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25333.2,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25334.0,
+      "audio_active": true
+    },
+    {
+      "received_file_seconds": 25334.0,
+      "audio_active": true
+    }
+  ],
+  "recognized_text": "ਸਤਿ ਕਰਿ ਮਾਨੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਅਵਰੁ ਨ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਤੇਰਾ ਜੀ ਤੇਰਾ ਨਾਮ ਸਤਿ ਹੈ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ ਪਉੜੀ ਵਡੀ ਹੂ ਵਡਾ ਅਪਾਰੁ ਤੇਰਾ ਮਰਤਬਾ ਰੰਗ ਪਰੰਗ ਅਨੇਕ ਨ ਜਾਪਨਿ੍ ਕਰਤਬਾ ਜੀਆ ਅੰਦਰਿ ਜੀਉ ਸਭੁ ਕਿਛੁ ਜਾਣਲਾ ਸਭੁ ਕਿਛੁ ਤੇਰੈ ਵਸਿ ਤੇਰਾ ਘਰੁ ਭਲਾ ਤੇਰੈ ਘਰਿ ਆਨੰਦੁ ਵਧਾਈ ਤੁਧੁ ਘਰਿ ਮਾਣੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਆਪਿ ਜਰਿ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਸਲੋਕ ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ਦਿਵਸੁ ਰਾਤਿ ਦੁਇ ਦਾਈ ਦਾਇਆ ਖੇਲੈ ਸਗਲ ਜਗਤੁ ਚੰਗਿਆਈਆ ਬੁਰਿਆਈਆ ਵਾਚੈ ਧਰਮੁ ਹਦੂਰਿ ਕਰਮੀ ਆਪੋ ਆਪਣੀ ਕੇ ਨੇੜੈ ਕੇ ਦੂਰਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਹਿ",
+  "human_accuracy_measured": false,
+  "no_raagi_fields_verified": true,
+  "waiting_verified_from": 25174.0
+}

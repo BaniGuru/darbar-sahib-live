@@ -1,68 +1,76 @@
-# Waiting screen and current raagi
+# Landing screen between shabads
 
-The player returns to the waiting screen after **30 seconds without supported
-shabad words**. The deadline follows source audio timestamps and the listener's
-delayed audio position, including between state polls. Silence/idle ASR messages
-and retained transcript text do not extend an old pankti. A freshly confirmed
-shabad resumes the existing single-pankti view at its first supported word.
+The player shows the original `public/darbar-sahib-live.png` landing layout,
+with listeners, SGPC date and India time. It does not show a raagi name or use
+the proposed raagi artwork. The duties JSON updater remains independent.
 
-Repeated `ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ` (including minor spelling variations), the existing
-complete Khalsa/Fateh greeting, and recognized Ardas panktis use the existing
-waiting artwork immediately at their audio boundary. They do not select the
-four-Waheguru verse. Ardas membership comes from `banis` / `bani_lines` joined to
-`panktis` and `lines`; the current database supplies 27 Ardas lines. Matching
-uses canonical membership or a strong four-word Ardas phrase, rather than
-common pairs such as `ਗੁਰ ਨਾਨਕ`. Continued chant/Ardas does not reset the
-30-second waiting-screen deadline. Normal shabad matching can resume within
-the same ASR message after the special phrase.
+During playback, the landing layout appears when:
 
-After 30 seconds, the API adds the current `raagi`, if available, from
-`data/kirtan_duties.json`. This is the structured output of
-`scripts/update_kirtan_duties.py`, described in [KIRTAN_DUTIES.md](KIRTAN_DUTIES.md).
-`KIRTAN_DUTIES_PATH` optionally overrides the JSON path; relative paths are
-resolved against the application directory. The shared lookup reloads on file
-replacement/change without restarting the service. Missing, deleted, invalid,
-overlapping or incomplete entries return no name, rather than an old name.
+- No supported shabad words have arrived for **60 seconds**.
+- The closing pauri `ਵਡੀ ਹੂ ਵਡਾ ਅਪਾਰੁ ਤੇਰਾ ਮਰਤਬਾ` is recognized.
+- The closing salok `ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ` is recognized.
+- The Khalsa/Fateh greeting or repeated `ਵਾਹਿਗੁਰੂ ਵਾਹਿਗੁਰੂ` is recognized.
+- Ardas is recognized from bani membership or a strong Ardas phrase.
 
-Lookup uses `Asia/Kolkata` and the date/time of the audio being heard. Dates
-are `DD-MM-YYYY`; times are 24-hour `HH:MM`. Start times are inclusive and end
-times exclusive. An empty samapti end applies through that date's midnight;
-it never carries yesterday's raagi into a missing date. Genuine schedule gaps
-remain gaps. Changes to the duty/name participate in the API revision even
-without another ASR update.
+Minor ASR spelling variations are accepted. The two closing compositions are
+identified by their opening phrases in the database, and all their subsequent
+panktis keep the landing screen visible. The current database supplies two
+closing shabads (14 indexed panktis) and 27 Ardas panktis. Common two-word
+fragments alone do not classify Ardas or a closing pauri.
 
-## Artwork prerequisite
+A new confirmed shabad outside these passages restores the single-pankti view
+at its first supported word. While following Ardas or a closing passage,
+ambiguous names/repeated words do not resume an unrelated verse: a strong new
+phrase must support four distinct words. Repeated ਹਰਿ therefore cannot count
+as four separate pieces of evidence. The closing greeting releases this extra
+context check. Ordinary shabad matching keeps its existing rules.
 
-The new raagi card expects the user's original artwork at
-`public/darbar-sahib-raagi.png`. **That file has not yet been supplied as a
-downloadable attachment.** An inline preview is visible in the conversation
-but is not available to the workspace as file bytes. No replacement artwork
-has been generated or substituted.
+All transitions follow the listener's **audio clock**, including between
+one-second state polls. Recognition is already ahead of the ten-second-delayed
+playback. Future recognition cannot dismiss waiting early, and stalled media
+cannot advance the display. Idle messages and retained transcript text do not
+renew an old pankti. The generic timeout is measured from the latest supported
+word end, not from server processing time or the last poll.
 
-Until that file is added, `raagi_artwork_url` is null and the player shows the
-existing greeting layout, even when the duties contain a name. Missing names
-also use that layout. An image download failure falls back to it. The frontend
-is prepared to put the raagi in the supplied artwork's centre panel, retain
-the date/India clock and right-aligned listeners, shrink long names, and wrap
-metadata below the image on phones. Its cache version is **19**.
+The API exposes `waiting_for_shabad`, `waiting_reason` and prepared
+`pankti_schedule` boundaries. There are no raagi fields or duties-file reads in
+the player path. Initial welcome, pending-play spinner/Starting soon, clock,
+listeners and connection recovery keep their existing behavior. UI cache
+version is **20**.
 
-Adding the exact artwork and visually checking it remains outstanding. Once
-present, the server detects the file on its next state request. Browser
-regressions automatically use the real file when it exists; otherwise their
-explicitly marked aspect-ratio scaffold tests only the UI transitions and
-overlay geometry. It is not production artwork or evidence of visual fidelity.
+## Recording verification
 
-## Validation and deployment
+The source is the requested October 14, 2026 recording, SHA256
+`23d8c9f385f9ecbea94c52d8765895b04cc859cb1d30f43092dd36553851f729`.
+Offsets below are file playback times. The filename states 02:00 India as the
+recording start; adding file offsets maps the historical clock.
 
-See [validation/waiting-screen](validation/waiting-screen) for the current
-test results, browser checks and causal ASR replay comparison. The browser
-checks cover initial visits, pending play, recovery, single-pankti display,
-media-clock transitions with no new poll body, stalled audio, all waiting
-reasons, no duty, image-load failure, listener/date layout, and 1280/390/320px
-viewports. No new acoustic transcription or human WER measurement was made;
-ASR, KenLM, beam settings and the ten-second audio delay are unchanged.
+Production four-second block ASR with the existing KenLM 3-gram/24 beams ran:
+
+- 03:41:19–03:43:47, including the requested Ardas start at 03:41:35.
+- 06:59:18–07:02:14, covering the complete 06:59:34–07:02:02 request.
+
+Captures include 16 seconds of preceding context and 12 seconds after each
+listener interval. They are replayed causally, ten seconds behind received
+audio. The Ardas replay preserves the final Anand Sahib line, then stays on
+the landing screen from the Waheguru transition at approximately 03:41:45.
+The original implementation briefly selected unrelated verses from prayer
+names; the updated matcher removes those flashes. The second requested
+interval stays on the landing screen through both closing passages, the
+Fateh greeting and the following quiet/ambient audio, with no raagi name.
+
+These are real acoustic captures and presentation checks, not human WER/CER.
+No acoustic-model, beam, KenLM, audio-buffer or CPU-setting change was made.
+See [validation/waiting-screen](validation/waiting-screen) for reports and
+compressed causal messages. Source audio/PCM are kept outside Git.
+
+Reproduce presentation without another acoustic run:
+
+```bash
+.venv/bin/python scripts/replay_waiting_screen.py --events validation/waiting-screen/ardas.jsonl.gz --capture-report validation/waiting-screen/ardas-capture.json --recording-start 2026-10-14T02:00:00+05:30 --start 13295 --end 13415 --expect-waiting-from 13305 --report /tmp/ardas-presentation.json
+.venv/bin/python scripts/replay_waiting_screen.py --events validation/waiting-screen/role-ending.jsonl.gz --capture-report validation/waiting-screen/role-ending-capture.json --recording-start 2026-10-14T02:00:00+05:30 --start 25174 --end 25322 --expect-waiting-from 25174 --report /tmp/role-presentation.json
+```
 
 Pull `no-audio-fix` and restart the existing application service for the new
-server logic. Keep the existing cron entry and writable duties JSON location.
-No new package is required. This cloud task does not deploy to the production
-server, activate cron, or supply missing production duties.
+server logic. No new package or artwork is required. Cloud validation/push
+does not deploy to the production server or activate its duties cron job.

@@ -251,42 +251,11 @@ function fitPunjabi() {
   }
 }
 
-let failedRaagiArtwork = null;
-
-function fitRaagiName() {
-  const node = $("currentRaagiName");
-  if ($("raagiArtwork").hidden || $("welcomeScreen").hidden) return;
-  node.style.fontSize = "";
-  let size = parseFloat(getComputedStyle(node).fontSize);
-  while (size > 9 && (node.scrollHeight > node.clientHeight || node.scrollWidth > node.clientWidth)) {
-    node.style.fontSize = `${--size}px`;
-  }
-}
-
-$("raagiImage").addEventListener("load", fitRaagiName);
-$("raagiImage").addEventListener("error", () => {
-  failedRaagiArtwork = $("raagiImage").getAttribute("src");
-  renderWelcome();
-});
-window.addEventListener("resize", fitRaagiName);
-document.fonts?.ready?.then(fitRaagiName);
-
 function renderWelcome() {
   const waiting = hasStartedPlayback && Boolean(latestState?.waiting_for_shabad);
-  const showRaagi = waiting && latestState?.waiting_reason === "no-shabad"
-    && Boolean(latestState?.raagi && latestState?.raagi_artwork_url)
-    && latestState.raagi_artwork_url !== failedRaagiArtwork;
-  $("raagiArtwork").hidden = !showRaagi;
-  $("defaultWelcomeImage").hidden = Boolean(showRaagi);
-  document.querySelector(".welcome-artwork").classList.toggle("is-raagi", Boolean(showRaagi));
-  $("currentRaagiName").textContent = showRaagi ? latestState.raagi : "";
-  if (showRaagi && $("raagiImage").getAttribute("src") !== latestState.raagi_artwork_url) {
-    $("raagiImage").src = latestState.raagi_artwork_url;
-  }
   $("welcomeScreen").hidden = hasStartedPlayback && !waiting;
   $("startingSoon").hidden = !waiting && (hasStartedPlayback || !playbackLoading);
   $("startingSoon").textContent = waiting ? "Waiting for next shabad…" : "Starting soon…";
-  if (showRaagi) fitRaagiName();
 }
 
 function showPlaybackMatch(state) {
@@ -319,7 +288,7 @@ function syncPanktiToPlayback() {
   }
   const key = JSON.stringify([hasStartedPlayback, effective.pankti_id,
     effective.pankti_timestamp, effective.waiting_for_shabad,
-    effective.waiting_reason, effective.raagi, effective.raagi_artwork_url,
+    effective.waiting_reason,
     effective.legacy_gurmukhi, effective.punjabi, effective.english]);
   latestState = effective;
   if (key !== renderedPanktiKey) {

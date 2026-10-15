@@ -1,6 +1,7 @@
 {
   "/health": {
     "status": "ok",
+    "stream_connected": true,
     "asr_connected": true,
     "playback_delay_seconds": 10.0,
     "recognition_mode": "blocks",
@@ -24,8 +25,6 @@
     "playback_ready": true,
     "playback_delay_seconds": 10.0,
     "waiting_for_shabad": false,
-    "waiting_reason": null,
-    "raagi": null,
-    "raagi_artwork_url": null
+    "waiting_reason": null
   }
 }

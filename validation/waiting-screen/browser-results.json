@@ -1,15 +1,12 @@
 {
   "completed": true,
-  "originalArtworkVerified": true,
-  "raagiArtworkVerified": false,
-  "raagiOverlayScaffold": true,
+  "artworkVerified": true,
   "singlePankti": true,
   "firstWordScheduleWithoutPoll": true,
   "stalledAudioHoldsLine": true,
-  "timedGreeting": true,
-  "timedRaagi": true,
-  "missingDutyFallback": true,
-  "failedImageFallback": true,
+  "timedWaitingAndResume": true,
+  "noRaagiName": true,
+  "allWaitingReasons": true,
   "results": [
     {
       "viewport": {

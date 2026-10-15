@@ -38,6 +38,7 @@ def reset(module, routes):
             _debug_timed_final_words=[],_debug_timed_partial_words=[],_debug_recompute_from=None,
             _pankti_timeline=[],_pankti_display_timeline=[],_display_dirty_from=None,
             _last_greeting_key=None,_greeting_audio_cutoff=None,_stream_wall_started_at=100000,
+            _waiting_context=None,
             _audio_sessions={},_audio_subscribers=set()).items():
         setattr(module,name,value)
     module._bani_matcher=OrderedBaniMatcher(routes,module._token_similarity,module._normalise_query)

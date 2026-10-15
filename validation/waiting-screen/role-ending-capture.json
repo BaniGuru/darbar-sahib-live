@@ -1,0 +1,2467 @@
+{
+  "audio": "/workspace/rapid-pankti-validation/sgpc-2026-10-14.mp3",
+  "start_seconds": 25158.0,
+  "recognition_mode": "blocks",
+  "block_seconds": 4,
+  "audio_sha256": "23d8c9f385f9ecbea94c52d8765895b04cc859cb1d30f43092dd36553851f729",
+  "seconds": 176.0,
+  "elapsed": 20.200189754999883,
+  "rtf": 0.1147738054261357,
+  "update_cost": {
+    "median": 0.00011194099988642847,
+    "p95": 0.4797519604007902,
+    "max": 0.6508346789996722
+  },
+  "model": {
+    "order": 3,
+    "weight": 0.3,
+    "mode": "ngram",
+    "beam": 24,
+    "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+  },
+  "final": {
+    "type": "final",
+    "audio_active": true,
+    "text": "ਸਤਿ ਕਰਿ ਮਾਨੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਅਵਰੁ ਨ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਤੇਰਾ ਜੀ ਤੇਰਾ ਨਾਮ ਸਤਿ ਹੈ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ ਪਉੜੀ ਵਡੀ ਹੂ ਵਡਾ ਅਪਾਰੁ ਤੇਰਾ ਮਰਤਬਾ ਰੰਗ ਪਰੰਗ ਅਨੇਕ ਨ ਜਾਪਨਿ੍ ਕਰਤਬਾ ਜੀਆ ਅੰਦਰਿ ਜੀਉ ਸਭੁ ਕਿਛੁ ਜਾਣਲਾ ਸਭੁ ਕਿਛੁ ਤੇਰੈ ਵਸਿ ਤੇਰਾ ਘਰੁ ਭਲਾ ਤੇਰੈ ਘਰਿ ਆਨੰਦੁ ਵਧਾਈ ਤੁਧੁ ਘਰਿ ਮਾਣੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਆਪਿ ਜਰਿ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਸਲੋਕ ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ਦਿਵਸੁ ਰਾਤਿ ਦੁਇ ਦਾਈ ਦਾਇਆ ਖੇਲੈ ਸਗਲ ਜਗਤੁ ਚੰਗਿਆਈਆ ਬੁਰਿਆਈਆ ਵਾਚੈ ਧਰਮੁ ਹਦੂਰਿ ਕਰਮੀ ਆਪੋ ਆਪਣੀ ਕੇ ਨੇੜੈ ਕੇ ਦੂਰਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਹਿ",
+    "committed_text": "ਸਤਿ ਕਰਿ ਮਾਨੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਅਵਰੁ ਨ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਤੇਰਾ ਜੀ ਤੇਰਾ ਨਾਮ ਸਤਿ ਹੈ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ ਪਉੜੀ ਵਡੀ ਹੂ ਵਡਾ ਅਪਾਰੁ ਤੇਰਾ ਮਰਤਬਾ ਰੰਗ ਪਰੰਗ ਅਨੇਕ ਨ ਜਾਪਨਿ੍ ਕਰਤਬਾ ਜੀਆ ਅੰਦਰਿ ਜੀਉ ਸਭੁ ਕਿਛੁ ਜਾਣਲਾ ਸਭੁ ਕਿਛੁ ਤੇਰੈ ਵਸਿ ਤੇਰਾ ਘਰੁ ਭਲਾ ਤੇਰੈ ਘਰਿ ਆਨੰਦੁ ਵਧਾਈ ਤੁਧੁ ਘਰਿ ਮਾਣੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਆਪਿ ਜਰਿ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਸਲੋਕ ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ਦਿਵਸੁ ਰਾਤਿ ਦੁਇ ਦਾਈ ਦਾਇਆ ਖੇਲੈ ਸਗਲ ਜਗਤੁ ਚੰਗਿਆਈਆ ਬੁਰਿਆਈਆ ਵਾਚੈ ਧਰਮੁ ਹਦੂਰਿ ਕਰਮੀ ਆਪੋ ਆਪਣੀ ਕੇ ਨੇੜੈ ਕੇ ਦੂਰਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਹਿ",
+    "partial_text": "",
+    "committed_until": 176.0,
+    "cache_committed_until": 176.0,
+    "text_committed_until": 104.64,
+    "committed_words": [
+      {
+        "text": "ਸਤਿ",
+        "start": 0.6,
+        "end": 0.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਿ",
+        "start": 0.92,
+        "end": 1.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਨੁ",
+        "start": 1.76,
+        "end": 2.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤਾ",
+        "start": 2.04,
+        "end": 2.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਜੁ",
+        "start": 2.36,
+        "end": 2.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣਾ",
+        "start": 2.72,
+        "end": 3.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਵਰੁ",
+        "start": 3.04,
+        "end": 3.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨ",
+        "start": 3.6,
+        "end": 4.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਰਬ",
+        "start": 4.04,
+        "end": 4.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਲਾ",
+        "start": 4.52,
+        "end": 5.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਰਪੂਰੁ",
+        "start": 5.04,
+        "end": 5.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਸੈ",
+        "start": 5.88,
+        "end": 6.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਤ",
+        "start": 6.48,
+        "end": 6.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਤਾ",
+        "start": 6.76,
+        "end": 7.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 7.6,
+        "end": 8.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸਨਿ",
+        "start": 8.2,
+        "end": 8.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸੁ",
+        "start": 8.72,
+        "end": 9.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 9.12,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਗੈ",
+        "start": 9.44,
+        "end": 9.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬਿਨਵਤਾ",
+        "start": 9.88,
+        "end": 11.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 11.04,
+        "end": 11.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 11.96,
+        "end": 12.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 12.2,
+        "end": 12.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮ",
+        "start": 12.52,
+        "end": 12.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਤਿ",
+        "start": 12.84,
+        "end": 13.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹੈ",
+        "start": 13.2,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸ੍ਰੀ",
+        "start": 13.64,
+        "end": 14.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 14.0,
+        "end": 16.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਉੜੀ",
+        "start": 16.56,
+        "end": 17.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਡੀ",
+        "start": 17.08,
+        "end": 17.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹੂ",
+        "start": 17.36,
+        "end": 17.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਡਾ",
+        "start": 17.56,
+        "end": 17.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਪਾਰੁ",
+        "start": 17.8,
+        "end": 18.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 18.52,
+        "end": 18.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਰਤਬਾ",
+        "start": 18.84,
+        "end": 19.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਰੰਗ",
+        "start": 19.56,
+        "end": 19.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਰੰਗ",
+        "start": 19.88,
+        "end": 20.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਨੇਕ",
+        "start": 20.28,
+        "end": 20.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨ",
+        "start": 20.76,
+        "end": 21.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਾਪਨਿ੍",
+        "start": 21.2,
+        "end": 21.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਤਬਾ",
+        "start": 21.8,
+        "end": 23.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀਆ",
+        "start": 23.6,
+        "end": 24.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅੰਦਰਿ",
+        "start": 24.04,
+        "end": 24.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀਉ",
+        "start": 24.48,
+        "end": 25.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਭੁ",
+        "start": 25.48,
+        "end": 25.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਛੁ",
+        "start": 25.88,
+        "end": 26.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਾਣਲਾ",
+        "start": 26.52,
+        "end": 28.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਭੁ",
+        "start": 28.2,
+        "end": 28.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਛੁ",
+        "start": 28.56,
+        "end": 28.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੈ",
+        "start": 28.92,
+        "end": 29.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਸਿ",
+        "start": 29.36,
+        "end": 30.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 30.32,
+        "end": 31.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰੁ",
+        "start": 31.28,
+        "end": 31.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਲਾ",
+        "start": 31.68,
+        "end": 32.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੈ",
+        "start": 32.96,
+        "end": 34.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰਿ",
+        "start": 34.52,
+        "end": 34.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਨੰਦੁ",
+        "start": 34.92,
+        "end": 35.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਧਾਈ",
+        "start": 35.48,
+        "end": 36.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 36.04,
+        "end": 36.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰਿ",
+        "start": 36.32,
+        "end": 37.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਣੁ",
+        "start": 37.48,
+        "end": 37.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤਾ",
+        "start": 37.88,
+        "end": 38.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਜੁ",
+        "start": 38.44,
+        "end": 39.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣਾ",
+        "start": 39.16,
+        "end": 40.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਿ",
+        "start": 40.0,
+        "end": 40.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਰਿ",
+        "start": 40.88,
+        "end": 42.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਰਬ",
+        "start": 42.16,
+        "end": 42.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਲਾ",
+        "start": 42.8,
+        "end": 43.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਰਪੂਰੁ",
+        "start": 43.8,
+        "end": 44.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਸੈ",
+        "start": 44.84,
+        "end": 45.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਤ",
+        "start": 45.36,
+        "end": 45.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਤਾ",
+        "start": 45.72,
+        "end": 46.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 46.6,
+        "end": 47.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸਨਿ",
+        "start": 47.76,
+        "end": 48.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸੁ",
+        "start": 48.56,
+        "end": 49.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 49.96,
+        "end": 50.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਗੈ",
+        "start": 50.44,
+        "end": 51.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬਿਨਵਤਾ",
+        "start": 51.28,
+        "end": 52.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਲੋਕ",
+        "start": 52.56,
+        "end": 53.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਵਣੁ",
+        "start": 53.12,
+        "end": 53.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗੁਰੂ",
+        "start": 53.48,
+        "end": 54.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਾਣੀ",
+        "start": 54.08,
+        "end": 54.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਿਤਾ",
+        "start": 54.6,
+        "end": 55.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਤਾ",
+        "start": 55.52,
+        "end": 56.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਰਤਿ",
+        "start": 56.28,
+        "end": 56.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤੁ",
+        "start": 56.88,
+        "end": 58.4,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਵਸੁ",
+        "start": 58.4,
+        "end": 59.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਰਾਤਿ",
+        "start": 59.0,
+        "end": 59.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੁਇ",
+        "start": 59.44,
+        "end": 59.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਈ",
+        "start": 59.84,
+        "end": 60.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਇਆ",
+        "start": 60.48,
+        "end": 61.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਖੇਲੈ",
+        "start": 61.56,
+        "end": 62.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਗਲ",
+        "start": 62.32,
+        "end": 63.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਗਤੁ",
+        "start": 63.08,
+        "end": 64.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਚੰਗਿਆਈਆ",
+        "start": 64.52,
+        "end": 65.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬੁਰਿਆਈਆ",
+        "start": 65.52,
+        "end": 67.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਚੈ",
+        "start": 67.36,
+        "end": 68.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਰਮੁ",
+        "start": 68.12,
+        "end": 68.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹਦੂਰਿ",
+        "start": 68.64,
+        "end": 70.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਮੀ",
+        "start": 70.2,
+        "end": 71.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪੋ",
+        "start": 71.0,
+        "end": 71.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣੀ",
+        "start": 71.68,
+        "end": 72.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇ",
+        "start": 72.96,
+        "end": 73.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨੇੜੈ",
+        "start": 73.32,
+        "end": 74.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇ",
+        "start": 74.12,
+        "end": 74.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੂਰਿ",
+        "start": 74.44,
+        "end": 75.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਿਨੀ",
+        "start": 75.32,
+        "end": 76.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 76.0,
+        "end": 76.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਿਆਇਆ",
+        "start": 76.48,
+        "end": 78.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗਏ",
+        "start": 78.72,
+        "end": 79.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਸਕਤਿ",
+        "start": 79.16,
+        "end": 79.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਾਲਿ",
+        "start": 79.96,
+        "end": 81.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 81.76,
+        "end": 82.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇ",
+        "start": 82.52,
+        "end": 82.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮੁਖ",
+        "start": 82.8,
+        "end": 83.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਉਜਲੇ",
+        "start": 83.24,
+        "end": 84.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇਤੀ",
+        "start": 84.68,
+        "end": 85.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਛੁਟੀ",
+        "start": 85.36,
+        "end": 86.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਲਿ",
+        "start": 86.0,
+        "end": 87.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਿਨੀ",
+        "start": 87.76,
+        "end": 88.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 88.32,
+        "end": 88.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਿਆਇਆ",
+        "start": 88.88,
+        "end": 91.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗਏ",
+        "start": 91.04,
+        "end": 91.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਸਕਤਿ",
+        "start": 91.44,
+        "end": 92.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਾਲਿ",
+        "start": 92.2,
+        "end": 93.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 93.96,
+        "end": 94.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇ",
+        "start": 94.68,
+        "end": 95.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮੁਖ",
+        "start": 95.0,
+        "end": 95.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਉਜਲੇ",
+        "start": 95.36,
+        "end": 96.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇਤੀ",
+        "start": 96.6,
+        "end": 97.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਛੁਟੀ",
+        "start": 97.24,
+        "end": 97.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਲਿ",
+        "start": 97.88,
+        "end": 100.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 100.24,
+        "end": 100.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 100.92,
+        "end": 101.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਾ",
+        "start": 101.2,
+        "end": 101.4,
+        "stable_count": 1
+      },
+      {
+        "text": "ਖਾਲਸਾ",
+        "start": 101.4,
+        "end": 102.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 102.88,
+        "end": 103.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 103.76,
+        "end": 104.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੀ",
+        "start": 104.0,
+        "end": 104.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਫਤਹਿ",
+        "start": 104.16,
+        "end": 104.64,
+        "stable_count": 1
+      }
+    ],
+    "partial_words": [],
+    "window_start": 0.0,
+    "window_end": 176.0,
+    "window_seconds": 176.0,
+    "samples": 2816000,
+    "pending_window_seconds": 0.0,
+    "max_window_seconds": 8.0,
+    "cache_hold_reason": "finished",
+    "received_until": 176.0,
+    "recognition_mode": "blocks",
+    "block_seconds": 4.0,
+    "lookahead_seconds": 4.0,
+    "encoder_calls": 44,
+    "acoustic_reencodes": 0,
+    "final_text": "ਸਤਿ ਕਰਿ ਮਾਨੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਅਵਰੁ ਨ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਤੇਰਾ ਜੀ ਤੇਰਾ ਨਾਮ ਸਤਿ ਹੈ ਸ੍ਰੀ ਵਾਹਿਗੁਰੂ ਪਉੜੀ ਵਡੀ ਹੂ ਵਡਾ ਅਪਾਰੁ ਤੇਰਾ ਮਰਤਬਾ ਰੰਗ ਪਰੰਗ ਅਨੇਕ ਨ ਜਾਪਨਿ੍ ਕਰਤਬਾ ਜੀਆ ਅੰਦਰਿ ਜੀਉ ਸਭੁ ਕਿਛੁ ਜਾਣਲਾ ਸਭੁ ਕਿਛੁ ਤੇਰੈ ਵਸਿ ਤੇਰਾ ਘਰੁ ਭਲਾ ਤੇਰੈ ਘਰਿ ਆਨੰਦੁ ਵਧਾਈ ਤੁਧੁ ਘਰਿ ਮਾਣੁ ਮਹਤਾ ਤੇਜੁ ਆਪਣਾ ਆਪਿ ਜਰਿ ਸਰਬ ਕਲਾ ਭਰਪੂਰੁ ਦਿਸੈ ਜਤ ਕਤਾ ਨਾਨਕ ਦਾਸਨਿ ਦਾਸੁ ਤੁਧੁ ਆਗੈ ਬਿਨਵਤਾ ਸਲੋਕ ਪਵਣੁ ਗੁਰੂ ਪਾਣੀ ਪਿਤਾ ਮਾਤਾ ਧਰਤਿ ਮਹਤੁ ਦਿਵਸੁ ਰਾਤਿ ਦੁਇ ਦਾਈ ਦਾਇਆ ਖੇਲੈ ਸਗਲ ਜਗਤੁ ਚੰਗਿਆਈਆ ਬੁਰਿਆਈਆ ਵਾਚੈ ਧਰਮੁ ਹਦੂਰਿ ਕਰਮੀ ਆਪੋ ਆਪਣੀ ਕੇ ਨੇੜੈ ਕੇ ਦੂਰਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਜਿਨੀ ਨਾਮੁ ਧਿਆਇਆ ਗਏ ਮਸਕਤਿ ਘਾਲਿ ਨਾਨਕ ਤੇ ਮੁਖ ਉਜਲੇ ਕੇਤੀ ਛੁਟੀ ਨਾਲਿ ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫਤਹਿ",
+    "tokens": [
+      1,
+      188,
+      182,
+      31,
+      182,
+      10,
+      33,
+      199,
+      10,
+      187,
+      46,
+      77,
+      194,
+      199,
+      109,
+      78,
+      12,
+      191,
+      179,
+      199,
+      5,
+      125,
+      201,
+      2,
+      62,
+      70,
+      179,
+      195,
+      173,
+      199,
+      3,
+      99,
+      203,
+      9,
+      188,
+      2,
+      46,
+      5,
+      33,
+      184,
+      45,
+      181,
+      185,
+      182,
+      45,
+      181,
+      199,
+      137,
+      215,
+      199,
+      34,
+      200,
+      203,
+      15,
+      182,
+      185,
+      191,
+      46,
+      77,
+      75,
+      9,
+      180,
+      77,
+      75,
+      166,
+      193,
+      1,
+      188,
+      182,
+      18,
+      1,
+      36,
+      180,
+      6,
+      178,
+      64,
+      200,
+      81,
+      204,
+      8,
+      211,
+      219,
+      180,
+      6,
+      154,
+      4,
+      204,
+      6,
+      214,
+      178,
+      12,
+      195,
+      11,
+      199,
+      77,
+      75,
+      10,
+      179,
+      188,
+      201,
+      178,
+      23,
+      140,
+      115,
+      140,
+      12,
+      185,
+      183,
+      184,
+      5,
+      71,
+      195,
+      185,
+      182,
+      212,
+      31,
+      188,
+      201,
+      178,
+      9,
+      180,
+      198,
+      12,
+      192,
+      90,
+      182,
+      9,
+      180,
+      211,
+      1,
+      217,
+      199,
+      26,
+      225,
+      199,
+      71,
+      208,
+      62,
+      1,
+      217,
+      199,
+      26,
+      225,
+      199,
+      77,
+      179,
+      203,
+      6,
+      181,
+      182,
+      77,
+      75,
+      138,
+      179,
+      199,
+      70,
+      62,
+      77,
+      179,
+      203,
+      138,
+      179,
+      182,
+      34,
+      185,
+      192,
+      186,
+      199,
+      6,
+      215,
+      102,
+      137,
+      215,
+      199,
+      138,
+      179,
+      182,
+      170,
+      208,
+      199,
+      10,
+      187,
+      46,
+      77,
+      194,
+      199,
+      109,
+      78,
+      109,
+      182,
+      9,
+      179,
+      182,
+      125,
+      201,
+      2,
+      62,
+      70,
+      179,
+      195,
+      173,
+      199,
+      3,
+      99,
+      203,
+      9,
+      188,
+      2,
+      46,
+      5,
+      33,
+      184,
+      45,
+      181,
+      185,
+      182,
+      45,
+      181,
+      199,
+      137,
+      215,
+      199,
+      34,
+      200,
+      203,
+      15,
+      182,
+      185,
+      191,
+      46,
+      1,
+      189,
+      196,
+      184,
+      8,
+      191,
+      208,
+      199,
+      29,
+      81,
+      204,
+      165,
+      143,
+      8,
+      182,
+      46,
+      170,
+      46,
+      169,
+      179,
+      188,
+      182,
+      10,
+      187,
+      188,
+      199,
+      3,
+      182,
+      191,
+      181,
+      199,
+      126,
+      188,
+      182,
+      3,
+      199,
+      205,
+      45,
+      210,
+      45,
+      205,
+      198,
+      57,
+      183,
+      189,
+      203,
+      1,
+      200,
+      189,
+      9,
+      200,
+      188,
+      199,
+      43,
+      140,
+      22,
+      210,
+      198,
+      15,
+      81,
+      22,
+      210,
+      198,
+      6,
+      178,
+      207,
+      203,
+      169,
+      179,
+      193,
+      199,
+      4,
+      186,
+      173,
+      182,
+      31,
+      171,
+      109,
+      196,
+      109,
+      143,
+      94,
+      49,
+      219,
+      203,
+      94,
+      3,
+      173,
+      182,
+      9,
+      182,
+      105,
+      166,
+      193,
+      199,
+      169,
+      22,
+      205,
+      198,
+      29,
+      222,
+      10,
+      181,
+      184,
+      188,
+      182,
+      138,
+      20,
+      182,
+      5,
+      33,
+      184,
+      77,
+      134,
+      213,
+      27,
+      194,
+      120,
+      94,
+      41,
+      177,
+      225,
+      199,
+      91,
+      59,
+      182,
+      9,
+      182,
+      105,
+      166,
+      193,
+      199,
+      169,
+      22,
+      205,
+      198,
+      29,
+      222,
+      10,
+      181,
+      184,
+      188,
+      182,
+      138,
+      20,
+      182,
+      5,
+      33,
+      184,
+      77,
+      134,
+      213,
+      27,
+      194,
+      120,
+      94,
+      41,
+      177,
+      225,
+      199,
+      91,
+      59,
+      182,
+      6,
+      178,
+      64,
+      200,
+      81,
+      204,
+      9,
+      180,
+      2,
+      178,
+      57,
+      20,
+      181,
+      178,
+      6,
+      178,
+      64,
+      200,
+      81,
+      204,
+      9,
+      180,
+      56,
+      74,
+      188,
+      64
+    ],
+    "words": [
+      {
+        "text": "ਸਤਿ",
+        "start": 0.6,
+        "end": 0.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਿ",
+        "start": 0.92,
+        "end": 1.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਨੁ",
+        "start": 1.76,
+        "end": 2.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤਾ",
+        "start": 2.04,
+        "end": 2.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਜੁ",
+        "start": 2.36,
+        "end": 2.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣਾ",
+        "start": 2.72,
+        "end": 3.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਵਰੁ",
+        "start": 3.04,
+        "end": 3.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨ",
+        "start": 3.6,
+        "end": 4.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਰਬ",
+        "start": 4.04,
+        "end": 4.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਲਾ",
+        "start": 4.52,
+        "end": 5.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਰਪੂਰੁ",
+        "start": 5.04,
+        "end": 5.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਸੈ",
+        "start": 5.88,
+        "end": 6.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਤ",
+        "start": 6.48,
+        "end": 6.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਤਾ",
+        "start": 6.76,
+        "end": 7.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 7.6,
+        "end": 8.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸਨਿ",
+        "start": 8.2,
+        "end": 8.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸੁ",
+        "start": 8.72,
+        "end": 9.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 9.12,
+        "end": 9.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਗੈ",
+        "start": 9.44,
+        "end": 9.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬਿਨਵਤਾ",
+        "start": 9.88,
+        "end": 11.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 11.04,
+        "end": 11.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 11.96,
+        "end": 12.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 12.2,
+        "end": 12.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮ",
+        "start": 12.52,
+        "end": 12.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਤਿ",
+        "start": 12.84,
+        "end": 13.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹੈ",
+        "start": 13.2,
+        "end": 13.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸ੍ਰੀ",
+        "start": 13.64,
+        "end": 14.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 14.0,
+        "end": 16.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਉੜੀ",
+        "start": 16.56,
+        "end": 17.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਡੀ",
+        "start": 17.08,
+        "end": 17.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹੂ",
+        "start": 17.36,
+        "end": 17.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਡਾ",
+        "start": 17.56,
+        "end": 17.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਪਾਰੁ",
+        "start": 17.8,
+        "end": 18.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 18.52,
+        "end": 18.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਰਤਬਾ",
+        "start": 18.84,
+        "end": 19.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਰੰਗ",
+        "start": 19.56,
+        "end": 19.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਰੰਗ",
+        "start": 19.88,
+        "end": 20.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅਨੇਕ",
+        "start": 20.28,
+        "end": 20.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨ",
+        "start": 20.76,
+        "end": 21.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਾਪਨਿ੍",
+        "start": 21.2,
+        "end": 21.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਤਬਾ",
+        "start": 21.8,
+        "end": 23.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀਆ",
+        "start": 23.6,
+        "end": 24.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਅੰਦਰਿ",
+        "start": 24.04,
+        "end": 24.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀਉ",
+        "start": 24.48,
+        "end": 25.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਭੁ",
+        "start": 25.48,
+        "end": 25.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਛੁ",
+        "start": 25.88,
+        "end": 26.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਾਣਲਾ",
+        "start": 26.52,
+        "end": 28.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਭੁ",
+        "start": 28.2,
+        "end": 28.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਿਛੁ",
+        "start": 28.56,
+        "end": 28.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੈ",
+        "start": 28.92,
+        "end": 29.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਸਿ",
+        "start": 29.36,
+        "end": 30.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰਾ",
+        "start": 30.32,
+        "end": 31.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰੁ",
+        "start": 31.28,
+        "end": 31.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਲਾ",
+        "start": 31.68,
+        "end": 32.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਰੈ",
+        "start": 32.96,
+        "end": 34.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰਿ",
+        "start": 34.52,
+        "end": 34.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਨੰਦੁ",
+        "start": 34.92,
+        "end": 35.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਧਾਈ",
+        "start": 35.48,
+        "end": 36.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 36.04,
+        "end": 36.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਰਿ",
+        "start": 36.32,
+        "end": 37.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਣੁ",
+        "start": 37.48,
+        "end": 37.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤਾ",
+        "start": 37.88,
+        "end": 38.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇਜੁ",
+        "start": 38.44,
+        "end": 39.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣਾ",
+        "start": 39.16,
+        "end": 40.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਿ",
+        "start": 40.0,
+        "end": 40.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਰਿ",
+        "start": 40.88,
+        "end": 42.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਰਬ",
+        "start": 42.16,
+        "end": 42.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਲਾ",
+        "start": 42.8,
+        "end": 43.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਭਰਪੂਰੁ",
+        "start": 43.8,
+        "end": 44.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਸੈ",
+        "start": 44.84,
+        "end": 45.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਤ",
+        "start": 45.36,
+        "end": 45.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਤਾ",
+        "start": 45.72,
+        "end": 46.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 46.6,
+        "end": 47.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸਨਿ",
+        "start": 47.76,
+        "end": 48.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਸੁ",
+        "start": 48.56,
+        "end": 49.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੁਧੁ",
+        "start": 49.96,
+        "end": 50.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਗੈ",
+        "start": 50.44,
+        "end": 51.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬਿਨਵਤਾ",
+        "start": 51.28,
+        "end": 52.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਲੋਕ",
+        "start": 52.56,
+        "end": 53.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਵਣੁ",
+        "start": 53.12,
+        "end": 53.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗੁਰੂ",
+        "start": 53.48,
+        "end": 54.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਾਣੀ",
+        "start": 54.08,
+        "end": 54.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਪਿਤਾ",
+        "start": 54.6,
+        "end": 55.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਾਤਾ",
+        "start": 55.52,
+        "end": 56.28,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਰਤਿ",
+        "start": 56.28,
+        "end": 56.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਹਤੁ",
+        "start": 56.88,
+        "end": 58.4,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਿਵਸੁ",
+        "start": 58.4,
+        "end": 59.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਰਾਤਿ",
+        "start": 59.0,
+        "end": 59.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੁਇ",
+        "start": 59.44,
+        "end": 59.84,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਈ",
+        "start": 59.84,
+        "end": 60.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦਾਇਆ",
+        "start": 60.48,
+        "end": 61.56,
+        "stable_count": 1
+      },
+      {
+        "text": "ਖੇਲੈ",
+        "start": 61.56,
+        "end": 62.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਸਗਲ",
+        "start": 62.32,
+        "end": 63.08,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਗਤੁ",
+        "start": 63.08,
+        "end": 64.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਚੰਗਿਆਈਆ",
+        "start": 64.52,
+        "end": 65.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਬੁਰਿਆਈਆ",
+        "start": 65.52,
+        "end": 67.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਚੈ",
+        "start": 67.36,
+        "end": 68.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਰਮੁ",
+        "start": 68.12,
+        "end": 68.64,
+        "stable_count": 1
+      },
+      {
+        "text": "ਹਦੂਰਿ",
+        "start": 68.64,
+        "end": 70.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਰਮੀ",
+        "start": 70.2,
+        "end": 71.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪੋ",
+        "start": 71.0,
+        "end": 71.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਆਪਣੀ",
+        "start": 71.68,
+        "end": 72.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇ",
+        "start": 72.96,
+        "end": 73.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨੇੜੈ",
+        "start": 73.32,
+        "end": 74.12,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇ",
+        "start": 74.12,
+        "end": 74.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਦੂਰਿ",
+        "start": 74.44,
+        "end": 75.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਿਨੀ",
+        "start": 75.32,
+        "end": 76.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 76.0,
+        "end": 76.48,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਿਆਇਆ",
+        "start": 76.48,
+        "end": 78.72,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗਏ",
+        "start": 78.72,
+        "end": 79.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਸਕਤਿ",
+        "start": 79.16,
+        "end": 79.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਾਲਿ",
+        "start": 79.96,
+        "end": 81.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 81.76,
+        "end": 82.52,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇ",
+        "start": 82.52,
+        "end": 82.8,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮੁਖ",
+        "start": 82.8,
+        "end": 83.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਉਜਲੇ",
+        "start": 83.24,
+        "end": 84.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇਤੀ",
+        "start": 84.68,
+        "end": 85.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਛੁਟੀ",
+        "start": 85.36,
+        "end": 86.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਲਿ",
+        "start": 86.0,
+        "end": 87.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜਿਨੀ",
+        "start": 87.76,
+        "end": 88.32,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 88.32,
+        "end": 88.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਧਿਆਇਆ",
+        "start": 88.88,
+        "end": 91.04,
+        "stable_count": 1
+      },
+      {
+        "text": "ਗਏ",
+        "start": 91.04,
+        "end": 91.44,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮਸਕਤਿ",
+        "start": 91.44,
+        "end": 92.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਘਾਲਿ",
+        "start": 92.2,
+        "end": 93.96,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਨਕ",
+        "start": 93.96,
+        "end": 94.68,
+        "stable_count": 1
+      },
+      {
+        "text": "ਤੇ",
+        "start": 94.68,
+        "end": 95.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਮੁਖ",
+        "start": 95.0,
+        "end": 95.36,
+        "stable_count": 1
+      },
+      {
+        "text": "ਉਜਲੇ",
+        "start": 95.36,
+        "end": 96.6,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੇਤੀ",
+        "start": 96.6,
+        "end": 97.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਛੁਟੀ",
+        "start": 97.24,
+        "end": 97.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਨਾਲਿ",
+        "start": 97.88,
+        "end": 100.24,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 100.24,
+        "end": 100.92,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 100.92,
+        "end": 101.2,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕਾ",
+        "start": 101.2,
+        "end": 101.4,
+        "stable_count": 1
+      },
+      {
+        "text": "ਖਾਲਸਾ",
+        "start": 101.4,
+        "end": 102.88,
+        "stable_count": 1
+      },
+      {
+        "text": "ਵਾਹਿਗੁਰੂ",
+        "start": 102.88,
+        "end": 103.76,
+        "stable_count": 1
+      },
+      {
+        "text": "ਜੀ",
+        "start": 103.76,
+        "end": 104.0,
+        "stable_count": 1
+      },
+      {
+        "text": "ਕੀ",
+        "start": 104.0,
+        "end": 104.16,
+        "stable_count": 1
+      },
+      {
+        "text": "ਫਤਹਿ",
+        "start": 104.16,
+        "end": 104.64,
+        "stable_count": 1
+      }
+    ],
+    "seconds": 176.0,
+    "feature_frames": 17600,
+    "encoded_frames": 4400,
+    "peak_pending_window_seconds": 8.0,
+    "cache_events": [
+      {
+        "at_seconds": 8.0,
+        "cached_until": 4.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 12.0,
+        "cached_until": 8.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 16.0,
+        "cached_until": 12.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 20.0,
+        "cached_until": 16.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 24.0,
+        "cached_until": 20.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 28.0,
+        "cached_until": 24.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 32.0,
+        "cached_until": 28.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 36.0,
+        "cached_until": 32.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 40.0,
+        "cached_until": 36.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 44.0,
+        "cached_until": 40.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 48.0,
+        "cached_until": 44.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 52.0,
+        "cached_until": 48.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 56.0,
+        "cached_until": 52.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 60.0,
+        "cached_until": 56.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 64.0,
+        "cached_until": 60.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 68.0,
+        "cached_until": 64.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 72.0,
+        "cached_until": 68.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 76.0,
+        "cached_until": 72.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 80.0,
+        "cached_until": 76.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 84.0,
+        "cached_until": 80.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 88.0,
+        "cached_until": 84.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 92.0,
+        "cached_until": 88.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 96.0,
+        "cached_until": 92.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 100.0,
+        "cached_until": 96.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 104.0,
+        "cached_until": 100.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 108.0,
+        "cached_until": 104.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 112.0,
+        "cached_until": 108.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 116.0,
+        "cached_until": 112.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 120.0,
+        "cached_until": 116.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 124.0,
+        "cached_until": 120.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 128.0,
+        "cached_until": 124.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 132.0,
+        "cached_until": 128.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 136.0,
+        "cached_until": 132.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 140.0,
+        "cached_until": 136.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 144.0,
+        "cached_until": 140.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 148.0,
+        "cached_until": 144.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 152.0,
+        "cached_until": 148.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 156.0,
+        "cached_until": 152.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 160.0,
+        "cached_until": 156.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 164.0,
+        "cached_until": 160.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 168.0,
+        "cached_until": 164.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 172.0,
+        "cached_until": 168.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 176.0,
+        "cached_until": 172.0,
+        "window_seconds": 8.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      },
+      {
+        "at_seconds": 176.0,
+        "cached_until": 176.0,
+        "window_seconds": 4.0,
+        "word_end_seconds": null,
+        "reason": "single-pass-block"
+      }
+    ]
+  },
+  "events": "validation/waiting-screen/role-ending.jsonl.gz"
+}

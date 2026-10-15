@@ -52,7 +52,7 @@ forward transitions, preserving full verse text. See
 [RAPID_PANKTI_FOLLOWING.md](RAPID_PANKTI_FOLLOWING.md) for timing rules,
 word-ID API fields and the two real recording replays.
 
-The current player uses cache version **19** and shows exactly one matched
+The current player uses cache version **20** and shows exactly one matched
 pankti. It receives confirmed upcoming first-word boundaries in
 `pankti_schedule` and switches against the audio element's clock between
 one-second state polls. Stalled audio holds the current line. Confirmed
@@ -63,8 +63,8 @@ contract and verification. The optional browser script also verifies local
 boundary switching while all later state polls return 204, and ignores
 stale paired arrays from older responses.
 
-The waiting-screen update adds the 30-second no-shabad deadline, repeated
-Waheguru/Ardas waiting states and file-backed current raagi lookup. The exact
-new raagi artwork is still awaiting a downloadable attachment; the existing
-artwork is used until it is supplied. See [WAITING_SCREEN.md](WAITING_SCREEN.md)
-for the current behavior, asset prerequisite and verification limits.
+The waiting-screen update uses the original landing layout without raagi
+names. It appears after 60 seconds without a supported match, or on the two
+specified closing pauris, Fateh, repeated Waheguru and Ardas. Confirmed new
+shabads restore one pankti at a time. See [WAITING_SCREEN.md](WAITING_SCREEN.md)
+for current rules, real recording verification and deployment details.
