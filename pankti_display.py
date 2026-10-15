@@ -1,4 +1,4 @@
-"""Pair only heard, consecutive panktis sung close together in forward order."""
+"""Historical pairing helpers for baseline replays; production shows one line."""
 from bisect import bisect_left, bisect_right
 
 

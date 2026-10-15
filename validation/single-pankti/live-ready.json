@@ -1,0 +1,413 @@
+{
+  "health": {
+    "status": "ok",
+    "stream_connected": true,
+    "asr_connected": true,
+    "database": "bani.db",
+    "speech_column": "unicode_speech",
+    "asr_build": "stream-d3aee32ffe83",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "playback_delay_seconds": 10.0,
+    "buffered_audio_seconds": 9.613061224489257
+  },
+  "asr_health": {
+    "status": "ok",
+    "build": "stream-d3aee32ffe83",
+    "provider": "CPUExecutionProvider",
+    "sample_rate": 16000,
+    "encoder_context": [
+      202,
+      100
+    ],
+    "encoder_frame_seconds": 0.04,
+    "text_commit_seconds": 4.0,
+    "cache_commit_seconds": 4.0,
+    "word_commit_policy": "shared-word-boundary",
+    "max_pending_window_seconds": 8.0,
+    "encoder_update_seconds": 4,
+    "normalization_lookahead_seconds": 4.0,
+    "encoder_threads": 2,
+    "decoder_beam_width": 24,
+    "blas_threads": 1,
+    "blas_pools": [
+      {
+        "internal_api": "openblas",
+        "num_threads": 1
+      }
+    ],
+    "cpu_budget": 4,
+    "decoder_mode": "optimized",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "enable_language_model": true,
+    "silence_guard": true,
+    "silence_hangover_seconds": 4.0,
+    "predictor_cache": true,
+    "predictor_cache_max_entries": 16384,
+    "language_prior": "repository-gurbani-word-context",
+    "language_prior_weight": 0.6,
+    "kenlm": "gurbani_3gram.bin",
+    "kenlm_order": 3,
+    "kenlm_minimum_ngram_order": 3,
+    "kenlm_weight": 0.3,
+    "kenlm_mode": "ngram",
+    "kenlm_word_bonus": 0.0,
+    "word_lookahead_seconds": 1.0
+  },
+  "live_state": {
+    "enabled": true,
+    "listener_count": 0,
+    "display_panktis": [
+      {
+        "score": 1.0,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "order_id": 30732,
+        "punjabi": "ਮੇਰੀ ਚਿੰਤਾ ਦੂਰ ਕਰ (ਮੇਹਰ ਕਰ, ਤੇਰੇ ਦਰ ਤੋਂ ਮੈਨੂੰ) ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਮਿਲ ਜਾਏ, (ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੁਖ (ਹੈ, ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੋਭਾ (ਹੈ) ॥੧॥ ਰਹਾਉ ॥",
+        "legacy_gurmukhi": "imlY sUKu nwmu hir soBw; icMqw lwih hmwrI ]1] rhwau ]",
+        "english": "Grant me the peace and glory of the Lord's Name, and remove my anxiety. ||1||Pause||"
+      }
+    ],
+    "pankti_schedule": [
+      {
+        "audio_timestamp": 1792036077.819365,
+        "line": {
+          "score": 1.0,
+          "pankti_id": "3KWL",
+          "shabad_id": "3JP",
+          "order_id": 30732,
+          "punjabi": "ਮੇਰੀ ਚਿੰਤਾ ਦੂਰ ਕਰ (ਮੇਹਰ ਕਰ, ਤੇਰੇ ਦਰ ਤੋਂ ਮੈਨੂੰ) ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਮਿਲ ਜਾਏ, (ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੁਖ (ਹੈ, ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੋਭਾ (ਹੈ) ॥੧॥ ਰਹਾਉ ॥",
+          "legacy_gurmukhi": "imlY sUKu nwmu hir soBw; icMqw lwih hmwrI ]1] rhwau ]",
+          "english": "Grant me the peace and glory of the Lord's Name, and remove my anxiety. ||1||Pause||"
+        }
+      }
+    ],
+    "playback_words": [
+      {
+        "text": "ਸੋਭਾ",
+        "start": 134.28,
+        "end": 142.64,
+        "audio_timestamp": 1792036030.659365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਮਿਲੈ",
+        "start": 142.64,
+        "end": 143.4,
+        "audio_timestamp": 1792036039.019365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੂਖੁ",
+        "start": 143.4,
+        "end": 144.8,
+        "audio_timestamp": 1792036039.779365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 144.8,
+        "end": 145.64,
+        "audio_timestamp": 1792036041.179365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਰਿ",
+        "start": 145.64,
+        "end": 146.76,
+        "audio_timestamp": 1792036042.019365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੋਭਾ",
+        "start": 146.76,
+        "end": 148.76,
+        "audio_timestamp": 1792036043.139365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਚਿੰਤਾ",
+        "start": 148.76,
+        "end": 149.6,
+        "audio_timestamp": 1792036045.139365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਲਾਹਿ",
+        "start": 149.6,
+        "end": 150.8,
+        "audio_timestamp": 1792036045.9793649,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਮਾਰੀ",
+        "start": 150.8,
+        "end": 154.84,
+        "audio_timestamp": 1792036047.179365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਚਿੰਤਾ",
+        "start": 154.84,
+        "end": 155.84,
+        "audio_timestamp": 1792036051.219365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਲਾਹਿ",
+        "start": 155.84,
+        "end": 157.16,
+        "audio_timestamp": 1792036052.219365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਮਾਰੀ",
+        "start": 157.16,
+        "end": 161.08,
+        "audio_timestamp": 1792036053.539365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਤਿਗੁਰ",
+        "start": 161.08,
+        "end": 161.92,
+        "audio_timestamp": 1792036057.459365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਆਇਓ",
+        "start": 161.92,
+        "end": 164.0,
+        "audio_timestamp": 1792036058.299365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਰਣਿ",
+        "start": 164.0,
+        "end": 164.72,
+        "audio_timestamp": 1792036060.379365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਤੁਹਾਰੀ",
+        "start": 164.72,
+        "end": 167.04,
+        "audio_timestamp": 1792036061.099365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਤਿਗੁਰ",
+        "start": 167.04,
+        "end": 168.0,
+        "audio_timestamp": 1792036063.419365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਆਇਓ",
+        "start": 168.0,
+        "end": 169.96,
+        "audio_timestamp": 1792036064.379365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਰਣਿ",
+        "start": 169.96,
+        "end": 170.64,
+        "audio_timestamp": 1792036066.339365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਤੁਹਾਰੀ",
+        "start": 170.64,
+        "end": 172.88,
+        "audio_timestamp": 1792036067.019365,
+        "pankti_id": "JYF2",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਮਿਲੈ",
+        "start": 172.88,
+        "end": 173.84,
+        "audio_timestamp": 1792036069.259365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੂਖੁ",
+        "start": 173.84,
+        "end": 175.28,
+        "audio_timestamp": 1792036070.219365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 175.28,
+        "end": 176.04,
+        "audio_timestamp": 1792036071.659365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਰਿ",
+        "start": 176.04,
+        "end": 177.28,
+        "audio_timestamp": 1792036072.419365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੋਭਾ",
+        "start": 177.28,
+        "end": 179.4,
+        "audio_timestamp": 1792036073.659365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਮਿਲੈ",
+        "start": 179.4,
+        "end": 180.16,
+        "audio_timestamp": 1792036075.779365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੂਖੁ",
+        "start": 180.16,
+        "end": 181.44,
+        "audio_timestamp": 1792036076.539365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਮੁ",
+        "start": 181.44,
+        "end": 182.2,
+        "audio_timestamp": 1792036077.819365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਰਿ",
+        "start": 182.2,
+        "end": 183.4,
+        "audio_timestamp": 1792036078.579365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੋਭਾ",
+        "start": 183.4,
+        "end": 185.24,
+        "audio_timestamp": 1792036079.779365,
+        "pankti_id": "3KWL",
+        "shabad_id": "3JP",
+        "bani_id": null,
+        "bani_position": null
+      }
+    ],
+    "waiting_for_shabad": false,
+    "playback_delay_seconds": 10.0,
+    "playback_ready": true,
+    "audio_generation": 0,
+    "playback_text": "ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਮਿਲੈ ਸੂਖੁ ਨਾਮੁ ਹਰਿ ਸੋਭਾ ਮਿਲੈ ਸੂਖੁ ਨਾਮੁ ਹਰਿ ਸੋਭਾ ਚਿੰਤਾ ਲਾਹਿ ਹਮਾਰੀ ਚਿੰਤਾ ਲਾਹਿ ਹਮਾਰੀ ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਸਤਿਗੁਰ ਆਇਓ ਸਰਣਿ ਤੁਹਾਰੀ ਮਿਲੈ ਸੂਖੁ ਨਾਮੁ ਹਰਿ ਸੋਭਾ ਮਿਲੈ ਸੂਖੁ ਨਾਮੁ ਹਰਿ ਸੋਭਾ",
+    "connected": true,
+    "asr_connected": true,
+    "audio_url": "/api/live/audio",
+    "audio_start_timestamp": null,
+    "client_started_at": null,
+    "playhead_timestamp": null,
+    "pankti_timestamp": 1792036077.819365,
+    "pankti": "ਮੇਰੀ ਚਿੰਤਾ ਦੂਰ ਕਰ (ਮੇਹਰ ਕਰ, ਤੇਰੇ ਦਰ ਤੋਂ ਮੈਨੂੰ) ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਮਿਲ ਜਾਏ, (ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੁਖ (ਹੈ, ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੋਭਾ (ਹੈ) ॥੧॥ ਰਹਾਉ ॥",
+    "punjabi": "ਮੇਰੀ ਚਿੰਤਾ ਦੂਰ ਕਰ (ਮੇਹਰ ਕਰ, ਤੇਰੇ ਦਰ ਤੋਂ ਮੈਨੂੰ) ਪਰਮਾਤਮਾ ਦਾ ਨਾਮ ਮਿਲ ਜਾਏ, (ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੁਖ (ਹੈ, ਇਹੀ ਮੇਰੇ ਵਾਸਤੇ) ਸੋਭਾ (ਹੈ) ॥੧॥ ਰਹਾਉ ॥",
+    "legacy_gurmukhi": "imlY sUKu nwmu hir soBw; icMqw lwih hmwrI ]1] rhwau ]",
+    "english": "Grant me the peace and glory of the Lord's Name, and remove my anxiety. ||1||Pause||",
+    "shabad_id": "3JP",
+    "pankti_id": "3KWL",
+    "bani_id": null,
+    "bani_name": null,
+    "line_group": null,
+    "bani_position": null,
+    "match_mode": null,
+    "revision": "25b0efe13bc44c659b30"
+  }
+}

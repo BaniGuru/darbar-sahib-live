@@ -45,9 +45,20 @@ version is 16. See [matching notes](PANKTI_PROGRESSION.md) and
 [calendar source/maintenance](SGPC_CALENDAR.md); the validation script now
 also covers greeting transitions, India time, and a 320-pixel phone.
 
-The rapid-following update uses cache version 17, the requested 18px SGPC
+The historical rapid-following update used cache version 17, the requested 18px SGPC
 metadata and “ਅੰਮ੍ਰਿਤਸਰ” time prefix, plus “Start Listening” in the stopped
 player. It renders at most two prepared consecutive panktis around close
 forward transitions, preserving full verse text. See
 [RAPID_PANKTI_FOLLOWING.md](RAPID_PANKTI_FOLLOWING.md) for timing rules,
 word-ID API fields and the two real recording replays.
+
+The current player uses cache version **18** and shows exactly one matched
+pankti. It receives confirmed upcoming first-word boundaries in
+`pankti_schedule` and switches against the audio element's clock between
+one-second state polls. Stalled audio holds the current line. Confirmed
+greetings use the same clock to show the welcome artwork. Calendar, loading,
+listeners and automatic recovery behavior remain as described above.
+See [SINGLE_PANKTI_DISPLAY.md](SINGLE_PANKTI_DISPLAY.md) for the current API
+contract and verification. The optional browser script also verifies local
+boundary switching while all later state polls return 204, and ignores
+stale paired arrays from older responses.

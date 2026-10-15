@@ -1,4 +1,4 @@
-import { darbarDateTime } from "/static/sgpc-calendar.js?v=17";
+import { darbarDateTime } from "/static/sgpc-calendar.js?v=18";
 const $ = id => document.getElementById(id);
 let audioUrl = "";
 const debugMode = new URLSearchParams(location.search).has("debug");
@@ -18,6 +18,9 @@ let playerIsPlaying = false;
 let hasStartedPlayback = false;
 let playbackLoading = false;
 let latestState = null;
+let preparedPlaybackState = null;
+let panktiBoundaryTimer = null;
+let renderedPanktiKey = "";
 let wantsAudioPlayback = false;
 let audioRecoveryTimer = null;
 let audioRecoveryRunning = false;
@@ -161,7 +164,7 @@ function onPlaybackStarted() {
   if (playbackBase === null && Number.isFinite($("liveAudio").currentTime)) {
     playbackBase = $("liveAudio").currentTime;
   }
-  showMatch(latestState || {});
+  showPlaybackMatch(preparedPlaybackState || latestState || {});
   showDebugPanel();
   setPlayerState(true);
 }
@@ -224,7 +227,7 @@ function setGurbani(id, value) {
 }
 
 function fitPunjabi() {
-  for (const id of ["legacyGurmukhi", "punjabi", "legacyGurmukhiSecond", "punjabiSecond"]) {
+  for (const id of ["legacyGurmukhi", "punjabi"]) {
     const node = $(id);
     if (node.hidden || !node.textContent) continue;
     const start = id.startsWith("legacyGurmukhi") ? 48 : 34;
@@ -255,6 +258,53 @@ function renderWelcome() {
   $("startingSoon").textContent = waiting ? "Waiting for next shabad…" : "Starting soon…";
 }
 
+function showPlaybackMatch(state) {
+  preparedPlaybackState = state;
+  syncPanktiToPlayback();
+}
+
+function syncPanktiToPlayback() {
+  clearTimeout(panktiBoundaryTimer);
+  panktiBoundaryTimer = null;
+  if (!preparedPlaybackState) return;
+  const state = preparedPlaybackState;
+  const audio = $("liveAudio");
+  let effective = state;
+  let nextBoundary = null;
+  let playhead = null;
+  if (hasStartedPlayback && Number.isFinite(state.audio_start_timestamp)) {
+    playhead = state.audio_start_timestamp + Math.max(0, audio.currentTime - (playbackBase || 0));
+    for (const entry of state.pankti_schedule || []) {
+      if (!Number.isFinite(entry.audio_timestamp) || !entry.line) continue;
+      if (entry.audio_timestamp > playhead) {
+        nextBoundary = entry.audio_timestamp;
+        break;
+      }
+      const line = entry.line;
+      effective = {...state, ...line, pankti: line.punjabi || "",
+        pankti_timestamp: entry.audio_timestamp,
+        waiting_for_shabad: Boolean(line.waiting_for_shabad)};
+    }
+  }
+  const key = JSON.stringify([hasStartedPlayback, effective.pankti_id,
+    effective.pankti_timestamp, effective.waiting_for_shabad,
+    effective.legacy_gurmukhi, effective.punjabi, effective.english]);
+  latestState = effective;
+  if (key !== renderedPanktiKey) {
+    renderedPanktiKey = key;
+    showMatch(effective);
+  }
+  if (nextBoundary !== null && wantsAudioPlayback && !audio.paused) {
+    // Recheck the actual audio clock on wake-up; buffering must not advance text.
+    panktiBoundaryTimer = setTimeout(syncPanktiToPlayback,
+      Math.max(20, (nextBoundary - playhead) * 1000 / (audio.playbackRate || 1)));
+  }
+}
+
+for (const event of ["timeupdate", "seeked", "ratechange", "pause"]) {
+  $("liveAudio").addEventListener(event, syncPanktiToPlayback);
+}
+
 function showMatch(state) {
   latestState = state;
   renderWelcome();
@@ -271,16 +321,10 @@ function showMatch(state) {
     for (const id of ["legacyGurmukhi", "punjabi", "english"]) $(id).textContent = "";
     return;
   }
-  const lines = Array.isArray(state.display_panktis) && state.display_panktis.length
-    ? state.display_panktis.slice(0, 2) : [state];
-  $("panktiGroup").classList.toggle("is-paired", lines.length === 2);
-  $("secondPankti").hidden = lines.length !== 2;
-  for (const [index, line] of lines.entries()) {
-    const suffix = index ? "Second" : "";
-    setGurbani("legacyGurmukhi" + suffix, line.legacy_gurmukhi);
-    setGurbani("punjabi" + suffix, line.punjabi || line.pankti);
-    setText("english" + suffix, line.english);
-  }
+  // The server selects the one confirmed line at this audio position.
+  setGurbani("legacyGurmukhi", state.legacy_gurmukhi);
+  setGurbani("punjabi", state.punjabi || state.pankti);
+  setText("english", state.english);
   fitPunjabi();
 }
 
@@ -338,7 +382,7 @@ async function refresh() {
       $("playToggle").disabled = playbackLoading;
       if (needsFocus) showPlayerDock();
     }
-    showMatch(state);
+    showPlaybackMatch(state);
   } catch {
     $("liveDot").classList.remove("active");
     $("liveStatus").textContent = "ਲਾਈਵ ਸਥਿਤੀ ਉਪਲਬਧ ਨਹੀਂ";

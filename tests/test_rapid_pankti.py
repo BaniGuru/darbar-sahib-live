@@ -23,7 +23,7 @@ class RapidPanktiTests(unittest.TestCase):
                         _pending_shabad_update=None,_pending_pankti_id=None,_pending_pankti_hits=0,
                         _pending_pankti_audio_time=None,_debug_final_text='',_debug_partial_text='',
                         _debug_timed_final_words=[],_debug_timed_partial_words=[],_debug_recompute_from=None,
-                        _pankti_timeline=[],_pankti_display_timeline=[],_display_dirty_from=None,
+                        _pankti_timeline=[],_playback_pankti_timeline=[],
                         _last_greeting_key=None,_greeting_audio_cutoff=None,_stream_wall_started_at=1000,
                         _audio_sessions={},_audio_subscribers=set())
         p.start();self.addCleanup(p.stop)
@@ -67,19 +67,54 @@ class RapidPanktiTests(unittest.TestCase):
                                 for ts,line in server._pankti_timeline))
             start+=len(self.rows[pid]['_tokens'])
 
-    def test_future_pair_is_prepared_once_and_expires_at_its_boundary(self):
-        first=server._active_match_payload(self.rows['ERNS'],1,2)
-        second=server._active_match_payload(self.rows['9E67'],1,2)
-        server._pankti_timeline[:]=[(1020,first)]
-        server._display_dirty_from=1014
+    def test_listener_switches_one_line_at_first_word_not_second_word(self):
+        old={k:v for k,v in server._live_match.items() if not k.startswith('_')}
+        server._pankti_timeline[:]=[(1010,old)]
+        self.send(' '.join(self.rows['ERNS']['_tokens'][:2]),start=20,spacing=1)
+        sid='11111111-1111-4111-8111-111111111111'
+        server._audio_sessions[sid]=dict(last_seen=time.monotonic(),first_audio_at=1010,generation=1)
+        before=server.live_state(sid,9.999)
+        onset=server.live_state(sid,10)
+        self.assertEqual(before['pankti_id'],'N43J')
+        self.assertEqual([p['pankti_id'] for p in before['display_panktis']],['N43J'])
+        self.assertEqual(onset['pankti_id'],'ERNS')
+        self.assertEqual([p['pankti_id'] for p in onset['display_panktis']],['ERNS'])
+        self.assertEqual(onset['playback_words'][0]['pankti_id'],'ERNS')
+        self.assertEqual(onset['playback_words'][0]['start'],20)
+        self.assertEqual(len(onset['playback_words']),1)  # second word is at 21
+        # The player receives the future first-word boundary before hearing it.
+        self.assertEqual([e['line']['pankti_id'] for e in before['pankti_schedule']],
+                         ['N43J','ERNS'])
+        self.assertEqual(before['pankti_schedule'][1]['audio_timestamp'],1020)
+        self.assertEqual([e['line']['pankti_id'] for e in onset['pankti_schedule']],['ERNS'])
+
+    def test_schedule_excludes_predictions_and_limits_future_horizon(self):
+        observed=server._active_match_payload(self.rows['N43J'],1,2)
+        upcoming=server._active_match_payload(self.rows['ERNS'],1,2)
+        prediction={**upcoming,'match_mode':'bani-auto-next'}
+        server._pankti_timeline[:]=[(1010,observed),(1011,prediction),
+                                  (1012,upcoming),(1021,observed)]
         server._prepare_pankti_timeline()
-        self.assertEqual(len(server._prepared_display(1020,first)),1)
-        server._pankti_timeline.append((1022,second))
-        server._display_dirty_from=1016
+        with patch.object(server,'PLAYBACK_DELAY_SECONDS',10):
+            schedule=server._pankti_schedule(1010,observed)
+        self.assertEqual([e['audio_timestamp'] for e in schedule],[1010,1012])
+        self.assertEqual([e['line']['pankti_id'] for e in schedule],['N43J','ERNS'])
+
+    def test_future_boundary_invalidates_revision_before_current_line_changes(self):
+        old={k:v for k,v in server._live_match.items() if not k.startswith('_')}
+        server._pankti_timeline[:]=[(1010,old)]
         server._prepare_pankti_timeline()
-        self.assertEqual([p['pankti_id'] for p in server._prepared_display(1020,first)],['ERNS','9E67'])
-        self.assertEqual([p['pankti_id'] for p in server._prepared_display(1022,second)],['ERNS','9E67'])
-        self.assertEqual([p['pankti_id'] for p in server._prepared_display(1028,second)],['9E67'])
+        sid='11111111-1111-4111-8111-111111111111'
+        server._audio_sessions[sid]=dict(last_seen=time.monotonic(),first_audio_at=1010,generation=1)
+        first=server.live_state(sid,1)
+        server._pankti_timeline.append((1012,server._active_match_payload(self.rows['ERNS'],1,2)))
+        server._prepare_pankti_timeline()
+        upcoming=server.live_state(sid,1,known_revision=first['revision'])
+        self.assertEqual(upcoming['pankti_id'],first['pankti_id'])
+        self.assertNotEqual(upcoming['revision'],first['revision'])
+        self.assertEqual(upcoming['pankti_schedule'][-1]['line']['pankti_id'],'ERNS')
+        unchanged=server.live_state(sid,1,known_revision=upcoming['revision'])
+        self.assertEqual(unchanged.status_code,204)
 
     def test_unchanged_snapshots_do_not_run_matching_again(self):
         text=' '.join(self.rows['ERNS']['_tokens'][:2])
@@ -122,13 +157,19 @@ class RapidPanktiTests(unittest.TestCase):
         self.assertEqual([(at,line['pankti_id']) for at,line in server._pankti_timeline],
                          [(1020,'first'),(1020.5,'second')])
         self.assertEqual([w['pankti_id'] for w in server._debug_timed_partial_words],['first','first'])
+        sid='11111111-1111-4111-8111-111111111111'
+        server._audio_sessions[sid]=dict(last_seen=time.monotonic(),first_audio_at=1020,generation=1)
+        self.assertEqual(server.live_state(sid,1)['pankti_id'],'first')
+        self.send('ਗੁਰ ਕਿਰਪਾ',start=22)
+        self.assertEqual(server.live_state(sid,1.999)['pankti_id'],'first')
+        self.assertEqual(server.live_state(sid,2)['pankti_id'],'second')
 
     def test_poll_reads_prepared_ids_without_matching_or_pairing(self):
         self.send(' '.join(self.rows['ERNS']['_tokens'][:2]))
         sid='11111111-1111-4111-8111-111111111111'
         server._audio_sessions[sid]=dict(last_seen=time.monotonic(),first_audio_at=1020,generation=1)
         with patch.object(server,'match_live_pankti',side_effect=AssertionError('poll matched')), \
-             patch.object(server,'display_lines',side_effect=AssertionError('poll paired')):
+             patch('pankti_display.display_lines',side_effect=AssertionError('poll paired')):
             first=server.live_state(sid,.3)
             later=server.live_state(sid,.4)
         self.assertEqual(first['pankti_id'],'ERNS')

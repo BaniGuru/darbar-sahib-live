@@ -1,4 +1,9 @@
-The live server now prepares pankti IDs against ASR word timestamps once.
+The paired display described below is historical (commit `41093d3`). The
+current player shows **one pankti at a time**, switching at its prepared
+first-word boundary between polls. See [SINGLE_PANKTI_DISPLAY.md](SINGLE_PANKTI_DISPLAY.md).
+The matching improvements and recording fixtures below remain in use.
+
+The live server prepares pankti IDs against ASR word timestamps once.
 Each listener's one-second state request selects the newest prepared event
 at that listener's delayed audio position. It performs neither Gurbani
 matching nor line grouping. `/api/live/state.playback_words` includes the

@@ -74,14 +74,11 @@ body.live-page {
 #darbarIndiaTime { font-size: 18px; }
 
 .pankti-entry { width: 100%; display: flex; flex-direction: column; align-items: center; gap: clamp(10px, 2vh, 20px); }
-.pankti-group.is-paired { gap: 20px; }
-.is-paired .pankti-entry { gap: 8px; }
-.is-paired .pankti-entry + .pankti-entry { padding-top: 18px; border-top: 1px solid #ad873b45; }
-.pankti-group.is-paired p { max-height: none; overflow: visible; }
-.is-paired .english { font-size: clamp(14px, 1.7vw, 19px); }
 @media (max-width: 600px) {
   .artwork-meta { flex-wrap: wrap; justify-content: flex-end; }
   .darbar-date-time { flex: 1 1 100%; }
   #darbarIndiaTime { white-space: normal; }
   .welcome-artwork { padding-bottom: 125px; }
 }
+
+.pankti-group p { max-height: none; overflow: visible; }

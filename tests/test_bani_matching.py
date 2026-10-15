@@ -218,7 +218,7 @@ class BaniMatchingTests(unittest.TestCase):
                 '_live_match_at':0,'_pending_shabad_id':None,'_pending_shabad_hits':0,
                 '_pending_pankti_id':None,'_pending_pankti_hits':0,'_pending_pankti_audio_time':None,
                 '_debug_final_text':'','_debug_partial_text':'','_debug_timed_final_words':[],
-                '_debug_recompute_from':None,'_pankti_timeline':[],'_stream_wall_started_at':100000}
+                '_debug_recompute_from':None,'_pankti_timeline':[],'_playback_pankti_timeline':[],'_stream_wall_started_at':100000}
         with patch.multiple(server,**values),patch.object(server.logger,'info'):
             asyncio.run(server._handle_asr_messages(Socket()))
             first_at=next(at for at,line in server._pankti_timeline

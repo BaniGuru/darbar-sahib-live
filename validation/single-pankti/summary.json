@@ -1,0 +1,97 @@
+{
+  "python_tests": 133,
+  "python_tests_passed": true,
+  "frontend_cache_version": 18,
+  "single_pankti": true,
+  "first_word_schedule": true,
+  "source_fixture_directory": "validation/rapid-pankti",
+  "baseline_revision": "f48d81a",
+  "compared_with_previous_matcher_scores": "41093d3",
+  "human_accuracy_measured": false,
+  "acoustic_model_changed": false,
+  "new_acoustic_run": false,
+  "playback_delay_seconds": 10,
+  "browser": {
+    "completed": true,
+    "artworkVerified": true,
+    "singlePankti": true,
+    "firstWordScheduleWithoutPoll": true,
+    "stalledAudioHoldsLine": true,
+    "timedGreeting": true,
+    "results": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "passed": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "passed": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 700
+        },
+        "passed": true
+      }
+    ]
+  },
+  "ranges": [
+    {
+      "name": "asa",
+      "start": "02:35:00",
+      "end": "02:40:00",
+      "seconds": 300.0,
+      "listener_polls": 301,
+      "paired_polls": 0,
+      "exact_word_pair_checks": 202,
+      "current_on_time": 202,
+      "baseline_on_time": 179,
+      "ambiguous_refrain_pairs": 0,
+      "matcher_seconds": 17.298204425999984,
+      "update_seconds": {
+        "median": 0.0012214530001983803,
+        "max": 0.7993353299998489,
+        "p95": 0.30557454999984657
+      },
+      "events_sha256": "989d19b87bfd8c9bfe7cf8804887e5044d3553344257718ef4fdbb3b7fde031f",
+      "report": "validation/single-pankti/asa-replay.json.gz"
+    },
+    {
+      "name": "rapid",
+      "start": "12:08:36",
+      "end": "12:11:00",
+      "seconds": 144.0,
+      "listener_polls": 145,
+      "paired_polls": 0,
+      "exact_word_pair_checks": 47,
+      "current_on_time": 46,
+      "baseline_on_time": 32,
+      "ambiguous_refrain_pairs": 3,
+      "matcher_seconds": 13.819556251999984,
+      "update_seconds": {
+        "median": 0.0004007690000662478,
+        "max": 0.5893709780000336,
+        "p95": 0.3517988759999753
+      },
+      "events_sha256": "bd5c959588ebb731320e50cb05220f4f6c1b838437400b798cbfe3d8437ee1a7",
+      "report": "validation/single-pankti/rapid-replay.json.gz"
+    }
+  ],
+  "sources_sha256": {
+    "server.py": "71e97e61681db78016faf92d3d53b5bdcffe07a1044984f0b86f2c8b710da8a5",
+    "bani_matching.py": "fc3001132eb15084b0c3a6960bbb3c2ece705231ca47f15ec5145345f2fb13e8",
+    "pankti_display.py": "6b3e222bb5be5886f6339aa2692d7430a47b7bdcdedeb0f81117047b885d87c9",
+    "public/live.js": "2933dd20be15ec62f9087618060bc7f9a7461853229491a2772f030fed8fc3cd",
+    "public/live.css": "8b96bdeea031d660e3342a8a01c65181a805263676f37db436be93bff61e4cc0",
+    "public/live.html": "167a0477761b077aa2bc514e37df0d7ba6d09206ce33a3a636c893c5fcd7d4b3",
+    "scripts/validate_pankti_timing.py": "9cce471f1c20e04d2dc24e9c6a6c597b263082afa39372b23d5799a7be889e1c",
+    "scripts/validate_player_ui.cjs": "b5893278371102bd4f84015a020c680cf40983f2121c13a73d6531610415a8cb"
+  }
+}

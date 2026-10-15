@@ -29,7 +29,7 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from pankti_display import display_lines, identity
+from pankti_display import identity
 from bani_matching import OrderedBaniMatcher, bani_family
 from delayed_audio import DelayedAudio, FrameParser
 
@@ -95,7 +95,6 @@ _speech_column: str | None = None
 _pankti_rows: list[dict[str, Any]] | None = None
 _pankti_token_index: dict[str, tuple[int, ...]] = {}
 _pankti_shabad_index: dict[str, tuple[int, ...]] = {}
-_pankti_next_by_id: dict[str, str] = {}
 _bani_matcher: OrderedBaniMatcher | None = None
 _live_match: dict[str, Any] | None = None
 _live_match_at = 0.0
@@ -116,8 +115,7 @@ _source_last_chunk_at: float | None = None
 _source_last_chunk_monotonic: float | None = None
 _source_audio_chunk_count = 0
 _pankti_timeline: list[tuple[float, dict[str, Any]]] = []
-_pankti_display_timeline: list[tuple[float, dict[str, Any]]] = []
-_display_dirty_from: float | None = None
+_playback_pankti_timeline: list[tuple[float, dict[str, Any]]] = []
 _audio_sessions: dict[str, dict[str, Any]] = {}
 _stream_connected = False
 _live_task: asyncio.Task | None = None
@@ -482,7 +480,7 @@ def _translation_expression(
 
 def _build_pankti_index() -> int:
     """Load pankti text once and index normalized words for live lookup."""
-    global _pankti_rows, _pankti_token_index, _pankti_shabad_index, _pankti_next_by_id, _speech_column, _bani_matcher
+    global _pankti_rows, _pankti_token_index, _pankti_shabad_index, _speech_column, _bani_matcher
     if _speech_column is None:
         _speech_column = _validate_database(BANI_DB_PATH)
     speech_expr = f"REPLACE(COALESCE(p.{_speech_column}, ''), ',', '')"
@@ -533,10 +531,6 @@ def _build_pankti_index() -> int:
     _pankti_shabad_index = {
         shabad_id: tuple(indexes) for shabad_id, indexes in shabad_rows.items()
     }
-    _pankti_next_by_id = {}
-    for indexes in _pankti_shabad_index.values():
-        ordered = sorted((rows[i] for i in indexes), key=lambda row: (row["order_id"] or 0, row["pankti_id"]))
-        _pankti_next_by_id.update({a["pankti_id"]: b["pankti_id"] for a, b in zip(ordered, ordered[1:])})
     by_id = {row["pankti_id"]: row for row in rows}
     routes: dict[int, dict[str, Any]] = {}
     with _sqlite_ro() as conn:
@@ -806,62 +800,41 @@ def _waiting_event() -> dict[str, Any]:
 
 
 def _prepare_pankti_timeline() -> None:
-    """Prepare shared line groups and annotate ASR words once, before polling."""
-    global _display_dirty_from
-    last_words: dict[int, float] = {}
+    """Attach confirmed pankti IDs at source-word starts, once before polling.
+
+    Auto-next predictions help the matcher follow bani internally. Playback
+    changes line only at the first recognized word of a confirmed line.
+    """
+    _playback_pankti_timeline[:] = [
+        (at, line) for at, line in _pankti_timeline
+        if line.get("match_mode") != "bani-auto-next"
+    ]
     for word in _debug_timed_final_words + _debug_timed_partial_words:
         at = (_stream_wall_started_at or 0)+word["start"]
         word["audio_timestamp"] = at
-        index = bisect_right(_pankti_timeline, at, key=lambda item: item[0])-1
-        line = _pankti_timeline[index][1] if index >= 0 else {}
+        index = bisect_right(_playback_pankti_timeline, at, key=lambda item: item[0])-1
+        line = _playback_pankti_timeline[index][1] if index >= 0 else {}
         for field in ("pankti_id", "shabad_id", "bani_id", "bani_position"):
             word[field] = line.get(field)
-        if line.get("pankti_id"):
-            last_words[index] = max(last_words.get(index, at), at)
-    for index, at in last_words.items():
-        line = _pankti_timeline[index][1]
-        if line.get("last_word_timestamp") != at:
-            line["last_word_timestamp"] = at
-            _display_dirty_from = min(_display_dirty_from if _display_dirty_from is not None else at-6, at-6)
-
-    if _display_dirty_from is not None:
-        start = _display_dirty_from
-        left = bisect_right(_pankti_display_timeline, start, key=lambda item: item[0])
-        if left and _pankti_display_timeline[left-1][0] == start:
-            left -= 1
-        del _pankti_display_timeline[left:]
-        raw_left = bisect_right(_pankti_timeline, start-6, key=lambda item: item[0])
-        points = {start}
-        for at, _ in _pankti_timeline[raw_left:]:
-            if at >= start:
-                points.add(at)
-            if at-6 >= start:
-                points.add(at-6)
-            if at+6 >= start:
-                points.add(at+6)
-        for at in sorted(points):
-            index = bisect_right(_pankti_timeline, at, key=lambda item: item[0])-1
-            if index < 0:
-                continue
-            selected = _pankti_timeline[index][1]
-            prepared = dict(active_key=identity(selected), lines=display_lines(
-                _pankti_timeline, at, selected, _pankti_next_by_id))
-            if not _pankti_display_timeline or prepared != _pankti_display_timeline[-1][1]:
-                _pankti_display_timeline.append((at, prepared))
-        if len(_pankti_display_timeline) > 40000:
-            del _pankti_display_timeline[:-40000]
-        _display_dirty_from = None
 
 
 def _prepared_display(playhead: float, selected: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Compatibility field: zero or one pankti already selected by audio time."""
     if not selected or selected.get("waiting_for_shabad"):
         return []
-    index = bisect_right(_pankti_display_timeline, playhead, key=lambda item: item[0])-1
-    if index >= 0:
-        prepared = _pankti_display_timeline[index][1]
-        if prepared["active_key"] == identity(selected):
-            return prepared["lines"]
     return [{k: v for k, v in selected.items() if not k.startswith("_")}]
+
+
+def _pankti_schedule(playhead: float, selected: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Share confirmed upcoming word boundaries; the player schedules locally."""
+    start = max(0, bisect_right(_playback_pankti_timeline, playhead, key=lambda item: item[0])-1)
+    end = bisect_right(_playback_pankti_timeline, playhead+PLAYBACK_DELAY_SECONDS, key=lambda item: item[0])
+    events = []
+    for at, line in _playback_pankti_timeline[start:min(end, start+64)]:
+        if at <= playhead and (not selected or identity(line) != identity(selected)):
+            continue
+        events.append({"audio_timestamp": at, "line": line})
+    return events
 
 
 async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -> None:
@@ -869,7 +842,7 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
     global _active_shabad_id, _pending_shabad_id, _pending_shabad_hits
     global _pending_pankti_id, _pending_pankti_hits
     global _pending_pankti_audio_time
-    global _last_greeting_key, _greeting_audio_cutoff, _display_dirty_from
+    global _last_greeting_key, _greeting_audio_cutoff
     global _debug_final_text, _debug_partial_text
     global _debug_final_words, _debug_partial_words
     global _debug_timed_final_words, _debug_timed_partial_words, _debug_recompute_from
@@ -967,7 +940,6 @@ async def _handle_asr_messages(socket: Any, audio_offset_seconds: float = 0.0) -
                 greeting_time = (_stream_wall_started_at or time.time())+_greeting_audio_cutoff
                 position = bisect_right([event[0] for event in _pankti_timeline], greeting_time)
                 _pankti_timeline.insert(position, (greeting_time, _waiting_event()))
-                _display_dirty_from = min(_display_dirty_from if _display_dirty_from is not None else greeting_time-6, greeting_time-6)
                 if len(_pankti_timeline) > 20000:
                     _pankti_timeline.pop(0)
                 _live_match = None
@@ -1025,7 +997,6 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
     global _live_match, _live_match_at
     global _active_shabad_id, _pending_shabad_id, _pending_shabad_hits, _pending_shabad_update
     global _pending_pankti_id, _pending_pankti_hits, _pending_pankti_audio_time
-    global _display_dirty_from
     # `match` must be local to this ASR update. Reusing its previous value
     # makes a no-match update look like a fresh repeat of the old pankti.
     match: dict[str, Any] | None = None
@@ -1193,7 +1164,6 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
                 if identity(prior) != identity(observed) or prior.get("match_mode") == "bani-auto-next":
                     public = {k:v for k,v in observed.items() if not k.startswith("_")}
                     _pankti_timeline.insert(index+1, (at, public))
-                    _display_dirty_from = min(_display_dirty_from if _display_dirty_from is not None else at-6, at-6)
             # This is a prediction of the next line, anchored to the
             # previous line's final word, not the next line's text.
             ending_offset = _matched_word_offset(
@@ -1225,7 +1195,6 @@ async def _match_asr_prefix(message: dict[str, Any], transcript: str,
             or last_match.get("match_mode") != public_match.get("match_mode")
             or match_audio_time - last_at >= 8.0
         ):
-            _display_dirty_from = min(_display_dirty_from if _display_dirty_from is not None else match_audio_time-6, match_audio_time-6)
             position = bisect_right([event[0] for event in _pankti_timeline], match_audio_time)
             _pankti_timeline.insert(position, (match_audio_time, public_match))
             if len(_pankti_timeline) > 20000:
@@ -1666,8 +1635,8 @@ def live_state(
     for key, value in tuple(_audio_sessions.items()):
         if value["last_seen"] < stale_before:
             _audio_sessions.pop(key, None)
-    selected_index = bisect_right(_pankti_timeline, playhead_time, key=lambda entry: entry[0])-1
-    fresh_entry = _pankti_timeline[selected_index] if selected_index >= 0 else None
+    selected_index = bisect_right(_playback_pankti_timeline, playhead_time, key=lambda entry: entry[0])-1
+    fresh_entry = _playback_pankti_timeline[selected_index] if selected_index >= 0 else None
     if (fresh_entry and not fresh_entry[1].get("waiting_for_shabad")
             and playhead_time-fresh_entry[0] > MATCH_HOLD_SECONDS):
         fresh_entry = None
@@ -1690,6 +1659,7 @@ def live_state(
         and PLAYBACK_DELAY_SECONDS == 0
         and audio_started_at is None
         and _live_match
+        and _live_match.get("match_mode") != "bani-auto-next"
         and 0 <= now - _live_match_at <= MATCH_HOLD_SECONDS
     ):
         # A new listener receives the current match immediately while the
@@ -1705,6 +1675,7 @@ def live_state(
         "enabled": True,
         "listener_count": len(_audio_subscribers),
         "display_panktis": _prepared_display(playhead_time, fresh_match),
+        "pankti_schedule": _pankti_schedule(playhead_time, fresh_match),
         "playback_words": [w for w in (_debug_timed_final_words + _debug_timed_partial_words)
                            if w.get("audio_timestamp", float("inf")) <= playhead_time][-30:],
         "waiting_for_shabad": bool(fresh_match and fresh_match.get("waiting_for_shabad")),
@@ -1743,7 +1714,7 @@ def live_state(
             "legacy_gurmukhi", "english", "shabad_id", "pankti_id",
             "bani_id", "bani_name", "line_group", "bani_position", "match_mode",
             "playback_delay_seconds", "playback_ready", "audio_generation", "playback_text",
-            "listener_count", "waiting_for_shabad", "display_panktis", "playback_words",
+            "listener_count", "waiting_for_shabad", "display_panktis", "playback_words", "pankti_schedule",
         )
     }
     revision = hashlib.sha256(

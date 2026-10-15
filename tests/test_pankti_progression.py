@@ -22,7 +22,7 @@ class PanktiProgressionTests(unittest.TestCase):
                       _pending_pankti_hits=0, _pending_pankti_audio_time=None,
                       _debug_final_text='', _debug_partial_text='',
                       _debug_timed_final_words=[], _debug_timed_partial_words=[],
-                      _debug_recompute_from=None, _pankti_timeline=[],
+                      _debug_recompute_from=None, _pankti_timeline=[], _playback_pankti_timeline=[],
                       _stream_wall_started_at=1000, _last_greeting_key=None,
                       _greeting_audio_cutoff=None, _audio_sessions={},
                       _audio_subscribers=set())

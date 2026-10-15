@@ -14,7 +14,7 @@ class PlaybackTests(unittest.TestCase):
         buffer.release(40)
         for name,value in (('_delayed_audio',buffer), ('_stream_wall_started_at',1000),
                            ('_audio_sessions',{}), ('_audio_subscribers',set()),
-                           ('_pankti_timeline',[]), ('_debug_timed_final_words',[]),
+                           ('_pankti_timeline',[]), ('_playback_pankti_timeline',[]), ('_debug_timed_final_words',[]),
                            ('_debug_timed_partial_words',[]),
                            ('PLAYBACK_DELAY_SECONDS',10)):
             p=patch.object(server,name,value);p.start();self.addCleanup(p.stop)
@@ -23,6 +23,7 @@ class PlaybackTests(unittest.TestCase):
         old = dict(punjabi='heard',english='',legacy_gurmukhi='',shabad_id='1',pankti_id='1')
         future = {**old, 'punjabi':'future', 'pankti_id':'2'}
         server._pankti_timeline[:] = [(1010,old),(1040,future)]
+        server._prepare_pankti_timeline()
         server._debug_timed_final_words[:] = [dict(text='heard',start=10,end=11),dict(text='future',start=40,end=41)]
         server._audio_sessions[self.sid] = dict(last_seen=0,first_audio_at=1029,generation=1)
         state = server.live_state(self.sid,0)

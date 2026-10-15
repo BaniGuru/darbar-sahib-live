@@ -71,7 +71,9 @@ async def replay(module, events, start, seconds):
                             assert state['pankti_timestamp'] <= state['playhead_timestamp']
                         next_poll+=1
     before=time.perf_counter();await module._handle_asr_messages(Socket());elapsed=time.perf_counter()-before
-    timeline=[(at-100000,line) for at,line in module._pankti_timeline]
+    playback_timeline = (module._playback_pankti_timeline if hasattr(module, '_playback_pankti_timeline')
+                         else module._pankti_timeline)
+    timeline=[(at-100000,line) for at,line in playback_timeline]
     rows={row['pankti_id']:row for row in module._pankti_rows}
     transitions=[dict(audio_seconds=at,**line,speech=rows.get(line.get('pankti_id'),{}).get('speech',''))
                  for at,line in timeline if start <= at <= start+seconds]
