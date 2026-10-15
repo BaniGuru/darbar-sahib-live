@@ -1,0 +1,35 @@
+{
+  "python_tests": 146,
+  "passed": true,
+  "duties_tests": 13,
+  "real_poppler_unicode_pdf_test": true,
+  "live_source_verified": false,
+  "live_source_blocker": "Cloud network proxy rejects hs.sgpc.net with HTTP 403",
+  "fabricated_duties_written": false,
+  "production_cron_installed": false,
+  "cloud_crontab_available": false,
+  "source_url": "https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php",
+  "nightly_india_time": "00:15",
+  "cron_expression_for_utc_daemon": "45 18 * * *",
+  "output": "data/kirtan_duties.json",
+  "cases": [
+    "initial write",
+    "new content replaces atomically",
+    "identical PDF unchanged",
+    "same text with regenerated PDF unchanged",
+    "HTTP 304 with conditional validators",
+    "relative embedded PDF",
+    "HTTP 503, timeout and invalid HTML/PDF retain previous data",
+    "atomic replacement failure retains old bytes",
+    "concurrent run excluded",
+    "failed first fetch creates no JSON",
+    "download size limit",
+    "CLI error exits nonzero",
+    "real Poppler Unicode Punjabi extraction; unreadable Punjabi rejected"
+  ],
+  "sources_sha256": {
+    "scripts/update_kirtan_duties.py": "3f4052ee86b48fdde10f8b039b1c60b679ba32fcf4fbfb69a740d9012ccaf8e6",
+    "tests/test_kirtan_duties.py": "8b36d229e4211d40d450bd14123a267a1de1b4a144a3885569840b5e48ac8d12",
+    "deploy/kirtan-duties.crontab": "c6da6527c0eaac1b0bb6ee075e831a58813f7eafdfd4e2b10ab12b41dac94b40"
+  }
+}

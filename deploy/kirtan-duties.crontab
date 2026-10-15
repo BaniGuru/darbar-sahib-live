@@ -1,0 +1,4 @@
+# User crontab; the cron daemon's timezone MUST be UTC.
+# 18:45 UTC = 00:15 Asia/Kolkata the following day, every night.
+# Run as the application owner. Adjust this path if the checkout is elsewhere.
+45 18 * * * /var/www/gurbani-asr/.venv/bin/python /var/www/gurbani-asr/scripts/update_kirtan_duties.py >> /var/www/gurbani-asr/data/kirtan_duties.log 2>&1
