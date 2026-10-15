@@ -1,0 +1,95 @@
+{
+  "human_accuracy_measured": false,
+  "baseline_commit": "f48d81a",
+  "python_tests": 131,
+  "source": {
+    "url": "https://sgpc.net/kirtan/2026/10/(02;00%20-%2022;30%20hours)%2014%20October2026.mp3",
+    "bytes": 590396395,
+    "sha256": "23d8c9f385f9ecbea94c52d8765895b04cc859cb1d30f43092dd36553851f729",
+    "download_seconds": 24.961527721985476
+  },
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "format": {
+      "duration": "73799.549375",
+      "size": "590396395"
+    }
+  },
+  "ranges": [
+    {
+      "name": "asa",
+      "start": "02:35:00.000",
+      "end": "02:40:00.000",
+      "duration_seconds": 300,
+      "input_seconds": 328.0,
+      "asr_seconds": 41.16118956799619,
+      "recognition_mode": "blocks",
+      "block_seconds": 4,
+      "model": {
+        "order": 3,
+        "weight": 0.3,
+        "mode": "ngram",
+        "beam": 24,
+        "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+      },
+      "listener_polls": 301,
+      "paired_polls": 261,
+      "baseline_pair_checks": 179,
+      "current_pair_checks": 202,
+      "total_pair_checks": 202,
+      "ambiguous_refrain_pairs": 0,
+      "current_matcher_seconds": 12.041152460995363,
+      "baseline_matcher_seconds": 55.99329592799768,
+      "current_update_seconds": {
+        "median": 0.0010278169938828796,
+        "max": 0.5136711079976521,
+        "p95": 0.2549138180038426
+      }
+    },
+    {
+      "name": "rapid",
+      "start": "12:08:36.000",
+      "end": "12:11:00.000",
+      "duration_seconds": 144,
+      "input_seconds": 172.0,
+      "asr_seconds": 11.90818784799194,
+      "recognition_mode": "blocks",
+      "block_seconds": 4,
+      "model": {
+        "order": 3,
+        "weight": 0.3,
+        "mode": "ngram",
+        "beam": 24,
+        "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+      },
+      "listener_polls": 145,
+      "paired_polls": 57,
+      "baseline_pair_checks": 32,
+      "current_pair_checks": 46,
+      "total_pair_checks": 47,
+      "ambiguous_refrain_pairs": 3,
+      "current_matcher_seconds": 10.526176376006333,
+      "baseline_matcher_seconds": 40.31395108698052,
+      "current_update_seconds": {
+        "median": 0.0003496095014270395,
+        "max": 0.3991761460201815,
+        "p95": 0.2565137479978148
+      }
+    }
+  ],
+  "sources_sha256": {
+    "server.py": "58e637e4816c18cebd9de011020092a7c77f24496bf90fe6ffa3f26b9fd5e969",
+    "bani_matching.py": "fc3001132eb15084b0c3a6960bbb3c2ece705231ca47f15ec5145345f2fb13e8",
+    "pankti_display.py": "35749ea86f61bb0214364d10f3aed27845bbf734af07b632be84ba475df9e02f",
+    "public/live.js": "f44e4db7a79b01e57aa7917d5ce5de83e88134308475fcd3ca794cbc378bf6a0",
+    "public/live.css": "d3f2fbfb2a1eb7a7e24252b602d1463d1df60729bdaff5c93af8feddd8c83d56"
+  }
+}

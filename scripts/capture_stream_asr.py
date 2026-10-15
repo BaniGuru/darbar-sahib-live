@@ -23,14 +23,17 @@ def main(args):
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     pcm = out.with_suffix('.f32')
-    cmd = ['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', '-i', args.audio]
+    cmd = ['ffmpeg', '-y', '-hide_banner',  '-loglevel', 'error']
+    if args.start:
+        cmd += ['-ss', str(args.start)]
+    cmd += ['-i', args.audio]
     if args.seconds is not None:
         if args.seconds <= 0:
             raise ValueError('--seconds must be positive')
         cmd += ['-t', str(args.seconds)]
     subprocess.run(cmd + ['-ac', '1', '-ar', '16000', '-f', 'f32le', str(pcm)], check=True)
     audio = np.memmap(pcm, dtype='<f4', mode='r')
-    recognizer = asr.StreamingRecognizer()
+    recognizer = asr.new_recognizer()
     timings = []
     origin = last_log = time.perf_counter()
     step = asr.PARTIAL_INTERVAL_SAMPLES
@@ -52,7 +55,8 @@ def main(args):
         events.write(json.dumps(final, ensure_ascii=False, separators=(',', ':')) + '\n')
     elapsed = time.perf_counter() - origin
     report = {
-        'audio': args.audio,
+        'audio': args.audio, 'start_seconds': args.start,
+        'recognition_mode': asr.RECOGNITION_MODE, 'block_seconds': asr.BLOCK_SECONDS,
         'audio_sha256': hashlib.sha256(Path(args.audio).read_bytes()).hexdigest(),
         'seconds': len(audio) / 16000, 'elapsed': elapsed,
         'rtf': elapsed / (len(audio) / 16000),
@@ -71,5 +75,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--audio', required=True)
     parser.add_argument('--seconds', type=float)
+    parser.add_argument('--start', type=float, default=0)
     parser.add_argument('--output', required=True)
     main(parser.parse_args())

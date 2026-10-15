@@ -1,4 +1,4 @@
-import { darbarDateTime } from "/static/sgpc-calendar.js?v=16";
+import { darbarDateTime } from "/static/sgpc-calendar.js?v=17";
 const $ = id => document.getElementById(id);
 let audioUrl = "";
 const debugMode = new URLSearchParams(location.search).has("debug");
@@ -112,21 +112,27 @@ function scheduleAudioRecovery() {
 function updateLocalTime() {
   const now = new Date();
   const clock = $("currentUserTime");
-  clock.textContent = localTimeFormatter.formatToParts(now)
-    .filter(part => part.type !== "dayPeriod")
-    .map(part => part.value)
-    .join("")
-    .trim();
+  const waiting = hasStartedPlayback && Boolean(latestState?.waiting_for_shabad);
+  if (playerIsPlaying || waiting) {
+    clock.textContent = localTimeFormatter.formatToParts(now)
+      .filter(part => part.type !== "dayPeriod")
+      .map(part => part.value)
+      .join("")
+      .trim();
+  } else {
+    clock.textContent = "Start Listening";
+  }
   clock.dateTime = now.toISOString();
   const darbar = darbarDateTime(now);
   $("darbarNanakshahiDate").textContent = darbar.date;
   $("darbarNanakshahiDate").hidden = !darbar.date;
-  $("darbarIndiaTime").textContent = darbar.time;
+  $("darbarIndiaTime").textContent = "ਅੰਮ੍ਰਿਤਸਰ " + darbar.time;
   $("darbarIndiaTime").dateTime = now.toISOString();
 }
 
 function setPlayerState(playing) {
   playerIsPlaying = playing;
+  updateLocalTime();
   const button = $("playToggle");
   button.setAttribute("aria-pressed", String(playing));
   button.setAttribute("aria-label", playbackLoading ? "ਕੀਰਤਨ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ" : playing ? "ਲਾਈਵ ਕੀਰਤਨ ਰੋਕੋ" : "ਲਾਈਵ ਕੀਰਤਨ ਚਲਾਓ");
@@ -218,10 +224,10 @@ function setGurbani(id, value) {
 }
 
 function fitPunjabi() {
-  for (const id of ["legacyGurmukhi", "punjabi"]) {
+  for (const id of ["legacyGurmukhi", "punjabi", "legacyGurmukhiSecond", "punjabiSecond"]) {
     const node = $(id);
     if (node.hidden || !node.textContent) continue;
-    const start = id === "legacyGurmukhi" ? 48 : 34;
+    const start = id.startsWith("legacyGurmukhi") ? 48 : 34;
     const min = 19;
     const measure = document.createElement("div");
     Object.assign(measure.style, {
@@ -265,9 +271,16 @@ function showMatch(state) {
     for (const id of ["legacyGurmukhi", "punjabi", "english"]) $(id).textContent = "";
     return;
   }
-  setGurbani("legacyGurmukhi", state.legacy_gurmukhi);
-  setGurbani("punjabi", state.punjabi || state.pankti);
-  setText("english", state.english);
+  const lines = Array.isArray(state.display_panktis) && state.display_panktis.length
+    ? state.display_panktis.slice(0, 2) : [state];
+  $("panktiGroup").classList.toggle("is-paired", lines.length === 2);
+  $("secondPankti").hidden = lines.length !== 2;
+  for (const [index, line] of lines.entries()) {
+    const suffix = index ? "Second" : "";
+    setGurbani("legacyGurmukhi" + suffix, line.legacy_gurmukhi);
+    setGurbani("punjabi" + suffix, line.punjabi || line.pankti);
+    setText("english" + suffix, line.english);
+  }
   fitPunjabi();
 }
 

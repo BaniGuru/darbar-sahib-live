@@ -1,0 +1,400 @@
+{
+  "/health": {
+    "status": "ok",
+    "stream_connected": true,
+    "asr_connected": true,
+    "database": "bani.db",
+    "speech_column": "unicode_speech",
+    "asr_build": "stream-d3aee32ffe83",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "playback_delay_seconds": 10.0,
+    "buffered_audio_seconds": 9.659501133786307
+  },
+  "/asr/health": {
+    "status": "ok",
+    "build": "stream-d3aee32ffe83",
+    "provider": "CPUExecutionProvider",
+    "sample_rate": 16000,
+    "encoder_context": [
+      202,
+      100
+    ],
+    "encoder_frame_seconds": 0.04,
+    "text_commit_seconds": 4.0,
+    "cache_commit_seconds": 4.0,
+    "word_commit_policy": "shared-word-boundary",
+    "max_pending_window_seconds": 8.0,
+    "encoder_update_seconds": 4,
+    "normalization_lookahead_seconds": 4.0,
+    "encoder_threads": 2,
+    "decoder_beam_width": 24,
+    "blas_threads": 1,
+    "blas_pools": [
+      {
+        "internal_api": "openblas",
+        "num_threads": 1
+      }
+    ],
+    "cpu_budget": 4,
+    "decoder_mode": "optimized",
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "enable_language_model": true,
+    "silence_guard": true,
+    "silence_hangover_seconds": 4.0,
+    "predictor_cache": true,
+    "predictor_cache_max_entries": 16384,
+    "language_prior": "repository-gurbani-word-context",
+    "language_prior_weight": 0.6,
+    "kenlm": "gurbani_3gram.bin",
+    "kenlm_order": 3,
+    "kenlm_minimum_ngram_order": 3,
+    "kenlm_weight": 0.3,
+    "kenlm_mode": "ngram",
+    "kenlm_word_bonus": 0.0,
+    "word_lookahead_seconds": 1.0
+  },
+  "/api/live/state": {
+    "enabled": true,
+    "listener_count": 0,
+    "display_panktis": [
+      {
+        "score": 1.0,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "order_id": 47651,
+        "punjabi": "ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਤੋਂ ਬਿਨਾ (ਜਿੰਦ ਦਾ ਹੋਰ) ਕੋਈ ਸੰਗੀ ਨਹੀਂ ਕੋਈ ਸਾਥੀ ਨਹੀਂ। (ਨਾਮ ਤੋਂ ਖੁੰਝ ਕੇ) ਬਹੁਤ ਲੋਕਾਈ ਜਨਮ ਮਰਨ ਦੇ ਗੇੜ ਵਿਚ ਪਈ ਰਹਿੰਦੀ ਹੈ।",
+        "legacy_gurmukhi": "ivxu nwvY. ko sMig. n swQI; AwvY jwie GnyrI ]",
+        "english": "Without the Name, no one has any friend or companion; millions come and go in reincarnation.",
+        "last_word_timestamp": 1792034272.8813949
+      }
+    ],
+    "playback_words": [
+      {
+        "text": "ਕੀ",
+        "start": 55.92,
+        "end": 56.08,
+        "audio_timestamp": 1792034213.321395,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਉ",
+        "start": 56.08,
+        "end": 56.2,
+        "audio_timestamp": 1792034213.4813948,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਚੇਰੀ",
+        "start": 56.2,
+        "end": 56.76,
+        "audio_timestamp": 1792034213.601395,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਅਪੁਨੇ",
+        "start": 56.76,
+        "end": 57.52,
+        "audio_timestamp": 1792034214.1613948,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਠਾਕੁਰ",
+        "start": 57.52,
+        "end": 57.92,
+        "audio_timestamp": 1792034214.9213948,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਕੀ",
+        "start": 57.92,
+        "end": 57.96,
+        "audio_timestamp": 1792034215.321395,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਹਉ",
+        "start": 57.92,
+        "end": 58.08,
+        "audio_timestamp": 1792034215.321395,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਚੇਰੀ",
+        "start": 58.08,
+        "end": 61.52,
+        "audio_timestamp": 1792034215.4813948,
+        "pankti_id": "J444",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਵਿਣੁ",
+        "start": 61.52,
+        "end": 62.12,
+        "audio_timestamp": 1792034218.9213948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 62.12,
+        "end": 63.16,
+        "audio_timestamp": 1792034219.5213947,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਕੋ",
+        "start": 63.16,
+        "end": 64.04,
+        "audio_timestamp": 1792034220.561395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੰਗਿ",
+        "start": 64.04,
+        "end": 65.16,
+        "audio_timestamp": 1792034221.4413948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨ",
+        "start": 65.16,
+        "end": 65.56,
+        "audio_timestamp": 1792034222.561395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਾਥੀ",
+        "start": 65.56,
+        "end": 71.4,
+        "audio_timestamp": 1792034222.9613948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਵਿਣੁ",
+        "start": 71.4,
+        "end": 71.96,
+        "audio_timestamp": 1792034228.801395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 71.96,
+        "end": 76.08,
+        "audio_timestamp": 1792034229.361395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 76.08,
+        "end": 82.04,
+        "audio_timestamp": 1792034233.4813948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਕੋ",
+        "start": 82.04,
+        "end": 85.8,
+        "audio_timestamp": 1792034239.4413948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸੰਗਿ",
+        "start": 85.8,
+        "end": 86.6,
+        "audio_timestamp": 1792034243.2013948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨ",
+        "start": 86.6,
+        "end": 88.32,
+        "audio_timestamp": 1792034244.0013947,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਸਾਥੀ",
+        "start": 88.32,
+        "end": 92.2,
+        "audio_timestamp": 1792034245.7213948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਆਵੈ",
+        "start": 92.2,
+        "end": 97.28,
+        "audio_timestamp": 1792034249.601395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਜਾਇ",
+        "start": 97.28,
+        "end": 99.44,
+        "audio_timestamp": 1792034254.6813948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਘਨੇਰੀ",
+        "start": 99.44,
+        "end": 102.88,
+        "audio_timestamp": 1792034256.841395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਵਿਣੁ",
+        "start": 102.88,
+        "end": 103.4,
+        "audio_timestamp": 1792034260.281395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 103.4,
+        "end": 106.36,
+        "audio_timestamp": 1792034260.801395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਬਿਨੁ",
+        "start": 106.36,
+        "end": 106.88,
+        "audio_timestamp": 1792034263.7613947,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 106.88,
+        "end": 111.92,
+        "audio_timestamp": 1792034264.281395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਬਿਨੁ",
+        "start": 111.92,
+        "end": 112.32,
+        "audio_timestamp": 1792034269.321395,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      },
+      {
+        "text": "ਨਾਵੈ",
+        "start": 112.32,
+        "end": 115.48,
+        "audio_timestamp": 1792034269.7213948,
+        "pankti_id": "BJKF",
+        "shabad_id": "2TY",
+        "bani_id": null,
+        "bani_position": null
+      }
+    ],
+    "waiting_for_shabad": false,
+    "playback_delay_seconds": 10.0,
+    "playback_ready": true,
+    "audio_generation": 0,
+    "playback_text": "ਇਕ ਬੇਨੰਤੀ ਮੇਰੀ ਸੁਣਿ ਨਾਹ ਪਿਆਰੇ ਇਕ ਬੇਨੰਤੀ ਮੇਰੀ ਇਕ ਬੇਨੰਤੀ ਮੇਰੀ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਅਪੁਨੇ ਠਾਕੁਰ ਕੀ ਹਉ ਚੇਰੀ ਵਿਣੁ ਨਾਵੈ ਕੋ ਸੰਗਿ ਨ ਸਾਥੀ ਵਿਣੁ ਨਾਵੈ ਨਾਵੈ ਕੋ ਸੰਗਿ ਨ ਸਾਥੀ ਆਵੈ ਜਾਇ ਘਨੇਰੀ ਵਿਣੁ ਨਾਵੈ ਬਿਨੁ ਨਾਵੈ ਬਿਨੁ ਨਾਵੈ",
+    "connected": true,
+    "asr_connected": true,
+    "audio_url": "/api/live/audio",
+    "audio_start_timestamp": null,
+    "client_started_at": null,
+    "playhead_timestamp": null,
+    "pankti_timestamp": 1792034269.7213948,
+    "pankti": "ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਤੋਂ ਬਿਨਾ (ਜਿੰਦ ਦਾ ਹੋਰ) ਕੋਈ ਸੰਗੀ ਨਹੀਂ ਕੋਈ ਸਾਥੀ ਨਹੀਂ। (ਨਾਮ ਤੋਂ ਖੁੰਝ ਕੇ) ਬਹੁਤ ਲੋਕਾਈ ਜਨਮ ਮਰਨ ਦੇ ਗੇੜ ਵਿਚ ਪਈ ਰਹਿੰਦੀ ਹੈ।",
+    "punjabi": "ਪਰਮਾਤਮਾ ਦੇ ਨਾਮ ਤੋਂ ਬਿਨਾ (ਜਿੰਦ ਦਾ ਹੋਰ) ਕੋਈ ਸੰਗੀ ਨਹੀਂ ਕੋਈ ਸਾਥੀ ਨਹੀਂ। (ਨਾਮ ਤੋਂ ਖੁੰਝ ਕੇ) ਬਹੁਤ ਲੋਕਾਈ ਜਨਮ ਮਰਨ ਦੇ ਗੇੜ ਵਿਚ ਪਈ ਰਹਿੰਦੀ ਹੈ।",
+    "legacy_gurmukhi": "ivxu nwvY. ko sMig. n swQI; AwvY jwie GnyrI ]",
+    "english": "Without the Name, no one has any friend or companion; millions come and go in reincarnation.",
+    "shabad_id": "2TY",
+    "pankti_id": "BJKF",
+    "bani_id": null,
+    "bani_name": null,
+    "line_group": null,
+    "bani_position": null,
+    "match_mode": null,
+    "revision": "1d00b25efad57c8688a1"
+  }
+}

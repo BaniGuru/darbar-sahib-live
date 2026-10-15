@@ -1,0 +1,4118 @@
+{
+  "baseline_revision": "f48d81a",
+  "asr": {
+    "seconds": 172.0,
+    "elapsed_seconds": 11.90818784799194,
+    "recognition_mode": "blocks",
+    "block_seconds": 4,
+    "model": {
+      "order": 3,
+      "weight": 0.3,
+      "mode": "ngram",
+      "beam": 24,
+      "source_sha256": "56f2b1b4f68bc470295f24e90d46af8a1801594cad113339cfd6306c83cf6242"
+    }
+  },
+  "start_seconds": 16,
+  "seconds": 144.0,
+  "current": {
+    "elapsed_seconds": 10.526176376006333,
+    "updates": 216,
+    "update_seconds": {
+      "median": 0.0003496095014270395,
+      "max": 0.3991761460201815,
+      "p95": 0.2565137479978148
+    },
+    "polls": [
+      {
+        "audio_seconds": 16,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100010.44,
+        "playhead_timestamp": 100016.0
+      },
+      {
+        "audio_seconds": 17,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100010.44,
+        "playhead_timestamp": 100017
+      },
+      {
+        "audio_seconds": 18,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100018
+      },
+      {
+        "audio_seconds": 19,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100019
+      },
+      {
+        "audio_seconds": 20,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100020
+      },
+      {
+        "audio_seconds": 21,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100021
+      },
+      {
+        "audio_seconds": 22,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100022
+      },
+      {
+        "audio_seconds": 23,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100023
+      },
+      {
+        "audio_seconds": 24,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100024
+      },
+      {
+        "audio_seconds": 25,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100025
+      },
+      {
+        "audio_seconds": 26,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100026
+      },
+      {
+        "audio_seconds": 27,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100027
+      },
+      {
+        "audio_seconds": 28,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100028
+      },
+      {
+        "audio_seconds": 29,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100029
+      },
+      {
+        "audio_seconds": 30,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100030
+      },
+      {
+        "audio_seconds": 31,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100031
+      },
+      {
+        "audio_seconds": 32,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100032
+      },
+      {
+        "audio_seconds": 33,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100033
+      },
+      {
+        "audio_seconds": 34,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100017.72,
+        "playhead_timestamp": 100034
+      },
+      {
+        "audio_seconds": 35,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100035
+      },
+      {
+        "audio_seconds": 36,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100036
+      },
+      {
+        "audio_seconds": 37,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100037
+      },
+      {
+        "audio_seconds": 38,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100038
+      },
+      {
+        "audio_seconds": 39,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100039
+      },
+      {
+        "audio_seconds": 40,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100040
+      },
+      {
+        "audio_seconds": 41,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100041
+      },
+      {
+        "audio_seconds": 42,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100042
+      },
+      {
+        "audio_seconds": 43,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100043
+      },
+      {
+        "audio_seconds": 44,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100044
+      },
+      {
+        "audio_seconds": 45,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100045
+      },
+      {
+        "audio_seconds": 46,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100046
+      },
+      {
+        "audio_seconds": 47,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100047
+      },
+      {
+        "audio_seconds": 48,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100048
+      },
+      {
+        "audio_seconds": 49,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100049
+      },
+      {
+        "audio_seconds": 50,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100050
+      },
+      {
+        "audio_seconds": 51,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100051
+      },
+      {
+        "audio_seconds": 52,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100052
+      },
+      {
+        "audio_seconds": 53,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100053
+      },
+      {
+        "audio_seconds": 54,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100054
+      },
+      {
+        "audio_seconds": 55,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100055
+      },
+      {
+        "audio_seconds": 56,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100056
+      },
+      {
+        "audio_seconds": 57,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100057
+      },
+      {
+        "audio_seconds": 58,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100058
+      },
+      {
+        "audio_seconds": 59,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100059
+      },
+      {
+        "audio_seconds": 60,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100060
+      },
+      {
+        "audio_seconds": 61,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100061
+      },
+      {
+        "audio_seconds": 62,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100062
+      },
+      {
+        "audio_seconds": 63,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100063
+      },
+      {
+        "audio_seconds": 64,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100064
+      },
+      {
+        "audio_seconds": 65,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100065
+      },
+      {
+        "audio_seconds": 66,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100066
+      },
+      {
+        "audio_seconds": 67,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100067
+      },
+      {
+        "audio_seconds": 68,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100068
+      },
+      {
+        "audio_seconds": 69,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100061.52,
+        "playhead_timestamp": 100069
+      },
+      {
+        "audio_seconds": 70,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100070
+      },
+      {
+        "audio_seconds": 71,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100071
+      },
+      {
+        "audio_seconds": 72,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100072
+      },
+      {
+        "audio_seconds": 73,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100073
+      },
+      {
+        "audio_seconds": 74,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100074
+      },
+      {
+        "audio_seconds": 75,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100075
+      },
+      {
+        "audio_seconds": 76,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100076
+      },
+      {
+        "audio_seconds": 77,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100077
+      },
+      {
+        "audio_seconds": 78,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100078
+      },
+      {
+        "audio_seconds": 79,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100078.08,
+        "playhead_timestamp": 100079
+      },
+      {
+        "audio_seconds": 80,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100078.08,
+        "playhead_timestamp": 100080
+      },
+      {
+        "audio_seconds": 81,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100081
+      },
+      {
+        "audio_seconds": 82,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100082
+      },
+      {
+        "audio_seconds": 83,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100083
+      },
+      {
+        "audio_seconds": 84,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100084
+      },
+      {
+        "audio_seconds": 85,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100085
+      },
+      {
+        "audio_seconds": 86,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100086
+      },
+      {
+        "audio_seconds": 87,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100087
+      },
+      {
+        "audio_seconds": 88,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100088
+      },
+      {
+        "audio_seconds": 89,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100089
+      },
+      {
+        "audio_seconds": 90,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100081.0,
+        "playhead_timestamp": 100090
+      },
+      {
+        "audio_seconds": 91,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100090.56,
+        "playhead_timestamp": 100091
+      },
+      {
+        "audio_seconds": 92,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100090.56,
+        "playhead_timestamp": 100092
+      },
+      {
+        "audio_seconds": 93,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100090.56,
+        "playhead_timestamp": 100093
+      },
+      {
+        "audio_seconds": 94,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100090.56,
+        "playhead_timestamp": 100094
+      },
+      {
+        "audio_seconds": 95,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100095
+      },
+      {
+        "audio_seconds": 96,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100096
+      },
+      {
+        "audio_seconds": 97,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100097
+      },
+      {
+        "audio_seconds": 98,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100098
+      },
+      {
+        "audio_seconds": 99,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100099
+      },
+      {
+        "audio_seconds": 100,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100100
+      },
+      {
+        "audio_seconds": 101,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100094.24,
+        "playhead_timestamp": 100101
+      },
+      {
+        "audio_seconds": 102,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100102
+      },
+      {
+        "audio_seconds": 103,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100103
+      },
+      {
+        "audio_seconds": 104,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100104
+      },
+      {
+        "audio_seconds": 105,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100105
+      },
+      {
+        "audio_seconds": 106,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100106
+      },
+      {
+        "audio_seconds": 107,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "HYN0",
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100107
+      },
+      {
+        "audio_seconds": 108,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100108
+      },
+      {
+        "audio_seconds": 109,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100109
+      },
+      {
+        "audio_seconds": 110,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100101.6,
+        "playhead_timestamp": 100110
+      },
+      {
+        "audio_seconds": 111,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100110.2,
+        "playhead_timestamp": 100111
+      },
+      {
+        "audio_seconds": 112,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100110.2,
+        "playhead_timestamp": 100112
+      },
+      {
+        "audio_seconds": 113,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100110.2,
+        "playhead_timestamp": 100113
+      },
+      {
+        "audio_seconds": 114,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100110.2,
+        "playhead_timestamp": 100114
+      },
+      {
+        "audio_seconds": 115,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100110.2,
+        "playhead_timestamp": 100115
+      },
+      {
+        "audio_seconds": 116,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100116
+      },
+      {
+        "audio_seconds": 117,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100117
+      },
+      {
+        "audio_seconds": 118,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100118
+      },
+      {
+        "audio_seconds": 119,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100119
+      },
+      {
+        "audio_seconds": 120,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100120
+      },
+      {
+        "audio_seconds": 121,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100121
+      },
+      {
+        "audio_seconds": 122,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100122
+      },
+      {
+        "audio_seconds": 123,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100123
+      },
+      {
+        "audio_seconds": 124,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100115.6,
+        "playhead_timestamp": 100124
+      },
+      {
+        "audio_seconds": 125,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100124.08,
+        "playhead_timestamp": 100125
+      },
+      {
+        "audio_seconds": 126,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100124.08,
+        "playhead_timestamp": 100126
+      },
+      {
+        "audio_seconds": 127,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100124.08,
+        "playhead_timestamp": 100127
+      },
+      {
+        "audio_seconds": 128,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100124.08,
+        "playhead_timestamp": 100128
+      },
+      {
+        "audio_seconds": 129,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100124.08,
+        "playhead_timestamp": 100129
+      },
+      {
+        "audio_seconds": 130,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100130
+      },
+      {
+        "audio_seconds": 131,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100131
+      },
+      {
+        "audio_seconds": 132,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100132
+      },
+      {
+        "audio_seconds": 133,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100133
+      },
+      {
+        "audio_seconds": 134,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100134
+      },
+      {
+        "audio_seconds": 135,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100135
+      },
+      {
+        "audio_seconds": 136,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100136
+      },
+      {
+        "audio_seconds": 137,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100137
+      },
+      {
+        "audio_seconds": 138,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100138
+      },
+      {
+        "audio_seconds": 139,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100139
+      },
+      {
+        "audio_seconds": 140,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100140
+      },
+      {
+        "audio_seconds": 141,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100141
+      },
+      {
+        "audio_seconds": 142,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100142
+      },
+      {
+        "audio_seconds": 143,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100136.4,
+        "playhead_timestamp": 100143
+      },
+      {
+        "audio_seconds": 144,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100144
+      },
+      {
+        "audio_seconds": 145,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100145
+      },
+      {
+        "audio_seconds": 146,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100146
+      },
+      {
+        "audio_seconds": 147,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100147
+      },
+      {
+        "audio_seconds": 148,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100148
+      },
+      {
+        "audio_seconds": 149,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100149
+      },
+      {
+        "audio_seconds": 150,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100143.36,
+        "playhead_timestamp": 100150
+      },
+      {
+        "audio_seconds": 151,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100151
+      },
+      {
+        "audio_seconds": 152,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100152
+      },
+      {
+        "audio_seconds": 153,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100153
+      },
+      {
+        "audio_seconds": 154,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100154
+      },
+      {
+        "audio_seconds": 155,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100155
+      },
+      {
+        "audio_seconds": 156,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "3Q5U",
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100156
+      },
+      {
+        "audio_seconds": 157,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100157
+      },
+      {
+        "audio_seconds": 158,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100158
+      },
+      {
+        "audio_seconds": 159,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100159
+      },
+      {
+        "audio_seconds": 160,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100160
+      }
+    ],
+    "paired_polls": 57,
+    "distinct_observed_panktis": 5,
+    "transitions": [
+      {
+        "audio_seconds": 17.720000000001164,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "last_word_timestamp": 100028.12,
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 34.83999999999651,
+        "score": 1.0,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "last_word_timestamp": 100038.72,
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 42.0399999999936,
+        "score": 0.9,
+        "pankti_id": "BU7E",
+        "shabad_id": "BJU",
+        "order_id": 12755,
+        "punjabi": "ਪ੍ਰਭੂ ਸਾਰੀਆਂ ਸ਼ਕਤੀਆਂ ਨਾਲ ਪੂਰਨ ਹੈ, (ਸਭ ਜੀਵਾਂ ਦੇ) ਦੁੱਖ-ਦਰਦ ਜਾਣਦਾ ਹੈ।",
+        "legacy_gurmukhi": "srb klw BrpUr pRB; ibrQw jwnnhwr ]",
+        "english": "God is totally imbued with all powers; He is the Knower of our troubles.",
+        "last_word_timestamp": 100042.72,
+        "speech": "ਸਰਬ ਕਲਾ ਭਰਪੂਰ ਪ੍ਰਭ ਬਿਰਥਾ ਜਾਨਨਹਾਰ"
+      },
+      {
+        "audio_seconds": 48.44000000000233,
+        "score": 1.0,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "last_word_timestamp": 100056.0,
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 61.520000000004075,
+        "score": 1.0,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "last_word_timestamp": 100063.44,
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 69.91999999999825,
+        "score": 0.9,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "last_word_timestamp": 100076.88,
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 78.08000000000175,
+        "score": 1.0,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "last_word_timestamp": 100079.24,
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 81.0,
+        "score": 1.0,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "last_word_timestamp": 100088.0,
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 90.55999999999767,
+        "score": 0.8571,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "last_word_timestamp": 100091.24,
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 94.24000000000524,
+        "score": 0.9,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "last_word_timestamp": 100099.12,
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 101.60000000000582,
+        "score": 1.0,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "last_word_timestamp": 100109.04,
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 110.19999999999709,
+        "score": 1.0,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "last_word_timestamp": 100112.96,
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 115.60000000000582,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "last_word_timestamp": 100122.72,
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 124.08000000000175,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "last_word_timestamp": 100128.12,
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 129.08000000000175,
+        "score": 1.0,
+        "pankti_id": "3Q5U",
+        "shabad_id": "GDB",
+        "order_id": 13218,
+        "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+        "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+        "english": "O friends, O Saints, make this your work.",
+        "last_word_timestamp": 100133.6,
+        "speech": "ਸਾਜਨ ਸੰਤ ਕਰਹੁ ਇਹੁ ਕਾਮੁ"
+      },
+      {
+        "audio_seconds": 136.39999999999418,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "last_word_timestamp": 100140.76,
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 143.36000000000058,
+        "score": 1.0,
+        "pankti_id": "3Q5U",
+        "shabad_id": "GDB",
+        "order_id": 13218,
+        "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+        "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+        "english": "O friends, O Saints, make this your work.",
+        "last_word_timestamp": 100147.44,
+        "speech": "ਸਾਜਨ ਸੰਤ ਕਰਹੁ ਇਹੁ ਕਾਮੁ"
+      },
+      {
+        "audio_seconds": 150.75999999999476,
+        "score": 0.875,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "last_word_timestamp": 100160.0,
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      }
+    ],
+    "timeline": [
+      [
+        3.3999999999941792,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100008.0
+        }
+      ],
+      [
+        10.440000000002328,
+        {
+          "score": 1.0,
+          "pankti_id": "3Q5U",
+          "shabad_id": "GDB",
+          "order_id": 13218,
+          "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+          "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+          "english": "O friends, O Saints, make this your work.",
+          "last_word_timestamp": 100015.04
+        }
+      ],
+      [
+        17.720000000001164,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100028.12
+        }
+      ],
+      [
+        34.83999999999651,
+        {
+          "score": 1.0,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam.",
+          "last_word_timestamp": 100038.72
+        }
+      ],
+      [
+        42.0399999999936,
+        {
+          "score": 0.9,
+          "pankti_id": "BU7E",
+          "shabad_id": "BJU",
+          "order_id": 12755,
+          "punjabi": "ਪ੍ਰਭੂ ਸਾਰੀਆਂ ਸ਼ਕਤੀਆਂ ਨਾਲ ਪੂਰਨ ਹੈ, (ਸਭ ਜੀਵਾਂ ਦੇ) ਦੁੱਖ-ਦਰਦ ਜਾਣਦਾ ਹੈ।",
+          "legacy_gurmukhi": "srb klw BrpUr pRB; ibrQw jwnnhwr ]",
+          "english": "God is totally imbued with all powers; He is the Knower of our troubles.",
+          "last_word_timestamp": 100042.72
+        }
+      ],
+      [
+        48.44000000000233,
+        {
+          "score": 1.0,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam.",
+          "last_word_timestamp": 100056.0
+        }
+      ],
+      [
+        61.520000000004075,
+        {
+          "score": 1.0,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety.",
+          "last_word_timestamp": 100063.44
+        }
+      ],
+      [
+        69.91999999999825,
+        {
+          "score": 0.9,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam.",
+          "last_word_timestamp": 100076.88
+        }
+      ],
+      [
+        78.08000000000175,
+        {
+          "score": 1.0,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam.",
+          "last_word_timestamp": 100079.24
+        }
+      ],
+      [
+        81.0,
+        {
+          "score": 1.0,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety.",
+          "last_word_timestamp": 100088.0
+        }
+      ],
+      [
+        90.55999999999767,
+        {
+          "score": 0.8571,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety.",
+          "last_word_timestamp": 100091.24
+        }
+      ],
+      [
+        94.24000000000524,
+        {
+          "score": 0.9,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam.",
+          "last_word_timestamp": 100099.12
+        }
+      ],
+      [
+        101.60000000000582,
+        {
+          "score": 1.0,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety.",
+          "last_word_timestamp": 100109.04
+        }
+      ],
+      [
+        110.19999999999709,
+        {
+          "score": 1.0,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety.",
+          "last_word_timestamp": 100112.96
+        }
+      ],
+      [
+        115.60000000000582,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100122.72
+        }
+      ],
+      [
+        124.08000000000175,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100128.12
+        }
+      ],
+      [
+        129.08000000000175,
+        {
+          "score": 1.0,
+          "pankti_id": "3Q5U",
+          "shabad_id": "GDB",
+          "order_id": 13218,
+          "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+          "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+          "english": "O friends, O Saints, make this your work.",
+          "last_word_timestamp": 100133.6
+        }
+      ],
+      [
+        136.39999999999418,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100140.76
+        }
+      ],
+      [
+        143.36000000000058,
+        {
+          "score": 1.0,
+          "pankti_id": "3Q5U",
+          "shabad_id": "GDB",
+          "order_id": 13218,
+          "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+          "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+          "english": "O friends, O Saints, make this your work.",
+          "last_word_timestamp": 100147.44
+        }
+      ],
+      [
+        150.75999999999476,
+        {
+          "score": 0.875,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord.",
+          "last_word_timestamp": 100160.0
+        }
+      ],
+      [
+        161.36000000000058,
+        {
+          "score": 1.0,
+          "pankti_id": "EXZC",
+          "shabad_id": "CSZ",
+          "order_id": 50857,
+          "punjabi": "ਹੇ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਭੂ! ਹੇ ਮੇਰੀ ਜਿੰਦ ਤੇ ਮਨ ਦੇ ਆਸਰੇ ਪ੍ਰਭੂ!",
+          "legacy_gurmukhi": "myry pRIqm; pRwn ADwr mn ]",
+          "english": "My Beloved is the Support of my breath of life and mind.",
+          "last_word_timestamp": 100170.84
+        }
+      ]
+    ]
+  },
+  "baseline": {
+    "elapsed_seconds": 40.31395108698052,
+    "updates": 216,
+    "update_seconds": {
+      "median": 0.19313296998734586,
+      "max": 0.5701983849867247,
+      "p95": 0.27124657400418073
+    },
+    "polls": [
+      {
+        "audio_seconds": 16,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100016.0
+      },
+      {
+        "audio_seconds": 17,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100017
+      },
+      {
+        "audio_seconds": 18,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100018
+      },
+      {
+        "audio_seconds": 19,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100019
+      },
+      {
+        "audio_seconds": 20,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100020
+      },
+      {
+        "audio_seconds": 21,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100014.36,
+        "playhead_timestamp": 100021
+      },
+      {
+        "audio_seconds": 22,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100022
+      },
+      {
+        "audio_seconds": 23,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100023
+      },
+      {
+        "audio_seconds": 24,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100024
+      },
+      {
+        "audio_seconds": 25,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100025
+      },
+      {
+        "audio_seconds": 26,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100026
+      },
+      {
+        "audio_seconds": 27,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100027
+      },
+      {
+        "audio_seconds": 28,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100028
+      },
+      {
+        "audio_seconds": 29,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100029
+      },
+      {
+        "audio_seconds": 30,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100030
+      },
+      {
+        "audio_seconds": 31,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100031
+      },
+      {
+        "audio_seconds": 32,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100032
+      },
+      {
+        "audio_seconds": 33,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100033
+      },
+      {
+        "audio_seconds": 34,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100021.4,
+        "playhead_timestamp": 100034
+      },
+      {
+        "audio_seconds": 35,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100035
+      },
+      {
+        "audio_seconds": 36,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100036
+      },
+      {
+        "audio_seconds": 37,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100037
+      },
+      {
+        "audio_seconds": 38,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100038
+      },
+      {
+        "audio_seconds": 39,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100039
+      },
+      {
+        "audio_seconds": 40,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100040
+      },
+      {
+        "audio_seconds": 41,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100041
+      },
+      {
+        "audio_seconds": 42,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100034.84,
+        "playhead_timestamp": 100042
+      },
+      {
+        "audio_seconds": 43,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100043
+      },
+      {
+        "audio_seconds": 44,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100044
+      },
+      {
+        "audio_seconds": 45,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100045
+      },
+      {
+        "audio_seconds": 46,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100046
+      },
+      {
+        "audio_seconds": 47,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100047
+      },
+      {
+        "audio_seconds": 48,
+        "pankti_id": "BU7E",
+        "display_ids": [
+          "BU7E"
+        ],
+        "pankti_timestamp": 100042.04,
+        "playhead_timestamp": 100048
+      },
+      {
+        "audio_seconds": 49,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100049
+      },
+      {
+        "audio_seconds": 50,
+        "pankti_id": "HGEY",
+        "display_ids": [
+          "HGEY"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100050
+      },
+      {
+        "audio_seconds": 51,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100051
+      },
+      {
+        "audio_seconds": 52,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100052
+      },
+      {
+        "audio_seconds": 53,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100053
+      },
+      {
+        "audio_seconds": 54,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100054
+      },
+      {
+        "audio_seconds": 55,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100055
+      },
+      {
+        "audio_seconds": 56,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100056
+      },
+      {
+        "audio_seconds": 57,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100057
+      },
+      {
+        "audio_seconds": 58,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100058
+      },
+      {
+        "audio_seconds": 59,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100059
+      },
+      {
+        "audio_seconds": 60,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100060
+      },
+      {
+        "audio_seconds": 61,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100061
+      },
+      {
+        "audio_seconds": 62,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100062
+      },
+      {
+        "audio_seconds": 63,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100063
+      },
+      {
+        "audio_seconds": 64,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100064
+      },
+      {
+        "audio_seconds": 65,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100065
+      },
+      {
+        "audio_seconds": 66,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100066
+      },
+      {
+        "audio_seconds": 67,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100067
+      },
+      {
+        "audio_seconds": 68,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100068
+      },
+      {
+        "audio_seconds": 69,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100048.44,
+        "playhead_timestamp": 100069
+      },
+      {
+        "audio_seconds": 70,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100070
+      },
+      {
+        "audio_seconds": 71,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100071
+      },
+      {
+        "audio_seconds": 72,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100072
+      },
+      {
+        "audio_seconds": 73,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100073
+      },
+      {
+        "audio_seconds": 74,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100074
+      },
+      {
+        "audio_seconds": 75,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100075
+      },
+      {
+        "audio_seconds": 76,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100076
+      },
+      {
+        "audio_seconds": 77,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100077
+      },
+      {
+        "audio_seconds": 78,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100069.92,
+        "playhead_timestamp": 100078
+      },
+      {
+        "audio_seconds": 79,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100078.68,
+        "playhead_timestamp": 100079
+      },
+      {
+        "audio_seconds": 80,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100078.68,
+        "playhead_timestamp": 100080
+      },
+      {
+        "audio_seconds": 81,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100078.68,
+        "playhead_timestamp": 100081
+      },
+      {
+        "audio_seconds": 82,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100078.68,
+        "playhead_timestamp": 100082
+      },
+      {
+        "audio_seconds": 83,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100083
+      },
+      {
+        "audio_seconds": 84,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100084
+      },
+      {
+        "audio_seconds": 85,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100085
+      },
+      {
+        "audio_seconds": 86,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100086
+      },
+      {
+        "audio_seconds": 87,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100087
+      },
+      {
+        "audio_seconds": 88,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100088
+      },
+      {
+        "audio_seconds": 89,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100089
+      },
+      {
+        "audio_seconds": 90,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100090
+      },
+      {
+        "audio_seconds": 91,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100091
+      },
+      {
+        "audio_seconds": 92,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100092
+      },
+      {
+        "audio_seconds": 93,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100093
+      },
+      {
+        "audio_seconds": 94,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100094
+      },
+      {
+        "audio_seconds": 95,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100095
+      },
+      {
+        "audio_seconds": 96,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100096
+      },
+      {
+        "audio_seconds": 97,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100082.6,
+        "playhead_timestamp": 100097
+      },
+      {
+        "audio_seconds": 98,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100098
+      },
+      {
+        "audio_seconds": 99,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100099
+      },
+      {
+        "audio_seconds": 100,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100100
+      },
+      {
+        "audio_seconds": 101,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100101
+      },
+      {
+        "audio_seconds": 102,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100102
+      },
+      {
+        "audio_seconds": 103,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100103
+      },
+      {
+        "audio_seconds": 104,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100104
+      },
+      {
+        "audio_seconds": 105,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100105
+      },
+      {
+        "audio_seconds": 106,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100106
+      },
+      {
+        "audio_seconds": 107,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100107
+      },
+      {
+        "audio_seconds": 108,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100108
+      },
+      {
+        "audio_seconds": 109,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100109
+      },
+      {
+        "audio_seconds": 110,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100110
+      },
+      {
+        "audio_seconds": 111,
+        "pankti_id": "HYN0",
+        "display_ids": [
+          "HYN0"
+        ],
+        "pankti_timestamp": 100097.04,
+        "playhead_timestamp": 100111
+      },
+      {
+        "audio_seconds": 112,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100112
+      },
+      {
+        "audio_seconds": 113,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100113
+      },
+      {
+        "audio_seconds": 114,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100114
+      },
+      {
+        "audio_seconds": 115,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100115
+      },
+      {
+        "audio_seconds": 116,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100116
+      },
+      {
+        "audio_seconds": 117,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100117
+      },
+      {
+        "audio_seconds": 118,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100118
+      },
+      {
+        "audio_seconds": 119,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100119
+      },
+      {
+        "audio_seconds": 120,
+        "pankti_id": "FNN1",
+        "display_ids": [
+          "FNN1"
+        ],
+        "pankti_timestamp": 100112.0,
+        "playhead_timestamp": 100120
+      },
+      {
+        "audio_seconds": 121,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100121
+      },
+      {
+        "audio_seconds": 122,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100122
+      },
+      {
+        "audio_seconds": 123,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100123
+      },
+      {
+        "audio_seconds": 124,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100124
+      },
+      {
+        "audio_seconds": 125,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100125
+      },
+      {
+        "audio_seconds": 126,
+        "pankti_id": "P0X8",
+        "display_ids": [
+          "P0X8"
+        ],
+        "pankti_timestamp": 100120.96,
+        "playhead_timestamp": 100126
+      },
+      {
+        "audio_seconds": 127,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100126.36,
+        "playhead_timestamp": 100127
+      },
+      {
+        "audio_seconds": 128,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100126.36,
+        "playhead_timestamp": 100128
+      },
+      {
+        "audio_seconds": 129,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100126.36,
+        "playhead_timestamp": 100129
+      },
+      {
+        "audio_seconds": 130,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100130
+      },
+      {
+        "audio_seconds": 131,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100131
+      },
+      {
+        "audio_seconds": 132,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100132
+      },
+      {
+        "audio_seconds": 133,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100133
+      },
+      {
+        "audio_seconds": 134,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100134
+      },
+      {
+        "audio_seconds": 135,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100135
+      },
+      {
+        "audio_seconds": 136,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100136
+      },
+      {
+        "audio_seconds": 137,
+        "pankti_id": "3Q5U",
+        "display_ids": [
+          "3Q5U"
+        ],
+        "pankti_timestamp": 100129.08,
+        "playhead_timestamp": 100137
+      },
+      {
+        "audio_seconds": 138,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100138
+      },
+      {
+        "audio_seconds": 139,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100139
+      },
+      {
+        "audio_seconds": 140,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100140
+      },
+      {
+        "audio_seconds": 141,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100141
+      },
+      {
+        "audio_seconds": 142,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100142
+      },
+      {
+        "audio_seconds": 143,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100143
+      },
+      {
+        "audio_seconds": 144,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100144
+      },
+      {
+        "audio_seconds": 145,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100145
+      },
+      {
+        "audio_seconds": 146,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100146
+      },
+      {
+        "audio_seconds": 147,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100147
+      },
+      {
+        "audio_seconds": 148,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100148
+      },
+      {
+        "audio_seconds": 149,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100149
+      },
+      {
+        "audio_seconds": 150,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100137.04,
+        "playhead_timestamp": 100150
+      },
+      {
+        "audio_seconds": 151,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100151
+      },
+      {
+        "audio_seconds": 152,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100152
+      },
+      {
+        "audio_seconds": 153,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100153
+      },
+      {
+        "audio_seconds": 154,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100154
+      },
+      {
+        "audio_seconds": 155,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100155
+      },
+      {
+        "audio_seconds": 156,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100156
+      },
+      {
+        "audio_seconds": 157,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100157
+      },
+      {
+        "audio_seconds": 158,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100158
+      },
+      {
+        "audio_seconds": 159,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100159
+      },
+      {
+        "audio_seconds": 160,
+        "pankti_id": "8J7L",
+        "display_ids": [
+          "8J7L"
+        ],
+        "pankti_timestamp": 100150.76,
+        "playhead_timestamp": 100160
+      }
+    ],
+    "paired_polls": 0,
+    "distinct_observed_panktis": 7,
+    "transitions": [
+      {
+        "audio_seconds": 21.39999999999418,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 34.83999999999651,
+        "score": 0.9867,
+        "pankti_id": "HGEY",
+        "shabad_id": "H3F",
+        "order_id": 8420,
+        "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+        "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+        "english": "The treasure of all happiness, celestial peace and poise,",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੁਖ ਸਹਜ ਨਿਧਾਨ"
+      },
+      {
+        "audio_seconds": 34.83999999999651,
+        "score": 0.832,
+        "pankti_id": "HGEY",
+        "shabad_id": "H3F",
+        "order_id": 8420,
+        "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+        "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+        "english": "The treasure of all happiness, celestial peace and poise,",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੁਖ ਸਹਜ ਨਿਧਾਨ"
+      },
+      {
+        "audio_seconds": 42.0399999999936,
+        "score": 0.9867,
+        "pankti_id": "BU7E",
+        "shabad_id": "BJU",
+        "order_id": 12755,
+        "punjabi": "ਪ੍ਰਭੂ ਸਾਰੀਆਂ ਸ਼ਕਤੀਆਂ ਨਾਲ ਪੂਰਨ ਹੈ, (ਸਭ ਜੀਵਾਂ ਦੇ) ਦੁੱਖ-ਦਰਦ ਜਾਣਦਾ ਹੈ।",
+        "legacy_gurmukhi": "srb klw BrpUr pRB; ibrQw jwnnhwr ]",
+        "english": "God is totally imbued with all powers; He is the Knower of our troubles.",
+        "speech": "ਸਰਬ ਕਲਾ ਭਰਪੂਰ ਪ੍ਰਭ ਬਿਰਥਾ ਜਾਨਨਹਾਰ"
+      },
+      {
+        "audio_seconds": 48.44000000000233,
+        "score": 0.9,
+        "pankti_id": "HGEY",
+        "shabad_id": "H3F",
+        "order_id": 8420,
+        "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+        "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+        "english": "The treasure of all happiness, celestial peace and poise,",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੁਖ ਸਹਜ ਨਿਧਾਨ"
+      },
+      {
+        "audio_seconds": 48.44000000000233,
+        "score": 1.0,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 69.91999999999825,
+        "score": 0.9,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 78.67999999999302,
+        "score": 1.0,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 82.60000000000582,
+        "score": 1.0,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 97.0399999999936,
+        "score": 0.92,
+        "pankti_id": "HYN0",
+        "shabad_id": "GDB",
+        "order_id": 13224,
+        "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+        "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+        "english": "All joys and comforts are in the treasure of the Naam.",
+        "speech": "ਸਰਬ ਕਲਿਆਣ ਸੂਖ ਨਿਧਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 112.0,
+        "score": 0.92,
+        "pankti_id": "FNN1",
+        "shabad_id": "GDB",
+        "order_id": 13225,
+        "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+        "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+        "english": "Even the drowning can reach the place of rest and safety.",
+        "speech": "ਬੂਡਤ ਜਾਤ ਪਾਏ ਬਿਸ੍ਰਾਮੁ"
+      },
+      {
+        "audio_seconds": 120.9600000000064,
+        "score": 1.0,
+        "pankti_id": "P0X8",
+        "shabad_id": "GDB",
+        "order_id": 13227,
+        "punjabi": "(ਤਾਂ ਤੇ) ਹੇ ਨਾਨਕ! ਨਾਮ ਜਪਹੁ, (ਨਾਮ ਹੀ) ਗੁਣਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ (ਹੈ) ॥੫॥",
+        "legacy_gurmukhi": "nwnk; nwmu jphu gunqwsu ]5]",
+        "english": "O Nanak, chant the Naam, the treasure of excellence. ||5||",
+        "speech": "ਨਾਨਕ ਨਾਮੁ ਜਪਹੁ ਗੁਨਤਾਸੁ"
+      },
+      {
+        "audio_seconds": 126.36000000000058,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 129.08000000000175,
+        "score": 0.92,
+        "pankti_id": "3Q5U",
+        "shabad_id": "GDB",
+        "order_id": 13218,
+        "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+        "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+        "english": "O friends, O Saints, make this your work.",
+        "speech": "ਸਾਜਨ ਸੰਤ ਕਰਹੁ ਇਹੁ ਕਾਮੁ"
+      },
+      {
+        "audio_seconds": 137.0399999999936,
+        "score": 1.0,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      },
+      {
+        "audio_seconds": 150.75999999999476,
+        "score": 0.875,
+        "pankti_id": "8J7L",
+        "shabad_id": "GDB",
+        "order_id": 13219,
+        "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+        "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+        "english": "Renounce everything else, and chant the Name of the Lord.",
+        "speech": "ਆਨ ਤਿਆਗਿ ਜਪਹੁ ਹਰਿ ਨਾਮੁ"
+      }
+    ],
+    "timeline": [
+      [
+        3.3999999999941792,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord."
+        }
+      ],
+      [
+        14.360000000000582,
+        {
+          "score": 1.0,
+          "pankti_id": "3Q5U",
+          "shabad_id": "GDB",
+          "order_id": 13218,
+          "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+          "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+          "english": "O friends, O Saints, make this your work."
+        }
+      ],
+      [
+        21.39999999999418,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord."
+        }
+      ],
+      [
+        34.83999999999651,
+        {
+          "score": 0.9867,
+          "pankti_id": "HGEY",
+          "shabad_id": "H3F",
+          "order_id": 8420,
+          "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+          "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+          "english": "The treasure of all happiness, celestial peace and poise,"
+        }
+      ],
+      [
+        34.83999999999651,
+        {
+          "score": 0.832,
+          "pankti_id": "HGEY",
+          "shabad_id": "H3F",
+          "order_id": 8420,
+          "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+          "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+          "english": "The treasure of all happiness, celestial peace and poise,"
+        }
+      ],
+      [
+        42.0399999999936,
+        {
+          "score": 0.9867,
+          "pankti_id": "BU7E",
+          "shabad_id": "BJU",
+          "order_id": 12755,
+          "punjabi": "ਪ੍ਰਭੂ ਸਾਰੀਆਂ ਸ਼ਕਤੀਆਂ ਨਾਲ ਪੂਰਨ ਹੈ, (ਸਭ ਜੀਵਾਂ ਦੇ) ਦੁੱਖ-ਦਰਦ ਜਾਣਦਾ ਹੈ।",
+          "legacy_gurmukhi": "srb klw BrpUr pRB; ibrQw jwnnhwr ]",
+          "english": "God is totally imbued with all powers; He is the Knower of our troubles."
+        }
+      ],
+      [
+        48.44000000000233,
+        {
+          "score": 0.9,
+          "pankti_id": "HGEY",
+          "shabad_id": "H3F",
+          "order_id": 8420,
+          "punjabi": "ਉਸ ਨੂੰ ਸਾਰੇ ਸੁਖਾਂ ਦੇ ਖ਼ਜ਼ਾਨੇ ਤੇ ਆਤਮਕ ਅਡੋਲਤਾ ਦੇ ਆਨੰਦ ਮਿਲ ਜਾਂਦੇ ਹਨ,",
+          "legacy_gurmukhi": "srb kilAwx; suK shj inDwn ]",
+          "english": "The treasure of all happiness, celestial peace and poise,"
+        }
+      ],
+      [
+        48.44000000000233,
+        {
+          "score": 1.0,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam."
+        }
+      ],
+      [
+        69.91999999999825,
+        {
+          "score": 0.9,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam."
+        }
+      ],
+      [
+        78.67999999999302,
+        {
+          "score": 1.0,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam."
+        }
+      ],
+      [
+        82.60000000000582,
+        {
+          "score": 1.0,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety."
+        }
+      ],
+      [
+        97.0399999999936,
+        {
+          "score": 0.92,
+          "pankti_id": "HYN0",
+          "shabad_id": "GDB",
+          "order_id": 13224,
+          "punjabi": "ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਭਲੇ ਭਾਗਾਂ ਤੇ ਸਾਰੇ ਸੁਖਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ ਹੈ,",
+          "legacy_gurmukhi": "srb kilAwx; sUK iniD nwmu ]",
+          "english": "All joys and comforts are in the treasure of the Naam."
+        }
+      ],
+      [
+        112.0,
+        {
+          "score": 0.92,
+          "pankti_id": "FNN1",
+          "shabad_id": "GDB",
+          "order_id": 13225,
+          "punjabi": "(ਨਾਮ ਜਪਿਆਂ ਵਿਕਾਰਾਂ ਵਿਚ) ਡੁੱਬਦੇ ਜਾਂਦੇ ਨੂੰ ਆਸਰਾ ਟਿਕਾਣਾ ਮਿਲਦਾ ਹੈ;",
+          "legacy_gurmukhi": "bUfq jwq; pwey ibsRwmu ]",
+          "english": "Even the drowning can reach the place of rest and safety."
+        }
+      ],
+      [
+        120.9600000000064,
+        {
+          "score": 1.0,
+          "pankti_id": "P0X8",
+          "shabad_id": "GDB",
+          "order_id": 13227,
+          "punjabi": "(ਤਾਂ ਤੇ) ਹੇ ਨਾਨਕ! ਨਾਮ ਜਪਹੁ, (ਨਾਮ ਹੀ) ਗੁਣਾਂ ਦਾ ਖ਼ਜ਼ਾਨਾ (ਹੈ) ॥੫॥",
+          "legacy_gurmukhi": "nwnk; nwmu jphu gunqwsu ]5]",
+          "english": "O Nanak, chant the Naam, the treasure of excellence. ||5||"
+        }
+      ],
+      [
+        126.36000000000058,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord."
+        }
+      ],
+      [
+        129.08000000000175,
+        {
+          "score": 0.92,
+          "pankti_id": "3Q5U",
+          "shabad_id": "GDB",
+          "order_id": 13218,
+          "punjabi": "ਹੇ ਸੱਜਣ ਜਨੋ! ਹੇ ਸੰਤ ਜਨੋ! ਇਹ ਕੰਮ ਕਰੋ,",
+          "legacy_gurmukhi": "swjn sMq; krhu iehu kwmu ]",
+          "english": "O friends, O Saints, make this your work."
+        }
+      ],
+      [
+        137.0399999999936,
+        {
+          "score": 1.0,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord."
+        }
+      ],
+      [
+        150.75999999999476,
+        {
+          "score": 0.875,
+          "pankti_id": "8J7L",
+          "shabad_id": "GDB",
+          "order_id": 13219,
+          "punjabi": "ਹੋਰ ਸਾਰੇ (ਆਹਰ) ਛੱਡ ਕੇ ਪ੍ਰਭੂ ਦਾ ਨਾਮ ਜਪਹੁ।",
+          "legacy_gurmukhi": "Awn iqAwig; jphu hir nwmu ]",
+          "english": "Renounce everything else, and chant the Name of the Lord."
+        }
+      ],
+      [
+        161.36000000000058,
+        {
+          "score": 1.0,
+          "pankti_id": "EXZC",
+          "shabad_id": "CSZ",
+          "order_id": 50857,
+          "punjabi": "ਹੇ ਮੇਰੇ ਪ੍ਰੀਤਮ ਪ੍ਰਭੂ! ਹੇ ਮੇਰੀ ਜਿੰਦ ਤੇ ਮਨ ਦੇ ਆਸਰੇ ਪ੍ਰਭੂ!",
+          "legacy_gurmukhi": "myry pRIqm; pRwn ADwr mn ]",
+          "english": "My Beloved is the Support of my breath of life and mind."
+        }
+      ]
+    ]
+  },
+  "audit": {
+    "exact_unique_pair_checks": 47,
+    "current_on_time": 46,
+    "baseline_on_time": 32,
+    "checks": [
+      {
+        "audio_seconds": 18.28,
+        "words": "ਆਨ ਤਿਆਗ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 3.119999999994178
+      },
+      {
+        "audio_seconds": 20.0,
+        "words": "ਤਿਆਗ ਜਪਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 1.3999999999941792
+      },
+      {
+        "audio_seconds": 21.4,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 22.04,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 42.72,
+        "words": "ਸਰਬ ਕਲਾ",
+        "shabad_id": "BJU",
+        "expected_pankti_id": "BU7E",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 48.88,
+        "words": "ਸਰਬ ਕਲਿਆਣ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 54.92,
+        "words": "ਕਲਿਆਣ ਸੂਖ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 55.48,
+        "words": "ਸੂਖ ਨਿਧ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 56.0,
+        "words": "ਨਿਧ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 62.24,
+        "words": "ਬੂਡਤ ਜਾਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": null
+      },
+      {
+        "audio_seconds": 76.88,
+        "words": "ਸਰਬ ਕਲਿਆਣ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 78.08,
+        "words": "ਕਲਿਆਣ ਸੂਖ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 78.68,
+        "words": "ਸੂਖ ਨਿਧ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 79.24,
+        "words": "ਨਿਧ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 81.88,
+        "words": "ਬੂਡਤ ਜਾਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 0.7200000000058253
+      },
+      {
+        "audio_seconds": 82.6,
+        "words": "ਜਾਤ ਪਾਏ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 83.28,
+        "words": "ਪਾਏ ਬਿਸ੍ਰਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 88.0,
+        "words": "ਬੂਡਤ ਜਾਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 90.56,
+        "words": "ਜਾਤ ਪਾਏ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 91.24,
+        "words": "ਪਾਏ ਬਿਸ੍ਰਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 94.88,
+        "words": "ਸਰਬ ਕਲਿਆਣ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 2.1599999999936017
+      },
+      {
+        "audio_seconds": 97.04,
+        "words": "ਕਲਿਆਣ ਸੂਖ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 98.12,
+        "words": "ਸੂਖ ਨਿਧ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "HYN0",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 102.8,
+        "words": "ਬੂਡਤ ਜਾਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 9.200000000000003
+      },
+      {
+        "audio_seconds": 110.2,
+        "words": "ਬੂਡਤ ਜਾਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 1.7999999999999972
+      },
+      {
+        "audio_seconds": 112.0,
+        "words": "ਜਾਤ ਪਾਏ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 112.96,
+        "words": "ਪਾਏ ਬਿਸ੍ਰਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "FNN1",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 116.92,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 9.44000000000058
+      },
+      {
+        "audio_seconds": 117.48,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 8.880000000000578
+      },
+      {
+        "audio_seconds": 120.2,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 6.160000000000579
+      },
+      {
+        "audio_seconds": 120.96,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 5.400000000000588
+      },
+      {
+        "audio_seconds": 124.08,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 2.280000000000584
+      },
+      {
+        "audio_seconds": 124.68,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": 1.6800000000005753
+      },
+      {
+        "audio_seconds": 127.36,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 128.12,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 130.68,
+        "words": "ਸਾਜਨ ਸੰਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "3Q5U",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 131.52,
+        "words": "ਸੰਤ ਕਰਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "3Q5U",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 133.04,
+        "words": "ਕਰਹ ਇਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "3Q5U",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 137.04,
+        "words": "ਆਨ ਤਿਆਗ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 138.68,
+        "words": "ਤਿਆਗ ਜਪਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 140.12,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 144.88,
+        "words": "ਸਾਜਨ ਸੰਤ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "3Q5U",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": null
+      },
+      {
+        "audio_seconds": 151.32,
+        "words": "ਆਨ ਤਿਆਗ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 152.8,
+        "words": "ਤਿਆਗ ਜਪਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 154.36,
+        "words": "ਜਪਹ ਹਰ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 155.0,
+        "words": "ਹਰ ਨਾਮ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "8J7L",
+        "current_on_time": true,
+        "current_delay_seconds": 0,
+        "baseline_on_time": true,
+        "baseline_delay_seconds": 0
+      },
+      {
+        "audio_seconds": 160.0,
+        "words": "ਨਾਮ ਜਪਹ",
+        "shabad_id": "GDB",
+        "expected_pankti_id": "P0X8",
+        "current_on_time": false,
+        "current_delay_seconds": null,
+        "baseline_on_time": false,
+        "baseline_delay_seconds": null
+      }
+    ],
+    "ambiguous_refrain_pairs": 3,
+    "ambiguous_cases": [
+      {
+        "audio_seconds": 119.0,
+        "words": "ਨਾਮ ਜਪਹ ਹਰ",
+        "excluded_pankti_id": "P0X8"
+      },
+      {
+        "audio_seconds": 122.72,
+        "words": "ਨਾਮ ਜਪਹ ਹਰ",
+        "excluded_pankti_id": "P0X8"
+      },
+      {
+        "audio_seconds": 126.36,
+        "words": "ਨਾਮ ਜਪਹ ਹਰ",
+        "excluded_pankti_id": "P0X8"
+      }
+    ],
+    "note": "ASR-to-pankti consistency within agreed selected shabads; not human accuracy or WER."
+  },
+  "human_accuracy_measured": false,
+  "events_sha256": "bd5c959588ebb731320e50cb05220f4f6c1b838437400b798cbfe3d8437ee1a7",
+  "sources_sha256": {
+    "server.py": "58e637e4816c18cebd9de011020092a7c77f24496bf90fe6ffa3f26b9fd5e969",
+    "bani_matching.py": "fc3001132eb15084b0c3a6960bbb3c2ece705231ca47f15ec5145345f2fb13e8",
+    "pankti_display.py": "35749ea86f61bb0214364d10f3aed27845bbf734af07b632be84ba475df9e02f",
+    "public/live.js": "f44e4db7a79b01e57aa7917d5ce5de83e88134308475fcd3ca794cbc378bf6a0",
+    "public/live.css": "d3f2fbfb2a1eb7a7e24252b602d1463d1df60729bdaff5c93af8feddd8c83d56"
+  },
+  "baseline_reused_from_same_causal_capture": true
+}

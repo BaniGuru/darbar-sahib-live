@@ -221,7 +221,9 @@ class BaniMatchingTests(unittest.TestCase):
                 '_debug_recompute_from':None,'_pankti_timeline':[],'_stream_wall_started_at':100000}
         with patch.multiple(server,**values),patch.object(server.logger,'info'):
             asyncio.run(server._handle_asr_messages(Socket()))
-            first_at=server._pankti_timeline[0][0]
+            first_at=next(at for at,line in server._pankti_timeline
+                          if line.get('match_mode') == 'bani-auto-next'
+                          and line['pankti_id'] == route[2]['pankti_id'])
         ending=json.loads(messages[0])['committed_words'][-1]['end']
         self.assertEqual(first_at,100000+ending)
         self.assertEqual(observed[0]['pankti_id'],route[2]['pankti_id'])
