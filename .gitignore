@@ -3,4 +3,5 @@ __pycache__
 .DS_Store
 data/kirtan_duties.json
 data/kirtan_duties.json.lock
+data/kirtan_duties.meta.json
 data/kirtan_duties.log

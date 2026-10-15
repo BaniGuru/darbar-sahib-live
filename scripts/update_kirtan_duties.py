@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 from contextlib import contextmanager
 import csv
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import fcntl
 import hashlib
 from html.parser import HTMLParser
@@ -192,6 +192,156 @@ def content_hash(pages):
     return hashlib.sha256(json.dumps(lines, ensure_ascii=False).encode()).hexdigest()
 
 
+DATE_PATTERN = r"(\d{2})[./-](\d{2})[./-](\d{4})"
+TIME_PATTERN = r"(?<!\d)(\d{1,2})[.:](\d{2})(?![\d.])"
+
+
+def _date(value):
+    match = re.fullmatch(DATE_PATTERN, value)
+    if not match:
+        raise ValueError(f"Invalid duty date: {value}")
+    return datetime(*(int(match[i]) for i in (3, 2, 1))).date()
+
+
+def _time_range(cell, period):
+    times = re.findall(TIME_PATTERN, cell)
+    open_end = "ਸਮਾਪਤੀ" in cell
+    if "ਤੋਂ" not in cell or len(times) != (1 if open_end else 2):
+        raise ValueError(f"Unrecognized duty time range: {cell}")
+    if "ਸ਼ਾਮ" in cell or "ਦੁਪਹਿਰ" in cell:
+        period = "pm"
+    values = []
+    for raw_hour, raw_minute in times:
+        hour, minute = int(raw_hour), int(raw_minute)
+        if not 0 <= hour <= 23 or not 0 <= minute < 60:
+            raise ValueError(f"Invalid duty time: {cell}")
+        if period == "pm" and hour < 12:
+            hour += 12
+        values.append(f"{hour:02d}:{minute:02d}")
+    if not open_end and values[0] >= values[1]:
+        raise ValueError(f"Duty ends before it starts: {cell}")
+    return values[0], "" if open_end else values[1]
+
+
+def _table_times(ids, headers):
+    """Reassemble the wrapped time headings in the numbered SGPC tables.
+
+    Numeric values come from the PDF; a changed/unrecognized layout fails
+    rather than silently applying a hardcoded daily timetable.
+    """
+    def find(predicate):
+        matches = [row for row in headers if predicate(row)]
+        if len(matches) != 1:
+            raise ValueError(f"Cannot uniquely read time headings for columns {ids}")
+        return matches[0]
+
+    def count(cell):
+        return len(re.findall(TIME_PATTERN, cell))
+
+    if ids == (1, 2, 3, 4):
+        starts = find(lambda row: len(row) == 2 and all(count(cell) == 1 and "ਤੋਂ" in cell for cell in row))
+        ends = find(lambda row: len(row) == 2 and all(count(cell) == 1 and "ਤੋਂ" not in cell for cell in row))
+        right = find(lambda row: len(row) == 3 and row[0] == "ਮਿਤੀ" and all(count(cell) == 2 for cell in row[1:]))
+        later = find(lambda row: len(row) == 4 and count(row[0]) == 2 and count(row[1]) == 0
+                     and all(count(cell) == 2 for cell in row[2:]))
+        result = {1: [_time_range(starts[0]+" "+ends[0], "am")],
+                  2: [_time_range(starts[1]+" "+ends[1], "am")],
+                  3: [_time_range(right[1], "am")], 4: [_time_range(right[2], "am")]}
+        for slot, cell in zip((1, 3, 4), (later[0], later[2], later[3])):
+            result[slot].append(_time_range(cell, "pm"))
+        # "Broadcasting" labels Asa Ki Vaar, and supplies no extra time range.
+        return result
+    if ids == (5, 6, 7, 8):
+        morning = find(lambda row: len(row) == 3 and all(count(cell) == 2 for cell in row))
+        midday = find(lambda row: len(row) == 1 and count(row[0]) == 2)
+        later = find(lambda row: len(row) == 4 and row[0] == "ਮਿਤੀ" and all(count(cell) == 2 for cell in row[1:]))
+        last = find(lambda row: len(row) == 4 and all(count(cell) == 0 for cell in row[:3])
+                    and "ਸਮਾਪਤੀ" in row[3])
+        result = {slot: [_time_range(early, "am"), _time_range(late, "pm")]
+                  for slot, early, late in zip((5, 6, 7), morning, later[1:])}
+        result[8] = [_time_range(midday[0], "pm"), _time_range(last[3], "pm")]
+        return result
+    raise ValueError(f"Unsupported SGPC duty columns: {ids}")
+
+
+def parse_duties(pages):
+    """Build complete dated assignments, preserving gaps and unspecified ends."""
+    if not isinstance(pages, list) or not pages:
+        raise ValueError("No extracted duties pages")
+    sections = []
+    current = None
+    declared_ranges = set()
+    digit_map = str.maketrans("੦੧੨੩੪੫੬੭੮੯", "0123456789")
+    for page in pages:
+        if not isinstance(page, dict) or not isinstance(page.get("lines"), list):
+            raise ValueError("Invalid extracted duties page")
+        for line in page["lines"]:
+            if not isinstance(line, dict):
+                raise ValueError("Invalid extracted duties row")
+            raw_columns = line.get("columns") or re.split(r"\s{2,}", line.get("text", "").strip())
+            columns = [unicodedata.normalize("NFC", str(cell)).translate(digit_map).strip()
+                       for cell in raw_columns]
+            if not any(columns):
+                continue
+            text = " ".join(columns)
+            if "ਮਿਤੀ" in text and "ਤੀਕ" in text:
+                dates = re.findall(DATE_PATTERN, text)
+                if len(dates) == 2:
+                    declared_ranges.add(tuple(_date(".".join(date)) for date in dates))
+            if len(columns) > 1 and all(cell.isdecimal() for cell in columns):
+                ids = tuple(map(int, columns))
+                if ids not in {(1, 2, 3, 4), (5, 6, 7, 8)}:
+                    raise ValueError(f"Unsupported SGPC duty columns: {ids}")
+                current = {"ids": ids, "headers": [], "rows": {}}
+                sections.append(current)
+            elif re.match(DATE_PATTERN+r"(?:\s|$)", columns[0]):
+                if current is None or len(columns) != 5:
+                    raise ValueError(f"Duty row lost its numbered table or four raagis: {text}")
+                date = _date(columns[0])
+                names = columns[1:]
+                if not all(readable_punjabi(name) for name in names):
+                    raise ValueError(f"Unreadable raagi on {date}")
+                previous = current["rows"].get(date)
+                if previous is not None and previous != names:
+                    raise ValueError(f"Conflicting duty row on {date}")
+                current["rows"][date] = names
+            elif current is not None and not current["rows"]:
+                current["headers"].append(columns)
+    assignments = {}
+    for section in sections:
+        times = _table_times(section["ids"], section["headers"])
+        for date, names in section["rows"].items():
+            daily = assignments.setdefault(date, {})
+            for slot, name in zip(section["ids"], names):
+                assignment = (name, times[slot])
+                if slot in daily and daily[slot] != assignment:
+                    raise ValueError(f"Conflicting assignment on {date}, column {slot}")
+                daily[slot] = assignment
+    if not assignments:
+        raise ValueError("No dated SGPC duty assignments found")
+    if declared_ranges:
+        if len(declared_ranges) != 1:
+            raise ValueError("Conflicting published duty date ranges")
+        first, last = next(iter(declared_ranges))
+        if not 0 <= (last-first).days <= 366:
+            raise ValueError("Invalid published duty date range")
+        expected = {first+timedelta(days=day) for day in range((last-first).days+1)}
+        if set(assignments) != expected:
+            raise ValueError("Duties do not cover the complete published date range")
+    result = {}
+    for date, daily in sorted(assignments.items()):
+        if set(daily) != set(range(1, 9)):
+            raise ValueError(f"Incomplete raagi table on {date}")
+        entries = sorted((dict(start_time=start, end_time=end, raagi=name)
+                          for name, ranges in daily.values() for start, end in ranges),
+                         key=lambda entry: entry["start_time"])
+        for previous, following in zip(entries, entries[1:]):
+            if not previous["end_time"] or previous["end_time"] > following["start_time"]:
+                raise ValueError(f"Overlapping duty times on {date}")
+        result[date.strftime("%d-%m-%Y")] = entries
+    return result
+
+
 def atomic_write(output: Path, document):
     temporary = None
     try:
@@ -220,41 +370,97 @@ def output_lock(output: Path):
             fcntl.flock(lock, fcntl.LOCK_UN)
 
 
+def metadata_path(output):
+    return output.with_suffix(".meta.json")
+
+
+def duties_hash(duties):
+    return hashlib.sha256(json.dumps(duties, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def read_existing(output):
+    existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
+    if existing is not None and not isinstance(existing, dict):
+        raise ValueError("Existing duties JSON is not an object")
+    return existing
+
+
+def _cache_for(output, existing):
+    if existing and "pages" in existing:
+        return existing  # Old output is its own extraction cache during migration.
+    path = metadata_path(output)
+    if not existing or not path.exists():
+        return None
+    try:
+        cache = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        LOGGER.warning("Ignoring unreadable duties metadata; fetching without validators")
+        return None
+    # A crash between the two atomic writes must not hide an unapplied update.
+    if isinstance(cache, dict) and cache.get("duties_sha256") == duties_hash(existing.get("duties")):
+        return cache
+    return None
+
+
+def _store_schedule(output, pages, metadata, existing):
+    duties = parse_duties(pages)
+    changed = (not existing or set(existing) != {"duties", "updated_at"}
+               or existing.get("duties") != duties)
+    cache = {**metadata, "schema_version": 2, "pages": pages,
+             "content_sha256": content_hash(pages), "duties_sha256": duties_hash(duties)}
+    # Write provenance first. Its hash is checked against the main JSON on read.
+    atomic_write(metadata_path(output), cache)
+    if changed:
+        atomic_write(output, {"duties": duties, "updated_at": datetime.now(timezone.utc).isoformat()})
+    return changed
+
+
+def convert_existing_json(source: Path, output: Path):
+    """Migrate a saved extraction without requiring another network request."""
+    with output_lock(output):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        if source.resolve() == output.resolve() and isinstance(data, dict) and set(data) == {"duties", "updated_at"}:
+            return False
+        if not isinstance(data, dict) or not isinstance(data.get("pages"), list):
+            raise ValueError("--from-json requires the old JSON containing extracted pages")
+        return _store_schedule(output, data["pages"], data, read_existing(output))
+
+
 def refresh(output: Path, client):
     with output_lock(output):
-        existing = json.loads(output.read_text(encoding="utf-8")) if output.exists() else None
-        if existing is not None and not isinstance(existing, dict):
-            raise ValueError("Existing duties JSON is not an object")
-        fetched = download_pdf(client, existing)
+        existing = read_existing(output)
+        cache = _cache_for(output, existing)
+        fetched = download_pdf(client, cache)
         if fetched is None:
-            return False
+            if existing and set(existing) == {"duties", "updated_at"}:
+                return False
+            return _store_schedule(output, cache["pages"], cache, existing)
         pdf, pdf_url, headers = fetched
         pdf_hash = hashlib.sha256(pdf).hexdigest()
-        if existing and existing.get("pdf_sha256") == pdf_hash:
-            return False
+        if cache and cache.get("pdf_sha256") == pdf_hash:
+            if existing and set(existing) == {"duties", "updated_at"}:
+                return False
+            return _store_schedule(output, cache["pages"], cache, existing)
         pages = extract_pages(pdf)
-        digest = content_hash(pages)
-        if existing and existing.get("content_sha256") == digest:
-            return False
-        document = dict(
-            schema_version=1, source_url=SOURCE_URL, pdf_url=pdf_url,
-            fetched_at=datetime.now(timezone.utc).isoformat(),
-            content_sha256=digest, pdf_sha256=pdf_hash,
-            etag=headers.get("etag"), last_modified=headers.get("last-modified"), pages=pages,
-        )
-        atomic_write(output, document)
-        return True
+        metadata = dict(source_url=SOURCE_URL, pdf_url=pdf_url,
+                        fetched_at=datetime.now(timezone.utc).isoformat(), pdf_sha256=pdf_hash,
+                        etag=headers.get("etag"), last_modified=headers.get("last-modified"))
+        return _store_schedule(output, pages, metadata, existing)
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--from-json", type=Path, help="Convert an existing raw-pages JSON without fetching the PDF")
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
-        with httpx.Client(timeout=30, follow_redirects=True, max_redirects=3,
-                          headers={"User-Agent": "BaniGuru-kirtan-duties/1.0"}) as client:
-            changed = refresh(args.output.resolve(), client)
+        if args.from_json:
+            changed = convert_existing_json(args.from_json, args.output.resolve())
+        else:
+            with httpx.Client(timeout=30, follow_redirects=True, max_redirects=3,
+                              headers={"User-Agent": "BaniGuru-kirtan-duties/1.0"}) as client:
+                changed = refresh(args.output.resolve(), client)
         LOGGER.info("%s: %s", "Updated duties" if changed else "No new duties; file unchanged", args.output)
         return 0
     except BlockingIOError:

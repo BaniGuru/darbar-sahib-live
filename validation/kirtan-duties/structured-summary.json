@@ -1,0 +1,46 @@
+{
+  "python_tests": 165,
+  "duties_tests": 32,
+  "passed": true,
+  "skipped": 0,
+  "source": "Complete raw-pages JSON uploaded by user",
+  "source_attachment_sha256": "bc02dc5a052cc6b3c6429c3c92663efce1ca1d40172311fa394c743e2a515ba5",
+  "fresh_sgpc_pdf_download": false,
+  "dates": 17,
+  "assignments": 255,
+  "assignments_per_date": 15,
+  "date_format": "DD-MM-YYYY",
+  "time_format": "HH:MM",
+  "timezone": "Asia/Kolkata",
+  "output_top_level_keys": [
+    "duties",
+    "updated_at"
+  ],
+  "assignment_keys": [
+    "start_time",
+    "end_time",
+    "raagi"
+  ],
+  "updated_at_timezone": "UTC",
+  "samapti_end_time": "",
+  "broadcast_label_creates_extra_assignment": false,
+  "repeated_conversion_preserves_bytes_and_mtime": true,
+  "metadata_stored_separately": true,
+  "offline_existing_file_migration_verified": true,
+  "same_pdf_and_304_migrations_verified": true,
+  "stale_metadata_recovery_verified": true,
+  "rejected_cases": [
+    "missing date in one or both tables",
+    "unsupported slot numbers",
+    "conflicting date rows",
+    "overlapping times"
+  ],
+  "existing_cron_unchanged": true,
+  "new_dependencies": false,
+  "sources_sha256": {
+    "scripts/update_kirtan_duties.py": "3ed5a051f712a89910cf5f8f34baa67f62d5a28b4ea37c45d74a4844eccf15c3",
+    "tests/test_kirtan_duties.py": "3183dc64971f74c52bdc5126e0427280e7f79688c91af3acf25c469a32752b24",
+    "validation/kirtan-duties/fixtures/sgpc-raw-pages.json": "bc02dc5a052cc6b3c6429c3c92663efce1ca1d40172311fa394c743e2a515ba5",
+    "validation/kirtan-duties/structured-duties.json": "e20bdd69eb591e7e9906a8c4770ff5e2a682f47b2773f7e792e3bf12b1dc1c35"
+  }
+}

@@ -1,3 +1,4 @@
+from copy import deepcopy
 import json
 from pathlib import Path
 import shutil
@@ -12,8 +13,17 @@ import httpx
 from scripts import update_kirtan_duties as duties
 
 
-PAGES = [{"page": 1, "lines": [{"text": "ਭਾਈ ਸਾਹਿਬ    02:00 - 04:00",
-                                    "columns": ["ਭਾਈ ਸਾਹਿਬ", "02:00 - 04:00"]}]}]
+FIXTURES = Path(__file__).resolve().parents[1] / "validation/kirtan-duties/fixtures"
+RAW = json.loads((FIXTURES/"sgpc-raw-pages.json").read_text(encoding="utf-8"))
+PAGES = RAW["pages"]
+
+
+def changed_pages():
+    pages = deepcopy(PAGES)
+    line = next(row for row in pages[0]["lines"] if row["columns"][0] == "02.10.2026")
+    line["columns"][1] = "ਭਾਈ ਨਵੇਂ ਸਾਹਿਬ ਸਿੰਘ"
+    line["text"] = "  ".join(line["columns"])
+    return pages
 
 
 def ocr_available():
@@ -72,9 +82,12 @@ class DutiesTests(unittest.TestCase):
     def test_first_refresh_writes_unicode_json_and_metadata(self):
         self.assertTrue(self.refresh(headers={"etag": '"week-1"'}))
         data = json.loads(self.output.read_text())
-        self.assertEqual(data["pages"], PAGES)
-        self.assertEqual(data["etag"], '"week-1"')
-        self.assertEqual(data["source_url"], duties.SOURCE_URL)
+        self.assertEqual(set(data), {"duties", "updated_at"})
+        self.assertEqual(data["duties"]["02-10-2026"][0]["raagi"], "ਭਾਈ ਗੁਰਮੇਲ ਸਿੰਘ")
+        cache = json.loads(duties.metadata_path(self.output).read_text())
+        self.assertEqual(cache["pages"], PAGES)
+        self.assertEqual(cache["etag"], '"week-1"')
+        self.assertEqual(cache["source_url"], duties.SOURCE_URL)
         self.assertIn("ਭਾਈ".encode(), self.output.read_bytes())
 
     def test_identical_pdf_keeps_bytes_and_modification_time(self):
@@ -86,16 +99,107 @@ class DutiesTests(unittest.TestCase):
 
     def test_regenerated_pdf_and_layout_spacing_are_not_new_data(self):
         self.refresh();before = self.snapshot()
-        pages = [{"page": 1, "lines": [{"text": "ਭਾਈ ਸਾਹਿਬ  02:00 - 04:00", "columns": []}]}]
+        pages = deepcopy(PAGES)
+        pages[0]["lines"].append({"text": "ਬਦਲਿਆ ਨੋਟ", "columns": ["ਬਦਲਿਆ ਨੋਟ"]})
         self.assertFalse(self.refresh(body=b"%PDF-regenerated", pages=pages))
         self.assertEqual(self.snapshot(), before)
 
     def test_changed_duties_replace_previous_data(self):
         self.refresh();before = self.output.read_bytes()
-        pages = [{"page": 1, "lines": [{"text": "ਭਾਈ ਦੂਜੇ ਸਾਹਿਬ  04:00 - 06:00", "columns": []}]}]
+        pages = changed_pages()
         self.assertTrue(self.refresh(body=b"%PDF-new", pages=pages))
         self.assertNotEqual(self.output.read_bytes(), before)
-        self.assertEqual(json.loads(self.output.read_text())["pages"], pages)
+        self.assertEqual(json.loads(self.output.read_text())["duties"]["02-10-2026"][0]["raagi"], "ਭਾਈ ਨਵੇਂ ਸਾਹਿਬ ਸਿੰਘ")
+
+    def test_full_attachment_has_17_days_and_255_time_assignments(self):
+        schedule = duties.parse_duties(PAGES)
+        self.assertEqual(list(schedule), [f"{day:02d}-10-2026" for day in range(1,18)])
+        self.assertTrue(all(len(entries) == 15 for entries in schedule.values()))
+        self.assertEqual(sum(map(len, schedule.values())), 255)
+        for entries in schedule.values():
+            self.assertTrue(all(set(row) == {"start_time", "end_time", "raagi"} for row in entries))
+            self.assertEqual(entries[-1]["start_time"], "20:45")
+            self.assertEqual(entries[-1]["end_time"], "")
+
+    def test_october_2_exact_morning_evening_and_midday_assignments(self):
+        schedule = duties.parse_duties(PAGES)["02-10-2026"]
+        self.assertEqual([(row["start_time"], row["end_time"]) for row in schedule],
+                         [("02:45","03:45"),("03:45","06:45"),("06:50","08:00"),
+                          ("08:00","09:00"),("09:00","10:00"),("10:00","11:00"),
+                          ("11:00","12:00"),("12:00","13:10"),("13:10","14:20"),
+                          ("14:20","15:20"),("15:20","16:20"),("16:20","17:35"),
+                          ("17:35","18:50"),("19:10","20:45"),("20:45","")])
+        self.assertEqual([row["raagi"] for row in schedule],
+                         ["ਭਾਈ ਗੁਰਮੇਲ ਸਿੰਘ","ਭਾਈ ਸਤਿੰਦਰਬੀਰ ਸਿੰਘ","ਭਾਈ ਜਗਤਾਰ ਸਿੰਘ ਰਾ",
+                          "ਭਾਈ ਆਗਿਆਕਾਰ ਸਿੰਘ","ਭਾਈ ਸੁਖਬੀਰ ਸਿੰਘ","ਭਾਈ ਭੁਪਿੰਦਰ ਸਿੰਘ",
+                          "ਭਾਈ ਵਰਿੰਦਰ ਸਿੰਘ","ਭਾਈ ਕੁਲਬੀਰ ਸਿੰਘ","ਭਾਈ ਗੁਰਮੇਲ ਸਿੰਘ",
+                          "ਭਾਈ ਜਗਤਾਰ ਸਿੰਘ ਰਾ","ਭਾਈ ਆਗਿਆਕਾਰ ਸਿੰਘ","ਭਾਈ ਸੁਖਬੀਰ ਸਿੰਘ",
+                          "ਭਾਈ ਭੁਪਿੰਦਰ ਸਿੰਘ","ਭਾਈ ਵਰਿੰਦਰ ਸਿੰਘ","ਭਾਈ ਕੁਲਬੀਰ ਸਿੰਘ"])
+
+    def test_updated_time_is_read_from_header_instead_of_hardcoded(self):
+        pages = deepcopy(PAGES)
+        pages[0]["lines"][4]["columns"][0] = "ਤਿੰਨ ਪਹਿਰਾ 2.40 ਤੋਂ"
+        self.assertEqual(duties.parse_duties(pages)["02-10-2026"][0]["start_time"], "02:40")
+
+    def test_incomplete_and_ambiguous_tables_preserve_existing_schedule(self):
+        self.refresh();before = self.snapshot()
+        incomplete = deepcopy(PAGES)
+        del incomplete[0]["lines"][31]  # second table loses October 2
+        missing_both = deepcopy(PAGES)
+        missing_both[0]["lines"] = [line for line in missing_both[0]["lines"]
+                                     if line["columns"][0] != "02.10.2026"]
+        unknown = deepcopy(PAGES)
+        unknown[0]["lines"][3]["columns"] = ["1","2","3","9"]
+        overlap = deepcopy(PAGES)
+        overlap[0]["lines"][5]["columns"][1] = "6.40 ਤੋਂ 8.00 ਸਵੇਰੇ"
+        for pages in [incomplete, missing_both, unknown, overlap]:
+            with self.subTest(pages=pages[0]["lines"][3]), self.assertRaises(ValueError):
+                self.refresh(body=b"%PDF-new-invalid", pages=pages)
+            self.assertEqual(self.snapshot(), before)
+
+    def test_conflicting_date_row_is_rejected(self):
+        pages = changed_pages()
+        old_row = deepcopy(PAGES[0]["lines"][9])
+        pages[0]["lines"].insert(10, old_row)
+        with self.assertRaisesRegex(ValueError, "Conflicting"):
+            duties.parse_duties(pages)
+
+    def test_raw_json_migrates_even_if_pdf_has_identical_bytes(self):
+        raw = {**RAW, "pdf_sha256": duties.hashlib.sha256(b"%PDF-fake").hexdigest()}
+        self.output.write_text(json.dumps(raw, ensure_ascii=False))
+        with patch.object(duties, "extract_pages", side_effect=AssertionError("should reuse old extracted pages")):
+            self.assertTrue(duties.refresh(self.output, self.client(lambda r: httpx.Response(200, content=b"%PDF-fake"))))
+        self.assertEqual(set(json.loads(self.output.read_text())), {"duties", "updated_at"})
+
+    def test_raw_json_migrates_on_http_304(self):
+        self.output.write_text(json.dumps(RAW, ensure_ascii=False))
+        self.assertTrue(duties.refresh(self.output, self.client(lambda r: httpx.Response(304))))
+        self.assertEqual(len(json.loads(self.output.read_text())["duties"]),17)
+
+    def test_offline_same_file_migration_is_idempotent_and_uses_no_network(self):
+        self.output.write_text(json.dumps(RAW, ensure_ascii=False))
+        with patch.object(duties.httpx, "Client", side_effect=AssertionError("migration must not fetch")):
+            self.assertEqual(duties.main(["--from-json",str(self.output),"--output",str(self.output)]),0)
+            before = self.snapshot()
+            self.assertEqual(duties.main(["--from-json",str(self.output),"--output",str(self.output)]),0)
+        self.assertEqual(self.snapshot(),before)
+
+    def test_output_write_failure_does_not_allow_a_stale_cache_to_skip_update(self):
+        self.refresh(headers={"etag":'"old"'});before = self.snapshot()
+        replace = duties.os.replace
+        def fail_main(source,target):
+            if target == self.output:
+                raise OSError("failed after metadata commit")
+            return replace(source,target)
+        with patch.object(duties.os,"replace",side_effect=fail_main), self.assertRaises(OSError):
+            self.refresh(body=b"%PDF-new",pages=changed_pages(),headers={"etag":'"new"'})
+        self.assertEqual(self.snapshot(),before)
+        def response(request):
+            self.assertNotIn("if-none-match",request.headers)
+            return httpx.Response(200,content=b"%PDF-new")
+        with patch.object(duties,"extract_pages",return_value=changed_pages()):
+            self.assertTrue(duties.refresh(self.output,self.client(response)))
+        self.assertEqual(json.loads(self.output.read_text())["duties"]["02-10-2026"][0]["raagi"],"ਭਾਈ ਨਵੇਂ ਸਾਹਿਬ ਸਿੰਘ")
 
     def test_304_sends_validators_and_keeps_file_untouched(self):
         self.refresh(headers={"etag": '"same"', "last-modified": "Wed, 14 Oct 2026 00:00:00 GMT"})
@@ -129,12 +233,12 @@ class DutiesTests(unittest.TestCase):
             return httpx.Response(200, content=b"%PDF-test")
         with patch.object(duties, "extract_pages", return_value=PAGES):
             self.assertTrue(duties.refresh(self.output, self.client(response)))
-        self.assertEqual(json.loads(self.output.read_text())["pdf_url"], "https://hs.sgpc.net/files/punjabi.pdf")
+        self.assertEqual(json.loads(duties.metadata_path(self.output).read_text())["pdf_url"], "https://hs.sgpc.net/files/punjabi.pdf")
 
     def test_atomic_replace_failure_retains_previous_json(self):
         self.refresh();before = self.snapshot()
         with patch.object(duties.os, "replace", side_effect=OSError("disk error")), self.assertRaises(OSError):
-            self.refresh(body=b"%PDF-new", pages=[{"lines": [{"text": "ਨਵੀਂ ਡਿਊਟੀ"}]}])
+            self.refresh(body=b"%PDF-new", pages=changed_pages())
         self.assertEqual(self.snapshot(), before)
         self.assertEqual(list(self.output.parent.glob(".duties.json.*")), [])
 
@@ -186,18 +290,13 @@ class DutiesTests(unittest.TestCase):
         self.assertEqual(len([line for line in text.splitlines() if line.strip().startswith(tuple(f"{i:02d}.10.2026" for i in range(1,18)))]),17)
 
     @unittest.skipUnless(shutil.which("pdftotext") and shutil.which("pdffonts"), "Install Poppler")
-    def test_legacy_pdf_direct_conversion_needs_no_ocr_and_retains_cache(self):
+    def test_legacy_pdf_direct_conversion_needs_no_ocr(self):
         pdf = unicode_pdf("15.10.2026     BweI minMdr isMG").replace(b"/Helvetica", b"/AnmolLipi")
-        client = self.client(lambda r: httpx.Response(200, content=pdf))
         with patch.object(duties, "ocr_pages", side_effect=AssertionError("known font must not use OCR")):
-            self.assertTrue(duties.refresh(self.output, client))
-            pages = json.loads(self.output.read_text())["pages"]
+            pages = duties.extract_pages(pdf)
             self.assertEqual(pages[0]["extraction_method"], "legacy-font-conversion")
             self.assertIn("15.10.2026", pages[0]["lines"][0]["text"])
             self.assertIn("ਭਾਈ ਮਨਿੰਦਰ ਸਿੰਘ", pages[0]["lines"][0]["text"])
-            before = self.snapshot()
-            self.assertFalse(duties.refresh(self.output, client))
-            self.assertEqual(self.snapshot(), before)
 
     def test_missing_ocr_language_explains_installation(self):
         result = SimpleNamespace(stdout=b"List of available languages (1):\neng\n")
@@ -266,19 +365,15 @@ class DutiesTests(unittest.TestCase):
                     "02:00 - 04:00", "04:00 - 06:00", "06:00 - 08:00"]
         for name in ["synthetic-unmapped-font.pdf", "synthetic-scanned.pdf"]:
             with self.subTest(fixture=name):
-                self.output.unlink(missing_ok=True)
                 pdf = (fixtures/name).read_bytes()
-                client = self.client(lambda r: httpx.Response(200, content=pdf))
-                self.assertTrue(duties.refresh(self.output, client))
-                pages = json.loads(self.output.read_text())["pages"]
+                pages = duties.extract_pages(pdf)
                 text = "\n".join(line["text"] for page in pages for line in page["lines"])
                 for phrase in expected:
                     self.assertIn(phrase, text)
                 self.assertEqual(pages[0]["extraction_method"], "ocr")
                 self.assertGreaterEqual(pages[0]["ocr_mean_confidence"], duties.MIN_OCR_CONFIDENCE)
-                before = self.snapshot()
-                self.assertFalse(duties.refresh(self.output, client))
-                self.assertEqual(self.snapshot(), before)
+                with self.assertRaises(ValueError):
+                    duties.parse_duties(pages)  # A generic test table is not the SGPC duty layout.
 
 
 if __name__ == "__main__":

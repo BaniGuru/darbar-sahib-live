@@ -7,6 +7,12 @@ an incomplete excerpt, not a replacement for the full published schedule.
 They verify the supported font families, Punjabi names, diacritics and
 preservation of numeric dates/times and table columns during conversion.
 
+`sgpc-raw-pages.json` is the complete extracted JSON subsequently uploaded
+by the user, with both numbered tables, dates October 1–17, 2026, and
+their published headings. It validates structured schedules with 15
+performances per date (255 total). It is user-supplied extraction evidence,
+not a claim that the cloud fetched the complete source PDF.
+
 The source was rendered using Chromium and the system Noto Sans Gurmukhi
 font. `synthetic-unmapped-font.pdf` removes its ToUnicode references,
 retaining its visible glyphs while breaking direct Unicode extraction.
