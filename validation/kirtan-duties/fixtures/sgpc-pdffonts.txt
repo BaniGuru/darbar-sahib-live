@@ -1,0 +1,6 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+ABCDEE+GurbaniAkharThick             TrueType          WinAnsi          yes yes no       5  0
+ABCDEE+AnmolLipiHeavy                TrueType          WinAnsi          yes yes no       7  0
+ABCDEE+AnmolLipi,Bold                TrueType          WinAnsi          yes yes no       9  0
+ABCDEE+AnmolLipi                     TrueType          WinAnsi          yes yes no      11  0

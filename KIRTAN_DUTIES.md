@@ -11,7 +11,7 @@ SHA-256 and HTTP validators are included for provenance.
 New duties replace the JSON atomically. Unchanged PDF bytes, HTTP 304, or
 regenerated PDFs with the same extracted text leave its **contents and
 modification time unchanged**. Timeouts, HTTP errors, invalid HTML/PDFs,
-missing extraction tools and unreadable/scanned/legacy-font Punjabi PDFs
+missing extraction tools and unreadable/low-confidence Punjabi PDFs
 retain the last good JSON and exit nonzero. Concurrent runs are locked.
 A failed first fetch creates no placeholder duties JSON. Generated duties,
 lock and log files are ignored by Git.
@@ -21,13 +21,47 @@ On the production server, install Poppler and cron if absent:
 ```bash
 sudo apt-get install poppler-utils cron
 cd /var/www/gurbani-asr
+.venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python scripts/update_kirtan_duties.py
 ```
 
-The script uses the existing `httpx` Python dependency. The application
+The script uses existing `httpx` and pinned **gurmukhiutils 0.3.1**, a small
+pure-Python converter for the confirmed SGPC fonts. The application
 owner must be able to write `data/`. Its default output is resolved from
 the script location, so cron does not need a working directory. An
 alternative location can be supplied with `--output /path/to/duties.json`.
+
+The user's `pdffonts` output confirms `GurbaniAkharThick`, `AnmolLipiHeavy`,
+`AnmolLipi,Bold` and `AnmolLipi`, all WinAnsi without Unicode maps. These
+are **directly converted to Unicode**, retaining dates/time values as ASCII
+digits and preserving row/column spacing. This avoids OCR guessing names
+or dropping headings. Pages record `extraction_method:
+"legacy-font-conversion"` and `source_fonts`. Whole-page conversion is
+used only when every PDF font belongs to the supported families, so an
+English font cannot be silently transliterated as Punjabi.
+
+Readable Unicode text remains the first choice. PDFs with scanned pages,
+unknown/mixed fonts or unusable glyphs fall back to **Punjabi + English
+Tesseract OCR**, if installed:
+
+```bash
+sudo apt-get install tesseract-ocr tesseract-ocr-pan tesseract-ocr-eng
+```
+
+Replacement characters, unmapped control glyphs and private-use characters
+also trigger fallback. Rendering/OCR processes
+one page at a time at 300 DPI, with one OCR thread, per-command timeouts
+and a 31-page limit. Both overall and Punjabi-word weighted mean confidence
+must be at least 60; otherwise the previous JSON stays intact. OCR pages
+include `extraction_method: "ocr"` and `ocr_mean_confidence`. Confidence is
+an OCR diagnostic, not a measured accuracy percentage: check names and
+times against the source PDF. OCR may miss headings or misread text.
+
+For the error `PDF has no reliably extracted Punjabi text`, pull the latest
+branch, update Python requirements and rerun the updater. The confirmed
+SGPC font path does not require OCR packages. If a different publication
+requires OCR, missing language data now produces an installation instruction
+instead of the old generic rejection. The existing cron entry does not change.
 
 Install the line in [deploy/kirtan-duties.crontab](deploy/kirtan-duties.crontab)
 using the **application owner's** `crontab -e`, preserving existing jobs:
@@ -52,14 +86,26 @@ write failure and concurrent-run protection. Run:
 .venv/bin/python -m unittest discover -s tests -p test_kirtan_duties.py -v
 ```
 
-All 146 Python tests passed, including 13 duties updater tests. See
-[validation/kirtan-duties/summary.json](validation/kirtan-duties/summary.json).
+The original updater passed 146 Python tests, including 13 duties tests.
+The follow-up tests the actual font list and 17 dated rows provided by the
+user, including the October 15 names, dates, time headings and column order.
+A generated PDF verifies direct legacy conversion without calling OCR,
+and confirms unchanged cache bytes/mtime. It also tests real synthetic non-Unicode-font and scanned
+PDFs, recovering all three expected names/time slots and preserving the
+JSON bytes/mtime on repeat. Its live SGPC PDF remains unverified. See
+[validation/kirtan-duties/summary.json](validation/kirtan-duties/summary.json)
+for the original result and
+[validation/kirtan-duties/ocr-summary.json](validation/kirtan-duties/ocr-summary.json)
+for the follow-up: **156 tests passed, zero skipped**, including 23 duties
+tests. The real OCR test requires the Punjabi and English language packs;
+it explicitly skips when those tools are unavailable.
 
 The cloud proxy currently blocks `hs.sgpc.net`. The hostname was added to
 the saved environment network draft, preserving other hosts and presets;
 review/save and publish that setting to permit the live-source check.
-The exact SGPC PDF layout and its font encoding have **not** been verified
-against the live endpoint yet. No real duties data is fabricated or
-committed. The cloud image also has no `crontab` binary, and this task has
+The user-provided font listing and extracted text have been verified with
+the converter. The full PDF has **not** been downloaded/verified against
+the live endpoint in this cloud task. No complete duties JSON is fabricated
+or committed from that partial excerpt. The cloud image also has no `crontab` binary, and this task has
 no shell on the production server, so the nightly production entry must
 be installed there using the command above.

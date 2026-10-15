@@ -1,0 +1,60 @@
+{
+  "synthetic_fixtures": true,
+  "live_sgpc_pdf_verified": false,
+  "results": [
+    {
+      "fixture": "legacy",
+      "all_three_names_and_time_slots_correct": true,
+      "repeat_json_bytes_and_mtime_unchanged": true,
+      "seconds": 1.452767804999894,
+      "confidence": 93.57
+    },
+    {
+      "fixture": "scanned",
+      "all_three_names_and_time_slots_correct": true,
+      "repeat_json_bytes_and_mtime_unchanged": true,
+      "seconds": 1.3478893569999855,
+      "confidence": 94.75
+    }
+  ],
+  "python_tests": 156,
+  "duties_tests": 23,
+  "tests_passed": true,
+  "tests_skipped": 0,
+  "ocr_thread_limit": 1,
+  "max_ocr_pages": 31,
+  "min_ocr_confidence": 60,
+  "source_url": "https://hs.sgpc.net/kirtan_duty_punjabi_pdf.php",
+  "source_blocker": "Full PDF fetch blocked by cloud proxy; actual font listing and extracted excerpt pasted by user were tested",
+  "language_data": {
+    "source": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_fast/87416418657359cb625c412a48b6e1d6d41c29bd/pan.traineddata",
+    "sha256": "1ec0907fc3534065ea9ae190c6bb7ec9e5c74fd9d2fa996aaec7407f11ad8131"
+  },
+  "confidence_is_accuracy_percentage": false,
+  "ocr_can_misread_names_times_or_omit_headings": true,
+  "sources_sha256": {
+    "scripts/update_kirtan_duties.py": "d8e18a86d67fd435710391516d74c9ac10c33bb1aac482df448eea51cb766be6",
+    "tests/test_kirtan_duties.py": "3d8f00f3f45d8d202664e53a82bb8ee67de67bcd241c2a4395c3480da3156222",
+    "requirements.txt": "68c545a6d60cd7fa5cc75d041aa116ef7ae533c23d161f03354ec743931d8477",
+    "validation/kirtan-duties/fixtures/synthetic-unmapped-font.pdf": "9a00b624962618347e2e8fed7db561007e075f90354e5752475e39ebb5f4e82b",
+    "validation/kirtan-duties/fixtures/synthetic-scanned.pdf": "11e6f5acdeac7e252a11320cee64f7f761c030906a8f3ae74efeb4271707ccc2",
+    "validation/kirtan-duties/fixtures/sgpc-pdffonts.txt": "2993f487385ca136bc96d175adb4718230b8f3a48da5586d3b8400b93d866e9e",
+    "validation/kirtan-duties/fixtures/sgpc-extracted-excerpt.txt": "27a1576b0d99e5c35a74620eb887e894423cc58ee1df0814d4d5d522dc84c943"
+  },
+  "sgpc_font_list_verified": true,
+  "sgpc_provided_text_excerpt_verified": true,
+  "source_fonts": [
+    "GurbaniAkharThick",
+    "AnmolLipiHeavy",
+    "AnmolLipi,Bold",
+    "AnmolLipi"
+  ],
+  "direct_conversion": {
+    "method": "legacy-font-conversion",
+    "package": "gurmukhiutils==0.3.1",
+    "dated_rows": 17,
+    "names_and_columns_checked_for": "15.10.2026",
+    "numeric_dates_times_and_layout_preserved": true,
+    "ocr_needed_for_confirmed_sgpc_fonts": false
+  }
+}
